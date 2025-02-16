@@ -1,6 +1,6 @@
 ---
-title: "Tutorial IV.III - Constraints in JuMP"
-subtitle: "Applied Optimization with Julia"
+title: "Tutorial III.III - Constraints in JuMP"
+subtitle: "Optimization with Julia"
 
 format:
     html:

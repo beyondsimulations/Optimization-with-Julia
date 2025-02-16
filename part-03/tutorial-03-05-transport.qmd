@@ -1,6 +1,6 @@
 ---
-title: "Tutorial IV.V - Modelling the Transportation Problem with JuMP"
-subtitle: "Applied Optimization with Julia"
+title: "Tutorial III.V - Modelling the Transportation Problem with JuMP"
+subtitle: "Optimization with Julia"
 
 format:
     html:

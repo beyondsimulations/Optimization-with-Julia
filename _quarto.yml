@@ -9,9 +9,9 @@ project:
     - part-02/*.qmd
     - part-03/*.qmd
 website:
-  title: "Mathematical Optimization with Julia"
-  repo-url: https://github.com/beyondsimulations/Mathematical-Optimization-Julia
-  site-url: https://beyondsimulations.github.io/Mathematical-Optimization-Julia
+  title: "Optimization with Julia"
+  repo-url: https://github.com/beyondsimulations/Optimization-with-Julia
+  site-url: https://beyondsimulations.github.io/Optimization-with-Julia
   bread-crumbs: true
   sidebar:
     style: floating
@@ -72,7 +72,7 @@ website:
     center: "Mathematical Optimization with Julia, Tobias Vlćek</br>CC BY-NC-SA 4.0" 
     right: 
       - icon: github
-        href: https://github.com/beyondsimulations/Mathematical-Optimization-Julia
+        href: https://github.com/beyondsimulations/Optimization-with-Julia
       - icon: linkedin
         href: https://linkedin.com/in/tobiasvlcek
 

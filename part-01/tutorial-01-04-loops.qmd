@@ -1,6 +1,6 @@
 ---
-title: "Tutorial II.IV - Loops"
-subtitle: "Applied Optimization with Julia"
+title: "Tutorial I.IV - Loops"
+subtitle: "Optimization with Julia"
 
 format:
     html:

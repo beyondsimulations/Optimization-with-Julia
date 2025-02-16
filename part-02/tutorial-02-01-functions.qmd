@@ -1,6 +1,6 @@
 ---
-title: "Tutorial III.I - Functions in Julia"
-subtitle: "Applied Optimization with Julia"
+title: "Tutorial II.I - Functions in Julia"
+subtitle: "Optimization with Julia"
 
 format:
     html:

@@ -1,6 +1,6 @@
 ---
-title: "Tutorial III.III - DataFrames in Julia"
-subtitle: "Applied Optimization with Julia"
+title: "Tutorial II.V - Plotting Graphs"
+subtitle: "Optimization with Julia"
 
 format:
     html:

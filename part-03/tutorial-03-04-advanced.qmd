@@ -1,6 +1,6 @@
 ---
-title: "Tutorial IV.IV - Advanced Solver Options with HiGHS in JuMP"
-subtitle: "Applied Optimization with Julia"
+title: "Tutorial III.IV - Advanced Solver Options with HiGHS in JuMP"
+subtitle: "Optimization with Julia"
 
 format:
     html:
