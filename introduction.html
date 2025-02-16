@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Tobias Vlćek">
+
+<title>Introduction – Optimization with Julia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-535f1e98bdee6bd367c8658371e9dbec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" data-domain="beyondsimulations.github.io/applied-optimization" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Introduction</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="https://images.beyondsimulations.com/logo/midjourney_square_left.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">I. First Steps</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-01/tutorial-01-01-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 - Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-01/tutorial-01-02-vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 - Vectors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-01/tutorial-01-03-comparisons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 - Comparisons</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-01/tutorial-01-04-loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 - Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-01/tutorial-01-05-dicts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 - Dictionaries</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">II. Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-02/tutorial-02-01-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 - Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-02/tutorial-02-02-handling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 - Packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-02/tutorial-02-03-DataFrames.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 - DataFrames</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-02/tutorial-02-04-IO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 - Input and Output</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-02/tutorial-02-05-Plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 - Plotting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">III. Optimization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-03/tutorial-03-01-jump.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 - JuMP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-03/tutorial-03-02-bounds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 - Bounds</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-03/tutorial-03-03-constraints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 - Constraints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-03/tutorial-03-04-advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 - Advanced</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part-03/tutorial-03-05-transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 - Transport</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Cheatsheets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./general/cheatsheet-julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./general/cheatsheet-jump.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JuMP</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./general/literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Literature</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#julia-programming-language" id="toc-julia-programming-language" class="nav-link active" data-scroll-target="#julia-programming-language"><span class="flow">Julia Programming Language</span></a>
+  <ul class="collapse">
+  <li><a href="#why-julia" id="toc-why-julia" class="nav-link" data-scroll-target="#why-julia">Why Julia?</a></li>
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
+  <li><a href="#jump" id="toc-jump" class="nav-link" data-scroll-target="#jump">JuMP</a></li>
+  </ul></li>
+  <li><a href="#algebraic-modeling" id="toc-algebraic-modeling" class="nav-link" data-scroll-target="#algebraic-modeling"><span class="flow">Algebraic Modeling</span></a>
+  <ul class="collapse">
+  <li><a href="#what-is-algebraic-modeling" id="toc-what-is-algebraic-modeling" class="nav-link" data-scroll-target="#what-is-algebraic-modeling">What is algebraic modeling?</a></li>
+  <li><a href="#how-to-learn-algebraic-modeling" id="toc-how-to-learn-algebraic-modeling" class="nav-link" data-scroll-target="#how-to-learn-algebraic-modeling">How to learn algebraic modeling?</a></li>
+  <li><a href="#central-questions" id="toc-central-questions" class="nav-link" data-scroll-target="#central-questions">Central Questions</a></li>
+  <li><a href="#model-components" id="toc-model-components" class="nav-link" data-scroll-target="#model-components">Model Components</a></li>
+  <li><a href="#linear-optimization-model" id="toc-linear-optimization-model" class="nav-link" data-scroll-target="#linear-optimization-model">Linear Optimization Model</a></li>
+  <li><a href="#what-is-modelling-good-for" id="toc-what-is-modelling-good-for" class="nav-link" data-scroll-target="#what-is-modelling-good-for">What is modelling good for?</a></li>
+  </ul></li>
+  <li><a href="#installing-julia" id="toc-installing-julia" class="nav-link" data-scroll-target="#installing-julia"><span class="flow">Installing Julia</span></a>
+  <ul class="collapse">
+  <li><a href="#download-and-install-julia" id="toc-download-and-install-julia" class="nav-link" data-scroll-target="#download-and-install-julia">Download and Install Julia</a></li>
+  <li><a href="#installing-julia-1" id="toc-installing-julia-1" class="nav-link" data-scroll-target="#installing-julia-1">Installing Julia</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
+  <li><a href="#installing-vs-code" id="toc-installing-vs-code" class="nav-link" data-scroll-target="#installing-vs-code">Installing VS Code</a></li>
+  <li><a href="#verify-the-installation" id="toc-verify-the-installation" class="nav-link" data-scroll-target="#verify-the-installation">Verify the Installation</a></li>
+  <li><a href="#create-a-new-file" id="toc-create-a-new-file" class="nav-link" data-scroll-target="#create-a-new-file">Create a new file</a></li>
+  <li><a href="#everything-working" id="toc-everything-working" class="nav-link" data-scroll-target="#everything-working">Everything working?</a></li>
+  <li><a href="#how-to-get-started" id="toc-how-to-get-started" class="nav-link" data-scroll-target="#how-to-get-started">How to get started?</a></li>
+  </ul></li>
+  <li><a href="#working-with-vs-code" id="toc-working-with-vs-code" class="nav-link" data-scroll-target="#working-with-vs-code"><span class="flow">Working with VS Code</span></a>
+  <ul class="collapse">
+  <li><a href="#notebooks-in-vs-code" id="toc-notebooks-in-vs-code" class="nav-link" data-scroll-target="#notebooks-in-vs-code">Notebooks in VS Code</a></li>
+  <li><a href="#downloading-the-notebooks" id="toc-downloading-the-notebooks" class="nav-link" data-scroll-target="#downloading-the-notebooks">Downloading the Notebooks</a></li>
+  </ul></li>
+  <li><a href="#working-with-ijulia" id="toc-working-with-ijulia" class="nav-link" data-scroll-target="#working-with-ijulia"><span class="flow">Working with IJulia</span></a>
+  <ul class="collapse">
+  <li><a href="#ijulia" id="toc-ijulia" class="nav-link" data-scroll-target="#ijulia">IJulia</a></li>
+  <li><a href="#installing-ijulia" id="toc-installing-ijulia" class="nav-link" data-scroll-target="#installing-ijulia">Installing IJulia</a></li>
+  <li><a href="#running-ijulia" id="toc-running-ijulia" class="nav-link" data-scroll-target="#running-ijulia">Running IJulia</a></li>
+  <li><a href="#get-started-with-the-sections" id="toc-get-started-with-the-sections" class="nav-link" data-scroll-target="#get-started-with-the-sections">Get started with the sections</a></li>
+  </ul></li>
+  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature"><span class="flow">Literature</span></a>
+  <ul class="collapse">
+  <li><a href="#literature-1" id="toc-literature-1" class="nav-link" data-scroll-target="#literature-1">Literature</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+<p class="subtitle lead">Optimization with Julia</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Tobias Vlćek </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Hamburg - Fall 2024
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="julia-programming-language" class="level1 title">
+<h1 class="title"><span class="flow">Julia Programming Language</span></h1>
+<section id="why-julia" class="level2">
+<h2 class="anchored" data-anchor-id="why-julia">Why Julia?</h2>
+<ul>
+<li><strong>Designed to be:</strong>
+<ul>
+<li>as general as Python</li>
+<li>as statistics-friendly as R</li>
+<li>as fast as C++!</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Allows for fast data workflows</strong>, particularly in scientific computing!</p>
+</div>
+</div>
+</section>
+<section id="syntax" class="level2">
+<h2 class="anchored" data-anchor-id="syntax">Syntax</h2>
+<ul>
+<li>Dynamically-typed syntax just like Python</li>
+<li>Similar to R, Matlab and Python - <strong>not like C++</strong></li>
+<li>In comparison, accessible and easy to learn!</li>
+<li><strong>No need to worry about memory management!</strong></li>
+</ul>
+</section>
+<section id="jump" class="level2">
+<h2 class="anchored" data-anchor-id="jump">JuMP</h2>
+<ul>
+<li>Package for <strong>algebraic modeling</strong> in Julia</li>
+<li>Simplifies solving complex optimization problems</li>
+<li>Provides a high-level, user-friendly interface</li>
+<li>Useful for operations research and data science</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>JuMP is an alternative to Pyomo, GAMS, and AMPL!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="algebraic-modeling" class="level1 title">
+<h1 class="title"><span class="flow">Algebraic Modeling</span></h1>
+<section id="what-is-algebraic-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-algebraic-modeling">What is algebraic modeling?</h2>
+<ul>
+<li>A “mathematical language” for optimization problems</li>
+<li>Allows for describing complex systems and constraints</li>
+<li>Based on linear algebra (Equations and Inequalities)</li>
+</ul>
+</section>
+<section id="how-to-learn-algebraic-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-learn-algebraic-modeling">How to learn algebraic modeling?</h2>
+<ul>
+<li><strong>Practice, practice, and practice!</strong></li>
+<li>Understand standard models and their approach</li>
+<li>Develop an understanding of constraints</li>
+<li>Understand the structure of a models solution space</li>
+<li>Use an available algorithms to determine solutions</li>
+</ul>
+</section>
+<section id="central-questions" class="level2">
+<h2 class="anchored" data-anchor-id="central-questions">Central Questions</h2>
+<ul>
+<li>What is to be decided?</li>
+<li>What is relevant to the decision?</li>
+<li>What information is given and relevant?</li>
+<li>What parameters (data) are needed?</li>
+<li>Which variables and of which type are needed?</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modeling is a creative process!</p>
+</div>
+</div>
+</section>
+<section id="model-components" class="level2">
+<h2 class="anchored" data-anchor-id="model-components">Model Components</h2>
+<ol type="1">
+<li>Objective function</li>
+<li>Constraints</li>
+<li>Variables</li>
+</ol>
+</section>
+<section id="linear-optimization-model" class="level2">
+<h2 class="anchored" data-anchor-id="linear-optimization-model">Linear Optimization Model</h2>
+<section id="basic-model-formulation" class="level4">
+<h4 class="anchored" data-anchor-id="basic-model-formulation">Basic Model Formulation</h4>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\text{maximize} \quad F = \sum_{j\in \mathcal{J}} c_j \times X_j
+\end{aligned}
+\]</span></p>
+<p>subject to</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sum_{j\in \mathcal{J}} a_{i,j} \times X_j  \le b_i &amp;&amp; \forall i \in \mathcal{I} \\
+&amp;X_j \ge 0 &amp;&amp;  \forall  j \in \mathcal{J}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="model-components-1" class="level4">
+<h4 class="anchored" data-anchor-id="model-components-1">Model Components</h4>
+<p><span class="math display">\[
+\begin{aligned}
+\mathcal{I} &amp;: \text{set of $i \in \mathcal{I}$,}\\
+\mathcal{J} &amp;: \text{set of $j \in \mathcal{J}$,}\\
+F   &amp;: \text{Objective function variable,}\\
+X_{j}   &amp;: \text{decision variables,}\\
+c_{j}   &amp;: \text{objective function coefficients,}\\
+a_{i,j} &amp;: \text{parameters,}\\
+b_{i}   &amp;: \text{parameters}
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="what-is-modelling-good-for" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-modelling-good-for">What is modelling good for?</h2>
+<ul>
+<li><span class="highlight">Good Question!</span> A lot of things:
+<ul>
+<li>Modeling real-world problems</li>
+<li>Solving complex systems</li>
+<li>Optimizing resource allocation</li>
+<li>Decision-making under constraints</li>
+<li>Simulation and prediction</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="installing-julia" class="level1 title">
+<h1 class="title"><span class="flow">Installing Julia</span></h1>
+<section id="download-and-install-julia" class="level2">
+<h2 class="anchored" data-anchor-id="download-and-install-julia">Download and Install Julia</h2>
+<p>To prepare for the upcoming lectures, we start by installing the Julia Programming Language and an Integrated Development Environment (IDE) to work with Julia.</p>
+</section>
+<section id="installing-julia-1" class="level2">
+<h2 class="anchored" data-anchor-id="installing-julia-1">Installing Julia</h2>
+<p><img src="https://images.beyondsimulations.com/ao/ao_julia2.png" class="img-fluid" data-max-width="400px"></p>
+<ul>
+<li>Head to <a href="https://julialang.org">julialang.org</a> and follow the instructions.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are ever asked to add something to your “PATH”, do so!</p>
+</div>
+</div>
+</section>
+<section id="vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="vs-code">VS Code</h2>
+<ul>
+<li>Next, we are going to install VS Code</li>
+<li>Alternatively, you can install VS Codium</li>
+<li>It is essentially VS Code but without any tracking by MS</li>
+</ul>
+</section>
+<section id="installing-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h2>
+<ul>
+<li>Head to the website <a href="https://code.visualstudio.com">code.visualstudio.com</a></li>
+<li>OR to the webside <a href="https://vscodium.com">vscodium.com</a></li>
+<li>Download and install the latest release</li>
+</ul>
+</section>
+<section id="verify-the-installation" class="level2">
+<h2 class="anchored" data-anchor-id="verify-the-installation">Verify the Installation</h2>
+<ul>
+<li>Start the IDE and take a look around</li>
+<li>Search for the field “Extensions” on the left sidebar</li>
+<li>Click it and search for “Julia”</li>
+<li>Download and install “Julia (Julia Language Support)”</li>
+</ul>
+</section>
+<section id="create-a-new-file" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-file">Create a new file</h2>
+<ul>
+<li>Create a new file with a “.jl” ending</li>
+<li>Save it somewhere on your computer</li>
+<li>e.g., in a folder that you will use in the course</li>
+</ul>
+<div id="2" class="cell" data-output-location="fragment" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Hello World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello World!</code></pre>
+</div>
+</div>
+<ul>
+<li>Run the file by clicking “run” in the upper right corner</li>
+<li>OR by pressing “Control+Enter” or “STRG+Enter”</li>
+</ul>
+</section>
+<section id="everything-working" class="level2">
+<h2 class="anchored" data-anchor-id="everything-working">Everything working?</h2>
+<ul>
+<li>If the terminal opens with a <code>Hello World!</code> → perfect!</li>
+<li>If not, it is likely that the IDE <span class="highlight">cannot find the path</span> to Julia</li>
+<li>Try to determine the path and save it to VS Code</li>
+<li>After saving it, try to run the file again</li>
+</ul>
+</section>
+<section id="how-to-get-started" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-get-started">How to get started?</h2>
+<ul>
+<li>Following three parts are dedicated to learning the basics</li>
+<li>Start with the very basics and gradually move on</li>
+<li>Focus in the first two parts on the programming language</li>
+<li>Third part dedicated to <span class="highlight">Mathematical Optimization</span></li>
+</ul>
+</section>
+</section>
+<section id="working-with-vs-code" class="level1 title">
+<h1 class="title"><span class="flow">Working with VS Code</span></h1>
+<section id="notebooks-in-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="notebooks-in-vs-code">Notebooks in VS Code</h2>
+<ul>
+<li>The easiest way is by using VS Code</li>
+<li>Install the Jupyter Extension</li>
+<li>Now, you can open <code>.ipynb</code> files</li>
+<li>Here you can run the code in the cells</li>
+</ul>
+</section>
+<section id="downloading-the-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="downloading-the-notebooks">Downloading the Notebooks</h2>
+<ul>
+<li>You will find the notebooks next to the sections pages</li>
+<li>On each page, you will find a button <code>Jupyter</code> on the right</li>
+<li>Click it to download the notebook and save it</li>
+<li>I’d recommend storing the notebooks <span class="highlight">in a separate directory for this workshop</span></li>
+</ul>
+</section>
+</section>
+<section id="working-with-ijulia" class="level1 title">
+<h1 class="title"><span class="flow">Working with IJulia</span></h1>
+<section id="ijulia" class="level2">
+<h2 class="anchored" data-anchor-id="ijulia">IJulia</h2>
+<ul>
+<li>IJulia is an interface between Julia and Jupyter Notebooks</li>
+<li>Popular tool for data analysis and visualization</li>
+<li>You can use IJulia to run <span class="highlight">Julia code in the notebooks</span></li>
+</ul>
+</section>
+<section id="installing-ijulia" class="level2">
+<h2 class="anchored" data-anchor-id="installing-ijulia">Installing IJulia</h2>
+<ul>
+<li>Open the VS Code IDE and start a terminal</li>
+<li>Start Julia by typing <code>julia</code> in the terminal</li>
+<li>Install IJulia by typing <code>]</code> to open the package manager</li>
+<li>Install IJulia by typing <code>add IJulia</code></li>
+<li>Press <code>Enter</code></li>
+</ul>
+</section>
+<section id="running-ijulia" class="level2">
+<h2 class="anchored" data-anchor-id="running-ijulia">Running IJulia</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">IJulia;</span> notebook()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Start IJulia by typing the above code in the Julia prompt</li>
+<li>This will open a new browser window</li>
+<li>You can now run code in the notebooks</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can also run the notebooks in VS Code, if you prefer!</p>
+</div>
+</div>
+</section>
+<section id="get-started-with-the-sections" class="level2">
+<h2 class="anchored" data-anchor-id="get-started-with-the-sections">Get started with the sections</h2>
+<ul>
+<li>Download the first notebook and open it</li>
+<li>Start with the <span class="highlight">first problem and solve it step by step</span></li>
+<li>You can find the sections here on the website</li>
+<li><span class="highlight">You can ask questions anytime!</span></li>
+</ul>
+</section>
+</section>
+<section id="literature" class="level1 title">
+<h1 class="title"><span class="flow">Literature</span></h1>
+<section id="literature-1" class="level2">
+<h2 class="anchored" data-anchor-id="literature-1">Literature</h2>
+<p>For interesting literature to learn more about Julia, take a look at the <a href="./general/literature.html">literature list</a> of this course.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Optimization-with-Julia");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Mathematical Optimization with Julia, Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/beyondsimulations/Optimization-with-Julia">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
