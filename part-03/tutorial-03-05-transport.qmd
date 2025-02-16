@@ -51,6 +51,7 @@ Pkg.add("CSV")
 ```
 
 ```{julia}
+#| output: false
 using JuMP, HiGHS
 using DataFrames, CSV
 ```

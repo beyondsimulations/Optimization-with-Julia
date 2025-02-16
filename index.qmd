@@ -1,16 +1,18 @@
 ---
-title: "Welcome to a Mathematical Optimization with Julia!"
+title: "Welcome to Optimization with Julia!"
 subtitle: "University of Hamburg - Fall 2025"
 
 html:
     theme: [default, styles.scss]
     highlight-style: breezedark
     linkcolor: "#a60000"
+    include-in-header:
+      - general/header.html
 ---
 
 # Description
 
-This small workshop will introduce you to the basics of mathematical optimization using Julia. Throughout the workshop, you will learn the basics of Julia and JuMP, the de facto standard for mathematical optimization in Julia. We will work with simple, practical examples to help you understand the core concepts. You will learn how to formulate basic optimization problems and translate them into code. The workshop was originally part of the course [Applied Optimization](https://github.com/opres-codes/applied-optimization-with-julia) but it is now also offered as a standalone small workshop.
+This small workshop will introduce you to the basics of mathematical optimization using Julia. Throughout the workshop, you will learn the basics of Julia and JuMP, the de facto standard for mathematical optimization in Julia. We will work with simple, practical examples to help you understand the core concepts. You will learn how to formulate basic optimization problems and translate them into code. The workshop was originally part of the course [Applied Optimization](https://beyondsimulations.github.io/Applied-Optimization/) but it is now also offered as a standalone small workshop.
 
 # Learning Outcomes
 
@@ -28,10 +30,10 @@ Please note that this workshop is **designed to be accessible to everyone, inclu
 # Course Blocks
 The core content of the workshop is organized in four blocks:
 
-1. **Part I**: Installation of Julia and JuMP
-2. **Part II**: Variables and Types
-3. **Part III**: Functions, Data Frames and Plots
-4. **Part IV**: Optimization with JuMP
+1. **Introduction**
+2. **Part I**: Variables and Types
+3. **Part II**: Functions, Data Frames and Plots
+4. **Part III**: Optimization with JuMP
 
 # Tutorials
 

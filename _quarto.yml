@@ -3,11 +3,11 @@ project:
   render:
     - 404.qmd
     - index.qmd
+    - introduction.qmd
     - general/*.qmd
     - part-01/*.qmd
     - part-02/*.qmd
     - part-03/*.qmd
-    - part-04/*.qmd
 website:
   title: "Mathematical Optimization with Julia"
   repo-url: https://github.com/beyondsimulations/Mathematical-Optimization-Julia
@@ -23,50 +23,44 @@ website:
       - text: "Welcome"
         href: index.qmd
       - text: "***"
-      - text: "01 Introduction"
-        href: part-01/lecture-introduction.qmd
-      - section: "02 First Steps"
+      - text: "Introduction"
+        href: introduction.qmd
+      - section: "I. First Steps"
         contents:
-          - text: "Lecture"
-            href: part-02/lecture-firststeps.qmd
           - text: "01 - Variables"
-            href: part-02/tutorial-02-01-variables.qmd
+            href: part-01/tutorial-01-01-variables.qmd
           - text: "02 - Vectors"
-            href: part-02/tutorial-02-02-vectors.qmd
+            href: part-01/tutorial-01-02-vectors.qmd
           - text: "03 - Comparisons"
-            href: part-02/tutorial-02-03-comparisons.qmd
+            href: part-01/tutorial-01-03-comparisons.qmd
           - text: "04 - Loops"
-            href: part-02/tutorial-02-04-loops.qmd
+            href: part-01/tutorial-01-04-loops.qmd
           - text: "05 - Dictionaries"
-            href: part-02/tutorial-02-05-dicts.qmd
-      - section: "03 Data"
+            href: part-01/tutorial-01-05-dicts.qmd
+      - section: "II. Data"
         contents:
-          - text: "Lecture"
-            href: part-03/lecture-packages.qmd
           - text: "01 - Functions"
-            href: part-03/tutorial-03-01-functions.qmd
+            href: part-02/tutorial-02-01-functions.qmd
           - text: "02 - Packages"
-            href: part-03/tutorial-03-02-handling.qmd
+            href: part-02/tutorial-02-02-handling.qmd
           - text: "03 - DataFrames"
-            href: part-03/tutorial-03-03-DataFrames.qmd
+            href: part-02/tutorial-02-03-DataFrames.qmd
           - text: "04 - Input and Output"
-            href: part-03/tutorial-03-04-IO.qmd
+            href: part-02/tutorial-02-04-IO.qmd
           - text: "05 - Plotting"
-            href: part-03/tutorial-03-05-Plotting.qmd
-      - section: "04 Optimization"
+            href: part-02/tutorial-02-05-Plotting.qmd
+      - section: "III. Optimization"
         contents:
-          - text: "Lecture"
-            href: part-04/lecture-jump.qmd
           - text: "01 - JuMP"
-            href: part-04/tutorial-04-01-jump.qmd
+            href: part-03/tutorial-03-01-jump.qmd
           - text: "02 - Bounds"
-            href: part-04/tutorial-04-02-bounds.qmd
+            href: part-03/tutorial-03-02-bounds.qmd
           - text: "03 - Constraints"
-            href: part-04/tutorial-04-03-constraints.qmd
+            href: part-03/tutorial-03-03-constraints.qmd
           - text: "04 - Advanced"
-            href: part-04/tutorial-04-04-advanced.qmd
+            href: part-03/tutorial-03-04-advanced.qmd
           - text: "05 - Transport"
-            href: part-04/tutorial-04-05-transport.qmd
+            href: part-03/tutorial-03-05-transport.qmd
       - text: "***"
       - section: "Cheatsheets"
         contents:
