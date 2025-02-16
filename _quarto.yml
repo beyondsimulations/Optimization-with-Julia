@@ -11,18 +11,16 @@ project:
 website:
   title: "Mathematical Optimization with Julia"
   repo-url: https://github.com/beyondsimulations/Mathematical-Optimization-Julia
-  repo-actions: [edit, source, issue]
   site-url: https://beyondsimulations.github.io/Mathematical-Optimization-Julia
   bread-crumbs: true
   sidebar:
     style: floating
     logo: https://images.beyondsimulations.com/logo/midjourney-square_left.png
-    collapse-level: 1 
+    collapse-level: 2
     search: true
     contents:
       - text: "Welcome"
         href: index.qmd
-      - text: "***"
       - text: "Introduction"
         href: introduction.qmd
       - section: "I. First Steps"
@@ -61,7 +59,6 @@ website:
             href: part-03/tutorial-03-04-advanced.qmd
           - text: "05 - Transport"
             href: part-03/tutorial-03-05-transport.qmd
-      - text: "***"
       - section: "Cheatsheets"
         contents:
           - text: "Julia"
