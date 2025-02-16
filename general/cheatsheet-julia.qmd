@@ -1,6 +1,6 @@
 ---
 title: "Julia Syntax Cheatsheet"
-subtitle: "Applied Optimization with Julia"
+subtitle: "Optimization with Julia"
 
 html:
     theme: [default, ../styles.scss]

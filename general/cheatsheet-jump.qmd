@@ -1,6 +1,6 @@
 ---
 title: "JuMP Syntax Cheatsheet"
-subtitle: "Applied Optimization with Julia"
+subtitle: "Optimization with Julia"
 
 html:
     theme: litera
