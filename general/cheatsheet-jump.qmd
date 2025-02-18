@@ -21,15 +21,21 @@ execute:
     eval: false
 ---
 
-# Basic Setup
+This cheatsheet summarizes the most common syntax elements of [JuMP](https://jump.dev/) for optimization modeling in Julia. It includes examples for setting up models, declaring variables and constraints, defining objectives, adjusting solver options, solving, and accessing solutions.
+
+> **Note:** This cheatsheet uses the latest JuMP syntax. For more detailed documentation, visit the [JuMP documentation](https://jump.dev/JuMP.jl/stable/).
+
+# Model Setup
+
+## Importing Packages and Creating a Model
 
 ```{julia}
 using JuMP, HiGHS
 
-# Create a model
+# Create a model with HiGHS optimizer
 model = Model(HiGHS.Optimizer)
 
-# Set optimizer attribute (optional)
+# Set a time limit for the optimizer (optional)
 set_optimizer_attribute(model, "time_limit", 60.0)
 ```
 
@@ -37,200 +43,279 @@ set_optimizer_attribute(model, "time_limit", 60.0)
 
 ## Declaration
 
+### Continuous Variables
+
 ```{julia}
-# Continuous Variables
-@variable(model, x)                    # Unbounded continuous
-@variable(model, x >= 0)              # Non-negative continuous
-@variable(model, 0 <= x <= 10)        # Bounded continuous
+# Unbounded continuous variable
+@variable(model, x)
 
-# Integer Variables
-@variable(model, x, Int)              # Unbounded integer
-@variable(model, x >= 0, Int)         # Non-negative integer
-@variable(model, 0 <= x <= 10, Int)   # Bounded integer
+# Non-negative continuous variable
+@variable(model, x >= 0)
 
-# Binary Variables
-@variable(model, x, Bin)              # Binary (0 or 1)
+# Bounded continuous variable (0 <= x <= 10)
+@variable(model, 0 <= x <= 10)
+
+# Fixed variable, x is fixed at 5
+@variable(model, x == 5)
+```
+
+### Integer Variables
+
+```{julia}
+# Unbounded integer variable
+@variable(model, x, Int)
+
+# Non-negative integer variable
+@variable(model, x >= 0, Int)
+
+# Bounded integer variable (0 <= x <= 10)
+@variable(model, 0 <= x <= 10, Int)
+```
+
+### Binary Variables
+
+```{julia}
+# Binary variable (0 or 1)
+@variable(model, x, Bin)
 ```
 
 ## Containers
 
+### Arrays and Matrices
+
 ```{julia}
-# Arrays
-@variable(model, x[1:5])              # Array of 5 variables
-@variable(model, x[1:5] >= 0)         # Non-negative array
-@variable(model, x[1:5], Bin)         # Binary array
+# Array of 5 continuous variables
+@variable(model, x[1:5])
 
-# Matrices
-@variable(model, x[1:3, 1:4])         # 3x4 matrix of variables
-@variable(model, x[1:3, 1:4], Int)    # Integer matrix
+# Non-negative array of variables
+@variable(model, x[1:5] >= 0)
 
-# Custom Indexing
+# Binary array of variables
+@variable(model, x[1:5], Bin)
+
+# 3x4 matrix of variables
+@variable(model, x[1:3, 1:4])
+
+# Integer 3x4 matrix
+@variable(model, x[1:3, 1:4], Int)
+```
+
+### Custom Indexing
+
+```{julia}
 indices = ["A", "B", "C"]
-@variable(model, x[i in indices])      # Custom indexed array
+@variable(model, x[i in indices])
 ```
 
 # Constraints
 
-## Declaration
+## Basic Constraints
 
 ```{julia}
-# Basic constraints
+# Declare additional variables as needed
+@variable(model, x)
+@variable(model, y)
+
 @constraint(model, con1, 2x + y <= 10)
 @constraint(model, con2, x + 2y >= 5)
+@constraint(model, con3, x == y)   # Equality constraint
 ```
 
-## Containers
+## Constraints with Containers
 
 ```{julia}
-# Array of variables
+# Array Variables
 @variable(model, x[1:5] >= 0)
 
-# Constraint for each variable
-@constraint(model, capacity[i=1:5], 
+# Constraint for each variable element
+@constraint(model, capacity[i=1:5],
     x[i] <= 100
 )
 
-# Sum constraint
+# Sum constraint across array
 @constraint(model, total_sum,
     sum(x[i] for i in 1:5) <= 500
 )
 
-# Matrix constraints
+# Matrix constraints: each element gets its constraint
 @variable(model, y[1:3, 1:4])
 @constraint(model, matrix_con[i=1:3, j=1:4],
     y[i,j] <= i + j
 )
 ```
 
-## Conditional
+## Conditional Constraints
 
 ```{julia}
-# Basic conditional constraint
+# Constraint applies only for indices where i > 2
 @constraint(model, cond[i=1:5; i > 2], 
     x[i] <= 10
-)   # Only applies when i > 2
+)
 
-# Multiple conditions
+# Multiple conditions for two-dimensional index:
 @constraint(model, cond2[i=1:10, j=1:10; i != j && i + j <= 15],
     x[i,j] + x[j,i] <= 1
 )
 ```
 
-## Key Points for Constraints
-
-- Use semicolon (;) to separate indices from conditions
-- Conditions can use any valid Julia boolean expression
-- Multiple conditions can be combined with && (and) or || (or)
-
-## Conditions while Summing
+## Constraints with Conditional Summations
 
 ```{julia}
+# Sum over a subset of indices (e.g., i > 2)
 @constraint(model, total_sum,
     sum(x[i] for i in 1:5 if i > 2) <= 500
 )
-# Only sums over i > 2
 
+# Sum with multiple conditions on a 2D array
 @constraint(model, total_sum2,
     sum(x[i,j] for i in 1:5, j in 1:5 if i != j && i + j <= 7) <= 1
 )
-# Only sums over i != j and i + j <= 7
 ```
 
-# Objective Function
+> **Tip:** Use semicolons (`;`) to separate the index definition from conditions when defining constraints.
 
-## Declaration
+# Objective Functions
+
+## Basic Objectives
+
 ```{julia}
-# Maximize objective
-@objective(model, Max, 5x + 3y)
-
-# Minimize objective
-@objective(model, Min, 2x + 4y)
+@objective(model, Max, 5x + 3y)   # Maximize
+@objective(model, Min, 2x + 4y)   # Minimize
 ```
 
-## Containers
+## Objectives Using Containers
+
 ```{julia}
-# Container objective
+# Container-based objective
 @variable(model, z[1:10])
 @objective(model, Min, sum(z[i] for i in 1:10))
 
-# Weighted objective
+# Weighted objective function
 weights = [1, 2, 3, 4, 5]
 @objective(model, Max, 
     sum(weights[i] * z[i] for i in 1:5)
 )
 ```
 
-## Key Points
-
-- Objective functions can be linear or nonlinear
-- Containers are useful for weighted objectives
-- Can reference external data (parameters)
-
-# Additional Features
-
-## Checking Bounds
-
-```{julia}
-# Checking bounds
-has_lower_bound(x)                    # Check if lower bound exists
-has_upper_bound(x)                    # Check if upper bound exists
-lower_bound(x)                        # Get lower bound value
-upper_bound(x)                        # Get upper bound value
-```
-
-## Checking Properties
-
-```{julia}
-# Check variable type
-is_binary(x)                          # Is variable binary?
-is_integer(x)                         # Is variable integer?
-is_continuous(x)                      # Is variable continuous?
-
-# Get variable info
-name(x)                              # Get variable name
-num_variables(model)                 # Count variables in model
-all_variables(model)                 # Get all variables
-```
-
 # Solver Options
 
 ```{julia}
-# Create model with solver
+# Recreate model with a solver if needed
 model = Model(HiGHS.Optimizer)
 
-# Time limits
-set_time_limit_sec(model, 60)         # 60 second limit
-time_limit_sec(model)                 # Get current time limit
+# Set a 60-second time limit
+set_time_limit_sec(model, 60)
+println("Current time limit: ", time_limit_sec(model))
 
-# Tolerance settings
+# Tolerance attributes: relative and absolute gap
 set_optimizer_attribute(model, "mip_rel_gap", 0.01)  # 1% gap tolerance
-set_optimizer_attribute(model, "mip_abs_gap", 0.1)   # Absolute gap
+set_optimizer_attribute(model, "mip_abs_gap", 0.1)   # Absolute gap tolerance
 
-# Presolve options
-set_optimizer_attribute(model, "presolve", "on")     # Enable presolve
-set_optimizer_attribute(model, "presolve", "off")    # Disable presolve
+# Presolve options: enable or disable
+set_optimizer_attribute(model, "presolve", "on")  # Enable presolve
+# set_optimizer_attribute(model, "presolve", "off")  # To disable presolve
 ```
 
-## Solution Status Checks
+> **Tip:** Adjust these settings to balance between solution precision and computational speed.
+
+# Solving and Inspecting the Model
 
 ```{julia}
-# Check solution status
-status = termination_status(model)    # Get solution status
-is_optimal = status == MOI.OPTIMAL    # Check if optimal
+# Optimize the model
+optimize!(model)
 
-# Get detailed status
-primal_status(model)                  # Primal solution status
-dual_status(model)                    # Dual solution status
-solve_time(model)                     # Solution time
-
-# Common status checks
-if termination_status(model) == OPTIMAL 
+# Check the termination status using MathOptInterface statuses
+status = termination_status(model)
+if status == MOI.OPTIMAL
     println("Solution is optimal")
-elseif termination_status(model) == TIME_LIMIT && has_values(model)
-    println("Time limit reached with feasible solution")
+elseif status == MOI.TIME_LIMIT && has_values(model)
+    println("Time limit reached with a feasible solution")
 else
-    println("Problem could not be solved")
+    println("Solver status: ", status)
 end
+
+# Get variable and objective values
+x_val = value(x)
+println("x value: ", x_val)
+
+# For arrays, retrieve values with broadcasting:
+x_vals = value.(x)
+println("x array values: ", x_vals)
+
+# Get the objective value
+obj_val = objective_value(model)
+println("Objective value: ", obj_val)
+```
+
+> **Important:** Always check the termination status before using the solution values.
+
+# Model Modifications
+
+## Variable Updates
+
+```{julia}
+# Set or update variable bounds
+set_lower_bound(x, 0)
+set_upper_bound(x, 10)
+
+# Fix x to a specific value, then unfix if needed
+fix(x, 5)
+unfix(x)
+```
+
+## Constraint Updates
+
+```{julia}
+# Delete a constraint if necessary
+delete(model, con1)
+```
+
+> **Note:** After modifying the model, you will need to re-solve it to update the solution.
+
+---
+
+# Additional Features and Advanced Topics
+
+## Checking Variable Properties
+
+```{julia}
+# Check bounds for a variable
+println("Has lower bound? ", has_lower_bound(x))
+println("Lower bound: ", lower_bound(x))
+println("Has upper bound? ", has_upper_bound(x))
+println("Upper bound: ", upper_bound(x))
+
+# Check variable type and retrieve information
+println("Is x binary? ", is_binary(x))
+println("Is x integer? ", is_integer(x))
+println("Variable name: ", name(x))
+println("Total number of variables: ", num_variables(model))
+```
+
+# Simple Model Example
+
+```{julia}
+#| eval: true
+# Create a simple model example
+   using JuMP, HiGHS
+   
+   model = Model(HiGHS.Optimizer)
+   @variable(model, 0 <= x <= 10)
+   @constraint(model, con1, x >= 5)
+   @objective(model, Max, x)
+   
+   optimize!(model)
+   
+   # Introspection on the variable x
+   println("Has lower bound? ", has_lower_bound(x))
+   println("Lower bound: ", lower_bound(x))
+   println("Has upper bound? ", has_upper_bound(x))
+   println("Upper bound: ", upper_bound(x))
+   println("Is x binary? ", is_binary(x))
+   println("Is x integer? ", is_integer(x))
+   println("Is x fixed? ", is_fixed(x))
+   println("Variable name: ", name(x))
+   println("Total number of variables: ", num_variables(model))
 ```
 
 ## Key Points
