@@ -314,35 +314,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-setup" id="toc-basic-setup" class="nav-link active" data-scroll-target="#basic-setup">Basic Setup</a></li>
+  <li><a href="#model-setup" id="toc-model-setup" class="nav-link active" data-scroll-target="#model-setup">Model Setup</a>
+  <ul class="collapse">
+  <li><a href="#importing-packages-and-creating-a-model" id="toc-importing-packages-and-creating-a-model" class="nav-link" data-scroll-target="#importing-packages-and-creating-a-model">Importing Packages and Creating a Model</a></li>
+  </ul></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a>
   <ul class="collapse">
-  <li><a href="#declaration" id="toc-declaration" class="nav-link" data-scroll-target="#declaration">Declaration</a></li>
-  <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a></li>
+  <li><a href="#declaration" id="toc-declaration" class="nav-link" data-scroll-target="#declaration">Declaration</a>
+  <ul class="collapse">
+  <li><a href="#continuous-variables" id="toc-continuous-variables" class="nav-link" data-scroll-target="#continuous-variables">Continuous Variables</a></li>
+  <li><a href="#integer-variables" id="toc-integer-variables" class="nav-link" data-scroll-target="#integer-variables">Integer Variables</a></li>
+  <li><a href="#binary-variables" id="toc-binary-variables" class="nav-link" data-scroll-target="#binary-variables">Binary Variables</a></li>
+  </ul></li>
+  <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a>
+  <ul class="collapse">
+  <li><a href="#arrays-and-matrices" id="toc-arrays-and-matrices" class="nav-link" data-scroll-target="#arrays-and-matrices">Arrays and Matrices</a></li>
+  <li><a href="#custom-indexing" id="toc-custom-indexing" class="nav-link" data-scroll-target="#custom-indexing">Custom Indexing</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints">Constraints</a>
   <ul class="collapse">
-  <li><a href="#declaration-1" id="toc-declaration-1" class="nav-link" data-scroll-target="#declaration-1">Declaration</a></li>
-  <li><a href="#containers-1" id="toc-containers-1" class="nav-link" data-scroll-target="#containers-1">Containers</a></li>
-  <li><a href="#conditional" id="toc-conditional" class="nav-link" data-scroll-target="#conditional">Conditional</a></li>
-  <li><a href="#key-points-for-constraints" id="toc-key-points-for-constraints" class="nav-link" data-scroll-target="#key-points-for-constraints">Key Points for Constraints</a></li>
-  <li><a href="#conditions-while-summing" id="toc-conditions-while-summing" class="nav-link" data-scroll-target="#conditions-while-summing">Conditions while Summing</a></li>
+  <li><a href="#basic-constraints" id="toc-basic-constraints" class="nav-link" data-scroll-target="#basic-constraints">Basic Constraints</a></li>
+  <li><a href="#constraints-with-containers" id="toc-constraints-with-containers" class="nav-link" data-scroll-target="#constraints-with-containers">Constraints with Containers</a></li>
+  <li><a href="#conditional-constraints" id="toc-conditional-constraints" class="nav-link" data-scroll-target="#conditional-constraints">Conditional Constraints</a></li>
+  <li><a href="#constraints-with-conditional-summations" id="toc-constraints-with-conditional-summations" class="nav-link" data-scroll-target="#constraints-with-conditional-summations">Constraints with Conditional Summations</a></li>
   </ul></li>
-  <li><a href="#objective-function" id="toc-objective-function" class="nav-link" data-scroll-target="#objective-function">Objective Function</a>
+  <li><a href="#objective-functions" id="toc-objective-functions" class="nav-link" data-scroll-target="#objective-functions">Objective Functions</a>
   <ul class="collapse">
-  <li><a href="#declaration-2" id="toc-declaration-2" class="nav-link" data-scroll-target="#declaration-2">Declaration</a></li>
-  <li><a href="#containers-2" id="toc-containers-2" class="nav-link" data-scroll-target="#containers-2">Containers</a></li>
+  <li><a href="#basic-objectives" id="toc-basic-objectives" class="nav-link" data-scroll-target="#basic-objectives">Basic Objectives</a></li>
+  <li><a href="#objectives-using-containers" id="toc-objectives-using-containers" class="nav-link" data-scroll-target="#objectives-using-containers">Objectives Using Containers</a></li>
+  </ul></li>
+  <li><a href="#solver-options" id="toc-solver-options" class="nav-link" data-scroll-target="#solver-options">Solver Options</a></li>
+  <li><a href="#solving-and-inspecting-the-model" id="toc-solving-and-inspecting-the-model" class="nav-link" data-scroll-target="#solving-and-inspecting-the-model">Solving and Inspecting the Model</a></li>
+  <li><a href="#model-modifications" id="toc-model-modifications" class="nav-link" data-scroll-target="#model-modifications">Model Modifications</a>
+  <ul class="collapse">
+  <li><a href="#variable-updates" id="toc-variable-updates" class="nav-link" data-scroll-target="#variable-updates">Variable Updates</a></li>
+  <li><a href="#constraint-updates" id="toc-constraint-updates" class="nav-link" data-scroll-target="#constraint-updates">Constraint Updates</a></li>
+  </ul></li>
+  <li><a href="#additional-features-and-advanced-topics" id="toc-additional-features-and-advanced-topics" class="nav-link" data-scroll-target="#additional-features-and-advanced-topics">Additional Features and Advanced Topics</a>
+  <ul class="collapse">
+  <li><a href="#checking-variable-properties" id="toc-checking-variable-properties" class="nav-link" data-scroll-target="#checking-variable-properties">Checking Variable Properties</a></li>
+  </ul></li>
+  <li><a href="#simple-model-example" id="toc-simple-model-example" class="nav-link" data-scroll-target="#simple-model-example">Simple Model Example</a>
+  <ul class="collapse">
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
-  </ul></li>
-  <li><a href="#additional-features" id="toc-additional-features" class="nav-link" data-scroll-target="#additional-features">Additional Features</a>
-  <ul class="collapse">
-  <li><a href="#checking-bounds" id="toc-checking-bounds" class="nav-link" data-scroll-target="#checking-bounds">Checking Bounds</a></li>
-  <li><a href="#checking-properties" id="toc-checking-properties" class="nav-link" data-scroll-target="#checking-properties">Checking Properties</a></li>
-  </ul></li>
-  <li><a href="#solver-options" id="toc-solver-options" class="nav-link" data-scroll-target="#solver-options">Solver Options</a>
-  <ul class="collapse">
-  <li><a href="#solution-status-checks" id="toc-solution-status-checks" class="nav-link" data-scroll-target="#solution-status-checks">Solution Status Checks</a></li>
-  <li><a href="#key-points-1" id="toc-key-points-1" class="nav-link" data-scroll-target="#key-points-1">Key Points</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="cheatsheet-jump.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -353,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../general/cheatsheet-julia.html">Cheatsheets</a></li><li class="breadcrumb-item"><a href="../general/cheatsheet-jump.html">JuMP</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">JuMP Syntax Cheatsheet</h1>
-<p class="subtitle lead">Applied Optimization with Julia</p>
+<p class="subtitle lead">Optimization with Julia</p>
 </div>
 
 
@@ -370,229 +385,340 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="basic-setup" class="level1">
-<h1>Basic Setup</h1>
-<div id="5b166c68" class="cell" data-execution_count="1">
+<p>This cheatsheet summarizes the most common syntax elements of <a href="https://jump.dev/">JuMP</a> for optimization modeling in Julia. It includes examples for setting up models, declaring variables and constraints, defining objectives, adjusting solver options, solving, and accessing solutions.</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> This cheatsheet uses the latest JuMP syntax. For more detailed documentation, visit the <a href="https://jump.dev/JuMP.jl/stable/">JuMP documentation</a>.</p>
+</blockquote>
+<section id="model-setup" class="level1">
+<h1>Model Setup</h1>
+<section id="importing-packages-and-creating-a-model" class="level2">
+<h2 class="anchored" data-anchor-id="importing-packages-and-creating-a-model">Importing Packages and Creating a Model</h2>
+<div id="f7998b82" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP</span>, <span class="bu">HiGHS</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a model</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a model with HiGHS optimizer</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set optimizer attribute (optional)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a time limit for the optimizer (optional)</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"time_limit"</span>, <span class="fl">60.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 </section>
 <section id="variables" class="level1">
 <h1>Variables</h1>
 <section id="declaration" class="level2">
 <h2 class="anchored" data-anchor-id="declaration">Declaration</h2>
-<div id="8e6fe051" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Continuous Variables</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x)                    <span class="co"># Unbounded continuous</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x <span class="op">&gt;=</span> <span class="fl">0</span>)              <span class="co"># Non-negative continuous</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, <span class="fl">0</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="fl">10</span>)        <span class="co"># Bounded continuous</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Integer Variables</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x, <span class="dt">Int</span>)              <span class="co"># Unbounded integer</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x <span class="op">&gt;=</span> <span class="fl">0</span>, <span class="dt">Int</span>)         <span class="co"># Non-negative integer</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, <span class="fl">0</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="fl">10</span>, <span class="dt">Int</span>)   <span class="co"># Bounded integer</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Binary Variables</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x, Bin)              <span class="co"># Binary (0 or 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="continuous-variables" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-variables">Continuous Variables</h3>
+<div id="8ce4427f" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unbounded continuous variable</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-negative continuous variable</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x <span class="op">&gt;=</span> <span class="fl">0</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Bounded continuous variable (0 &lt;= x &lt;= 10)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, <span class="fl">0</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixed variable, x is fixed at 5</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x <span class="op">==</span> <span class="fl">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="integer-variables" class="level3">
+<h3 class="anchored" data-anchor-id="integer-variables">Integer Variables</h3>
+<div id="af854a7b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unbounded integer variable</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x, <span class="dt">Int</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-negative integer variable</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x <span class="op">&gt;=</span> <span class="fl">0</span>, <span class="dt">Int</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Bounded integer variable (0 &lt;= x &lt;= 10)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, <span class="fl">0</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="fl">10</span>, <span class="dt">Int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="binary-variables" class="level3">
+<h3 class="anchored" data-anchor-id="binary-variables">Binary Variables</h3>
+<div id="ed4b1c10" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binary variable (0 or 1)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x, Bin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="containers" class="level2">
 <h2 class="anchored" data-anchor-id="containers">Containers</h2>
-<div id="d5ae82fe" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrays</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>])              <span class="co"># Array of 5 variables</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>] <span class="op">&gt;=</span> <span class="fl">0</span>)         <span class="co"># Non-negative array</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>], Bin)         <span class="co"># Binary array</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>])         <span class="co"># 3x4 matrix of variables</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>], <span class="dt">Int</span>)    <span class="co"># Integer matrix</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom Indexing</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>indices <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>]</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[i <span class="kw">in</span> indices])      <span class="co"># Custom indexed array</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="arrays-and-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="arrays-and-matrices">Arrays and Matrices</h3>
+<div id="1b1122f4" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of 5 continuous variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-negative array of variables</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>] <span class="op">&gt;=</span> <span class="fl">0</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Binary array of variables</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>], Bin)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3x4 matrix of variables</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>])</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Integer 3x4 matrix</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>], <span class="dt">Int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="custom-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="custom-indexing">Custom Indexing</h3>
+<div id="e370c7ac" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>indices <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[i <span class="kw">in</span> indices])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="constraints" class="level1">
 <h1>Constraints</h1>
-<section id="declaration-1" class="level2">
-<h2 class="anchored" data-anchor-id="declaration-1">Declaration</h2>
-<div id="54ce54ee" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic constraints</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, con1, <span class="fl">2</span>x <span class="op">+</span> y <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, con2, x <span class="op">+</span> <span class="fl">2</span>y <span class="op">&gt;=</span> <span class="fl">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="basic-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="basic-constraints">Basic Constraints</h2>
+<div id="7cffe333" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Declare additional variables as needed</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, y)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, con1, <span class="fl">2</span>x <span class="op">+</span> y <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, con2, x <span class="op">+</span> <span class="fl">2</span>y <span class="op">&gt;=</span> <span class="fl">5</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, con3, x <span class="op">==</span> y)   <span class="co"># Equality constraint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="containers-1" class="level2">
-<h2 class="anchored" data-anchor-id="containers-1">Containers</h2>
-<div id="c23ca8da" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of variables</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>] <span class="op">&gt;=</span> <span class="fl">0</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Constraint for each variable</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, capacity[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>], </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="op">&lt;=</span> <span class="fl">100</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum constraint</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, total_sum,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>) <span class="op">&lt;=</span> <span class="fl">500</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix constraints</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, y[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>])</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, matrix_con[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, j<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>],</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    y[i,j] <span class="op">&lt;=</span> i <span class="op">+</span> j</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="conditional" class="level2">
-<h2 class="anchored" data-anchor-id="conditional">Conditional</h2>
-<div id="179f09ab" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic conditional constraint</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, cond[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>; i <span class="op">&gt;</span> <span class="fl">2</span>], </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="op">&lt;=</span> <span class="fl">10</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)   <span class="co"># Only applies when i &gt; 2</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple conditions</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, cond2[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, j<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>; i <span class="op">!=</span> j <span class="op">&amp;&amp;</span> i <span class="op">+</span> j <span class="op">&lt;=</span> <span class="fl">15</span>],</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    x[i,j] <span class="op">+</span> x[j,i] <span class="op">&lt;=</span> <span class="fl">1</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="key-points-for-constraints" class="level2">
-<h2 class="anchored" data-anchor-id="key-points-for-constraints">Key Points for Constraints</h2>
-<ul>
-<li>Use semicolon (;) to separate indices from conditions</li>
-<li>Conditions can use any valid Julia boolean expression</li>
-<li>Multiple conditions can be combined with &amp;&amp; (and) or || (or)</li>
-</ul>
-</section>
-<section id="conditions-while-summing" class="level2">
-<h2 class="anchored" data-anchor-id="conditions-while-summing">Conditions while Summing</h2>
-<div id="901d33a4" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, total_sum,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span> <span class="cf">if</span> i <span class="op">&gt;</span> <span class="fl">2</span>) <span class="op">&lt;=</span> <span class="fl">500</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Only sums over i &gt; 2</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, total_sum2,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x[i,j] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, j <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span> <span class="cf">if</span> i <span class="op">!=</span> j <span class="op">&amp;&amp;</span> i <span class="op">+</span> j <span class="op">&lt;=</span> <span class="fl">7</span>) <span class="op">&lt;=</span> <span class="fl">1</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Only sums over i != j and i + j &lt;= 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="objective-function" class="level1">
-<h1>Objective Function</h1>
-<section id="declaration-2" class="level2">
-<h2 class="anchored" data-anchor-id="declaration-2">Declaration</h2>
-<div id="4f456e8e" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maximize objective</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Max, <span class="fl">5</span>x <span class="op">+</span> <span class="fl">3</span>y)</span>
+<section id="constraints-with-containers" class="level2">
+<h2 class="anchored" data-anchor-id="constraints-with-containers">Constraints with Containers</h2>
+<div id="cb94c461" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array Variables</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, x[<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>] <span class="op">&gt;=</span> <span class="fl">0</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimize objective</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Min, <span class="fl">2</span>x <span class="op">+</span> <span class="fl">4</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Constraint for each variable element</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, capacity[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>],</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="op">&lt;=</span> <span class="fl">100</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum constraint across array</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, total_sum,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>) <span class="op">&lt;=</span> <span class="fl">500</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix constraints: each element gets its constraint</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, y[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>])</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, matrix_con[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, j<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>],</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    y[i,j] <span class="op">&lt;=</span> i <span class="op">+</span> j</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="containers-2" class="level2">
-<h2 class="anchored" data-anchor-id="containers-2">Containers</h2>
-<div id="de54a827" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Container objective</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, z[<span class="fl">1</span><span class="op">:</span><span class="fl">10</span>])</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Min, <span class="fu">sum</span>(z[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>))</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Weighted objective</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>]</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Max, </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(weights[i] <span class="op">*</span> z[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>)</span>
+<section id="conditional-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-constraints">Conditional Constraints</h2>
+<div id="b3cb2e1a" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constraint applies only for indices where i &gt; 2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, cond[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>; i <span class="op">&gt;</span> <span class="fl">2</span>], </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="op">&lt;=</span> <span class="fl">10</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple conditions for two-dimensional index:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, cond2[i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, j<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>; i <span class="op">!=</span> j <span class="op">&amp;&amp;</span> i <span class="op">+</span> j <span class="op">&lt;=</span> <span class="fl">15</span>],</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    x[i,j] <span class="op">+</span> x[j,i] <span class="op">&lt;=</span> <span class="fl">1</span></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="key-points" class="level2">
-<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
-<ul>
-<li>Objective functions can be linear or nonlinear</li>
-<li>Containers are useful for weighted objectives</li>
-<li>Can reference external data (parameters)</li>
-</ul>
+<section id="constraints-with-conditional-summations" class="level2">
+<h2 class="anchored" data-anchor-id="constraints-with-conditional-summations">Constraints with Conditional Summations</h2>
+<div id="45d35230" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum over a subset of indices (e.g., i &gt; 2)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, total_sum,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span> <span class="cf">if</span> i <span class="op">&gt;</span> <span class="fl">2</span>) <span class="op">&lt;=</span> <span class="fl">500</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum with multiple conditions on a 2D array</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(model, total_sum2,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x[i,j] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, j <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span> <span class="cf">if</span> i <span class="op">!=</span> j <span class="op">&amp;&amp;</span> i <span class="op">+</span> j <span class="op">&lt;=</span> <span class="fl">7</span>) <span class="op">&lt;=</span> <span class="fl">1</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Tip:</strong> Use semicolons (<code>;</code>) to separate the index definition from conditions when defining constraints.</p>
+</blockquote>
 </section>
 </section>
-<section id="additional-features" class="level1">
-<h1>Additional Features</h1>
-<section id="checking-bounds" class="level2">
-<h2 class="anchored" data-anchor-id="checking-bounds">Checking Bounds</h2>
-<div id="9119738b" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking bounds</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">has_lower_bound</span>(x)                    <span class="co"># Check if lower bound exists</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">has_upper_bound</span>(x)                    <span class="co"># Check if upper bound exists</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lower_bound</span>(x)                        <span class="co"># Get lower bound value</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">upper_bound</span>(x)                        <span class="co"># Get upper bound value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="objective-functions" class="level1">
+<h1>Objective Functions</h1>
+<section id="basic-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="basic-objectives">Basic Objectives</h2>
+<div id="a10d4c7f" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Max, <span class="fl">5</span>x <span class="op">+</span> <span class="fl">3</span>y)   <span class="co"># Maximize</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Min, <span class="fl">2</span>x <span class="op">+</span> <span class="fl">4</span>y)   <span class="co"># Minimize</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="checking-properties" class="level2">
-<h2 class="anchored" data-anchor-id="checking-properties">Checking Properties</h2>
-<div id="474932b5" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check variable type</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is_binary</span>(x)                          <span class="co"># Is variable binary?</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">is_integer</span>(x)                         <span class="co"># Is variable integer?</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">is_continuous</span>(x)                      <span class="co"># Is variable continuous?</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get variable info</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span>(x)                              <span class="co"># Get variable name</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">num_variables</span>(model)                 <span class="co"># Count variables in model</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">all_variables</span>(model)                 <span class="co"># Get all variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="objectives-using-containers" class="level2">
+<h2 class="anchored" data-anchor-id="objectives-using-containers">Objectives Using Containers</h2>
+<div id="72630389" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Container-based objective</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(model, z[<span class="fl">1</span><span class="op">:</span><span class="fl">10</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Min, <span class="fu">sum</span>(z[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Weighted objective function</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(model, Max, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(weights[i] <span class="op">*</span> z[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="solver-options" class="level1">
 <h1>Solver Options</h1>
-<div id="c4f29764" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create model with solver</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Time limits</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set_time_limit_sec</span>(model, <span class="fl">60</span>)         <span class="co"># 60 second limit</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">time_limit_sec</span>(model)                 <span class="co"># Get current time limit</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Tolerance settings</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"mip_rel_gap"</span>, <span class="fl">0.01</span>)  <span class="co"># 1% gap tolerance</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"mip_abs_gap"</span>, <span class="fl">0.1</span>)   <span class="co"># Absolute gap</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Presolve options</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"presolve"</span>, <span class="st">"on"</span>)     <span class="co"># Enable presolve</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"presolve"</span>, <span class="st">"off"</span>)    <span class="co"># Disable presolve</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="69317723" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recreate model with a solver if needed</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a 60-second time limit</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set_time_limit_sec</span>(model, <span class="fl">60</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Current time limit: "</span>, <span class="fu">time_limit_sec</span>(model))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Tolerance attributes: relative and absolute gap</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"mip_rel_gap"</span>, <span class="fl">0.01</span>)  <span class="co"># 1% gap tolerance</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"mip_abs_gap"</span>, <span class="fl">0.1</span>)   <span class="co"># Absolute gap tolerance</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Presolve options: enable or disable</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set_optimizer_attribute</span>(model, <span class="st">"presolve"</span>, <span class="st">"on"</span>)  <span class="co"># Enable presolve</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># set_optimizer_attribute(model, "presolve", "off")  # To disable presolve</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="solution-status-checks" class="level2">
-<h2 class="anchored" data-anchor-id="solution-status-checks">Solution Status Checks</h2>
-<div id="354e06ff" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check solution status</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> <span class="fu">termination_status</span>(model)    <span class="co"># Get solution status</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>is_optimal <span class="op">=</span> status <span class="op">==</span> MOI.OPTIMAL    <span class="co"># Check if optimal</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get detailed status</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">primal_status</span>(model)                  <span class="co"># Primal solution status</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dual_status</span>(model)                    <span class="co"># Dual solution status</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_time</span>(model)                     <span class="co"># Solution time</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Common status checks</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="fu">termination_status</span>(model) <span class="op">==</span> OPTIMAL </span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Solution is optimal"</span>)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elseif</span> <span class="fu">termination_status</span>(model) <span class="op">==</span> TIME_LIMIT <span class="op">&amp;&amp;</span> <span class="fu">has_values</span>(model)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Time limit reached with feasible solution"</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Problem could not be solved"</span>)</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><strong>Tip:</strong> Adjust these settings to balance between solution precision and computational speed.</p>
+</blockquote>
+</section>
+<section id="solving-and-inspecting-the-model" class="level1">
+<h1>Solving and Inspecting the Model</h1>
+<div id="1e3e1f01" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimize the model</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(model)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the termination status using MathOptInterface statuses</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> <span class="fu">termination_status</span>(model)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> status <span class="op">==</span> MOI.OPTIMAL</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Solution is optimal"</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elseif</span> status <span class="op">==</span> MOI.TIME_LIMIT <span class="op">&amp;&amp;</span> <span class="fu">has_values</span>(model)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Time limit reached with a feasible solution"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Solver status: "</span>, status)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Get variable and objective values</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>x_val <span class="op">=</span> <span class="fu">value</span>(x)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"x value: "</span>, x_val)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co"># For arrays, retrieve values with broadcasting:</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> <span class="fu">value</span>.(x)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"x array values: "</span>, x_vals)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the objective value</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>obj_val <span class="op">=</span> <span class="fu">objective_value</span>(model)</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Objective value: "</span>, obj_val)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Important:</strong> Always check the termination status before using the solution values.</p>
+</blockquote>
+</section>
+<section id="model-modifications" class="level1">
+<h1>Model Modifications</h1>
+<section id="variable-updates" class="level2">
+<h2 class="anchored" data-anchor-id="variable-updates">Variable Updates</h2>
+<div id="056f37f1" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set or update variable bounds</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set_lower_bound</span>(x, <span class="fl">0</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set_upper_bound</span>(x, <span class="fl">10</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix x to a specific value, then unfix if needed</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fix</span>(x, <span class="fl">5</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">unfix</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="key-points-1" class="level2">
-<h2 class="anchored" data-anchor-id="key-points-1">Key Points</h2>
+<section id="constraint-updates" class="level2">
+<h2 class="anchored" data-anchor-id="constraint-updates">Constraint Updates</h2>
+<div id="090d1d46" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Delete a constraint if necessary</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">delete</span>(model, con1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> After modifying the model, you will need to re-solve it to update the solution.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="additional-features-and-advanced-topics" class="level1">
+<h1>Additional Features and Advanced Topics</h1>
+<section id="checking-variable-properties" class="level2">
+<h2 class="anchored" data-anchor-id="checking-variable-properties">Checking Variable Properties</h2>
+<div id="f2cc5637" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check bounds for a variable</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Has lower bound? "</span>, <span class="fu">has_lower_bound</span>(x))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Lower bound: "</span>, <span class="fu">lower_bound</span>(x))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Has upper bound? "</span>, <span class="fu">has_upper_bound</span>(x))</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Upper bound: "</span>, <span class="fu">upper_bound</span>(x))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check variable type and retrieve information</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Is x binary? "</span>, <span class="fu">is_binary</span>(x))</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Is x integer? "</span>, <span class="fu">is_integer</span>(x))</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Variable name: "</span>, <span class="fu">name</span>(x))</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Total number of variables: "</span>, <span class="fu">num_variables</span>(model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="simple-model-example" class="level1">
+<h1>Simple Model Example</h1>
+<div id="a9213e8a" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple model example</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>   <span class="im">using</span> <span class="bu">JuMP</span>, <span class="bu">HiGHS</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>   model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>   <span class="pp">@variable</span>(model, <span class="fl">0</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>   <span class="pp">@constraint</span>(model, con1, x <span class="op">&gt;=</span> <span class="fl">5</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>   <span class="pp">@objective</span>(model, Max, x)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">optimize!</span>(model)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Introspection on the variable x</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Has lower bound? "</span>, <span class="fu">has_lower_bound</span>(x))</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Lower bound: "</span>, <span class="fu">lower_bound</span>(x))</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Has upper bound? "</span>, <span class="fu">has_upper_bound</span>(x))</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Upper bound: "</span>, <span class="fu">upper_bound</span>(x))</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Is x binary? "</span>, <span class="fu">is_binary</span>(x))</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Is x integer? "</span>, <span class="fu">is_integer</span>(x))</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Is x fixed? "</span>, <span class="fu">is_fixed</span>(x))</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Variable name: "</span>, <span class="fu">name</span>(x))</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>   <span class="fu">println</span>(<span class="st">"Total number of variables: "</span>, <span class="fu">num_variables</span>(model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running HiGHS 1.8.1 (git hash: 4a7f24ac6): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [1e+00, 1e+00]
+  Bound  [1e+01, 1e+01]
+  RHS    [5e+00, 5e+00]
+Presolving model
+0 rows, 0 cols, 0 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve : Reductions: rows 0(-1); columns 0(-1); elements 0(-1) - Reduced to empty
+Solving the original LP from the solution after postsolve
+Model status        : Optimal
+Objective value     :  1.0000000000e+01
+Relative P-D gap    :  0.0000000000e+00
+HiGHS run time      :          0.00
+Has lower bound? true
+Lower bound: 0.0
+Has upper bound? true
+Upper bound: 10.0
+Is x binary? false
+Is x integer? false
+Is x fixed? false
+Variable name: x
+Total number of variables: 1</code></pre>
+</div>
+</div>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
 <ul>
 <li>Always check solution status before using results</li>
 <li>Set appropriate time limits for large problems</li>
