@@ -68,9 +68,9 @@ website:
       - text: "Literature"
         href: general/literature.qmd
 
-  page-footer: 
-    center: "Mathematical Optimization with Julia, Tobias Vlćek</br>CC BY-NC-SA 4.0" 
-    right: 
+  page-footer:
+    center: "Mathematical Optimization with Julia, Tobias Vlćek</br>CC BY-SA 4.0"
+    right:
       - icon: github
         href: https://github.com/beyondsimulations/Optimization-with-Julia
       - icon: linkedin
@@ -94,15 +94,13 @@ format:
   pdf:
     documentclass: report
     geometry:
-        - margin=1in
+      - margin=1in
     fontfamily: roboto
     fontfamilyoptions: sfdefault
     colorlinks: true
-    include-in-header: 
+    include-in-header:
       text: |
         \usepackage{fvextra}
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 execute:
   freeze: auto
-
-
