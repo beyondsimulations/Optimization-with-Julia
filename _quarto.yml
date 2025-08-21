@@ -118,3 +118,5 @@ format:
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 execute:
   freeze: auto
+
+engine: julia
