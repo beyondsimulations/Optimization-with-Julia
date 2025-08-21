@@ -15,7 +15,7 @@ website:
   bread-crumbs: true
   sidebar:
     style: floating
-    logo: https://images.beyondsimulations.com/logo/midjourney_square_left.png
+    logo: https://images.beyondsimulations.com/lectures/mj-hall.png
     collapse-level: 2
     search: true
     contents:
