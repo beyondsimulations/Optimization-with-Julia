@@ -257,7 +257,7 @@
     "href": "part-02/tutorial-02-05-Plotting.html#bar-plot",
     "title": "Tutorial II.V - Plotting Graphs",
     "section": "Bar Plot",
-    "text": "Bar Plot\n\n# Bar plot\nx_categories = [\"A\", \"B\", \"C\", \"D\"]\ny_values = [15, 23, 18, 30]\nbar_plot = bar(\n    x_categories, \n    y_values, \n    title=\"Bar Plot Example\"\n)\ndisplay(bar_plot)",
+    "text": "Bar Plot\n\n# Bar plot\nx_categories = [\"A\", \"B\", \"C\", \"D\"]\ny_values = [15, 23, 18, 30]\nbar_plot = bar(\n    x_categories,\n    y_values,\n    title=\"Bar Plot Example\"\n)\ndisplay(bar_plot)",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -268,7 +268,7 @@
     "href": "part-02/tutorial-02-05-Plotting.html#histogram",
     "title": "Tutorial II.V - Plotting Graphs",
     "section": "Histogram",
-    "text": "Histogram\n\ndata = randn(1000)\nhist_plot = histogram(\n    data, \n    bins=30, \n    title=\"Histogram Example\"\n)\ndisplay(hist_plot)",
+    "text": "Histogram\n\ndata = randn(1000)\nhist_plot = histogram(\n    data,\n    bins=30,\n    title=\"Histogram Example\"\n)\ndisplay(hist_plot)",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -279,7 +279,7 @@
     "href": "part-02/tutorial-02-05-Plotting.html#box-plot",
     "title": "Tutorial II.V - Plotting Graphs",
     "section": "Box Plot",
-    "text": "Box Plot\n\n# Box plot\ngroup = repeat(1:4, inner=50)\ny = randn(200) .+ group\nbox_plot = boxplot(\n    group, \n    y, \n    title=\"Box Plot Example\"\n)\ndisplay(box_plot)",
+    "text": "Box Plot\n\n# Box plot\ngroup = repeat(1:4, inner=50)\ny = randn(200) .+ group\nbox_plot = boxplot(\n    group,\n    y,\n    title=\"Box Plot Example\"\n)\ndisplay(box_plot)",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -1799,7 +1799,7 @@
     "href": "part-03/lecture-jump.html#get-started-with-the-tutorials",
     "title": "Lecture IV - Modelling with JuMP",
     "section": "Get started with the tutorials",
-    "text": "Get started with the tutorials\n\nDownload this weeks tutorials and start with the first one\nRemember, you can ask questions anytime!\n\n. . .\n\n\n\n\n\n\nAnd that’s it for this lecture!\n\n\n\nThe remaining time we will already start working on the problems of the fourth lecture. From next week, we will start with different optimizations problems and topics, that we address together in the course."
+    "text": "Get started with the tutorials\n\nDownload this weeks tutorials and start with the first one\nRemember, you can ask questions anytime!\n\n. . .\n\n\n\n\n\n\nNoteAnd that’s it for this lecture!\n\n\n\nThe remaining time we will already start working on the problems of the fourth lecture. From next week, we will start with different optimizations problems and topics, that we address together in the course."
   },
   {
     "objectID": "part-03/lecture-jump.html#literature-1",
