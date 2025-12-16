@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.19">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46d4eb725d7d2b8695ccd307f5b3c105.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-197188da37a79cb9418c4f38e6d23e8d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46d4eb725d7d2b8695ccd307f5b3c105.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9fdb3f734bd8d4f80a5eaa9fffd7d284.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d52245bb7ba9b6ab6a7d9ea1e3d6d73b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5f96869ffd51bc4c837006638a84c664.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d52245bb7ba9b6ab6a7d9ea1e3d6d73b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +107,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script defer="" src="https://umami.byndsim.com/getinfo" data-website-id="c9696f17-b99d-4e18-b36c-20af187a680b"></script>
+<script defer="" src="https://umi.byndsim.com/script.js" data-website-id="e230d76b-b0a6-477e-8c5d-19a7bd661e68"></script>
+
+<script defer="" data-domain="beyondsimulations.github.io" src="https://plb.byndsim.com/js/script.file-downloads.hash.outbound-links.js"></script>
+<script>
+    window.plausible =
+        window.plausible ||
+        function () {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+</script>
 
 
 </head>
@@ -340,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-01-02-vectors.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tutorial-01-02-vectors.ipynb" download="tutorial-01-02-vectors.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-01-02-vectors.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="tutorial-01-02-vectors.ipynb" download="tutorial-01-02-vectors.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -374,17 +387,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>A tuple is like a sealed package containing different types of items</li>
 </ul>
 <p>Understanding these data structures and how to manipulate them is crucial in Julia. Follow the instructions, write your code in the designated code blocks, and execute the corresponding code cell.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>If a cell is marked with <code>YOUR CODE BELOW</code>, you are expected to write your code in that cell.</p>
+</div>
 </div>
 </div>
 </section>
@@ -421,17 +431,14 @@ Note
 <li>Look at specific items using their position number: <code>grades[1]</code> gives you the first grade</li>
 <li>Access a range of items: <code>grades[1:3]</code> gives you the first three grades</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>In Julia, we start counting positions from 1, not 0. So <code>grades[1]</code> gives you the first grade!</p>
+</div>
 </div>
 </div>
 <p>Use ‘?’ in the REPL for function details.</p>
@@ -519,17 +526,14 @@ matrix2 is [1 0; 0 -1].</code></pre>
 </div>
 </div>
 <p>But we can change this by using broadcasting!</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>Julia’s broadcasting feature allows you to apply functions element-wise to arrays of different sizes. This is denoted by adding a dot (.) before the operator or function. It is extremely useful for performing operations on arrays without the need to loop through each element.</p>
+</div>
 </div>
 </div>
 <div id="26" class="cell" data-execution_count="1">
@@ -715,13 +719,14 @@ Tip
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

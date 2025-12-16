@@ -2,38 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/tutorial-03-05-transport.html</loc>
-    <lastmod>2025-02-16T13:02:00.000Z</lastmod>
+    <lastmod>2025-12-16T08:26:40.250Z</lastmod>
   </url>
   <url>
     <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/tutorial-03-03-constraints.html</loc>
-    <lastmod>2025-02-16T13:02:04.000Z</lastmod>
+    <lastmod>2025-12-16T08:26:30.396Z</lastmod>
   </url>
   <url>
     <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/tutorial-03-01-jump.html</loc>
-    <lastmod>2025-02-16T13:01:45.000Z</lastmod>
+    <lastmod>2025-12-16T08:25:14.856Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-05-Plotting.html</loc>
-    <lastmod>2025-08-21T08:27:48.324Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-04-IO.html</loc>
+    <lastmod>2025-12-16T08:26:12.339Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-03-DataFrames.html</loc>
-    <lastmod>2025-02-16T13:02:20.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-02-handling.html</loc>
+    <lastmod>2025-12-16T08:26:01.671Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-01-functions.html</loc>
-    <lastmod>2025-02-16T13:02:43.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-05-dicts.html</loc>
+    <lastmod>2025-12-16T08:25:46.915Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-04-loops.html</loc>
-    <lastmod>2025-02-16T12:57:45.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-03-comparisons.html</loc>
+    <lastmod>2025-12-16T08:25:38.347Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-02-vectors.html</loc>
-    <lastmod>2025-02-16T12:57:41.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-01-variables.html</loc>
+    <lastmod>2025-12-16T08:25:29.413Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/general/literature.html</loc>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/general/cheatsheet-jump.html</loc>
+    <lastmod>2025-02-18T09:08:58.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/introduction.html</loc>
+    <lastmod>2025-02-16T12:56:20.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/index.html</loc>
     <lastmod>2025-02-16T12:54:58.000Z</lastmod>
   </url>
   <url>
@@ -41,51 +49,35 @@
     <lastmod>2025-02-18T09:11:05.000Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/index.html</loc>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/general/literature.html</loc>
     <lastmod>2025-02-16T12:54:58.000Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/introduction.html</loc>
-    <lastmod>2025-02-16T12:56:20.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-02-vectors.html</loc>
+    <lastmod>2025-12-16T08:25:34.221Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/general/cheatsheet-jump.html</loc>
-    <lastmod>2025-02-18T09:08:58.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-04-loops.html</loc>
+    <lastmod>2025-12-16T08:31:22.758Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-01-variables.html</loc>
-    <lastmod>2025-02-16T12:57:34.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-01-functions.html</loc>
+    <lastmod>2025-12-16T08:25:51.971Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-03-comparisons.html</loc>
-    <lastmod>2025-02-16T12:57:43.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-03-DataFrames.html</loc>
+    <lastmod>2025-12-16T08:26:04.929Z</lastmod>
   </url>
   <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-05-dicts.html</loc>
-    <lastmod>2025-02-16T13:02:51.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-02-handling.html</loc>
-    <lastmod>2025-02-16T13:02:17.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-04-IO.html</loc>
-    <lastmod>2025-02-16T13:02:23.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/lecture-presentation.html</loc>
-    <lastmod>2025-02-16T12:54:58.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/lecture-jump.html</loc>
-    <lastmod>2025-02-16T12:54:58.000Z</lastmod>
+    <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-02/tutorial-02-05-Plotting.html</loc>
+    <lastmod>2025-12-16T08:40:01.058Z</lastmod>
   </url>
   <url>
     <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/tutorial-03-02-bounds.html</loc>
-    <lastmod>2025-02-16T13:01:49.000Z</lastmod>
+    <lastmod>2025-12-16T08:26:25.689Z</lastmod>
   </url>
   <url>
     <loc>https://beyondsimulations.github.io/Optimization-with-Julia/part-03/tutorial-03-04-advanced.html</loc>
-    <lastmod>2025-02-16T13:01:56.000Z</lastmod>
+    <lastmod>2025-12-16T08:26:34.721Z</lastmod>
   </url>
 </urlset>

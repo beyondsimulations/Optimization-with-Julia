@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.19">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46d4eb725d7d2b8695ccd307f5b3c105.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-197188da37a79cb9418c4f38e6d23e8d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46d4eb725d7d2b8695ccd307f5b3c105.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9fdb3f734bd8d4f80a5eaa9fffd7d284.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d52245bb7ba9b6ab6a7d9ea1e3d6d73b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5f96869ffd51bc4c837006638a84c664.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d52245bb7ba9b6ab6a7d9ea1e3d6d73b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +107,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script defer="" src="https://umami.byndsim.com/getinfo" data-website-id="c9696f17-b99d-4e18-b36c-20af187a680b"></script>
+<script defer="" src="https://umi.byndsim.com/script.js" data-website-id="e230d76b-b0a6-477e-8c5d-19a7bd661e68"></script>
+
+<script defer="" data-domain="beyondsimulations.github.io" src="https://plb.byndsim.com/js/script.file-downloads.hash.outbound-links.js"></script>
+<script>
+    window.plausible =
+        window.plausible ||
+        function () {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+</script>
 
 
 </head>
@@ -329,11 +342,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#section-3---updating-and-removing-packages" id="toc-section-3---updating-and-removing-packages" class="nav-link" data-scroll-target="#section-3---updating-and-removing-packages">Section 3 - Updating and Removing Packages</a></li>
   <li><a href="#section-4---managing-environments" id="toc-section-4---managing-environments" class="nav-link" data-scroll-target="#section-4---managing-environments">Section 4 - Managing Environments</a>
   <ul class="collapse">
+  <li><a href="#why-environments-matter" id="toc-why-environments-matter" class="nav-link" data-scroll-target="#why-environments-matter">4.1 Why Environments Matter</a></li>
+  <li><a href="#activating-the-course-environment" id="toc-activating-the-course-environment" class="nav-link" data-scroll-target="#activating-the-course-environment">4.2 Activating the Course Environment</a></li>
+  <li><a href="#exercise-4.1---activate-the-course-environment" id="toc-exercise-4.1---activate-the-course-environment" class="nav-link" data-scroll-target="#exercise-4.1---activate-the-course-environment">Exercise 4.1 - Activate the Course Environment</a></li>
+  <li><a href="#activating-an-environment-in-your-current-directory" id="toc-activating-an-environment-in-your-current-directory" class="nav-link" data-scroll-target="#activating-an-environment-in-your-current-directory">4.3 Activating an Environment in Your Current Directory</a></li>
+  <li><a href="#exercise-4.2---create-and-activate-a-local-environment" id="toc-exercise-4.2---create-and-activate-a-local-environment" class="nav-link" data-scroll-target="#exercise-4.2---create-and-activate-a-local-environment">Exercise 4.2 - Create and Activate a Local Environment</a></li>
+  <li><a href="#checking-whats-installed" id="toc-checking-whats-installed" class="nav-link" data-scroll-target="#checking-whats-installed">4.4 Checking What’s Installed</a></li>
+  <li><a href="#exercise-4.3---check-your-environment-status" id="toc-exercise-4.3---check-your-environment-status" class="nav-link" data-scroll-target="#exercise-4.3---check-your-environment-status">Exercise 4.3 - Check Your Environment Status</a></li>
+  <li><a href="#adding-packages-to-your-environment" id="toc-adding-packages-to-your-environment" class="nav-link" data-scroll-target="#adding-packages-to-your-environment">4.5 Adding Packages to Your Environment</a></li>
+  <li><a href="#keeping-your-environment-active-in-notebooks" id="toc-keeping-your-environment-active-in-notebooks" class="nav-link" data-scroll-target="#keeping-your-environment-active-in-notebooks">4.6 Keeping Your Environment Active in Notebooks</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-02-02-handling.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tutorial-02-02-handling.ipynb" download="tutorial-02-02-handling.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-02-02-handling.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="tutorial-02-02-handling.ipynb" download="tutorial-02-02-handling.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -363,17 +385,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Welcome to this beginner-friendly guide on understanding packages and package management in Julia!</p>
 <p>Think of packages as pre-written sets of tools that extend what Julia can do. It’s like having a toolbox where you can add new tools (packages) to help you solve specific problems. For example, there are packages for working with data, creating visualizations, or solving complex math problems.</p>
 <p>The best part? Most Julia packages are free to use, thanks to the open-source community!</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>While we’ll practice some commands here, you’ll typically manage packages in Julia’s REPL (Read-Eval-Print Loop), which is like Julia’s command center.</p>
+</div>
 </div>
 </div>
 </section>
@@ -437,25 +456,205 @@ Note
 </section>
 <section id="section-4---managing-environments" class="level1">
 <h1>Section 4 - Managing Environments</h1>
-<p>Think of environments as separate workspaces for different projects. It’s like having different folders for different school subjects. It’s a best practice to create a new environment for each project to avoid conflicts between package versions. Activate a new environment with <code>Pkg.activate("new_environment")</code> and add packages to it with <code>Pkg.add("PackageName")</code>. This ensures that each of your projects has a clean, dedicated set of dependencies. When you create a new environment, Julia generates two important files:</p>
+<p>Think of environments as separate workspaces for different projects. It’s like having different folders for different school subjects - each folder contains only the books and supplies you need for that subject. Using environments helps you:</p>
+<ul>
+<li>Keep your projects organized and reproducible</li>
+<li>Avoid conflicts between different package versions</li>
+<li>Share your project setup easily with others</li>
+</ul>
+<p>When you create or activate an environment, Julia generates two important files:</p>
 <ol type="1">
-<li><code>Project.toml</code>: Lists direct dependencies of your project.</li>
-<li><code>Manifest.toml</code>: Contains a complete dependency graph of your project.</li>
+<li><code>Project.toml</code>: Lists the packages your project directly depends on</li>
+<li><code>Manifest.toml</code>: Contains a complete record of all packages and their exact versions</li>
 </ol>
-<p>These files help ensure reproducibility and should be version controlled with your project. But don’t worry, you don’t have to worry about this yet.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>These files ensure that anyone can recreate your exact setup.</p>
+<section id="why-environments-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-environments-matter">4.1 Why Environments Matter</h2>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Even if you’re working primarily with Jupyter notebooks, understanding environments will save you from headaches later! When you encounter a “Package not found” error, knowing how to activate the right environment is the solution.</p>
+</div>
+</div>
+</div>
+<p>For this course, we’ve prepared an environment with all the packages you’ll need. This means you don’t have to install each package individually - you just need to activate the course environment and you’re ready to go!</p>
+</section>
+<section id="activating-the-course-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activating-the-course-environment">4.2 Activating the Course Environment</h2>
+<p>The course materials come with a pre-configured environment containing all necessary packages. To use it, you need to activate it and then instantiate (download) the packages.</p>
+<p>Here’s how to activate an environment at a specific path:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"/path/to/course/folder"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()  <span class="co"># Downloads all packages listed in Project.toml</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>instantiate()</code> command reads the Project.toml file and installs all the required packages. You only need to run this once when you first set up the course.</p>
+</section>
+<section id="exercise-4.1---activate-the-course-environment" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4.1---activate-the-course-environment">Exercise 4.1 - Activate the Course Environment</h2>
+<p>Activate the course environment. Replace the path below with the actual path to your course folder (where you downloaded the course materials).</p>
+<div id="10" class="cell" data-execution_count="0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint: Use Pkg.activate("path/to/your/course/folder")</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Then use Pkg.instantiate() to install all packages</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="12" class="cell" data-execution_count="0">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Pkg</span>.<span class="fu">status</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"Environment activated! Check the package list above."</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="cn">e</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@error</span> <span class="st">"Something went wrong. Make sure you've imported Pkg first!"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="activating-an-environment-in-your-current-directory" class="level2">
+<h2 class="anchored" data-anchor-id="activating-an-environment-in-your-current-directory">4.3 Activating an Environment in Your Current Directory</h2>
+<p>Often, you’ll want to create an environment right in the folder where you’re working. The simplest way to do this is using a dot (<code>.</code>) which means “the current directory”:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is particularly useful when:</p>
+<ul>
+<li>You’re starting a new project in a specific folder</li>
+<li>You want to keep your packages local to one project</li>
+<li>You’re working in a notebook and want packages specific to that folder</li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>When you activate a new environment that doesn’t have a Project.toml yet, Julia will create one for you automatically when you add your first package.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4.2---create-and-activate-a-local-environment" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4.2---create-and-activate-a-local-environment">Exercise 4.2 - Create and Activate a Local Environment</h2>
+<p>Create and activate an environment in your current working directory.</p>
+<div id="14" class="cell" data-execution_count="0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint: Use the dot notation to refer to the current directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="16" class="cell" data-execution_count="0">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># After running your code, this should show an empty or minimal environment</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">status</span>()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Local environment activated!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="checking-whats-installed" class="level2">
+<h2 class="anchored" data-anchor-id="checking-whats-installed">4.4 Checking What’s Installed</h2>
+<p>To see which packages are installed in your current environment, use <code>Pkg.status()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">status</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This shows you:</p>
+<ul>
+<li>The name of each installed package</li>
+<li>The version number</li>
+<li>Whether the package was added directly or as a dependency</li>
+</ul>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you see fewer packages than expected, you might be in the wrong environment! Use <code>Pkg.status()</code> to diagnose package issues.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4.3---check-your-environment-status" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4.3---check-your-environment-status">Exercise 4.3 - Check Your Environment Status</h2>
+<p>Check what packages are available in your current environment.</p>
+<div id="18" class="cell" data-execution_count="0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="20" class="cell" data-execution_count="0">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected: You should see a list of packages</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If the list is empty, you may need to activate the course environment</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Tip: If the list is empty, try activating the course environment!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="adding-packages-to-your-environment" class="level2">
+<h2 class="anchored" data-anchor-id="adding-packages-to-your-environment">4.5 Adding Packages to Your Environment</h2>
+<p>Once you’ve activated an environment, any packages you add will be installed into that specific environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, make sure you're in the right environment</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)  <span class="co"># or your specific path</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then add packages</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"PackageName"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can also add multiple packages at once:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>([<span class="st">"JuMP"</span>, <span class="st">"HiGHS"</span>, <span class="st">"CSV"</span>, <span class="st">"Plots"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Main Course Packages
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you plan to stick to working with notebooks, you don’t have to care about environments yet. Just use the regular environment for the course and you don’t have to activate anything.</p>
+<p>For this course, the main packages you’ll need are:</p>
+<ul>
+<li><strong>JuMP</strong> and <strong>HiGHS</strong>: For optimization problems</li>
+<li><strong>DataFrames</strong> and <strong>CSV</strong>: For working with data</li>
+<li><strong>Plots</strong> and <strong>StatsPlots</strong>: For visualization</li>
+</ul>
 </div>
 </div>
+</section>
+<section id="keeping-your-environment-active-in-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="keeping-your-environment-active-in-notebooks">4.6 Keeping Your Environment Active in Notebooks</h2>
+<p>When working with Jupyter notebooks, you’ll want to make sure the correct environment is active. Here’s a reliable pattern to use at the start of your notebooks:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add this at the top of your notebook</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"/path/to/course/folder"</span>)  <span class="co"># Activate course environment</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Now you can use the packages</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP</span>, <span class="bu">HiGHS</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span>, <span class="bu">CSV</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Pro Tips for Notebooks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Always activate first</strong>: Put the <code>Pkg.activate()</code> command in the first cell of your notebook</li>
+<li><strong>Use absolute paths</strong>: This ensures the environment is found regardless of where Jupyter starts</li>
+<li><strong>Run activation each session</strong>: The environment needs to be activated every time you restart the notebook kernel</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you keep your notebook in the same folder as the course materials, you can use <code>Pkg.activate(".")</code> and Julia will find the Project.toml in that directory.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>Congratulations! You’ve completed the tutorial on packages and package management in Julia. These skills are important for effectively managing and utilizing external libraries. Continue to the next file to learn more.</p>
@@ -521,13 +720,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
