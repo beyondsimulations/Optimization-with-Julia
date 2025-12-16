@@ -4,3 +4,4 @@
 .venv/
 
 /general/header.html
+**/*.quarto_ipynb

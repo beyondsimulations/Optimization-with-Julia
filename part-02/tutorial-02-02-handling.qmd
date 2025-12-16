@@ -102,15 +102,188 @@ To remove it, you'd use `Pkg.rm("DataFrames")`.
 
 # Section 4 - Managing Environments
 
-Think of environments as separate workspaces for different projects. It's like having different folders for different school subjects. It's a best practice to create a new environment for each project to avoid conflicts between package versions. Activate a new environment with `Pkg.activate("new_environment")` and add packages to it with `Pkg.add("PackageName")`. This ensures that each of your projects has a clean, dedicated set of dependencies. When you create a new environment, Julia generates two important files:
+Think of environments as separate workspaces for different projects. It's like having different folders for different school subjects - each folder contains only the books and supplies you need for that subject. Using environments helps you:
 
-1. `Project.toml`: Lists direct dependencies of your project.
-2. `Manifest.toml`: Contains a complete dependency graph of your project.
+- Keep your projects organized and reproducible
+- Avoid conflicts between different package versions
+- Share your project setup easily with others
 
-These files help ensure reproducibility and should be version controlled with your project. But don't worry, you don't have to worry about this yet.
+When you create or activate an environment, Julia generates two important files:
+
+1. `Project.toml`: Lists the packages your project directly depends on
+2. `Manifest.toml`: Contains a complete record of all packages and their exact versions
+
+These files ensure that anyone can recreate your exact setup.
+
+## 4.1 Why Environments Matter
+
+::: {.callout-tip}
+Even if you're working primarily with Jupyter notebooks, understanding environments will save you from headaches later! When you encounter a "Package not found" error, knowing how to activate the right environment is the solution.
+:::
+
+For this course, we've prepared an environment with all the packages you'll need. This means you don't have to install each package individually - you just need to activate the course environment and you're ready to go!
+
+## 4.2 Activating the Course Environment
+
+The course materials come with a pre-configured environment containing all necessary packages. To use it, you need to activate it and then instantiate (download) the packages.
+
+Here's how to activate an environment at a specific path:
+
+```julia
+import Pkg
+Pkg.activate("/path/to/course/folder")
+Pkg.instantiate()  # Downloads all packages listed in Project.toml
+```
+
+The `instantiate()` command reads the Project.toml file and installs all the required packages. You only need to run this once when you first set up the course.
+
+## Exercise 4.1 - Activate the Course Environment
+
+Activate the course environment. Replace the path below with the actual path to your course folder (where you downloaded the course materials).
+
+```{julia}
+#| eval: false
+# YOUR CODE BELOW
+# Hint: Use Pkg.activate("path/to/your/course/folder")
+# Then use Pkg.instantiate() to install all packages
+
+```
+```{julia}
+#| eval: false
+#| code-fold: true
+# Test your answer
+try
+    Pkg.status()
+    println("Environment activated! Check the package list above.")
+catch e
+    @error "Something went wrong. Make sure you've imported Pkg first!"
+end
+```
+
+## 4.3 Activating an Environment in Your Current Directory
+
+Often, you'll want to create an environment right in the folder where you're working. The simplest way to do this is using a dot (`.`) which means "the current directory":
+
+```julia
+import Pkg
+Pkg.activate(".")
+```
+
+This is particularly useful when:
+
+- You're starting a new project in a specific folder
+- You want to keep your packages local to one project
+- You're working in a notebook and want packages specific to that folder
 
 ::: {.callout-note}
-If you plan to stick to working with notebooks, you don't have to care about environments yet. Just use the regular environment for the course and you don't have to activate anything.
+When you activate a new environment that doesn't have a Project.toml yet, Julia will create one for you automatically when you add your first package.
+:::
+
+## Exercise 4.2 - Create and Activate a Local Environment
+
+Create and activate an environment in your current working directory.
+
+```{julia}
+#| eval: false
+# YOUR CODE BELOW
+# Hint: Use the dot notation to refer to the current directory
+
+```
+```{julia}
+#| eval: false
+#| code-fold: true
+# Test your answer
+# After running your code, this should show an empty or minimal environment
+Pkg.status()
+println("Local environment activated!")
+```
+
+## 4.4 Checking What's Installed
+
+To see which packages are installed in your current environment, use `Pkg.status()`:
+
+```julia
+Pkg.status()
+```
+
+This shows you:
+
+- The name of each installed package
+- The version number
+- Whether the package was added directly or as a dependency
+
+::: {.callout-tip}
+If you see fewer packages than expected, you might be in the wrong environment! Use `Pkg.status()` to diagnose package issues.
+:::
+
+## Exercise 4.3 - Check Your Environment Status
+
+Check what packages are available in your current environment.
+
+```{julia}
+#| eval: false
+# YOUR CODE BELOW
+
+```
+```{julia}
+#| eval: false
+#| code-fold: true
+# Expected: You should see a list of packages
+# If the list is empty, you may need to activate the course environment
+println("Tip: If the list is empty, try activating the course environment!")
+```
+
+## 4.5 Adding Packages to Your Environment
+
+Once you've activated an environment, any packages you add will be installed into that specific environment:
+
+```julia
+# First, make sure you're in the right environment
+Pkg.activate(".")  # or your specific path
+
+# Then add packages
+Pkg.add("PackageName")
+```
+
+You can also add multiple packages at once:
+
+```julia
+Pkg.add(["JuMP", "HiGHS", "CSV", "Plots"])
+```
+
+::: {.callout-note}
+## Main Course Packages
+For this course, the main packages you'll need are:
+
+- **JuMP** and **HiGHS**: For optimization problems
+- **DataFrames** and **CSV**: For working with data
+- **Plots** and **StatsPlots**: For visualization
+:::
+
+## 4.6 Keeping Your Environment Active in Notebooks
+
+When working with Jupyter notebooks, you'll want to make sure the correct environment is active. Here's a reliable pattern to use at the start of your notebooks:
+
+```julia
+# Add this at the top of your notebook
+import Pkg
+Pkg.activate("/path/to/course/folder")  # Activate course environment
+
+# Now you can use the packages
+using JuMP, HiGHS
+using DataFrames, CSV
+using Plots
+```
+
+::: {.callout-tip}
+## Pro Tips for Notebooks
+1. **Always activate first**: Put the `Pkg.activate()` command in the first cell of your notebook
+2. **Use absolute paths**: This ensures the environment is found regardless of where Jupyter starts
+3. **Run activation each session**: The environment needs to be activated every time you restart the notebook kernel
+:::
+
+::: {.callout-note}
+If you keep your notebook in the same folder as the course materials, you can use `Pkg.activate(".")` and Julia will find the Project.toml in that directory.
 :::
 
 ## Conclusion
