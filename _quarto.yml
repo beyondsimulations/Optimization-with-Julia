@@ -109,8 +109,9 @@ format:
             });
         </script>
 
-    typst:
-      papersize: a4
+  typst:
+    papersize: a4
+
 execute:
   freeze: auto
 
