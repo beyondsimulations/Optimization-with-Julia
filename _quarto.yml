@@ -1,5 +1,8 @@
 project:
   type: website
+  post-render:
+    - helpers/convert_pypercent.py
+    - helpers/convert_qmd_to_md.py
   render:
     - 404.qmd
     - index.qmd
@@ -96,17 +99,16 @@ format:
       - general/header.html
     include-after-body:
       text: |
-        <script src="https://cdn.jsdelivr.net/gh/beyondsimulations/web-embedded-chat@main/floating-chat.js"></script>
+        <script src="https://agents.byndsim.com/static/floating-chat.js"></script>
         <script>
-            new UniversalChatWidget({
-                title: "Julia Assistant",
-                apiEndpoint: "https://model-proxy.vlcek-4b4.workers.dev/api",
-                model: "julia-programming",
-                userMessageOpacity: 0.5,
-                assistantMessageOpacity: 0.5,
-                position: "bottom-right",
-                windowHeight: 800
-            });
+        new UniversalChatWidget({
+          "apiEndpoint": "https://chat.byndsim.com/chat",
+          "model": "optimization-julia",
+          "title": "Julia Assistant",
+          "welcomeMessage": "Hi! How can I help you with Julia and JuMP?",
+          "titleBackgroundColor": "#363D45",
+          "titleFontColor": "#FDF8ED"
+        });
         </script>
 
   typst:
