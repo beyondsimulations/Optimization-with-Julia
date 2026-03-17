@@ -114,6 +114,9 @@ format:
   typst:
     papersize: a4
 
+  gfm:
+    output-file-ext: "md"
+
 execute:
   freeze: auto
 

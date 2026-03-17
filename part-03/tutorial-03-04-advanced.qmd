@@ -5,6 +5,7 @@ subtitle: "Optimization with Julia"
 format:
     html: default
     typst: default
+    gfm: default
     ipynb:
         code-copy: true
         code-overflow: wrap

@@ -1,41 +1,19 @@
----
-title: "Introduction"
-subtitle: "Optimization with Julia"
-author: "Dr. Tobias Vlćek"
-institute: "University of Hamburg - Fall 2024"
-title-slide-attributes:
-    data-background-color: "#025259"
-html-math-method:
-  method: mathjax
-  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+# Introduction
+Dr. Tobias Vlćek
 
-format:
-    html:
-        theme: [litera, styles.scss]
-        include-in-header:
-        - general/header.html
-    gfm: default
-
-execute:
-    echo: true
-
-engine: julia
-
----
-
-# [Julia Programming Language]{.flow} {.title}
+# <span class="flow">Julia Programming Language</span>
 
 ## Why Julia?
 
-- **Designed to be:**   
-    - as general as Python
-    - as statistics-friendly as R
-    - as fast as C++!
+- **Designed to be:**
+  - as general as Python
+  - as statistics-friendly as R
+  - as fast as C++!
 
-
-:::{.callout-tip}
-**Allows for fast data workflows**, particularly in scientific computing!
-:::
+> [!TIP]
+>
+> **Allows for fast data workflows**, particularly in scientific
+> computing!
 
 ## Syntax
 
@@ -51,15 +29,15 @@ engine: julia
 - Provides a high-level, user-friendly interface
 - Useful for operations research and data science
 
-:::{.callout-tip}
-JuMP is an alternative to Pyomo, GAMS, and AMPL!
-:::
+> [!TIP]
+>
+> JuMP is an alternative to Pyomo, GAMS, and AMPL!
 
-# [Algebraic Modeling]{.flow} {.title}
+# <span class="flow">Algebraic Modeling</span>
 
 ## What is algebraic modeling?
 
-- A "mathematical language" for optimization problems
+- A “mathematical language” for optimization problems
 - Allows for describing complex systems and constraints
 - Based on linear algebra (Equations and Inequalities)
 
@@ -79,15 +57,15 @@ JuMP is an alternative to Pyomo, GAMS, and AMPL!
 - What parameters (data) are needed?
 - Which variables and of which type are needed?
 
-:::{.callout-tip}
-Modeling is a creative process!
-:::
+> [!TIP]
+>
+> Modeling is a creative process!
 
 ## Model Components
 
-1. Objective function
-2. Constraints
-3. Variables
+1.  Objective function
+2.  Constraints
+3.  Variables
 
 ## Linear Optimization Model
 
@@ -114,77 +92,83 @@ $$
 \begin{aligned}
 \mathcal{I} &: \text{set of $i \in \mathcal{I}$,}\\
 \mathcal{J} &: \text{set of $j \in \mathcal{J}$,}\\
-F 	&: \text{Objective function variable,}\\
-X_{j}	&: \text{decision variables,}\\
-c_{j}	&: \text{objective function coefficients,}\\
-a_{i,j}	&: \text{parameters,}\\
-b_{i}	&: \text{parameters}
+F   &: \text{Objective function variable,}\\
+X_{j}   &: \text{decision variables,}\\
+c_{j}   &: \text{objective function coefficients,}\\
+a_{i,j} &: \text{parameters,}\\
+b_{i}   &: \text{parameters}
 \end{aligned}
 $$
 
 ## What is modelling good for?
 
-- [Good Question!]{.highlight} A lot of things:
-    - Modeling real-world problems
-    - Solving complex systems
-    - Optimizing resource allocation
-    - Decision-making under constraints
-    - Simulation and prediction
+- <span class="highlight">Good Question!</span> A lot of things:
+  - Modeling real-world problems
+  - Solving complex systems
+  - Optimizing resource allocation
+  - Decision-making under constraints
+  - Simulation and prediction
 
-# [Installing Julia]{.flow} {.title}
+# <span class="flow">Installing Julia</span>
 
 ## Download and Install Julia
 
-To prepare for the upcoming lectures, we start by installing the Julia Programming Language and an Integrated Development Environment (IDE) to work with Julia.
+To prepare for the upcoming lectures, we start by installing the Julia
+Programming Language and an Integrated Development Environment (IDE) to
+work with Julia.
 
 ## Installing Julia
 
-![](https://images.beyondsimulations.com/ao/ao_julia2.png){max-width=400px}
+<img src="https://images.beyondsimulations.com/ao/ao_julia2.png"
+data-max-width="400px" />
 
-- Head to [julialang.org](https://julialang.org) and follow the instructions. 
+- Head to [julialang.org](https://julialang.org) and follow the
+  instructions.
 
-:::{.callout-tip}
-If you are ever asked to add something to your "PATH", do so!
-:::
+> [!TIP]
+>
+> If you are ever asked to add something to your “PATH”, do so!
 
 ## VS Code
 
 - Next, we are going to install VS Code
-- Alternatively, you can install VS Codium 
+- Alternatively, you can install VS Codium
 - It is essentially VS Code but without any tracking by MS
 
 ## Installing VS Code
 
-- Head to the website [code.visualstudio.com](https://code.visualstudio.com)
-- OR to the webside [vscodium.com](https://vscodium.com) 
+- Head to the website
+  [code.visualstudio.com](https://code.visualstudio.com)
+- OR to the webside [vscodium.com](https://vscodium.com)
 - Download and install the latest release
 
 ## Verify the Installation
 
 - Start the IDE and take a look around
-- Search for the field "Extensions" on the left sidebar
-- Click it and search for "Julia"
-- Download and install "Julia (Julia Language Support)"
+- Search for the field “Extensions” on the left sidebar
+- Click it and search for “Julia”
+- Download and install “Julia (Julia Language Support)”
 
 ## Create a new file
 
-- Create a new file with a ".jl" ending
+- Create a new file with a “.jl” ending
 - Save it somewhere on your computer
 - e.g., in a folder that you will use in the course
 
-```{julia}
-#| eval: true
-#| output-location: fragment
+``` julia
 print("Hello World!")
 ```
 
-- Run the file by clicking "run" in the upper right corner 
-- OR by pressing "Control+Enter" or "STRG+Enter"
+    Hello World!
+
+- Run the file by clicking “run” in the upper right corner
+- OR by pressing “Control+Enter” or “STRG+Enter”
 
 ## Everything working?
 
 - If the terminal opens with a `Hello World!` → perfect!
-- If not, it is likely that the IDE [cannot find the path]{.highlight} to Julia
+- If not, it is likely that the IDE <span class="highlight">cannot find
+  the path</span> to Julia
 - Try to determine the path and save it to VS Code
 - After saving it, try to run the file again
 
@@ -193,15 +177,16 @@ print("Hello World!")
 - Following three parts are dedicated to learning the basics
 - Start with the very basics and gradually move on
 - Focus in the first two parts on the programming language
-- Third part dedicated to [Mathematical Optimization]{.highlight}
+- Third part dedicated to <span class="highlight">Mathematical
+  Optimization</span>
 
-# [Working with VS Code]{.flow} {.title}
+# <span class="flow">Working with VS Code</span>
 
 ## Notebooks in VS Code
 
 - The easiest way is by using VS Code
-- Install the Jupyter Extension 
-- Now, you can open `.ipynb` files 
+- Install the Jupyter Extension
+- Now, you can open `.ipynb` files
 - Here you can run the code in the cells
 
 ## Downloading the Notebooks
@@ -209,15 +194,17 @@ print("Hello World!")
 - You will find the notebooks next to the sections pages
 - On each page, you will find a button `Jupyter` on the right
 - Click it to download the notebook and save it
-- I'd recommend storing the notebooks [in a separate directory for this workshop]{.highlight}
+- I’d recommend storing the notebooks <span class="highlight">in a
+  separate directory for this workshop</span>
 
-# [Working with IJulia]{.flow} {.title}
+# <span class="flow">Working with IJulia</span>
 
 ## IJulia
 
 - IJulia is an interface between Julia and Jupyter Notebooks
 - Popular tool for data analysis and visualization
-- You can use IJulia to run [Julia code in the notebooks]{.highlight}
+- You can use IJulia to run <span class="highlight">Julia code in the
+  notebooks</span>
 
 ## Installing IJulia
 
@@ -229,7 +216,7 @@ print("Hello World!")
 
 ## Running IJulia
 
-```julia
+``` julia
 using IJulia; notebook()
 ```
 
@@ -237,20 +224,21 @@ using IJulia; notebook()
 - This will open a new browser window
 - You can now run code in the notebooks
 
-:::{.callout-note}
-You can also run the notebooks in VS Code, if you prefer!
-:::
+> [!NOTE]
+>
+> You can also run the notebooks in VS Code, if you prefer!
 
 ## Get started with the sections
 
 - Download the first notebook and open it
-- Start with the [first problem and solve it step by step]{.highlight}
+- Start with the <span class="highlight">first problem and solve it step
+  by step</span>
 - You can find the sections here on the website
-- [You can ask questions anytime!]{.highlight}
+- <span class="highlight">You can ask questions anytime!</span>
 
-# [Literature]{.flow} {.title}
+# <span class="flow">Literature</span>
 
 ## Literature
 
-For interesting literature to learn more about Julia, take a look at the [literature list](general/literature.qmd) of this course.
-
+For interesting literature to learn more about Julia, take a look at the
+[literature list](general/literature.qmd) of this course.
