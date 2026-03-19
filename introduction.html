@@ -394,7 +394,7 @@ window.Quarto = {
   <li><a href="#literature-1" id="toc-literature-1" class="nav-link" data-scroll-target="#literature-1">Literature</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="introduction.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1167,6 +1167,18 @@ b_{i}   &amp;: \text{parameters}
 </i> 
     </a>
   </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
+      <i class="bi bi-skip-backward" role="img">
+</i> 
+    </a>
+  </li>  
 </ul>
     </div>
   </div>
@@ -1176,10 +1188,7 @@ b_{i}   &amp;: \text{parameters}
 new UniversalChatWidget({
   "apiEndpoint": "https://chat.byndsim.com/chat",
   "model": "optimization-julia",
-  "title": "Julia Assistant",
-  "welcomeMessage": "Hi! How can I help you with Julia and JuMP?",
-  "titleBackgroundColor": "#363D45",
-  "titleFontColor": "#FDF8ED"
+  "configUrl": "https://agents.byndsim.com/api/widget-config/optimization-julia"
 });
 </script>
 

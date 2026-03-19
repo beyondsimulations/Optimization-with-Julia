@@ -345,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-03-01-jump.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="tutorial-03-01-jump.ipynb" download="tutorial-03-01-jump.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-03-01-jump.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="tutorial-03-01-jump.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li><li><a href="tutorial-03-01-jump.ipynb" download="tutorial-03-01-jump.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1042,6 +1042,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </i> 
     </a>
   </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
+      <i class="bi bi-skip-backward" role="img">
+</i> 
+    </a>
+  </li>  
 </ul>
     </div>
   </div>
@@ -1051,10 +1063,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 new UniversalChatWidget({
   "apiEndpoint": "https://chat.byndsim.com/chat",
   "model": "optimization-julia",
-  "title": "Julia Assistant",
-  "welcomeMessage": "Hi! How can I help you with Julia and JuMP?",
-  "titleBackgroundColor": "#363D45",
-  "titleFontColor": "#FDF8ED"
+  "configUrl": "https://agents.byndsim.com/api/widget-config/optimization-julia"
 });
 </script>
 

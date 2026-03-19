@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#basic-package-operations" id="toc-basic-package-operations" class="nav-link" data-scroll-target="#basic-package-operations">Basic Package Operations</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="cheatsheet-julia.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="cheatsheet-julia.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="cheatsheet-julia.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1291,6 +1291,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </i> 
     </a>
   </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
+      <i class="bi bi-skip-backward" role="img">
+</i> 
+    </a>
+  </li>  
 </ul>
     </div>
   </div>
@@ -1300,10 +1312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 new UniversalChatWidget({
   "apiEndpoint": "https://chat.byndsim.com/chat",
   "model": "optimization-julia",
-  "title": "Julia Assistant",
-  "welcomeMessage": "Hi! How can I help you with Julia and JuMP?",
-  "titleBackgroundColor": "#363D45",
-  "titleFontColor": "#FDF8ED"
+  "configUrl": "https://agents.byndsim.com/api/widget-config/optimization-julia"
 });
 </script>
 
