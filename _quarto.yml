@@ -78,6 +78,10 @@ website:
         href: https://github.com/beyondsimulations/Optimization-with-Julia
       - icon: linkedin
         href: https://linkedin.com/in/tobiasvlcek
+      - icon: envelope
+        href: mailto:vlcek@beyondsimulations.com
+      - icon: skip-backward
+        href: https://tobiasvlcek.com/lectures/
 
 format:
   html:
@@ -104,10 +108,7 @@ format:
         new UniversalChatWidget({
           "apiEndpoint": "https://chat.byndsim.com/chat",
           "model": "optimization-julia",
-          "title": "Julia Assistant",
-          "welcomeMessage": "Hi! How can I help you with Julia and JuMP?",
-          "titleBackgroundColor": "#363D45",
-          "titleFontColor": "#FDF8ED"
+          "configUrl": "https://agents.byndsim.com/api/widget-config/optimization-julia"
         });
         </script>
 
