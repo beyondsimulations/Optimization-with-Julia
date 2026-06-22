@@ -594,6 +594,36 @@
     ]
   },
   {
+    "objectID": "general/literature.html",
+    "href": "general/literature.html",
+    "title": "Literature and Resources",
+    "section": "",
+    "text": "This section provides a curated list of books and resources to enhance your understanding of mathematical Modelling, Julia programming and related topics. Each recommendation includes a brief description to help you choose the most suitable resources for you.",
+    "crumbs": [
+      "Literature"
+    ]
+  },
+  {
+    "objectID": "general/literature.html#books",
+    "href": "general/literature.html#books",
+    "title": "Literature and Resources",
+    "section": "Books",
+    "text": "Books\n\nLauwens, B., & Downey, A. B. (2019). Think Julia: How to think like a computer scientist (First edition). O’Reilly®. Link to the free book website.\n\nThis book is great for beginners and covers Julia programming in a comprehensive manner.\n\nKwon, C. (2019). Julia programming for operations research (Second edition). Changhyun Kwon. Link to the free book website.\n\nThis book is a fantastic ressource for students interested in Julia and Operations Research and covers a variety of topics.",
+    "crumbs": [
+      "Literature"
+    ]
+  },
+  {
+    "objectID": "general/literature.html#resources",
+    "href": "general/literature.html#resources",
+    "title": "Literature and Resources",
+    "section": "Resources",
+    "text": "Resources\n\nJulia Documentation\n\nThe official Julia documentation is an good starting point to understand the language’s features and syntax.\n\nJuMP Documentation\n\nThe official documentation of JuMP is a great resource for understanding optimization modeling in Julia, covering everything from simple linear models to advanced nonlinear and mixed-integer problems.",
+    "crumbs": [
+      "Literature"
+    ]
+  },
+  {
     "objectID": "general/cheatsheet-jump.html",
     "href": "general/cheatsheet-jump.html",
     "title": "JuMP Syntax Cheatsheet",
@@ -1316,34 +1346,102 @@
     ]
   },
   {
-    "objectID": "general/literature.html",
-    "href": "general/literature.html",
-    "title": "Literature and Resources",
+    "objectID": "general/imprint.html",
+    "href": "general/imprint.html",
+    "title": "Imprint",
     "section": "",
-    "text": "This section provides a curated list of books and resources to enhance your understanding of mathematical Modelling, Julia programming and related topics. Each recommendation includes a brief description to help you choose the most suitable resources for you.",
-    "crumbs": [
-      "Literature"
-    ]
+    "text": "Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:\nDr. Tobias Vlćek\nAm Eich 9d\n22113 Oststeinbek\nGermany\nEmail: vlcek@beyondsimulations.com"
   },
   {
-    "objectID": "general/literature.html#books",
-    "href": "general/literature.html#books",
-    "title": "Literature and Resources",
-    "section": "Books",
-    "text": "Books\n\nLauwens, B., & Downey, A. B. (2019). Think Julia: How to think like a computer scientist (First edition). O’Reilly®. Link to the free book website.\n\nThis book is great for beginners and covers Julia programming in a comprehensive manner.\n\nKwon, C. (2019). Julia programming for operations research (Second edition). Changhyun Kwon. Link to the free book website.\n\nThis book is a fantastic ressource for students interested in Julia and Operations Research and covers a variety of topics.",
-    "crumbs": [
-      "Literature"
-    ]
+    "objectID": "general/imprint.html#provider-and-responsible-for-content",
+    "href": "general/imprint.html#provider-and-responsible-for-content",
+    "title": "Imprint",
+    "section": "",
+    "text": "Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:\nDr. Tobias Vlćek\nAm Eich 9d\n22113 Oststeinbek\nGermany\nEmail: vlcek@beyondsimulations.com"
   },
   {
-    "objectID": "general/literature.html#resources",
-    "href": "general/literature.html#resources",
-    "title": "Literature and Resources",
-    "section": "Resources",
-    "text": "Resources\n\nJulia Documentation\n\nThe official Julia documentation is an good starting point to understand the language’s features and syntax.\n\nJuMP Documentation\n\nThe official documentation of JuMP is a great resource for understanding optimization modeling in Julia, covering everything from simple linear models to advanced nonlinear and mixed-integer problems.",
-    "crumbs": [
-      "Literature"
-    ]
+    "objectID": "general/imprint.html#liability-for-content",
+    "href": "general/imprint.html#liability-for-content",
+    "title": "Imprint",
+    "section": "Liability for content",
+    "text": "Liability for content\nThe contents of this website have been put together with great care. Except where legally required, they are provided for information purposes without being legally binding. As the provider, I am responsible for my own content on these pages in accordance with the general laws. I am, however, under no obligation to monitor transmitted or stored third-party information or to investigate circumstances that indicate unlawful activity.\nAll website content is subject to change and non-binding. I reserve the right to modify, supplement, or delete content without prior notice."
+  },
+  {
+    "objectID": "general/imprint.html#liability-for-links",
+    "href": "general/imprint.html#liability-for-links",
+    "title": "Imprint",
+    "section": "Liability for links",
+    "text": "Liability for links\nThis website contains links to external websites operated by third parties, over whose content I have no influence. Therefore, I cannot accept any responsibility for this external content. The respective provider or operator of the linked websites is always responsible for their content. I do not endorse the content of external websites I link to, whether directly or indirectly. Should I become aware of any legal infringements, I will remove the relevant links without delay."
+  },
+  {
+    "objectID": "general/imprint.html#copyright",
+    "href": "general/imprint.html#copyright",
+    "title": "Imprint",
+    "section": "Copyright",
+    "text": "Copyright\nAll contents presented on this website, such as texts, photographs, graphics, brands, and trademarks, are protected by the respective intellectual property rights. Any use not permitted by intellectual property law requires the prior written consent of the respective rights holder.\nUnless stated otherwise, the course material is licensed under CC BY-SA 4.0."
+  },
+  {
+    "objectID": "general/privacy.html",
+    "href": "general/privacy.html",
+    "title": "Privacy Policy",
+    "section": "",
+    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the AI chat assistant (“Oshu”) embedded on this website and the privacy-friendly web analytics (Umami) used to measure site usage. To exercise your rights or for any questions about data processing, please contact us using the details above."
+  },
+  {
+    "objectID": "general/privacy.html#controller",
+    "href": "general/privacy.html#controller",
+    "title": "Privacy Policy",
+    "section": "",
+    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the AI chat assistant (“Oshu”) embedded on this website and the privacy-friendly web analytics (Umami) used to measure site usage. To exercise your rights or for any questions about data processing, please contact us using the details above."
+  },
+  {
+    "objectID": "general/privacy.html#ai-chat-assistant-oshu",
+    "href": "general/privacy.html#ai-chat-assistant-oshu",
+    "title": "Privacy Policy",
+    "section": "2. AI chat assistant (Oshu)",
+    "text": "2. AI chat assistant (Oshu)\nOn this website we use an embeddable AI chat assistant operated on our behalf by BeyondSimulations GmbH, Am Eich 9d, 22113 Oststeinbek, Germany (“Oshu”) as our processor. A data processing agreement under Art. 28 GDPR is in place with Oshu.\nPurpose: the assistant answers visitor questions based on content we have provided.\nData processed: when you use the chat, the messages you enter, the generated responses, and a conversation identifier are processed. Technical data such as your IP address is processed only transiently for security and abuse prevention and is not stored permanently with the conversation. Please do not enter special categories of personal data (Art. 9 GDPR) into the chat.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in answering enquiries efficiently). If the chat forms part of a contractual service, Art. 6(1)(b) GDPR."
+  },
+  {
+    "objectID": "general/privacy.html#hosting-and-inference",
+    "href": "general/privacy.html#hosting-and-inference",
+    "title": "Privacy Policy",
+    "section": "3. Hosting and inference",
+    "text": "3. Hosting and inference\nData is processed on servers of Hetzner Online GmbH in Falkenstein, Germany. Responses are generated via the EU API of Mistral AI SAS in Paris, France. There is no transfer to a third country, and the content is not used to train AI models."
+  },
+  {
+    "objectID": "general/privacy.html#cookies",
+    "href": "general/privacy.html#cookies",
+    "title": "Privacy Policy",
+    "section": "4. Cookies",
+    "text": "4. Cookies\nThe widget sets two strictly necessary first-party cookies so a conversation can be resumed:\n\ncw_conv_&lt;agent&gt; — conversation identifier\ncw_conv_session_&lt;agent&gt; — signed session token to retrieve the conversation history\n\nBoth last approximately 24 hours, with SameSite=Lax and the Secure flag. No tracking, marketing, or third-party cookies are set.\nLegal basis: § 25(2) TDDDG (strictly necessary cookies)."
+  },
+  {
+    "objectID": "general/privacy.html#retention",
+    "href": "general/privacy.html#retention",
+    "title": "Privacy Policy",
+    "section": "5. Retention",
+    "text": "5. Retention\nConversation logs are automatically deleted after at most 12 months. If “private mode” is enabled, the content of visitor messages is not stored."
+  },
+  {
+    "objectID": "general/privacy.html#web-analytics-umami",
+    "href": "general/privacy.html#web-analytics-umami",
+    "title": "Privacy Policy",
+    "section": "6. Web analytics (Umami)",
+    "text": "6. Web analytics (Umami)\nTo understand how this website is used and to improve its content, we use Umami, a privacy-friendly web analytics tool. Umami is self-hosted on our own infrastructure (umi.byndsim.com) on servers of Hetzner Online GmbH in Germany; usage data is not shared with third parties and there is no transfer to a third country.\nNo cookies, no tracking across sites: Umami does not set cookies and does not store any information on your device. It does not create a persistent identifier and does not track you across other websites.\nData processed: Umami collects aggregated, anonymized usage statistics such as the pages viewed, the referring website, and general information about your browser, operating system, device type, and country. Your IP address is used only transiently to derive this information and is not stored.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in analyzing and improving our website). Because Umami does not store or access information on your device, no consent under § 25(1) TDDDG is required."
+  },
+  {
+    "objectID": "general/privacy.html#your-data-protection-rights",
+    "href": "general/privacy.html#your-data-protection-rights",
+    "title": "Privacy Policy",
+    "section": "7. Your data protection rights",
+    "text": "7. Your data protection rights\nUnder the EU General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:\n\nRight to access (Art. 15 GDPR)\nRight to rectification (Art. 16 GDPR)\nRight to erasure (Art. 17 GDPR)\nRight to restrict processing (Art. 18 GDPR)\nRight to data portability (Art. 20 GDPR)\nRight to object (Art. 21 GDPR)\n\nTo exercise any of these rights, please contact us as the controller using the details in Section 1. You also have the right to lodge a complaint with a supervisory authority, in particular in the EU member state of your habitual residence, place of work, or the place of the alleged infringement."
+  },
+  {
+    "objectID": "general/privacy.html#changes-to-this-privacy-policy",
+    "href": "general/privacy.html#changes-to-this-privacy-policy",
+    "title": "Privacy Policy",
+    "section": "8. Changes to this Privacy Policy",
+    "text": "8. Changes to this Privacy Policy\nWe may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the date at the top. We encourage you to review this policy periodically."
   },
   {
     "objectID": "part-01/tutorial-01-02-vectors.html",
