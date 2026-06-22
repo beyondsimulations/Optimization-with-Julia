@@ -1,5 +1,4 @@
-# Tutorial III.I - Introduction to Mathematical Optimization with JuMP
-and HiGHS
+# Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS
 
 
 # Introduction

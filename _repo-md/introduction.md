@@ -71,25 +71,20 @@ Dr. Tobias Vlćek
 
 #### Basic Model Formulation
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &\text{maximize} \quad F = \sum_{j\in \mathcal{J}} c_j \times X_j
-\end{aligned}
-$$
+\end{aligned}$$
 
 subject to
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &\sum_{j\in \mathcal{J}} a_{i,j} \times X_j  \le b_i && \forall i \in \mathcal{I} \\
 &X_j \ge 0 &&  \forall  j \in \mathcal{J} 
-\end{aligned}
-$$
+\end{aligned}$$
 
 #### Model Components
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \mathcal{I} &: \text{set of $i \in \mathcal{I}$,}\\
 \mathcal{J} &: \text{set of $j \in \mathcal{J}$,}\\
 F   &: \text{Objective function variable,}\\
@@ -97,8 +92,7 @@ X_{j}   &: \text{decision variables,}\\
 c_{j}   &: \text{objective function coefficients,}\\
 a_{i,j} &: \text{parameters,}\\
 b_{i}   &: \text{parameters}
-\end{aligned}
-$$
+\end{aligned}$$
 
 ## What is modelling good for?
 
