@@ -5,7 +5,7 @@
 <<
   /Type /Pages
   /Count 6
-  /Kids [937 0 R 939 0 R 941 0 R 943 0 R 945 0 R 948 0 R]
+  /Kids [943 0 R 945 0 R 947 0 R 949 0 R 951 0 R 954 0 R]
 >>
 endobj
 
@@ -26,7 +26,7 @@ endobj
   /Last 7 0 R
   /Count -4
   /Title (Introduction)
-  /Dest 926 0 R
+  /Dest 932 0 R
 >>
 endobj
 
@@ -35,7 +35,7 @@ endobj
   /Parent 3 0 R
   /Next 5 0 R
   /Title (What is JuMP?)
-  /Dest 922 0 R
+  /Dest 928 0 R
 >>
 endobj
 
@@ -45,7 +45,7 @@ endobj
   /Next 6 0 R
   /Prev 4 0 R
   /Title (What is HiGHS?)
-  /Dest 923 0 R
+  /Dest 929 0 R
 >>
 endobj
 
@@ -55,7 +55,7 @@ endobj
   /Next 7 0 R
   /Prev 5 0 R
   /Title (Our Example Problem)
-  /Dest 924 0 R
+  /Dest 930 0 R
 >>
 endobj
 
@@ -64,7 +64,7 @@ endobj
   /Parent 3 0 R
   /Prev 6 0 R
   /Title (Setting Up)
-  /Dest 925 0 R
+  /Dest 931 0 R
 >>
 endobj
 
@@ -74,7 +74,7 @@ endobj
   /Next 9 0 R
   /Prev 3 0 R
   /Title (Section 1 - Defining an Optimization Model)
-  /Dest 927 0 R
+  /Dest 933 0 R
 >>
 endobj
 
@@ -87,7 +87,7 @@ endobj
   /Last 10 0 R
   /Count -1
   /Title (Section 2 - Adding Variables)
-  /Dest 929 0 R
+  /Dest 935 0 R
 >>
 endobj
 
@@ -95,7 +95,7 @@ endobj
 <<
   /Parent 9 0 R
   /Title (Exercise 2.1 - Create Variables)
-  /Dest 928 0 R
+  /Dest 934 0 R
 >>
 endobj
 
@@ -108,7 +108,7 @@ endobj
   /Last 12 0 R
   /Count -1
   /Title (Section 3 - Adding Constraints)
-  /Dest 931 0 R
+  /Dest 937 0 R
 >>
 endobj
 
@@ -116,7 +116,7 @@ endobj
 <<
   /Parent 11 0 R
   /Title (Exercise 3.1 - Create Constraints)
-  /Dest 930 0 R
+  /Dest 936 0 R
 >>
 endobj
 
@@ -129,7 +129,7 @@ endobj
   /Last 14 0 R
   /Count -1
   /Title (Section 4 - Defining the Objective Function)
-  /Dest 933 0 R
+  /Dest 939 0 R
 >>
 endobj
 
@@ -137,7 +137,7 @@ endobj
 <<
   /Parent 13 0 R
   /Title (Exercise 4.1 - Create the Objective Function)
-  /Dest 932 0 R
+  /Dest 938 0 R
 >>
 endobj
 
@@ -147,7 +147,7 @@ endobj
   /Next 16 0 R
   /Prev 13 0 R
   /Title (Section 5 - Solving the Model)
-  /Dest 934 0 R
+  /Dest 940 0 R
 >>
 endobj
 
@@ -157,7 +157,7 @@ endobj
   /Next 17 0 R
   /Prev 15 0 R
   /Title (Conclusion)
-  /Dest 935 0 R
+  /Dest 941 0 R
 >>
 endobj
 
@@ -166,7 +166,7 @@ endobj
   /Parent 2 0 R
   /Prev 16 0 R
   /Title (Solutions)
-  /Dest 936 0 R
+  /Dest 942 0 R
 >>
 endobj
 
@@ -195,7 +195,7 @@ endobj
 endobj
 
 20 0 obj
-[883 0 R 883 0 R 883 0 R 882 0 R 881 0 R 880 0 R 880 0 R 880 0 R 879 0 R 878 0 R 877 0 R 875 0 R 874 0 R 872 0 R 871 0 R 869 0 R 868 0 R 865 0 R 865 0 R 865 0 R 865 0 R 864 0 R 863 0 R 863 0 R 863 0 R 862 0 R 861 0 R 861 0 R 861 0 R 860 0 R 859 0 R 858 0 R 857 0 R 855 0 R 854 0 R 851 0 R 850 0 R 848 0 R 847 0 R 844 0 R 843 0 R 841 0 R 840 0 R 837 0 R 836 0 R 834 0 R 833 0 R 830 0 R 829 0 R]
+[883 0 R 883 0 R 882 0 R 881 0 R 880 0 R 880 0 R 880 0 R 879 0 R 878 0 R 877 0 R 875 0 R 874 0 R 872 0 R 871 0 R 869 0 R 868 0 R 865 0 R 865 0 R 865 0 R 865 0 R 864 0 R 863 0 R 863 0 R 863 0 R 862 0 R 861 0 R 861 0 R 861 0 R 860 0 R 859 0 R 858 0 R 857 0 R 855 0 R 854 0 R 851 0 R 850 0 R 848 0 R 847 0 R 844 0 R 843 0 R 841 0 R 840 0 R 837 0 R 836 0 R 834 0 R 833 0 R 830 0 R 829 0 R]
 endobj
 
 21 0 obj
@@ -233,7 +233,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [77 78 79 80]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -243,7 +243,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [67 31 0 R 69 29 0 R 71 72 73 74 75 76]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -266,7 +266,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [70]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -277,8 +277,8 @@ endobj
   /P 28 0 R
   /K [32 0 R <<
     /Type /OBJR
-    /Pg 948 0 R
-    /Obj 947 0 R
+    /Pg 954 0 R
+    /Obj 953 0 R
   >>]
 >>
 endobj
@@ -293,7 +293,7 @@ endobj
     /TextDecorationType /Underline
   >>]
   /K [68]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -304,7 +304,7 @@ endobj
   /P 26 0 R
   /T (Solutions)
   /K [66]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -314,7 +314,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [62 63 64 65]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -325,7 +325,7 @@ endobj
   /P 26 0 R
   /T (Conclusion)
   /K [61]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -365,7 +365,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [60]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -392,7 +392,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [59]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -419,7 +419,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [58]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -446,7 +446,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [57]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -486,7 +486,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [56]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -513,7 +513,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [55]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -540,7 +540,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [54]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -567,7 +567,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [52 53]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -594,7 +594,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [51]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -621,7 +621,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [50]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -648,7 +648,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [49]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -675,7 +675,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [48]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -702,7 +702,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [47]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -729,7 +729,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [46]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -756,7 +756,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [45]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -783,7 +783,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [44]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -810,7 +810,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [43]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -837,7 +837,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [42]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -864,7 +864,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [41]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -904,7 +904,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [40]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -931,7 +931,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [39]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -958,7 +958,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [38]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -985,7 +985,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [36 37]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1012,7 +1012,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [35]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1039,7 +1039,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [34]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1066,7 +1066,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [33]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1093,7 +1093,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [32]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1120,7 +1120,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [31]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1147,7 +1147,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [30]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1174,7 +1174,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [29]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1201,7 +1201,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [28]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1228,7 +1228,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [27]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1255,7 +1255,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [26]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1282,7 +1282,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [25]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1322,7 +1322,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [24]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1349,7 +1349,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [23]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1376,7 +1376,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [22]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1403,7 +1403,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [21]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1430,7 +1430,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [20]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1457,7 +1457,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [19]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1497,7 +1497,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [18]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1524,7 +1524,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [17]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1551,7 +1551,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [16]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1578,7 +1578,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [15]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1605,7 +1605,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [13 14]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1632,7 +1632,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [12]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1659,7 +1659,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [11]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1686,7 +1686,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [10]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1713,7 +1713,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [9]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1740,7 +1740,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [8]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1767,7 +1767,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [7]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1807,7 +1807,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [6]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1817,7 +1817,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [4 5]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1827,7 +1827,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [2 3]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1841,7 +1841,7 @@ endobj
     /Placement /Block
   >>]
   /K [0 1]
-  /Pg 948 0 R
+  /Pg 954 0 R
 >>
 endobj
 
@@ -1873,7 +1873,7 @@ endobj
   /S /LBody
   /P 150 0 R
   /K [154 0 R 111 152 0 R 113 114]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -1896,7 +1896,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [112]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -1919,7 +1919,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [110]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -1929,7 +1929,7 @@ endobj
   /S /Lbl
   /P 150 0 R
   /K [109]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -1948,7 +1948,7 @@ endobj
   /S /LBody
   /P 157 0 R
   /K [159 0 R 108]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -1971,7 +1971,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [107]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -1981,7 +1981,7 @@ endobj
   /S /Lbl
   /P 157 0 R
   /K [106]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2000,7 +2000,7 @@ endobj
   /S /LBody
   /P 162 0 R
   /K [164 0 R 105]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2023,7 +2023,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [104]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2033,7 +2033,7 @@ endobj
   /S /Lbl
   /P 162 0 R
   /K [103]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2052,7 +2052,7 @@ endobj
   /S /LBody
   /P 167 0 R
   /K [169 0 R 102]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2075,7 +2075,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [101]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2085,7 +2085,7 @@ endobj
   /S /Lbl
   /P 167 0 R
   /K [100]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2095,7 +2095,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [99]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2135,7 +2135,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [98]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2162,7 +2162,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [97]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2189,7 +2189,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [96]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2216,7 +2216,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [95]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2243,7 +2243,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [94]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2270,7 +2270,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [93]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2297,7 +2297,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [92]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2324,7 +2324,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [91]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2351,7 +2351,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [90]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2391,7 +2391,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [89]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2418,7 +2418,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [88]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2445,7 +2445,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [87]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2472,7 +2472,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [86]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2499,7 +2499,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [85]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2526,7 +2526,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [84]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2553,7 +2553,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [83]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2580,7 +2580,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [82]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2607,7 +2607,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [81]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2617,7 +2617,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [80]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2657,7 +2657,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [79]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2697,7 +2697,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [78]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2724,7 +2724,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [77]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2751,7 +2751,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [76]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2778,7 +2778,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [75]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2805,7 +2805,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [74]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2832,7 +2832,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [73]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2859,7 +2859,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [72]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2899,7 +2899,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [71]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2926,7 +2926,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [70]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2966,7 +2966,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [69]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -2993,7 +2993,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [68]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3020,7 +3020,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [67]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3047,7 +3047,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [66]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3074,7 +3074,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [65]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3114,7 +3114,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [64]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3141,7 +3141,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [63]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3181,7 +3181,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [62]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3208,7 +3208,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [61]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3248,7 +3248,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [60]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3275,7 +3275,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [59]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3302,7 +3302,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [58]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3329,7 +3329,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [57]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3369,7 +3369,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [56]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3396,7 +3396,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [55]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3423,7 +3423,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [54]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3450,7 +3450,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [53]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3477,7 +3477,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [52]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3504,7 +3504,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [51]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3531,7 +3531,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [50]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3558,7 +3558,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [49]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3585,7 +3585,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [48]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3612,7 +3612,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [47]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3639,7 +3639,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [46]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3679,7 +3679,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [45]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3706,7 +3706,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [44]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3733,7 +3733,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [43]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3760,7 +3760,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [42]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3787,7 +3787,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [41]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3827,7 +3827,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [40]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3854,7 +3854,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [39]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3881,7 +3881,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [38]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3908,7 +3908,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [37]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3935,7 +3935,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [36]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3962,7 +3962,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [35]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -3989,7 +3989,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [34]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4029,7 +4029,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [33]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4061,7 +4061,7 @@ endobj
   /S /LBody
   /P 318 0 R
   /K [30 31 32]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4071,7 +4071,7 @@ endobj
   /S /Lbl
   /P 318 0 R
   /K [29]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4111,7 +4111,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [28]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4138,7 +4138,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [27]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4170,7 +4170,7 @@ endobj
   /S /LBody
   /P 327 0 R
   /K [26]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4180,7 +4180,7 @@ endobj
   /S /Lbl
   /P 327 0 R
   /K [25]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4220,7 +4220,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [24]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4247,7 +4247,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [23]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4279,7 +4279,7 @@ endobj
   /S /LBody
   /P 336 0 R
   /K [22]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4289,7 +4289,7 @@ endobj
   /S /Lbl
   /P 336 0 R
   /K [21]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4299,7 +4299,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [19 20]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4310,7 +4310,7 @@ endobj
   /P 26 0 R
   /T (Section 5 - Solving the Model)
   /K [18]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4350,7 +4350,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [17]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4377,7 +4377,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [15 16]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4404,7 +4404,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [14]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4431,7 +4431,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [13]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4471,7 +4471,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [12]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4498,7 +4498,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [11]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4525,7 +4525,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [10]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4552,7 +4552,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [9]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4592,7 +4592,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [8]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4619,7 +4619,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [7]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4646,7 +4646,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [6]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4673,7 +4673,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [5]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4700,7 +4700,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [4]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4727,7 +4727,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [3]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4754,7 +4754,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [2]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4781,7 +4781,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [1]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4821,7 +4821,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [0]
-  /Pg 945 0 R
+  /Pg 951 0 R
 >>
 endobj
 
@@ -4861,7 +4861,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [87]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4871,7 +4871,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [81 82 385 0 R 84 383 0 R 86]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4894,7 +4894,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [85]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4917,7 +4917,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [83]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4928,7 +4928,7 @@ endobj
   /P 26 0 R
   /T (Exercise 4.1 - Create the Objective Function)
   /K [80]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4938,7 +4938,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [75 391 0 R 77 389 0 R 79]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4961,7 +4961,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [78]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -4984,7 +4984,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [76]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5024,7 +5024,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [74]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5051,7 +5051,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [73]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5078,7 +5078,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [72]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5105,7 +5105,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [71]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5132,7 +5132,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [70]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5159,7 +5159,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [69]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5186,7 +5186,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [68]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5213,7 +5213,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [67]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5240,7 +5240,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [66]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5267,7 +5267,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [65]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5277,7 +5277,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [64]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5309,7 +5309,7 @@ endobj
   /S /LBody
   /P 416 0 R
   /K [418 0 R 63]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5332,7 +5332,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [62]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5342,7 +5342,7 @@ endobj
   /S /Lbl
   /P 416 0 R
   /K [61]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5361,7 +5361,7 @@ endobj
   /S /LBody
   /P 421 0 R
   /K [427 0 R 56 425 0 R 58 423 0 R 60]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5384,7 +5384,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [59]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5407,7 +5407,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [57]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5430,7 +5430,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [55]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5440,7 +5440,7 @@ endobj
   /S /Lbl
   /P 421 0 R
   /K [54]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5459,7 +5459,7 @@ endobj
   /S /LBody
   /P 430 0 R
   /K [432 0 R 53]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5482,7 +5482,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [52]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5492,7 +5492,7 @@ endobj
   /S /Lbl
   /P 430 0 R
   /K [51]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5502,7 +5502,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [50]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5542,7 +5542,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [49]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5569,7 +5569,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [48]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5579,7 +5579,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [47]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5589,7 +5589,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [43 44 443 0 R 46]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5612,7 +5612,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [45]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5623,7 +5623,7 @@ endobj
   /P 26 0 R
   /T (Section 4 - Defining the Objective Function)
   /K [42]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5663,7 +5663,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [41]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5690,7 +5690,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [39 40]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5717,7 +5717,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [38]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5744,7 +5744,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [37]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5784,7 +5784,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [36]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5811,7 +5811,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [35]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5838,7 +5838,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [34]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5865,7 +5865,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [33]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5905,7 +5905,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [32]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5932,7 +5932,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [31]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5959,7 +5959,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [30]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -5986,7 +5986,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [29]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6026,7 +6026,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [28]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6053,7 +6053,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [27]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6080,7 +6080,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [26]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6107,7 +6107,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [25]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6147,7 +6147,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [24]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6174,7 +6174,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [23]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6201,7 +6201,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [22]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6228,7 +6228,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [21]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6268,7 +6268,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [20]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6308,7 +6308,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [19]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6318,7 +6318,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [12 13 500 0 R 15 16 498 0 R 18]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6341,7 +6341,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [17]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6364,7 +6364,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [14]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6375,7 +6375,7 @@ endobj
   /P 26 0 R
   /T (Exercise 3.1 - Create Constraints)
   /K [11]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6385,7 +6385,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [0 510 0 R 2 3 508 0 R 5 506 0 R 7 504 0 R 9 10]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6408,7 +6408,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [8]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6431,7 +6431,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [6]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6454,7 +6454,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [4]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6477,7 +6477,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [1]
-  /Pg 943 0 R
+  /Pg 949 0 R
 >>
 endobj
 
@@ -6517,7 +6517,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [116]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6544,7 +6544,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [115]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6571,7 +6571,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [114]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6598,7 +6598,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [113]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6625,7 +6625,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [112]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6652,7 +6652,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [111]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6679,7 +6679,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [110]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6706,7 +6706,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [109]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6733,7 +6733,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [108]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6760,7 +6760,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [107]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6770,7 +6770,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [106]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6802,7 +6802,7 @@ endobj
   /S /LBody
   /P 535 0 R
   /K [537 0 R 105]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6825,7 +6825,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [104]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6835,7 +6835,7 @@ endobj
   /S /Lbl
   /P 535 0 R
   /K [103]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6854,7 +6854,7 @@ endobj
   /S /LBody
   /P 540 0 R
   /K [542 0 R 100 101 102]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6877,7 +6877,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [99]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6887,7 +6887,7 @@ endobj
   /S /Lbl
   /P 540 0 R
   /K [98]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6906,7 +6906,7 @@ endobj
   /S /LBody
   /P 545 0 R
   /K [547 0 R 97]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6929,7 +6929,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [96]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6939,7 +6939,7 @@ endobj
   /S /Lbl
   /P 545 0 R
   /K [95]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6949,7 +6949,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [94]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -6989,7 +6989,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [93]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7016,7 +7016,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [92]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7026,7 +7026,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [91]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7036,7 +7036,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [86 87 88 558 0 R 90]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7059,7 +7059,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [89]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7070,7 +7070,7 @@ endobj
   /P 26 0 R
   /T (Section 3 - Adding Constraints)
   /K [85]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7110,7 +7110,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [84]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7137,7 +7137,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [83]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7164,7 +7164,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [82]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7191,7 +7191,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [81]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7231,7 +7231,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [80]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7258,7 +7258,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [79]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7285,7 +7285,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [78]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7312,7 +7312,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [77]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7339,7 +7339,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [76]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7366,7 +7366,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [75]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7393,7 +7393,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [74]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7433,7 +7433,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [73]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7460,7 +7460,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [72]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7487,7 +7487,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [71]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7514,7 +7514,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [70]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7541,7 +7541,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [69]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7568,7 +7568,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [68]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7595,7 +7595,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [67]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7635,7 +7635,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [66]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7662,7 +7662,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [65]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7689,7 +7689,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [64]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7716,7 +7716,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [63]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7743,7 +7743,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [62]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7770,7 +7770,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [61]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7797,7 +7797,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [60]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7837,7 +7837,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [59]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7864,7 +7864,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [58]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7891,7 +7891,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [57]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7918,7 +7918,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [56]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7945,7 +7945,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [55]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -7972,7 +7972,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [54]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8012,7 +8012,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [53]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8039,7 +8039,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [52]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8066,7 +8066,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [51]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8093,7 +8093,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [50]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8133,7 +8133,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [49]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8160,7 +8160,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [48]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8187,7 +8187,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [47]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8214,7 +8214,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [46]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8241,7 +8241,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [45]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8268,7 +8268,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [44]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8295,7 +8295,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [43]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8335,7 +8335,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [42]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8362,7 +8362,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [41]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8389,7 +8389,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [40]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8416,7 +8416,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [39]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8443,7 +8443,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [38]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8470,7 +8470,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [37]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8497,7 +8497,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [36]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8537,7 +8537,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [35]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8564,7 +8564,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [34]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8591,7 +8591,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [33]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8618,7 +8618,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [32]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8645,7 +8645,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [31]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8672,7 +8672,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [30]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8699,7 +8699,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [29]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8739,7 +8739,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [28]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8766,7 +8766,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [27]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8793,7 +8793,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [26]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8820,7 +8820,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [25]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8847,7 +8847,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [24]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8874,7 +8874,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [23]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8914,7 +8914,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [22]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8941,7 +8941,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [21]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8968,7 +8968,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [20]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -8995,7 +8995,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [19]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9035,7 +9035,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [18]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9075,7 +9075,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [17]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9085,7 +9085,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [9 715 0 R 11 713 0 R 13 14 711 0 R 16]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9108,7 +9108,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [15]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9131,7 +9131,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [12]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9154,7 +9154,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [10]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9165,7 +9165,7 @@ endobj
   /P 26 0 R
   /T (Exercise 2.1 - Create Variables)
   /K [8]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9175,7 +9175,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [7]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9215,7 +9215,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [6]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9242,7 +9242,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [5]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9269,7 +9269,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [4]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9296,7 +9296,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [3]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9323,7 +9323,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [2]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9350,7 +9350,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [1]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9360,7 +9360,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [0]
-  /Pg 941 0 R
+  /Pg 947 0 R
 >>
 endobj
 
@@ -9392,7 +9392,7 @@ endobj
   /S /LBody
   /P 734 0 R
   /K [736 0 R 60]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9415,7 +9415,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [59]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9425,7 +9425,7 @@ endobj
   /S /Lbl
   /P 734 0 R
   /K [58]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9444,7 +9444,7 @@ endobj
   /S /LBody
   /P 739 0 R
   /K [741 0 R 57]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9467,7 +9467,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [56]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9477,7 +9477,7 @@ endobj
   /S /Lbl
   /P 739 0 R
   /K [55]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9496,7 +9496,7 @@ endobj
   /S /LBody
   /P 744 0 R
   /K [746 0 R 54]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9519,7 +9519,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [53]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9529,7 +9529,7 @@ endobj
   /S /Lbl
   /P 744 0 R
   /K [52]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9539,7 +9539,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [51]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9579,7 +9579,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [50]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9606,7 +9606,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [49]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9616,7 +9616,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [46 756 0 R 48]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9639,7 +9639,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [47]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9649,7 +9649,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [43 44 45]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9660,7 +9660,7 @@ endobj
   /P 26 0 R
   /T (Section 2 - Adding Variables)
   /K [42]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9670,7 +9670,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [41]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9680,7 +9680,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [35 764 0 R 37 762 0 R 39 40]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9703,7 +9703,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [38]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9726,7 +9726,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [36]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9766,7 +9766,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [34]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9806,7 +9806,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [33]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9833,7 +9833,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [32]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9860,7 +9860,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [31]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9887,7 +9887,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [30]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9927,7 +9927,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [29]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9954,7 +9954,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [28]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -9981,7 +9981,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [27]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10008,7 +10008,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [26]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10035,7 +10035,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [25]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10045,7 +10045,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [24]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10055,7 +10055,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [22 23]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10066,7 +10066,7 @@ endobj
   /P 26 0 R
   /T (Section 1 - Defining an Optimization Model)
   /K [21]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10076,7 +10076,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [20]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10116,7 +10116,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [19]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10143,7 +10143,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [18]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10170,7 +10170,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [17]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10197,7 +10197,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [16]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10224,7 +10224,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [15]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10234,7 +10234,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [14]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10274,7 +10274,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [13]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10301,7 +10301,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [12]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10328,7 +10328,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [11]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10355,7 +10355,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [10]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10382,7 +10382,7 @@ endobj
     /BackgroundColor [1 0.93333334 0.8862745]
   >>]
   /K [9]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10392,7 +10392,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [7 8]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10403,7 +10403,7 @@ endobj
   /P 26 0 R
   /T (Setting Up)
   /K [6]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10413,7 +10413,7 @@ endobj
   /S /P
   /P 26 0 R
   /K [4 5]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10458,7 +10458,7 @@ endobj
   /S /LBody
   /P 821 0 R
   /K [3]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10468,7 +10468,7 @@ endobj
   /S /Lbl
   /P 821 0 R
   /K [2]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10487,7 +10487,7 @@ endobj
   /S /LBody
   /P 824 0 R
   /K [1]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10497,7 +10497,7 @@ endobj
   /S /Lbl
   /P 824 0 R
   /K [0]
-  /Pg 939 0 R
+  /Pg 945 0 R
 >>
 endobj
 
@@ -10524,8 +10524,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 828 0 R
-  /K [48]
-  /Pg 937 0 R
+  /K [47]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10534,8 +10534,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 827 0 R
-  /K [47]
-  /Pg 937 0 R
+  /K [46]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10566,8 +10566,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 832 0 R
-  /K [46]
-  /Pg 937 0 R
+  /K [45]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10576,8 +10576,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 832 0 R
-  /K [45]
-  /Pg 937 0 R
+  /K [44]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10595,8 +10595,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 835 0 R
-  /K [44]
-  /Pg 937 0 R
+  /K [43]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10605,8 +10605,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 835 0 R
-  /K [43]
-  /Pg 937 0 R
+  /K [42]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10633,8 +10633,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 839 0 R
-  /K [42]
-  /Pg 937 0 R
+  /K [41]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10643,8 +10643,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 838 0 R
-  /K [41]
-  /Pg 937 0 R
+  /K [40]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10662,8 +10662,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 842 0 R
-  /K [40]
-  /Pg 937 0 R
+  /K [39]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10672,8 +10672,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 842 0 R
-  /K [39]
-  /Pg 937 0 R
+  /K [38]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10704,8 +10704,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 846 0 R
-  /K [38]
-  /Pg 937 0 R
+  /K [37]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10714,8 +10714,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 846 0 R
-  /K [37]
-  /Pg 937 0 R
+  /K [36]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10733,8 +10733,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 849 0 R
-  /K [36]
-  /Pg 937 0 R
+  /K [35]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10743,8 +10743,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 849 0 R
-  /K [35]
-  /Pg 937 0 R
+  /K [34]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10771,8 +10771,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 853 0 R
-  /K [34]
-  /Pg 937 0 R
+  /K [33]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10781,8 +10781,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 852 0 R
-  /K [33]
-  /Pg 937 0 R
+  /K [32]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10800,8 +10800,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 856 0 R
-  /K [32]
-  /Pg 937 0 R
+  /K [31]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10810,8 +10810,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 856 0 R
-  /K [31]
-  /Pg 937 0 R
+  /K [30]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10820,8 +10820,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [30]
-  /Pg 937 0 R
+  /K [29]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10831,8 +10831,8 @@ endobj
   /S /H2
   /P 26 0 R
   /T (Our Example Problem)
-  /K [29]
-  /Pg 937 0 R
+  /K [28]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10841,8 +10841,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [26 27 28]
-  /Pg 937 0 R
+  /K [25 26 27]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10852,8 +10852,8 @@ endobj
   /S /H2
   /P 26 0 R
   /T (What is HiGHS?)
-  /K [25]
-  /Pg 937 0 R
+  /K [24]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10862,8 +10862,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [22 23 24]
-  /Pg 937 0 R
+  /K [21 22 23]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10873,8 +10873,8 @@ endobj
   /S /H2
   /P 26 0 R
   /T (What is JuMP?)
-  /K [21]
-  /Pg 937 0 R
+  /K [20]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10883,8 +10883,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [17 18 19 20]
-  /Pg 937 0 R
+  /K [16 17 18 19]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10915,8 +10915,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 867 0 R
-  /K [16]
-  /Pg 937 0 R
+  /K [15]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10925,8 +10925,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 867 0 R
-  /K [15]
-  /Pg 937 0 R
+  /K [14]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10944,8 +10944,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 870 0 R
-  /K [14]
-  /Pg 937 0 R
+  /K [13]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10954,8 +10954,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 870 0 R
-  /K [13]
-  /Pg 937 0 R
+  /K [12]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10973,8 +10973,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 873 0 R
-  /K [12]
-  /Pg 937 0 R
+  /K [11]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -10983,8 +10983,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 873 0 R
-  /K [11]
-  /Pg 937 0 R
+  /K [10]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11002,8 +11002,8 @@ endobj
   /Type /StructElem
   /S /LBody
   /P 876 0 R
-  /K [10]
-  /Pg 937 0 R
+  /K [9]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11012,8 +11012,8 @@ endobj
   /Type /StructElem
   /S /Lbl
   /P 876 0 R
-  /K [9]
-  /Pg 937 0 R
+  /K [8]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11022,8 +11022,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [8]
-  /Pg 937 0 R
+  /K [7]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11032,8 +11032,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [5 6 7]
-  /Pg 937 0 R
+  /K [4 5 6]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11043,8 +11043,8 @@ endobj
   /S /H1
   /P 26 0 R
   /T (Introduction)
-  /K [4]
-  /Pg 937 0 R
+  /K [3]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11053,8 +11053,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [3]
-  /Pg 937 0 R
+  /K [2]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11063,8 +11063,8 @@ endobj
   /Type /StructElem
   /S /P
   /P 26 0 R
-  /K [0 1 2]
-  /Pg 937 0 R
+  /K [0 1]
+  /Pg 943 0 R
 >>
 endobj
 
@@ -11120,7 +11120,7 @@ endobj
 <<
   /Type /Font
   /Subtype /Type0
-  /BaseFont /DYPWYP+Gelasio-Regular
+  /BaseFont /VSHONM+Gelasio-Bold
   /Encoding /Identity-H
   /DescendantFonts [891 0 R]
   /ToUnicode 894 0 R
@@ -11131,7 +11131,7 @@ endobj
 <<
   /Type /Font
   /Subtype /CIDFontType2
-  /BaseFont /DYPWYP+Gelasio-Regular
+  /BaseFont /VSHONM+Gelasio-Bold
   /CIDSystemInfo <<
     /Registry (Adobe)
     /Ordering (Identity)
@@ -11140,7 +11140,7 @@ endobj
   /FontDescriptor 893 0 R
   /DW 0
   /CIDToGIDMap /Identity
-  /W [0 0 1000 1 1 618.65234 2 2 575.1953 3 3 345.21484 4 4 539.0625 5 5 409.66797 6 6 292.96875 7 7 503.90625 8 8 286.1328 9 9 241.21094 10 10 389.64844 11 11 269.53125 12 12 374.02344 13 13 590.8203 14 14 574.21875 15 15 454.10156 16 16 927.2461 17 17 582.03125 18 18 483.39844 19 19 880.8594 20 20 744.1406 21 21 571.28906 22 22 443.84766 23 23 737.3047 24 24 517.5781 25 25 609.8633 26 26 814.9414 27 27 725.09766 28 28 561.03516 29 29 975.58594 30 30 432.1289 31 31 478.51562 32 32 653.3203 33 33 504.8828 34 34 560.0586 35 35 509.27734 36 36 756.34766 37 37 429.6875 38 38 749.02344 39 39 582.51953 40 40 558.59375 41 41 670.89844 42 42 666.5039 43 43 642.08984 44 44 551.7578 45 45 564.9414 46 46 291.9922 47 47 496.58203 48 48 599.1211 49 49 528.3203]
+  /W [0 0 1000 1 1 684.08203 2 2 676.7578 3 3 397.46094 4 4 635.7422 5 5 520.01953 6 6 353.51562 7 7 595.7031 8 8 344.23828 9 9 253.90625 10 10 445.80078 11 11 328.125 12 12 378.90625 13 13 689.9414 14 14 663.08594 15 15 531.25 16 16 1023.4375 17 17 679.6875 18 18 571.77734 19 19 1015.625 20 20 819.8242 21 21 657.71484 22 22 525.3906 23 23 863.28125 24 24 595.21484 25 25 701.1719 26 26 913.08594 27 27 807.1289 28 28 648.9258 29 29 1126.4648 30 30 512.6953 31 31 548.33984 32 32 721.1914 33 33 587.8906 34 34 645.5078 35 35 576.66016 36 36 833.4961 37 37 489.7461 38 38 833.9844 39 39 694.8242 40 40 626.46484 41 41 758.3008 42 42 762.20703 43 43 715.33203 44 44 624.5117 45 45 649.41406 46 46 346.1914 47 47 566.89453 48 48 671.3867 49 49 599.1211]
 >>
 endobj
 
@@ -11157,14 +11157,14 @@ endobj
 893 0 obj
 <<
   /Type /FontDescriptor
-  /FontName /DYPWYP+Gelasio-Regular
+  /FontName /VSHONM+Gelasio-Bold
   /Flags 131076
-  /FontBBox [-59.08203 -234.375 995.1172 768.0664]
+  /FontBBox [-91.796875 -232.91016 1143.5547 768.0664]
   /ItalicAngle 0
   /Ascent 927.7344
   /Descent -341.79688
   /CapHeight 692.8711
-  /StemV 95.4
+  /StemV 168.6
   /CIDSet 892 0 R
   /FontFile2 895 0 R
 >>
@@ -11261,41 +11261,45 @@ endobj
 
 895 0 obj
 <<
-  /Length 6090
+  /Length 6438
   /Filter /FlateDecode
 >>
 stream
-xœY	x×µ>÷ÎŒdkKy•5’%ÙØ–l­Þ7¼€mÀ»Á8^ ƒÆ³´ÐBH[ 	I $ÐP>’–/-i’—&!|mÓ&ÍÒ4@›„Ò–¼Bðè}w$Ù²CúÐ÷ùóhîÕÌ½çüç?ÿ9 DÃ÷Í¢þµçïñý HþmoO÷‚´G3¿0€¯··§[µo 0€”Þ¥+‡¯¼'{Àô ü®Ùüî%¿ÿ= ÿ ô/í„20+ À4Ð½´'­¹ü~ s ú|pÙŠ•«¾¬ú ECÞ98Ô3Ø+yh@Êq E'ÕIä@´ <Ë³Vžåµù2 $ED÷MSòÍ+¡¥Â®vÔ‡úÚ…]hi»°OØ'‘ÿûŸmLë­ÑZÑ"ìDËZ„íÂŽf4 <
-ì ô¯˜ÈàÍ6¯Ç_„½Z‹Y…¥‰ÅlóQnÞeÄùfwP¥ã8ÇéuªdYÞÙYŒ„ô^±V#OCX*“Iè‰L&E©rcµ)'}MíLÕ«Y6UÎÓ”Ún¥‡ê–÷ÆjU,›½}[{û¶íÙ,«ÒÆö.¯»µ3Ý® °Â O@¸L7SB c¶Ù¼¬Çf³Ûl^ÏÍ»ô¬ŽãÜ.Ÿÿ[wÉM§×÷a³«0úbÚí¾8½:FƒÔVµ?¿gCvV¥Yüî´ÆiTzkÈzêù,#Ãv~/!óû÷â¤t»c%'7¦ŒÎŠ­ôù=xVºMI…n%NÏ¦i†WË¹ÛTá7U{ÈšKø#‡Ìðš-diî"ì÷ùÜ.NÏòAòáåû8NªÂèhÛ w…B‘XÒc ¸]4²+¬\ø£ÙWQo•éR}Ób£wp6>ŽôŠt©x¡:J¦þ†ô
-½iô‰æ9|Bœ41Eã¶†ÏhŠºjH ÐzÄ—“‹&ñ‹Fòzl³dÆŠ÷÷îýíÀò÷öî}wðý}û“?tõ‘¿nßþ×G¹º}ûÕGÎ]¼xîÜÅKd… Tu| n5>_„_ü>ŸßÅôExìuv³D"eÇ‘³†eù´Oe‚L¥”/x,=J‡“§·””pÎB]§qj^Ln½™ÀÅ(çi:Ç÷9dRF£U‘D†4±;³çäM)±Ø²c‡µ£Ÿ…!cÀ€ÝÌóØ1Š\È º_Q¡n€Šüž"ì÷zld÷R)ÙY®;^o¤½ü¬
-w÷¿°À:§.}Šr8gnî’}ËG¦Çs•>†5Hâ{‹<žÒ}}›Û~3£¬q•±ÿh÷×ó7ÍH“°ÎòË%×Ý¥™eöœŽB¬½œbDøhÓ3ªuåÓ<+{Š;sŒ¨Kã^J,0+á %ÂÒÚÉ–Ž0ìtž·Ö¡¼Ú™J¡XpœX6-7V¯ÖÇÄiDSÒ?›Ò„$ib¿yU4žš‰'oìÀ/2#„îðF7ï
-FÁûX–ÏêFîÊdâ2ôïÐ×*c0àÍym^8jRCwn½‘nSÐcqþ@à*z!ßˆQ"rÎõùùùùõërfÍÊÉii!s£¿ãÝx ( ­—×/ÆSÐß7n$#™ ôêT2ÝÈŒ°›H~¾ðlK®¡ÁE,Ë[gù*ãˆM»ŸH‹Òá˜e‡:J—–e•Ä±–šYV¡5U«ýùE+Ûk¬aè2ñÐ5!	¥‰Œ©¯´.é}!Ë&¥E1Ê5:„Í‰x;›•’–?z¼$I´‹‘ ¶=ð½FÂsŒƒql°{=Ú—¸!ÃøŠ	uK$v×ànô:ŽÃÊ'~ÑÜuî`Ã#Yzq±Žìfê¶å‰Q:\ñ§9zäy:*o3Ÿ8Ô¸l­#k]Òîk[·^ÛcÉüÑWN§VÊ·AÓ"lÂ«t9s+:Ë2ðF¯gðÕuk^[*ŸQK©AÄá%‘ÝžE–EV%›Ï` CR‰ÃGŸnxoKËÓƒNoŠI²©›ÒÒ×î›³ÁS»ÑDI£]rgœHBÆ¯]Yçša+‹7N1¨ùŸé_¹úø©™%5c`¢è(jöÁC=€4ÇCŽÄÜÈçóß	ÔéY%+÷²,ŸZç/h†þzÈ®‹—¢Ÿï™.4À²¼©Ê…¬B£[H±–µ¥Œ%@…}
-Î,vtë3j°`–™Mq²2ž£û¾	0èÖ™	™Q@? á ö?a¥îìáÑjí"7+‘Åê(ø¸§xb#ð>_(M¬0O½È8Á<AÏêð‰q…¼O‚²Š9L‚u—¿ÜxaÍÆ'[c¤ÌèfÔ°¡Œ`F"1sHxìQµ '	¾yîòêÖ.²5eüyCE‰DtMÍÂ‹%'ö8¶û:$ÿ¢nÀÐ]p‰á.¬,Õéîšrúî@9t9»gªu÷wM½õtìÉHÏÞìwÐ²–ÿŸâ+Ë¹™%ÿÁE­6©F:úöÝP†ŽÀgÌ^æ°À{=1)n£×a‘•b¼LvŒõºß<xóù9‡ãÝw‘ý‡süïÏþ´jú™#Ïžª˜~:iåy¤:pÕ¾þºðÓó„ëçWv<,çÎ!ÓþýÂ§çÎ	|‚ F.´Ð>êx¡@´ìÄP¹k‚²‰8²h]>"†DG±W ‰QëãrÒÂ.xŽ¸À{ òàÙ¦Î·ÎqÊüõ©<Ë¦®Ét®ôßk1-F¹A)…=f&Z¹Ø_ºçÚÖûÿ¶Ç”6-ÀÅ+)š—ÑWC¯¿º¼ mt©ÓÌ T#u	Ü!ÄùüÈoàÇÕ¸–P–˜¥Hjç]aA)¥ti•"Î EwH„=¼/5V”ãz¤3©ñ³
-.&J°lÔ¢ƒ|¾#Qá°Î¤ÖêY["~imrQk]ÑâÈÃ!ƒJo–VÌ*Û£S²¬ðžV PàBà&óu‰Dƒ¾-	´Z·6(Æn“ø”"¢ÐAá‚ÑoÅöîŠ÷¯tÎ¥çÅñ,‹*XV­·f…÷«…›_GS•.>4ž¦Y~ô>;Z‰§qú(ÑrF9§Ä4ïºýþõh È\¢>aF CD\ha.NO‰	æŽ†Õ©0Ú=õá2§µµ29=ÃØèî»¥äYý7,Ëg4Ìy`§Ñ•ãX’=§W/^2$>C„y;,dn¿¾ëÌAa ý8³ÒÁgõävÃ/2¥PnWÑg™ ¦þ4ï¢Õ<´å‹½'*:mäÎ;Ï'vÍ/ïÚ]·-”."”•¢þÌã÷Ÿ_)ìËx“yÖÖ(Š¬N’%*»YÐx÷êŽ¿ËyÈËëÅÅ·"GiP	^ ÑÓuâ	£·ž¡,w£ïf>ÙßO¼)p‰yŠ9F81;(¯§ˆ"$ å$s° Åv³ŠÒëÄœÉî Va|½áôÉ‡[Zw~uÎkïz9¯ JÉaÃ‚§V8V/,îÚýdIïšìÜF;Ù
-¦xfK5?5:ûŽßxöÈÍýÙ¥ámÖ€”š¦­(iæÎËÏž¾¹«$µÈ„ÐdD	rÓó Á@àÆƒÎ0ª	9©Àçñz‚ 7pœ!´~²|e·“‘˜&E!tÙ/ƒ#EPˆ‡V¬7'¦°RMTŒM­5 Ì%Ç¤Ë$I©)ËÖy‡jæî¬«Øº¬Sµ÷î®¨[RªŒÕªäE©4éÔ	XžQXÝ˜QÑ_xÏÎ¥#Ã5«ß4æ±jN*ã´	zÝýü£Îø¸)q÷´ÔvfØzçU¯êJµÔ/Ú:gÑÎ¶)qñ1ÑRƒºpù<[rœ*ºta­;ÎÑ×V²´+ÓÖÜw_ÓæŸ´
-Ü\“Þ`FÀK8',xÇÝ£3 äF(¸÷HÞQaÂ;§
-k¼¹bÕ/ú¥hF:Tßæ#%òÖ¥ú9Kè'¶Ð£FÖ…—bèe$á°Kxš¦â©¨ÛzÎ­ÃÔ_)F§À˜æÉ§Ä%eÞŠ¢Soý ®<ð9å h
-yŒ˜›Ôžè¬ ¯ÂÊ&¨h‚E^ô–ÝCÎ2±^'A§f'N‰Qj4*Ö@Kh½2A"ÑÙâg¶X[‡ë×M]5½oUçœ8N*‘°ÑJ%aåqëíjò×Øîœ¹­ù—‰Æ(¥D£1Í¨-ÓtW:ÍéÕWWÖä&›ë×´ÍYg7Èä²6º&ÓY¨Òk4©]•|~Zy»ÓZß?kä8`¨
-\¥v2ÿ‚TR_#Td{d­Ù¡Š™èæ Ï©(½žSYpsh{IÇ=%:×ÜªòÖ´T&99¹&†[üÜàþÓõÃÃ®üz±ÞCkçn^¼xS›³¯=/+ë
-§É)±;ò§¯z±½aëºµÛš…-9Á’Ø0ïEæ!¨"ÕãD¡æ¶ŠñN¬maXÿx&Ø"ê.kØŠ1Ûúø¬y!ž¢~gÁ‰rMŠ"Õ]èŽO ‘¨EP2FIŽÄÏsx”Ôv
-ãÔh±ëÖÇ,ëžLÍHøËÊ¹š7½„èòY:‚e…
-Òõâš§!!Áo£ÐÚ}$¡T@  ®S— -ÄÕ$Zj"C: Ñj	¢"GUPÚ;¨M¢Äß²Y–w—Æ_ûÂZdÓ°,‹~À²r]l¦T²ï°¬ ^«`Y4•Ì™štá–Íaõåv2ÇàPžx9*?N''âÒšŸˆòPG¦•	+D-¦h–QÉ…ëÔ2.†"ºÃh”[ý&ááá	3±\#W!ðJË'|ø”N–pù sdót&Iy#è2û|ÖH!gÄ/ëU¹5b-ãêh*Ó“jÆ¼`Àuàlk÷[?,\Þ–Èfd Þþ5Îìµýy›ymñlÇ1ÎqùFÑ‘2æò”"ónQÃiö„¬äî x+ËÝlq€‚\ÁDÇQ@=Á#2‹áí.w¼nÇ¹Å.‘HÇ”¨èF7ÙŠTG4rX=;$PÃŽn.xfuÉâ<¿kvneqëáå›ñÍž²Ê¬Ä>.96§õÐrO}¼Õ4³àÒâ]3Ð‚76¥ötævä¼˜æMQ³|Ãf[yuâ´…å5‰ÆZÁ”Õ¼¼ln;ÛZX¼Vã<PsÏcs\™¹sJ³|G˜¸¤†¹Ú£•JO’7Ï¹quóS½ÝÚì–©¾âx&šÑWå6ôfQ¾²ee=÷——-+#1YøŒù”\ D…üóm¡ÂDD|Wúe4øÞËOúj(¬)°†eys}zòðÁãå¥‰cjmÆ<úÂ¨ïÔõuÞx_˜R±*žûòâŠ·ïÃš-ê°nHAt6Yé^ Š¥€uLw“º?Äej~w„ÐyÄ¬©¡¥ÏÎHÐªõ†Šºzs'Êk“øÊxŽê5ûäÂš¤ô„[ÿˆORQHªp» ˜“Ì$-}‡êÒÍst?-V±IBðàÀËC¢h
-QnzÅþ¨¶á¡“/·	WLsZçþt×ìŽýÿÕúËokC4ôÚ×›¿~bÐwT•ÌÙ7ï¿ôç²ûX ú	‰u‚&v¬‹qd—„”
-ëõ¼Ï5©ë8A"Z˜ˆ‘<±Ž]¯PÄ®Cø‘Ñ#mÛj¥‰ëcìq…kæå¡¿8kbÃJ–ZÉì™ÈS™ œöÕš"À£H¯àe²úCŸ9jµ²WrsãŽþå¤…yûúXû`¼aìW¢Ñ”ñ¶‚å t4}
-ÒÜ^qkˆ&Ä"%„ÏPêÒëTXÊK×cYÔªN,L]ÔY]•¤ŠR1ŒÉ“çPêÖœXôÖ'K¿>¯“™UñòYgÞ|g¾{mkJ6go2&ghÝN£½`púéç;_9u°ààÀe æ>æiÈë›œù‘ñdCzì”÷‡xZ¬ì¼”’ŠEi¾WƒÞ~
-Õxòƒf“³,_XKm-ýeþ¸¹gYI2ã’u¤EIôí[tF¢Æ›J´A*E{ÒÓ…%Œ4Ž¢‰œÁqééøARç}¸ÆìaFH'ý»4W0ÝLÒ[ø>!A“W[J²ª:
- ¹x^‘YoŠ2«8—œ“EÇ2Q·.Ò(Š2&Ñãâ
-'eÜŠ¥KôYæQáŽB¨%)æÅ.PXÍ‡Ò<¥ÂøïÃ_¿½nÃ[_ôoya¹…Ã)¢|×aCçã+Kv¬ŸÙºuWÁÐ®&ÍjÙ&4ðãô£(ñÝ7PÂ‹MÉiáÍ lß9;íûÂèG¿¶8Zw¶ˆ…ñ5ÕÔ\@0WXMëèS0cŒõÅWKCJÄmPÅñ$ÐcN”zÌ•íßÖjÏON*u*Õ>üßµ+×;Ši†’Ûºçh­U3¦Ã€,Ìš±ñ±š³K{†²ÛN­½ïÏÂê”™÷ÎÎœ–fÉ>n,œròXßýµÆt•*Ý6sM½m^{Á8L³Ê†š³^{~Æ”ÊQÍñÛ.‚\áÝFÿâ Ò(Ô;A<ëgÝR‹Ïn—sr)æèäxS}ô×èãÃ_Ê>Î i™‰:“Œ–GÇ&g'Þ¾m”	ÃÏgÀy¡='žÎ¸C§3 ˜û$p“N¤.‰¿;öîÔX@‡Ã]…cbWáŸ_‡Z
-³Ä–‚ß(¹C;áq¼àÛ­„°Ž|ŽÊˆ~qDÊb´c¡<ËßAJò¬ˆ>1dI1œZçG…ÁF1V£\‡±%wzš°EÅ§Åcl
-I3Æ	‰‚QYkbµ¡.1iüæ%2$<CºnnéèYº²^'"0( gW>Sz¬LEZÃJ„aêÏôÒ}À£AÄcHX˜%R»–—òT¸!†%è½²ëjEû4ijly“£~iiRùªi3O:ËM8 }2Ã»?Ç}#†S«•øjìú”+ñFEÃ¶#M«÷×Oç©¨c‚Åê|cóIáÖâ×­ôXË<OÎuØˆBÀ_Væ÷—•Ñ{êóòëêòóêÉ\‚ÃÔerÚ¥žtˆ!>ùÌKé:^U2=yV¢ŽKHpQHä¼±r…PœVbÎñ›Ê\Ô‘ÃT|XÐ%#	­‰½ÝØqtS5ñ¸xZ|çOØB'+áŒÖ;–£Æûã¡üõ­kè]ãÙ‰ üa…ßþ'¡S]ðO ¢€|.núßGÅÿ®~ }!j£ô- @ñƒ ¤ý£å Q…ã·ŸˆÚ(>)òã%DIvú dãÿ#]3¨*(Ä³ÁAGA7®Œ®PFèÇ©ð `1ýdÒA;u*¤K ž>
-ê¨*ÀÉü/tÐ‚œÚfæJàôEè’l.æ<4Ñ`@z!p›ZåÔï ŠÉƒ.Zjz}àsZ¹%TSƒ°— ‹>±ô0,g:—™æÀ‡ŒJéÅ0—Þ¹¸%pžúwàúWÐEçA	@`+¹GÖ Y°	>BÉ¨@ÏbÀ¹8¯Â#ø1
-QíÔS´Š^O¿Ì´1»™›’*ÉnÉûR›ôIi jSÔ¢«£wG²ïÉÞ“wÈ"¿ªp)žU\Qæ+ïS¾«*Põ©V©Î¨ÔÝê5êÔ_ˆõÂ#ÀÀ 'Ù—¿GÁBrEGÀ3Á»t4 PÁ3¡k*x1tM^	]Ó`„ë¡kâ‘&t-#šºVMƒ©°a-A,‚^X	&pA¸À&h‚^èTAôC7¬€>X&¨ƒ!X‹¡æ‹¿(…U°zaÁ
-0Aªø¤•0+ œà„EÐ'ÎXóÀóa,'4Š¿X}0 M°¡œ“Þ–6é{ôÀ"X%Þ‚lp@dAäC#4ÁTÈŸ4?sÒ/&ïeâhôˆ{ c`Šxþ~êäý«öÀ ,Ÿ³ú¡æ‹wV@8Ä}/
-Ç[ OŠ¯P”€fC+4@3ÔB9Ì
-2€ÔCTBÔÀ4¨4Â=Ð™à†t˜>Èƒ0C*Ì…
-¨†Ð^=¤@.Ø€Ì€9±#
-Þ—®èËrgùÅÿ.·ÿ
-l9Io‡ÿÀ‰Zo
+xœ•z	xTUšöwÎ¹÷V%µÞÔ–ÊR©%U•õ&µg';kBÈJÂ’RY $!d¤QPpimtpû—¶nQ´{tº§µíÛ±…q mµ{èGHÝšçÜª„°øÿþyž<¹uÎ­{¿ó÷{¿÷ûN @Ü´Ã›úüéà0@Æ¯Ã½}åoö~	`€àà`¸—ws… Ö# 9¸fb£¬%aÀú xxteï{¾Þ°€á5½Ç Õ Øå `é]vï­N°g ]7Ñ¿o–À1	€zÇÆÃcƒÜ=;œ=  B“é9 —·ñNoÓ!BÈ„!œþr;[yùõÐñàR4„†–ŠÑš¥âCâCœâ›‹]lÇ•? q´®]ÜFÛÅ{Å½mhD< RØåì(èµ»þPð»Ë8Îaw*ˆÏæµ`“ž~rÄáàõF£Éh4è9jäy[AwååÜb±[«ÈÂ¬<ce\‚œCY
+­­£8÷Ëšî,ƒ†ç³6†hÜNf¼ií`²NÍóž{ï^ºôî{=<¯Ö%®mº²?×­$XiRd!ú›OÎ@@Ýå
+ð~—ËírüAŸÍk –ø¼ÁÐ£t0h4èckpÔk»-vxÍM’ír<Ùí=yÕVjúgšV–ÈYãžmÕåëº}©ù·mÅÎ\·
+c•QaÉŒ<_7TVêÇu3†¬õvÂÊ‹Mj¢)˜µ(-¿É#Y|†˜ÙTÈŸ²ØAUàP0èó¼/æ:É1;25F_´Þ×±Z¡2·Î22¶¬\ÛÇJ¥Nñ!Ÿípt:5zNfÚ`É	ãQ†Ò%×–®óFFü2(mY‘“m6³^žábÓüv ¢g™wÈ%ÐÐnñ3}^éÅŒÃžérJ.
+ø];·à b¿Ý³WŒ¼ø¢Ý‹º—íÜÙIÑÇÎ¯_þØ±óçþôÓÓ§?=€ €I&— °NÂL08cgBÁ`Èk4*pü•œÃmç8ÙÜôó¼-{¾¿>5Q­Rìû¨\®Çi«÷-ª˜k+¨µ(h¯1–´ºéÖX(^LiøÎ
+!QÆjuÊÄ¤MþeÅÆÆ@‹àkü¬º? V¹ì
+†bÆB! ~…ý’s_Š!/š ê‘Þè9æGäøaÀ-þ
+
+ø]Ô2BAÍµà8zèNÅÑÄ@óYˆWãÞ?û8ìªÍ÷
+‰?hXÖýÀ‘úñ§‡¼F­ºœãUœöÉÍËJ«þÏPÙž•¨¥ªº²IWs×’};²Ÿ®¬1+8ñâÂŠª®â”œùá²È¹*w’ŠU”ø›5³ëWy›ýÉ¨:15õ4À÷s*ÈœáiÝLOKºêØE<os6¢ò…éÔ³{þ^!7f'Ç<i'Ä”Æ¼0+O÷dÇ'_>ér(¤p³Ð÷…H>»Ü7}ŸÏw‹\}å}<o+ìE¾úú¼…çm¾åÈ7Û2ïLª)™
+›¬øÈ•·¯†9 Øý'¡U  ;ó>uúÞÑææµk››G_jX³¦¡qÃzoú>ŠG¨oZ6Cžƒþpà q°kÉ%˜÷m¸ôÍÀå¯ÙìñyénG¬ñÉ!êÒº`½9Q­Tî>["×cÝ¦£m»rKÍ¼–ç#çx^¡·V&zÊ‚«;’kœSÀeSlxkÅ´»åœ6yÌÔT-Ü¶5r¶Ð%c$±(´:ÌXÓp±yv(»$%ò^ezÊ³=Ñ³¬À© `šý±U¸~O¯Ë‡ÁÕõ„8.DÑ[ŽAo4bë‘·:ÆÎ¼Ð´±&!#47‡dùÉÇ²äÆù’ÅâÑ2ù~V,¥¨Â<…£é÷µk×W˜³ýc¦ª"ñ dùäË¿œ²2¨¯Ù_ à&çì¡×¶®y®ÔGÏ2:rIâ@+bä³MÊ"nÉ*ÃM&:%ã8|»øøÕ~„Ÿ{ø§9	¬¯Æì,‘ÈÒõKoŸ·~ÖÂ{óXEb^"!Þ_¤£´?ù|[Ï
+C*¨NÏÖ]”%žþjçsÍ~«ÄFÎÈÙÅã€ 
+@övÏULÐüv6BÁ``Ø×£"–‘ÍL{Ã<oËj
+•µJŽÃ·¡…¨’Uâ*	úÞò#4¬s|i¢µ8òwWuWætþSºs˜”©€p#vr)Y¤.Ñ^—Rò­+D•bd†.GYtåÄÌÌÈ°œ
+üß°ÎË¾+Ø§fçS´/”˜Y©Üw†23kØñrÏü-…•1¸,Á}…ûø²dW(yQ3Ç*®¡—ÈäASSuÎÆ‰È[¹¶™ˆÇiÉ¸ÁX^(!þ*a¨‹že’K`ƒì)ôÐ¥Hö±7"Ù¤$Æáï‰Š_<"ÞÿÈÉž#‘y=ûê»¶Æñâ{WÜŠúë<]éÈ|ùþs}ó÷We.ÎF¿4· h0kñ†ãWÝÏqò$r	Æ¿CŽ3}/Ëþ?(gìÊùŒRŽaËñ•EýMFÛ­Çæm7ƒz”:‰z·ç#d÷Æ†¯HÃsÔÁ²Ê¥5éUÎkSéôq2£$sM…yN1%¦ßçÚeäÚmª1ÏU;Šo›¤{xª$e*‹`èŽžå
+Ùge­Lø“2}^&É Çãö“~LWú$#™}\üòdÿ?¡†óçQã?õ¿!~ùÜöGç5<¾}Ûæ7>™>ñ.R?ü.Zpê”øò»‹ÞXþ(rœ>¬‡‰<}ZüøQúV…ØÎ\ —  µ -1ÿ^ìñM‹jŠŒL”‡$89ˆ7HE‘´]¼ÑX¦MÒÌEÙ×l„ï§OŸ¢<ZyW5WÜê¶ñ¼V"ËnauŠj@l·(LJL”î\†½ÎÓ‹êkïÿj×y@kìyË˜¢"ŒMaA—†^Û:òl¯P9œ^Ïbär|qäC(d²M+ò.I|ÅÉÌí¬ ±`—Ž“µéÓ,©è¯+eâ¯ófûÓ1.Õ*H-’kÕ§Dû&5g×ú,çY©X24nƒ9…ï_å¨ZÒ’D59ÊIJF6Jl¸73U´7%éU</þVg@€¢¿‹~-““3P P‡n:ÅDÃô0Ur ‚~*ž0T:©Çž·yÊNÿü‚SÎ
+êI´ç5g¥^|ûqòÃRLŸ"L„µÆÈÛøhd»µIr„2é°Q…™ôàä«ø±È
+ê=wôs˜ÝCã·Î>eš×h uÜTÌðz5F'ç<;Û/õ×”¦V9Wõ£ºžl‰ÝOò¼mAWß¯Zf•çm,ØHïT¨Ÿ:AÊfˆšLDÒl“§žèsQ,†Ø0û äBè¦üá³I3&Èg¦âóV`	ƒŽ‡©°Z(TKº
+¹GÞk~ê›{7‹Ñy¥uÄEÇ>	4{ªnë¹*³\*)@³›^9|ç»âÞéœ÷dÌ¿£o÷E „ÚÇ]tÞBhù6¿-%þ¿ïC›AÒ…‹…ª˜,\;37¢V:·âZÉŸ»ROÒ¿‹j¼qÉ7æOüòæÍÑ3\1û,å…:»@þ
+âó2&‘sØce-vØÕÄ ·`Ÿ÷[V§Sc²¡û£ß¾¸ªÿØoÏ¼‰X¿ç«Çê¼ÄÔyxsîø†pÅ’{ÍZ¶ÜZÞîž^u^Ò<øwKÁÐ—žyúëãÃž*“øoB*më¾ŽôÆýŸ=óÊ×+]eˆ“7µ6Å&0Î-·GÏ0ï³G¡{
+Ó” bdôü1ˆ›ŒFSÌ~·€ÝÒ*¥¬$%LÕn¿@¦D¡ÉB(â·¶s¤¥+U<gp$™3Ö8L…J™%#kó¡¶¢p%Æ·ï¨Þ=1gÞ]¯Ž-«O7«Õ
+Þ, ¥ÒeÖ%Ë4ÙÛ––Í9ÚÖxèÖþb)Q)x­,™O5¤3—=—™“–c^¬*Ëj®è¾­Gp4õßÕÕy`°(%EŸ 3jýwkmf¥U,]Za›_µhëŠ\wÇðÝ‹·ÿ¸ E?Ž~•àb÷@€rÎ”ôoÕ’&„|Åè{ïH™9Âˆ‰¼³X0RæÙÃó¶¶r•¢ºãhÊd3Î£ôó¥Ÿúy.­X±Eì%1?ÏóšeDß“Ütµfò}òËÉÂkTº=c£F«6ÿJ3ùrR:£gÈ§ä´Æw‹š@ëH¿€¯Ý(j«[¤û6±ÒÇ Ù.SÚ)“´{˜k½#U«IÕéÓuVBˆM—Åq†duõHcKOà¶ñÊc¯oêÞl4Ê8.MctÖjpÊÔ¡5ÝÖº‚‘‰åGW]´¨äF#¯R6õuLz£±Ô›¶ ¸¸8¿¾&Ë´pKÇâ{Z‚F…"1‰Oh*H/1YÌúÜÕMºÂÜºWÆâ;V<ô`Xý‚I`ÿ²h]EŠ.Úê!ñÕ†â¢HÍÈR_z³¨¥¥HÝRWÞœ¥O(d,âMÛ~¼æ‰× Ö[omEíÍ£RÙ‡þ£²wS{ËÚ®‚Õ=å.—xÞ¨mœ›•W:6·ç™U+wöŽ5Eõ†ÆXi¯^Ùì˜M«ÈëiJŠv)Ôm¼íj;FuTo4Ù¦6ÁDlv×ÈU’bv9°S¡ÍSfÅMH‘’—ŽqšV‘—§Ðf`”.¤‰WJlÈÖµ¾Nž§Õeã¬+!ž÷]ORâOx^aœöEÎ0µõz%Ï‹u´÷el›#¦†\dóƒI´»‡j| sœœ®8CSˆè®K¸”(>L!Š§™3RgÝDqúÝn™ôØD	¥ß)çÄsÎl—–çyœN~r6#{ö5—NÉó¨ƒÞ4ÛüÈœžáäõ<ùšÞdÊQüóó‰M)z˜ÎŠ4äGÝB&K×jµR‘H-›¤ˆ\àº$‚uZ:ìô;Ä·Å#Î|v†˜LÔ*4â_‰F¦·Y GÏEÿÈ¼Ç©!J:ì3Û!JáFÙts.·;gŠ8~Å Ô§Pýf™ØµÑ¦U³¬udGILÃï½¯ÜçÐ¡Ãq·&%!8Ûê0²)¹²¸tÃK²ä¢ywA™%&ß,–ŒŒÄáðOv¬;ºŒê6uŽäŠæEr	Ê`ô TÙ¥ÐÅÌ½Z¹OÅ8mŠÉ¦U¨´‰tß¤÷´ kŠQµ.¶®ér>{éîïì_¾¼ðÖ£ËúÞ}dí]~Û2oùê<ï³C]ÖñúãÞf—1}ù<d:²|Ëå'Êûæ¸SçÖžÔÔ×kUËï…f¥V´„JŒ†RÑ‘Zž×ºÊâîõ.èOÎ{²³ç`Kž;Ã?»³¦î%¹¼iU÷¡Å		º`ZvRÃ}á¶çÆW¤zk²2ë6Q–R\ÔÜ“M‚³Ç+{v×ŽTVŽÔ ‚ÊèYn˜ÝÅ UDZd¦ëFõ¥Æ´•ômI—}ï¸ðükâû/ )±™çmö9ôä3÷Ÿh«nI“äÄoxÞÖÐÉ¼	>}q×ÐäðñÂÁN°:Å1GÞûÞ»ãøßíÍTŽÍDÄ¶;™§©îŽëí
+ÐÅYŒ-ä›ÑîzŠ«uél”»Òn7h¦%ºŸ#O³/VdiS0-Ù‰ßžP˜ügL“|fvFúx}DÕ×»2¨‚¾©ö22ômjâpJ%/Eƒ€ŽýR¯mJ7øTøNßòÇÞx§Kü³µ³cÉ¡±òšt¼u£6BãoümÇáÇÇ‚GÕF÷­â‡¯ž»U œÉ°mœóZëY‡â›$%Ù¡ÆCLºÞTÒý½FÎÖIí„‡•Jó¡(ùÓ½‡ËÝóCO(æü¾Î"Ô²÷AaºAù½·¥Î©>“,X§JV&Õ†Ï¡¥CÁv]x¨´« PcAe8W×#ÚXmòä…)Mh™ºk®)™k ˜ï3?‚\€u±MS„T˜ÄO	¤”e¥~Ç2›l\¥XýÙ©Mö¶ÆP•MÆÛùDGÀ9×“nÙ}zb&'þù“Õø‰Vµ-¡ý™¾·Í·©Ãá5æwå[ËÒÊ
+JËVÕ¼òüÀñƒ[ƒß Ž^àÒØ'À3Ý3§(!2½×{Ñï&&gˆÄ(šÎèÜ61IÕhi@‹þø9úˆ/žóÚž·•Ö’ÝÞÈ¿{ï!íå6žçxôQÆÏ2ô´Åé¹Ìä&?ýªj&Ä(K@[(OÜ,ã’Z†fá\yÞ
+(úAô+®–ÝÂMteSLd]SÛ©±á‘£Ú’
+é€ïãy[yAQ¯¨ Êêª¬ŠfÙ‘ÿNbþ‡æÎi¡K˜dV>ÙJöÊ‰%‰+*5Â¼5åŠ4FÏ°Mì³TiLõb°ô]+à9ÚMˆ)àxr'jL6=(~òùîý_ ÃO½Ú›ÊãÕì† ÑÔß5^¾{KCÛíûËúïëä™4­²4mþ…eîQ”ö›·Qê[óòÄ×%©Þ~pIömbä£_‰;…?X"Ã¿R×Óª72Ç˜AÃ4çK</+ŒUœRàÆôÏt _‡;šÃ	v’Êc°cùñ]‹¤W•Éf¬ê:p  m]í2¥R©œhñê<‹kå^½&Y¡)±9ªs[öŸèûo¤
+ô|oÁ÷N?7æ,š˜_Ùž/˜ÿæõ¾þPßíúL‡ÁÕxË"×Š%e:![X–žãÌ¬Ì®[ÛœúHÃí}U
+´üùõÛ³ÌO0™—ÁPÅÇ•Š÷MMçä}2ÏE¶È´8+ôYÉÅ["Ãè=‚Ëª/ÅhŽÛ¤MObRô³Z,“£«øÌñD4mgáLé|Æ?Ÿéªðÿ5ú5ókrFêûÝ¤«pó–šÌÞX?¡˜j”Z¤Šä•˜(æÖHÍ„òdqg©÷gL5l§6DÀƒZ>ÓL¬‰`	L¾×)ì¨¿i¿ØÇê¦B¿UFRNd•;²i¿ƒç™awŠBëQZrs‚Ùâ~¤š’T Å%ä7Åm‹­¼.Þ(¦­ß«50PíX´´&3òÆâ±Ôš›œ¨ŽŸ§T‹™Û™ghþLRÓâÒÂÎÉÜ:±‘évƒ“Ù»Ø7[Â¦t¨µfÅ¬Œàúî%”ÖÖ‘eÚˆ5§òÍÕO|8|¿øç™K*p”­}¼oñãý‹ªlÄ#þIìË«\wúö‡¯­e¶Ákì—TÍ.šQ4ŽŒ46ŒŽ2Ûú-X´¨Ÿb@ÂùŒžwµÄN;¤þê5›©àÖ«ñ@ûÖª~‹³¤ÌåGÅó¥¦õ½+—‘uÉKâ¬YK²‹šÓWÞñ©™Ñ—¦Iã‘×uROI§…±7~§¶U±¶©ù¹òëOØf6X¥W¿æ„ aå£ÜÆªnMÙE9¡ÿ ð_›î~êoä÷‘½ŠO^’r3–¦¥ïÉ†#µ ÊÂÈï'ïT|"=iæO€R%»	RÙU Ö˜lÈÃïC!s
+zñI X@öC?{‰zØàd¡‡©„zy!T±cÀ3¡Nn…<nt³5 `üàäÎGÇ¼	nö0„eæÖCëÛHôc&:™•°˜}ÂÌË `s¢ç˜G!—{*ÉŸa;÷„Ù}À±Öp|ô"gŽ~Àþ™(T±^˜ßŠ¶2wGÿ•í†0óK¨ˆÖÒ1j7 ÂvøJCóÐ!ô4Šâáuønü Ž’.ò8£d62¯±]ìì7Ü<îûÜG²\Ù“r,¿Cþû„ù	&ˆ‰Û?P,Uü£âse¡ò)åYU‘j‡ê×êRõz½ú„&UÓ«¹Eó’æ¼äÑ üX¸ØëüËHŸåÐ“  ôÿ?b×Ôp$~A?Œ_ðÂ«ñk’á‹ø5)ˆ‰_sŒ,ñk5Qj`Æ`ŒÃÀ L€¼P^ð‚ZaÂ`…Ù†aè…u0£`…&‡QXaX)}£
+ÖÃÂ(ŒÃ:°B–ô¤	ƒuPP 0$Ý±V€ +aÖ@´HßXC0­°	Æ ×½-ûºÏÕ0
+ÃÐ 
+¡J¡Z¡J¯»3š!°^¿aSOj‡°d7ëŒ'_ÿ¼©o\¿:êÃ0Œ@¿ô„	†!X)¬ƒ0Ò*¤ÿ
+~¢Õ°êºxŠGWDƒXÄ!’£”ˆH‰TH4H‹x”„tHÈˆL(™Q
+JEi(YPØ‘Ù9P&è‘^r!7Ê#˜P6ÊA¹ŒòP>H«à!ë™<dTðqÁC†é<dXðÈÖõ®2WðÈÇÂãC£}‚G>¸il0<"xýí<d¥à!‚‡
+Bï^#xÈBÁCÆÙ,xÈ-‚‡Ì<¤Ið9‚‡Ì<¤EðÁCÖ	R'xÈFÁCV2 xH›à!µ‚‡T	Ò.xHà!«Ù xH½àIX?2Tè+Å¯¼¾àIì¯[7$x àŠî|‰¹þQ«7
 endstream
 endobj
 
@@ -11800,7 +11804,7 @@ endobj
 <<
   /Type /Font
   /Subtype /Type0
-  /BaseFont /CEPOHI+FontAwesome6Free-Solid-Identity-H
+  /BaseFont /GZULSW+GoogleSansCode-Bold
   /Encoding /Identity-H
   /DescendantFonts [915 0 R]
   /ToUnicode 918 0 R
@@ -11810,8 +11814,8 @@ endobj
 915 0 obj
 <<
   /Type /Font
-  /Subtype /CIDFontType0
-  /BaseFont /CEPOHI+FontAwesome6Free-Solid
+  /Subtype /CIDFontType2
+  /BaseFont /GZULSW+GoogleSansCode-Bold
   /CIDSystemInfo <<
     /Registry (Adobe)
     /Ordering (Identity)
@@ -11819,11 +11823,131 @@ endobj
   >>
   /FontDescriptor 917 0 R
   /DW 0
-  /W [0 0 750 1 1 375]
+  /CIDToGIDMap /Identity
+  /W [0 9 600]
 >>
 endobj
 
 916 0 obj
+<<
+  /Length 10
+  /Filter /FlateDecode
+>>
+stream
+xœû  ÀÀ
+endstream
+endobj
+
+917 0 obj
+<<
+  /Type /FontDescriptor
+  /FontName /GZULSW+GoogleSansCode-Bold
+  /Flags 131077
+  /FontBBox [20 -286 585 816.5]
+  /ItalicAngle 0
+  /Ascent 966
+  /Descent -286
+  /CapHeight 716
+  /StemV 168.6
+  /CIDSet 916 0 R
+  /FontFile2 919 0 R
+>>
+endobj
+
+918 0 obj
+<<
+  /Length 731
+  /Type /CMap
+  /WMode 0
+>>
+stream
+%!PS-Adobe-3.0 Resource-CMap
+%%DocumentNeededResources: procset CIDInit
+%%IncludeResource: procset CIDInit
+%%BeginResource: CMap Custom
+%%Title: (Custom Adobe Identity 0)
+%%Version: 1
+%%EndComments
+/CIDInit /ProcSet findresource begin
+12 dict begin
+begincmap
+/CIDSystemInfo 3 dict dup begin
+    /Registry (Adobe) def
+    /Ordering (Identity) def
+    /Supplement 0 def
+end def
+/CMapName /Custom def
+/CMapVersion 1 def
+/CMapType 0 def
+/WMode 0 def
+1 begincodespacerange
+<0000> <FFFF>
+endcodespacerange
+9 beginbfchar
+<0001> <0062>
+<0002> <0065>
+<0003> <0067>
+<0004> <0069>
+<0005> <006E>
+<0006> <0066>
+<0007> <006C>
+<0008> <0073>
+<0009> <0064>
+endbfchar
+endcmap
+CMapName currentdict /CMap defineresource pop
+end
+end
+%%EndResource
+%%EOF
+endstream
+endobj
+
+919 0 obj
+<<
+  /Length 1400
+  /Filter /FlateDecode
+>>
+stream
+xœU{LSWÿ{OoAón”ªÓØR^RžmTœs
+L†àªã©+PZJi‘…E£nä!4ŠÃùäµi‰Œa¶%&3ºLãÜ2qf#Æ˜ýá•µ°ÜÛ‚¸%ÛÎMîùÎwïïû~ßù}ç^ ~Ø	0ÛjJú´	 M {×b2ëÛ6F´€Îb1gÎ–_ h/€E–rW5·9ÐË ‚lŽ"£ì*è¨¸.7VW`ºê ²ËMñ_®q²ù “Tápº”Msvòl `ÐPFÖrÀÉ|¨À}¬Á³˜1xNËÚÇ,Õ´¶LŒPƒl 
+„ «‚Õa!
+ø.!>(H¡ä¸°xV›¨	æŠÀ æ;ã‘ÿñ›Dã¯ÝotžÚdì»o2äÙíÁÅ¹‡ežáœ¼ú'=³»ž6ŒnžÛòagc@c'@=1B3h²/“Z«Môe	ää‚VPLåHˆ×Ë8ŽÙÚõ¨¶î÷coåäîf•µÀUW¿¥5™¥ƒ÷<îêz\_ýÓ¾¨´ýœ¥ª§- ¥»¹¬¶ážó´M&ÇBÄa9V+Ä|‰:½’ã¤ø:mbˆ }I)âÅô”}ŽÏ?«&a:]‚"˜y«ÇÝÔú®fþË‡šOìñ<üáèrØ9Ô8îÚëÛ]Wêê®ow}Û’_ZšŸoµ’5…ªKW<çºí•Ç¼³àµˆœ·sÒ­…$Cqöxë®/JØëg•ÜÖÁë SœîçføeäJ7òÉ’¶c E@s9£¤åL(/ð2­  ZAÁ‹…%He§$ÜSËžq™äÆu.×ºõG&{Ù˜yç›t÷.éÜœe(/7dmA@“i2¥þPxWðï-šo ý—œ.këÿ>=}ƒ•Î?V`ºÐë‰eš7l¬)ôØ Z-`ä%J¹Ú»kJ^äGÌ?í<•q &[¿fí,Ï0{ƒ/'-»’ž^ŸêÞËÎc¥NŒP›l xQê-/ð	ñ’fR¡s¾ù…ÄtD¦„I=é¾ÈÈƒï\¤š?ï÷«B¯­XF}ð@ì±¶‰[tMF¤cQ˜>H[›¨ó*ìeè“U©ôªÍìþj|"Æ£Ü™÷JÊÒ¼ƒïï=÷ñº}ÙJíêƒµÞŽ0¤e.§¡‘s£ÔN¦}p÷Îõö5Â#£N¾G÷Ÿƒü‰š4í4Mõ”2xAÂqúçûê‘ó¬Íò©sSƒÆŸhÆoúGícrÊÊr
+¬ÖàÆ§]/ô<©ÏËf"ÆÒç˜ÆNìh:ÙÑ2§¥k…x¶SRoDozaé~¬üªè¾WSmruïeùëAÀ½^œ¼És ýã±ž]²,/nÚ ´}Ø‚l„£°!mÈ—žâuìÀ=Â“’C¶‘ÏÉo>.3
+9ò!“VÏ+­ýP"ZÔÀ×KýA ÂÏfà‡}6nûlŠH’è³e˜G6úljRí³ #G°T •(…¸ B<b-T0ÀTH˜a“VoÂ;œPIèbÉ—‰J8`…	ERŒ¨‚8P)½3J%O
+¡A(GÌÓ"—À;\pþÍïôå‹–Pb¾ˆÿdô*°¡zh+]K‚µX‹Éz†žÄN"ßX8àDŒ(‚	ÑXÌ¨‚FTþÝ˜Ì¾&©þR)¦j›c=…õp¡N$!1’V&Ø§vÊ†R‰¡ˆ6A#í¶â—Aãç þ+Ÿï-qÌ °Š0„%”ÈF8"G
+kÒÄ±fM[ª‰cíš8Ö¦‰cš8à/ŸUÊe
+endstream
+endobj
+
+920 0 obj
+<<
+  /Type /Font
+  /Subtype /Type0
+  /BaseFont /CEPOHI+FontAwesome6Free-Solid-Identity-H
+  /Encoding /Identity-H
+  /DescendantFonts [921 0 R]
+  /ToUnicode 924 0 R
+>>
+endobj
+
+921 0 obj
+<<
+  /Type /Font
+  /Subtype /CIDFontType0
+  /BaseFont /CEPOHI+FontAwesome6Free-Solid
+  /CIDSystemInfo <<
+    /Registry (Adobe)
+    /Ordering (Identity)
+    /Supplement 0
+  >>
+  /FontDescriptor 923 0 R
+  /DW 0
+  /W [0 0 750 1 1 375]
+>>
+endobj
+
+922 0 obj
 <<
   /Length 9
   /Filter /FlateDecode
@@ -11833,7 +11957,7 @@ xœ;   Á Á
 endstream
 endobj
 
-917 0 obj
+923 0 obj
 <<
   /Type /FontDescriptor
   /FontName /CEPOHI+FontAwesome6Free-Solid
@@ -11844,12 +11968,12 @@ endobj
   /Descent -125
   /CapHeight 822.2656
   /StemV 217.40001
-  /CIDSet 916 0 R
-  /FontFile3 919 0 R
+  /CIDSet 922 0 R
+  /FontFile3 925 0 R
 >>
 endobj
 
-918 0 obj
+924 0 obj
 <<
   /Length 619
   /Type /CMap
@@ -11890,7 +12014,7 @@ end
 endstream
 endobj
 
-919 0 obj
+925 0 obj
 <<
   /Length 511
   /Filter /FlateDecode
@@ -11902,11 +12026,11 @@ xü«¹¬#Lu ñ‹Ùñ¢6+„í®[ˆ­¸ž=2ãåýÄÂç¸n§‹Úp¥6ôëðx¿¯m0A”=,<ÞÖR$þ ˆ{à]]!I
 endstream
 endobj
 
-920 0 obj
-[/ICCBased 921 0 R]
+926 0 obj
+[/ICCBased 927 0 R]
 endobj
 
-921 0 obj
+927 0 obj
 <<
   /Length 314
   /N 3
@@ -11920,73 +12044,73 @@ xœ}¿KqÆ?×U–X94%MQKS†Nø#Ô¦óüQ vÝ÷BšË¡©hˆFk	¢ÙÆú‚ !
 endstream
 endobj
 
-922 0 obj
-[937 0 R /XYZ 90 417.07034 0]
-endobj
-
-923 0 obj
-[937 0 R /XYZ 90 345.78348 0]
-endobj
-
-924 0 obj
-[937 0 R /XYZ 90 274.49658 0]
-endobj
-
-925 0 obj
-[939 0 R /XYZ 90 686.88184 0]
-endobj
-
-926 0 obj
-[937 0 R /XYZ 90 643.63446 0]
-endobj
-
-927 0 obj
-[939 0 R /XYZ 90 513.4663 0]
-endobj
-
 928 0 obj
-[941 0 R /XYZ 90 681.515 0]
+[943 0 R /XYZ 90 417.07034 0]
 endobj
 
 929 0 obj
-[939 0 R /XYZ 90 288.89178 0]
+[943 0 R /XYZ 90 345.78348 0]
 endobj
 
 930 0 obj
-[943 0 R /XYZ 90 707.9988 0]
+[943 0 R /XYZ 90 274.49658 0]
 endobj
 
 931 0 obj
-[941 0 R /XYZ 90 387.3077 0]
+[945 0 R /XYZ 90 686.88184 0]
 endobj
 
 932 0 obj
-[943 0 R /XYZ 90 201.5138 0]
+[943 0 R /XYZ 90 643.63446 0]
 endobj
 
 933 0 obj
-[943 0 R /XYZ 90 481.04553 0]
+[945 0 R /XYZ 90 513.4663 0]
 endobj
 
 934 0 obj
-[945 0 R /XYZ 90 665.9858 0]
+[947 0 R /XYZ 90 681.515 0]
 endobj
 
 935 0 obj
-[948 0 R /XYZ 90 494.76968 0]
+[945 0 R /XYZ 90 288.89178 0]
 endobj
 
 936 0 obj
-[948 0 R /XYZ 90 402.9315 0]
+[949 0 R /XYZ 90 707.9988 0]
 endobj
 
 937 0 obj
+[947 0 R /XYZ 90 387.3077 0]
+endobj
+
+938 0 obj
+[949 0 R /XYZ 90 201.5138 0]
+endobj
+
+939 0 obj
+[949 0 R /XYZ 90 481.04553 0]
+endobj
+
+940 0 obj
+[951 0 R /XYZ 90 665.9858 0]
+endobj
+
+941 0 obj
+[954 0 R /XYZ 90 494.76968 0]
+endobj
+
+942 0 obj
+[954 0 R /XYZ 90 402.9315 0]
+endobj
+
+943 0 obj
 <<
   /Type /Page
   /Resources <<
     /ProcSet [/PDF /Text /ImageC /ImageB]
     /ColorSpace <<
-      /c0 920 0 R
+      /c0 926 0 R
     >>
     /Font <<
       /f0 890 0 R
@@ -11997,36 +12121,42 @@ endobj
   /MediaBox [0 0 595.2756 841.8898]
   /StructParents 0
   /Parent 1 0 R
-  /Contents 938 0 R
+  /Contents 944 0 R
 >>
 endobj
 
-938 0 obj
+944 0 obj
 <<
-  /Length 3037
+  /Length 2979
   /Filter /FlateDecode
 >>
 stream
-xœå]ÝoÜ¸ß¿‚I“4{9Óäð»MSäh -ÎoÉ=ØnÜK‘8WßÐþ÷…lI+’Ã!åµvsé‹eïJäp8ó›OÊÇÏ¯6/NÏ7ìÅÛ—«¯$L°£îâµäÞÏÎ?¯ŽÏ;ÿ¥û–‡ ÒXo»_½eûåürÕ=öye‚áàŒe‚}Úþ1Žôi5öÓê§ÕÅêï«×o_®Žøùô’=}ºbìøíË¿¼bbõì{ñ*"IJÍMÐÁ0'=×Æé	i‚ƒ”Îj×ÑêšÈÐýê„ñÌ5‘/NV‚\­Ž/“–vr1]±`'ŸWï¿B¼BöWè¯ª¿êþjú«í¯îúzvýs³fGJsðF`7#^f?…T“¿°g.*£]%´™˜Fiã5H—Üo£û¯Š³¥«Gïqb|zNBOc¨©¬qT@¿N0éHëÙÉ_W¯OJò%ùÒÎñ ÔNâ5èùùæ×ÓO'þ³aOß¼~óFˆç¯žóVå°€5;ù×õÊkLW\à:0ÌË•Â,©,l!ÄJQ¸þ—Ü‹O—„l¦þoÝÕÏ{©Á0Äó(®tMxÂp ÃðÌZËƒS;±[qGó»(øÞ³k¼Ô/ƒ`€«a76®	..¡µõšÂz…å.8ØÁ¤u’6hk¦—Æ‚a}4nk¦xÓ¯ôºcàô“Ñâå7ã¸5;2–+cuý·gk&7J"C¡÷Oä+6”øý7FRèLDD×U4Æ`^ÊäK·fà¸ÒÊß rÍ¤äNúíw½0\&£äÀ„Ïé [sˆóÎq?á¤ÛBp7&L¾njêí0–¼k€“6Øí’¬ÐLÕ93o»°äL6â–Ë8OÓÙÄ¬n÷âQ#+j8%rñˆÌáÖØUØâÀd‚äN	µ.6ŒR›nõÒ8ŒpºU¾°‡kßó[éÄ0Ô³AÉÑ §h©,¢˜©Á¦Iàª°dç­ÈqÄ‚~‚ÖI÷&LÀp+åk¦5°²{²•Ç¾_­ñÁcWC„1SN²°&E°a‹«£n)YƒFÏUèÁÌæt¾@à1ªÆ0˜‰Nƒ8Qrý»yÒ k¦=÷°ñ{	Ô«Vdsds–[«À-èrAÊúƒ%ŠÑ30SýÉ0	ƒZà¥WÌŸ*Û™­@¦ê\ž0	/.R,L#þ¹£Çã=¬m¸/l¸1Ühv©„néÎîÍÉû}¼Ù«-Þ¤aBQñ¶°€@kê<%èóAg“.ù~Ê³œ#Ùgk¢0QÞo™QškË9?ë&y–h6ThZK½<•B!RÕa’â5ø±J“£¥Ñ`*ÁYÊ‚²É‡ôïc2»Ð1‹®MŸ©ç+±„eèöÖ*ÅŒ\YXL¾kS Åta"Q5¢'%ó—ÉTg_Añ(P@Üê&#~&®¤WKËŒùÄ¸éÄóÀs±VKÁ•3Á3ÓID0
-–„ïcŠër«i¹]šÞ£ŒÃ– &µÁI€’ ¡z‘î>O†ÉbÌ#)Ÿt¤@fÎa9À©Ì7‰Fk[\H»j8€_“ŽÛÐ’¸4‘¸}¿Ub#-ÙU@öŽŒçmÁ”½jpEÑ^uŽZ9T½`P
-I 8nè…Z[Ï¥”Jí»j1#9À$ B‚¢’°dÞ'Á_¶£7²SJòÉ=I’¯!k†èÉ4K”‹d(l‘¹…kžOV©å´‚î*²Œ9×%ýr²¬¥ŠVÈj`zI2§Ù¸ Î–ØX“0oñiG8­‡E¢å5"²´7Sçd?²8 Âß–²SÚ(.´VKV€-îÎæî¤(e»î’àuØ—£HgF!<ŸË_§‰xu bÚi&¯”.(Ð[wtäÐ”[*OˆðYCü<aRJO'·Â<zn²vq@ ÷ÅÉL:0 ~X¤F®Y0Ü	Œ{cTãÊ‹ÔÈÌ-q§!];Gmt¤¡S®< Sj¸­k@E4+˜VŽç–ô0i‰Š—ôGûª–ã^ôCUk‚…jYkLF«A—hï#@	½,×ŠÊRNÇÏdÑ%Ÿ¡m¦bù1Ã³Ýòº™Î§„@¥;)¥»åžV7¼ÃûŒR
-Úš)â‡*—”§³%“¸ŸßÇ¹‚2H©i€2(ëZ¥Øƒ÷Uôb¾:ƒRŒßzgÍ=ª.!x1‡©àx ­w;× 8Ð¹¾TÛ¢mÛ$ÍÑqë4Ý|Ý²t(,ÝKîŒÓfÁ$çœf9vÔ%˜L Ó*ï¨›ì&ÀIR\H²}tXÍW(‰PÅò«jÉjæ¶âú\wm×£	Ò0ko½u¶ØÁÐUFÊ#ó˜K9ú¦åùF+˜?IHÖ#’±!ÂËR¿lé~¸mÆ/×.ãÆòqÊºá…O¦¬å6½XçÑ{œUà6€t‹øiÑn'3]¶cŠ_ÞGêûùGÄüíŠ’RE­ˆ™ØÔ6Óì€A›s„1•êH%ÏVääÕÛZÛÃK[?÷¹;ð‰4w2L^³^PûFGN¨š´G/…YÊHnAé»eóø¶Ô'QI!ëérFµ¶Öw·5ÞzrÒ³BÉ
-‰ÊEÍüƒ%T¢6ãûaëô­Åò¯2ü½ÃC#kænFkú^Xn•3î«4«‡tûkÐ
-›”\wK[0âl>kduwZ›ŠB’;PKÞ³õ	qÐÂ÷–Ó'˜æS¿1‹žJ&i/Ð¥œjs…âÇž49³ø°ó¹kœ•¢Ê=2\±ý†™:,uÄQ½ŽD….*†k¡Ì‚ÑáÒq1ÓÀƒBÕ#÷–
-U6ZKînÍ¤p\êw'#>ÚJÙ½¬“`ºý%¥„Ýž”³ÇP«m?Û…·Y”KrÔZž†¾]*u;_<§·ýÛšƒNúÜ8UÝÐÅ^” ¶ASŸÕJBÎÚ À®”]‘^;ù½6'•V² Ú.“Ó	Rë9à.òf‰Â!k”¾5³¢;ò¸EÄê¶ú0À®ŒprÉ€aÀôQªÌVÍØ5V'OÏžE¼	‰½×å>ò@Ç¯Ú‹
-¥]PK¯ÜbGDG±Çœ2hSuníS¾Ö‡„ñÐ~^³pÔ¤”ÏØKkßíÚ!§ÇõŠYÎ²†.K©oU…J3HÏ…µ»¨sI`¯)õ7¯-+Ó…–»óN†%©{×Ü¸7c¿nßºM5§5óPÍï'Ç$a9
-¦3…[›Ú}Qø‡ª.Šƒ €‡Ü¡TQ“ª¸q7šøG4ÂH?5èûýh¦¨¾Tð©ð­¦õK‡ã»%`ñæS¬?„õ;2Pµ~Ø5;ŠØ[7Q†’?é=·Rî @)ÇÍù2Z?ðÃ™þúE¸Ž»¼‹¶šFÞ'ÆFø¾NvóOã»|¬<Õ+‹Œ~kæH	sŠ­wÙÀEÌÓ"æ€{k–‹.öh$«"öì·)b…°¹{Ñ•ÞÊ¸kAŠþrÔÍö³'i»4Òm9p>ßu.wª ]j	Ôy1a‹w½ëŠ–Îf½ä«Ù‹þs<lô×´˜K´`Ö^\T¥î”tæP
-DªR÷›q	o³–kùrƒºÄcò½^(oWöIJ¬ÜÐ•«5ùúeDQ‹IçÂth°œShEj-øÞÀÌãÓšöøÀqkµ[ò¬Ð~37‘aû.¶üMÍ'åÎÖ²È/d@£W)ïi-{0Át ÞoœÝåÿì¬4•H\7Á9ÿ„I±ÎC:óý·£3…–žà¸QÂÙCy­žRååˆÛsÔ7ãHxñÝÂ°‹£U$s$ú€èŽ†Êßÿ©‹÷|ø?eýÿVÚlNÏúðöîøÅ—ÍæËç»OøõlóßŸ?°ã7_¾l>\u\ÿý·Ó~¼<Ý|ür‰ýëž`¸‘˜1\x%ÄäfUëHoÿWË«
+xœå]ÝsÜ¶¿¿vmÇŒ#X|­ëŽí$3íŒgÚ‰Þì<HªÕ¸cK‰r}èßá‰äÀbÞ‰w¶ûbúîH`±Øýí'¨Ó—·ëWç—köêÍëÕo+Éì¤»´Zò¶õ-»ü´:½ìò÷îWî=Hc[Ûý·mAÅ~¿¼^u}Zo88c™`·Æ‘>®&Ã~\ý²ºZýcõÃ›×«ÓŸ~=¿fÏŸ¯;}óú¯ß3±zñ‚½ú> IJ`N¶\§'D	R:«]G¨y¾û¯¦mÁlÈ{u¶ììvuz%˜´Ü°³«éZ;û´zûôâ²¿BUýU÷WÓ_mu›ëÅæßuÃ´ãZ+'ÙÝx×É¿BªÉ§ô‰+r¤Ûˆ*R'mH½tÑý6¸ÿ63W¼jäÁúÇ' çôÀ0R†’‘Â?³³¿­~8ËIˆÄ$D+®]+$³Þr%„0K
+
+ô,ƒ/âÏ¡À¶¤ÆE÷„LîïRÃV,ï?«à®~ÞÛ@P† œG©ð{¥KÈ†€Ô\Hï5³ÖrïÔ^Û¡¸û2÷ã"Œ/ÂK/˜àÞjØ†k‚‹‹€Li½:³^a¹óö€ûÎlÐ`ß0e¸4Ì}#ð7Lq/¦?é¦càô›Ñ¤7ã¸†Ë•±Æºþ×‹†IÏ’ÈPèýù
+Í~ÿvÒuŒ1€pž|éŽ+­ÜøÛ 0 &%w²ÝþÖÃu4J:Lø²58ïo'œƒx[î†äI×MM½Æ’wcbÂzë–•úÁ©:eæ®KÎdn¹„ó4UÌêv/5pÑ¹¥†S"Àn]ˆLÆKî”PËáÒ`Ã(µéV/ãÞ§kå{h°ö=¿•Ž| C=+”pŒ–Ê"Šlš®2Ë@vÑŠG,è‡!aÄñÖø	n¥¼aZs[ { ÛE~ì‡EÐ¯<fx5øá3å$ù
+Û`R+¶x°:jGÉ4z®z&6§ó<Q5„ÁDt*Ä‰’ë?Ì“h˜ny[A½ªE6›A6g¹µ
+Ü‚.Ä¬4X¢p=ÕŸ1¨^zÕÁü©¼Ù
+d¬Îù	£ðâ*ÆÂ8.ž;z8ÞãÒ†»Ì†Ã¶`—Úð'èö‘îìÁœ¼oÂ€Ä^mñ&²Š·…Zcç)B÷G:›xÉcž¥I¾{Z•àÐ¶¢µÌ(Í5øåœŸ¦Jž=– šƒÖR/O¤PˆPu¤¸Eí}hâÜÃhhF0˜
+p’± Lò1ÝûÌ.rL‚k„§ÄBl1ˆe‰}··V)f¤çÊÂbðm•”JI‹éÂD¢îj„CÏrÖ/‘©Î¼‚âA" ¸ÅMFÜL\#H¯”•Óˆm%²‘ãÙå8`-
+–õ‚+g|ËL'Þ(XJ¾).Ë­¢åvizOcX‚XÔ
+r‚†"èU¼û<&	1Œ¤\Ò‘™ø†ùø¦0ß$-mq&ëª[ÏÚÅ0é´N )€K‰Û÷òq}° ²÷d<wSôŠ±E{Ñ9ªåPnôŒAÉä€àØÐ3´¶-—R*uè¢ÅŒÜ “Ü	ŠÊÁ’iŸtCüXÞÈN)É'÷D9¾Š¤¢'Ó$QB,’ @’Ef×<¬PJiëÝU$	+r®{Ëù¥dXM-“ÔÀô’dN²qœ-±¡&aÞáÓŽp(Z³D=IKDdeo¦þÎI~$q@¿%,Í$§´Q\h­–, [ÜœÍÝIMÊvÍ'¾Õ)X`?Ž"…ðt,}$â=–ˆi§‰¼\º CoÙÑBSj©0<!ÂKdáó„IÉ=Ý>0l4
+óè¹KÚ…<'éÀ øq–Ù0o¸÷Æ¨Æå3¨‘™[áŽBš$*vŽÚè@C§\yD§Ôp[WŠhV0­÷Î-éaÒ.éöE-Ç[²ŠZ´ÈÓÈRc4Z	ºD}Jèu¾T””rp:~F‹Îùu3e«^ì—×Mt>&
+ÍI1Ý5÷ÔºáVÙfSP×K>T¸¨:,™Äýôþ{Îäy@JM”ù”uRÆÁû,Z±Ž_A)Æo½·ÞU”À‹9LyÇ=h½_Ë¿â@çúbm¶mõF‡ÓtïuÍÒefé­äÎ8mLrÎé•c']‚Éx0}Ð¨’0ðž:°°Éîœ(Å…${ÐG‡Õ|& €’E,¿-–¬¶`n®Ï¦áh»M†Yëtsè­³Ù†Š¬2R™Ç\ÊÑ75ÏWZÁôIB²Æ‘Œ^æÚes÷Ã®¿0\»ûÊÇ)Kè†>™²–[/ôbGGlqVž[Ò-â§»Ít]CŒÉþø©ï§_ó×+JLu²"dbUØL“ó	ýuÎÆTª!•<Z‘’Wn7¨íÏmýÜçîÁ$ÒÜÑtX0¹a½ öŽœP5©Ž^ sKÉ-(½`³lßæúd‚"*é#„a=]Î(ÖÖúæV¢Æ[N®B|T(Z!Q™ ¨™®„JÔ&|?n¾¶XþY†¿÷xf¤a­àÂÍhm‚Lß‹Ë­rÆ}¶‘fñŒn-Zæ\“’‚ëniFœÕG¬æÚ{*
+‰î@-u|ÏÖ'ÄAgßkŸ`šŸMýbÄ,rv*š¤¾@sªÎ
+{Vå`ÌâÃÌçf¬q~Š>(÷Èp^Äv$ê°TÔNDYô2eº¨À®…2F‡KÇÅL÷ZUŽÜk*TÉh5¹»†Iá¸ÔïŽF|²•²I'ÁtûJr	=º=)e¡V[´ m³È—ä¨µV:<}»Tk7_<¥·ýëš‚NüÜ8UÙÐÅ^” ºAUŸÕ#JBÎfÚ  \)»"½:tò{mŽ*­dAµ^&:§ÄÖsÀ]äÅ™3Ö(}³¢;ñ¸EÄâ¶dú0À®ŒprÉ€aÀôQªÌVÍØ«#†‡‡g/^„Ä^ëòy ãW‰;™Ò.(Ïe«ÜbGDG¶Çœ2hSu®íSÞèCÄx¨?®™9j’Ëg¤µo·vÈéq½l–3¯¡äRŠ§[U¦Ò²åÂÚ}Ô9'°JÛ†ý›¢-wçôKR÷¶ºqoÆ~íÞºL5§5óXÍïžFÇ$a9
+¦3ùMí¡(ücQ3ÅAÀ½÷îXª¨HU\Œ¸;MüaÄŒŸôCÈ~0SÐŸ+ø”øÓú¹ÃñÝ°xó9ÖB‰ú=¨R?lÃNö–M”¦äO¶-·Rî!@)ÇÝù2Z?ðÃ™íæí°Ž{û¼¦µ˜F>$ÆøÞD»ùçñŸû|¬4Õ*‹~KfI	sŠ­÷ÙÀ½EÌÑ"æ€·Ö,]ÐHEìÅ—)b™°¹{Ï•ó­;šq÷¤è/GÝl?{’¶‹#Ýšçó]ç|§
+Ò¥V‘@Öx×É{!°n °aébÖ;¾ª½è¿„ÃŸ¦Å\¢³ôVÜL *5p§¤3GR MªR÷Å¸Ç„·YÊµÎ|¹Á]â1ù^.”×+û$%–oèJÕš|û2¢¨Ù¤óa:6XÎŒ)4Zmo`ŽæñiE{|à¸µÚ-yVè°™›À°}Zþªæ“|gk^ä2 Á›O´–˜`:ïŠ7ÎîógöVšB$.ï\û•„I¡Îœ~E:óÝ×£3™–ï¸QÂÙcy­ŽRååˆ;pÔ7ãHxöÕÂ°£•%s$ú€àŽŠÊßÿ©‹÷røã]wbþr½>¿üåý?ÙÛÓW7ëõÍ§Ÿ»oúÏÅú¿¿¾g§?ÞÜ¬ßßv_m>ÿýü_®Ï×n®±¿Üã7Ò3†‹V	±€¹[Uèíÿ ÿèwÑ
 endstream
 endobj
 
-939 0 obj
+945 0 obj
 <<
   /Type /Page
   /Resources <<
     /ProcSet [/PDF /Text /ImageC /ImageB]
     /ColorSpace <<
-      /c0 920 0 R
+      /c0 926 0 R
     >>
     /Font <<
       /f0 902 0 R
@@ -12038,11 +12168,11 @@ endobj
   /MediaBox [0 0 595.2756 841.8898]
   /StructParents 1
   /Parent 1 0 R
-  /Contents 940 0 R
+  /Contents 946 0 R
 >>
 endobj
 
-940 0 obj
+946 0 obj
 <<
   /Length 3604
   /Filter /FlateDecode
@@ -12063,13 +12193,13 @@ yZo»%¢1#2)h'Þp:‰Émi¢1¦Ž×ƒ=#+1Û+OFX¶Ag\§ÅU¾Lö.ŠÇ÷Px€ˆÃ3È‡+:‰Iš^¡çÊ@w±
 endstream
 endobj
 
-941 0 obj
+947 0 obj
 <<
   /Type /Page
   /Resources <<
     /ProcSet [/PDF /Text /ImageC /ImageB]
     /ColorSpace <<
-      /c0 920 0 R
+      /c0 926 0 R
     >>
     /Font <<
       /f0 896 0 R
@@ -12080,11 +12210,11 @@ endobj
   /MediaBox [0 0 595.2756 841.8898]
   /StructParents 2
   /Parent 1 0 R
-  /Contents 942 0 R
+  /Contents 948 0 R
 >>
 endobj
 
-942 0 obj
+948 0 obj
 <<
   /Length 4158
   /Filter /FlateDecode
@@ -12107,13 +12237,13 @@ AfL¿ó®Û~ÑéðªþèìAYèžŽÿ:®šº¨èëáµ¼| jÜI¢ù¼©½…yïPÙÌ•@.Q®ëš»›,QŒ…è+½DgkG™.À•
 endstream
 endobj
 
-943 0 obj
+949 0 obj
 <<
   /Type /Page
   /Resources <<
     /ProcSet [/PDF /Text /ImageC /ImageB]
     /ColorSpace <<
-      /c0 920 0 R
+      /c0 926 0 R
     >>
     /Font <<
       /f0 896 0 R
@@ -12124,11 +12254,11 @@ endobj
   /MediaBox [0 0 595.2756 841.8898]
   /StructParents 3
   /Parent 1 0 R
-  /Contents 944 0 R
+  /Contents 950 0 R
 >>
 endobj
 
-944 0 obj
+950 0 obj
 <<
   /Length 4021
   /Filter /FlateDecode
@@ -12154,59 +12284,54 @@ jcõ}w¸œß³
 endstream
 endobj
 
-945 0 obj
+951 0 obj
 <<
   /Type /Page
   /Resources <<
     /ProcSet [/PDF /Text /ImageC /ImageB]
     /ColorSpace <<
-      /c0 920 0 R
+      /c0 926 0 R
     >>
     /Font <<
       /f0 908 0 R
       /f1 890 0 R
       /f2 896 0 R
+      /f3 914 0 R
     >>
   >>
   /MediaBox [0 0 595.2756 841.8898]
   /StructParents 4
   /Parent 1 0 R
-  /Contents 946 0 R
+  /Contents 952 0 R
 >>
 endobj
 
-946 0 obj
+952 0 obj
 <<
-  /Length 4379
+  /Length 4385
   /Filter /FlateDecode
 >>
 stream
-xœí]ÝsÜ¶¿¿‚qâÄj"‹o¤™ÌØNÒ¦ÓÌ´õ)Îƒ¥ZI:¶œ*êCÿû@‚ È[€‡;)S?øpIìý°Ø/,°Ïïî¹y}}ß¼øîåîß;hhC›s÷ac¬i®ßí.®isý›û+±–TF¹¦1ŒKÞüv}»s½ÛI+	ÓR5´y;|éßôv7zíÛÝÏ»›Ýßw_÷rw±D†¥–i:¸ÿ'JŒQLÙÑÁšwŽb¬œÊq«am®wø@¥ A¸¡à¾	ä÷Ïô—˜°û¢*üÓáŠ$Œ©›á}Zù›úÞºï×;šowCGÝ%:¼‰†n®QH™FEhRnÄ¬$¾×·]€PÐÊÕÐõÿý¯¯o›/¾Ø5ÍÅw/¿ýª¡®õ××·?5ÏÞÜžÿãû³Ý—_6/¾šÑÆ5‘ÆŽH£„3),e%Â
- ­Ü`IEµ\x_\îhsy·»¸¡!¦¹¼s(m.ßí~xöŠRJÜ¯(ÕîÓÿ÷ŠrÙ}òîj|ÓGÝÑ~²pS÷P÷’»îbü*3}?•g?6—Ù}}‰#Îˆâ6gˆ¸"¶åÕ¶•=D€"&pÃjÑÇDyôÙƒ*páP) VfZIåÙ°2¬¸jÐ>ìzÖ\þƒ– „‰"6¢Z¸ÚV6^ƒWG^eVÂ ˜	ýtÿÍˆe'à@A´#®6šµ&E`mVU—§®>ÿyó_ž™ïI¤«À}~2¾ãÌóæTkµú)ùì â¸À24Ó¬PHM¤3²Þv­ì1Rˆ1
-äU$è,	Ê¦H‚Š,ŒðM?©Æ"ÎÁ]¤ÄÀý<xÛÊF\#äUGœÛw$ñªç"Ï«¾•œÁ ×‘W_ xä>ë…ƒÿÏóë§J.Ï\KÀLè®o¯Z¤½
-”(£EELc§ ¦î@´ýüGKØ`À»Ñf ŒÃÖ“Wál£¡³ðb\“–ÛV>bÿ©'°6O2èçùˆƒ¢j¿—˜á%e–Å”Œ©~ü0=yB·áæÞmçc
-žŒºúö3&x2'½ÿ4 ‡Ö)Z#N2;1NeO^åÙÉrv:aL%Ñ\s}ÜÈÆ§´¦QVÆ•zÌª¢à­Üˆr0[úêA\ª+Š8RjB¹”] £ÿ–ÊÙl)­Ï­ÒðöóXèŸ5ç‚‘Ì0ÕL¼ÓWÇ‚Ÿ¿0ìí×©»i½cL<k¢ùÍ³…îøŠ–Âî=l_W1~*uqÜä#‰[ƒâÈÉ)ø‘ÆÛ€¿IEfñÎ«°Œ0£¤:j° 0ÑGáD©u­öda¤ä²v“k”€¤"¤·êLŒ ÐWë%³dF®I±m”„ƒ”rBsäí0dÜ/nZ×ÔTÃdD4 ‰X`„%ÅbQ*F“îÞýC³ãŽûhê¶ŸWîÿ‹ÉÛîqq?í®•ü=9Ý_M´º»®bžœ!lf–€0æÌDØ‰e|ŸŸ5š`²¦ò¬K$ï¯=É9œ ª»Û¯& ¸G%QýË®–Ÿ|÷2Ò©ŽF]0M¸àºŽ«ÌwQÆÎN,(¥”Mø4ŒcâÎ)?¦»’Š‰ˆk“w»ŸÀ8ÿª 7»o'W;YGyòwD—€|ÓjE4r=ý‘Ÿ9Ñ¦ÁèhtIGæí bülÌv"{Dæc‚‹›˜
-£ã÷^E›AŒjÏ	¶Zï}:ŸdN¬³FbØ ø3~sÃÈ%™`õ¹å2[º¥ò¡¤¨%¿–ùË	Žè
-›No¨!9Mfð³"Çp_¿Î@cqº(sú°T.*)qÏ¨‰èÐ)LVž^'ÑïÊ¹:VŸOãÈÔLû°õA³1·d.ìú.P.ë7ì¨§~æô–Û©ú[¡ËÁ¦°ßìaÖì·Ïþölï‡ô—–«D5å•_ }º—<–²¡)+•²>™”ËIƒ3r>ì+™ƒR»UË	„'Ïd”pJ]öãp	ˆ ’+;Êd¬½­ï0\pÙƒ¡=N×èèu´ï›A(5™®¾ÏA\©$ÊÙ •³2òâ^wÿ4Ó/zs¼œ¡ºõáÎÏ¯Ø+Uå‚ÐçŠp¡L-iúœÌWI™/¥Ú@u"Ï÷	h?-êi}¾Ï€›Ý!ÒŽÖØ”œYPLð¢ö¨AœYŠ‰qÓþ¿bZWLà\v<bÉd˜°§#Žb„œ$ÞWIWM¬0LR*Ä­œ%óã£gûUŽVp–;¸K†l»‚Ãädë[·yÎÖe¶–êøl*—÷j:ž
-° åÄ(JÔ&÷ãX5œ5ç†»Í4ŒMCÁ+zbþÌÁ•F²—†ä+„dET¼âÉž0§]ìxÏšÅGÐ5D"'À‰JFo'¿Í©Ü÷<þ…·'Ãë‹¯˜ÛL‹AõÅ_³lS­ýøÔZê·v©`¡g\ü}Ÿƒ=rL	¢«¤Aq§°ÄR –yaÖo½„§ËÝ¦d}LYŒÑ\Î~ÖœOŸHÅ¹¯VÞ‘R³~J×:Sd“v’|²Ü÷>1‡©#æy®	Z_°¤j–;›È»ù«UI=†RûDÛ#ª„%ÒÊŠ+[‡7ŽÒÓ`}m=­mng³q 
-£y¦‚4Z¢°¶‰]…Y¹¬’5SFëÝÓ»ïÆ/­3ubù +ýÚÚ’$Œ«šù…;ÎÅ­¤ì!Åˆ@
-b¨™‰@Jbs
-¯©Úûú.û+.LÔÇ‰ú‹tôJ:t‰	N#1·‡ˆ"mœÈ7ò÷5#×/c„ZQoX¿®7ª}d(#S€& &¤îG´ë@m+GÌâ„#Ž¢:•÷Ò¥>Ñ10·u„á¸yC'G¥žwÖÇòöÒ3ë(nc’+Ç$òªÁÖs v³C»û¢¯ÍñqŽJî¬Ïh(DÎ8-²Í[–9&>î©«>^¥›ëñB¸;'à4B³‰9XëümõÌ0R&†7çƒÌåŽ¾#™Íà®øï_Û¿ß‹;xýVåDY~d ÇAq+	X¦NafÌk7Ø½y-R ˆj)<Øõ6¨ú#sŠ0ÞzþêH)O^=€GqXœÅf…“À]mõRÛÌÇ•ÖÒXŸ+CÔžÓÈüŠL+ìÉ=W§ãbûûî¢ÞÑ›ó˜å„«ÓLŒ»×ÑW}äÀ­}bêrË(7@´€ú'ö ÊPäæÓüÊùë¬æÌ[ˆôËCHJÊ8tëlF%0µÔÕC5;
-!ÝÉ³ExmŽBŒ§<Â¬~Laé…hÉ°mvC$ÊËë¬?lGˆFœöæh„Äø|À#ëüSþ(w§˜–€§ü¯ràµ­|ðPg2uËl˜‡!F’BÎþè¿dÛ\i§ÄNÃ²ß.Xõoü™Ç‡Àzç.÷pÌîr÷Êf·ta@˜kä†qžyµ¹ìóÄ1<gCVìœF.^í.K…évµñ¿¿µï|I­ˆ¶`Ž4ró
-W†0“D“Çç-zs˜W¢<¶ŽÀ#€]9Î[‚ñV­†òðZêê\ç-Ákó‘µ
-uÈoG`}ž<V”wztlÈ‡*‹ýÆgÙÆêvÈMŒz™Ž™Ým$ßÆW7œ3…Kôs€dq¢`aÁ¡kæó"v½Ñeú‰‡©‡PŸqJ®Zeˆ1½ÎŒ=Ã×™@w3c3:V³½Ú'[F;FÂ¯Yð!Hç²xwÒ·ò¹åÄwôUçÄ^ ™“ÂãH9æº‰B&¹r„û’3Oƒ#jù5XËåU“~äŠ>Ml®ïß(Œçî¨cšXn~i,E@oLnW¨¬ØŽ¾êPÏU&»rj›€RDBºÑQ¨•ÓŽ¾jf»3m±"ÀÀÊƒïšù ¡¼ìŽÆê|¸vžz^@©½á îÈx‹<øu£0*î1ÝSWp^õ¸ FþáÕ!P_Ä=[—&~(¬/ÃŠl>Æ\¹ÝãæÊhdmW‚£Íc°ù
-pÜì{hT¡ŽÀêXöhØšŸÁ‡ÔíøÖúŽÀˆçÍS„N
-~<X>,Áqs¨Z£òe…µ±¬¨î’}J0ÞhÛi”{è«„p¶i§À'~”àTv¡ê¶•j·b °2O¶v]»ÛcK5Ô‚mo¿EÂ$#ëXy9P8p[ë†¢Jµ
-k\v<œi¿;©;mI«Ï|#9ŒØÓW[o+D¼‡ÓÑþTDŽÆægUÈ5PXy<ŽWsØš†Y§‰4Çµ‡‘^™ÑD'5†gEJG0iˆP–U,9fuÆî¬–ôúÕòÙ|™‡ºT=åîÀ‡é;ì	5îœµ¨´Äü¬¥Tçób1@]W9§3!	S–ñ‡tTçDKp‚h¸$ˆ‘
-ôè .Û»úþÂwLMhO©	×èð6Ú÷…=¢†q;õ?ƒ\‡gœ«ŒxÌuµ‹ÞèúÔvß@_5Œ³¿ví¦±lG5¨D ±:gvúá*½¼4ÍŠ-d=*ÌÝ~ùÓÄFrÆŸ¤öøøúŸ³™vŸÌIØñèé«Ëöß"yžI·z´P›u;òŒŒ`Êï-lãú³ÁE:ú*Ë‡9»Ìÿ+ã?ÿ¨g@ßÊ|V¸³ò¨x‘ûYì ãÓÐq¥,N1ÿQ¡†@_màüÜ	DœHb¢o}µË9ß€1E(Ájæ[ä¢-M¤N<f3¿áühQ‹¹}õ0.5óK;€™o3ÎB:gn6óÏOjæŸ‚í1~Z ¯2Ûgšù§@çyòŽŒft	`Í|‹ò‹:újË‡›ùEü·ÕÌ·(¿©£°¾ÀÝ`æŸo5óO1ÿ1NV ¯º È6óOn¶¥¯:b33FîB60†J¯µ
-¨çE/—äö–¿É+!ã>ijýlµLÃ×4_*¥£ta|/¯¿§Ó`½?K¸Ò`Ð’h“y‚®q) ~.µ­ìÉµÖÓ™DíÁV®UJh²bŽáÄ¦&3Eù¤+•ï‡ÕÜôôât^C·ûËláb_uhJ
-Ã¯TŒÛVßeÿó9!a <9¡(Ñ …ÎòËy›öä>dªÜFO`±ßÝÉyõdMª09ã°
-oYƒ.uÖp ‹¦Ãm*Ÿfµ""ue¥ZàP²qlÌ²”Y™!óªšígµ ®¸;†ß*õ`Ä•DI*²Ê,x§#úfÐBjÔ“™Äí¥ÏÖG&%Ž@É–«!ŽîöWÝŸ07ËŒîÀ×™ÄÂø…%eÇÂvÌ¡ÄcÂ«Š?M—@Å‹S|ºçJ	Ð²’ÊûylÉGvuÐ‹Ü÷SJ3W2ÎðÉ²aí=  ¨uºžÄ$fÇ‹yn±~/Û@²ä²6DºGMî‰-¥¢
-Ò‹Ñ`Êˆ°Ôp}vÃ,Àh|ìüvŽç·”Èe)åGä·Œ( ZóÝãƒos%8paÈM³Ï*H£MÃdœÏÏùv±U×vÐ¦ :yŠÏˆU@5¡ UtXÁAYó ðÃ„GæD/:[žßß¿¾þùÍ?›.^¼¿¿ÿîGwõûÿ\Ýÿ÷×7ÍÅ7ïßß¿¹s—.ý÷¿½þé—Û×÷¿¼¿Mžm.ˆàJ5Rj8¥Ó=E‡3>¾œÿpq©
+xœí]ÝsÜ¶¿¿‚qâÄj"‹o¤™ÌØNÒ¦ÓÌ´õ)Îƒ¥ZI:¶œ*êCÿûH€G‚ ¹ wR¦~ðá(’Øûa±_X`/žßÝÿróúú¾yñÝËÝ¿wÐÐ†6çîÃ ÆXÓ\¿Û]\Óæú7÷Wb-©ŒrMc—¼ùíúvç{·“V¦¥jhóvÿ¥ÓÛÝàµow?ïnvß}ýÝËÝÅ–6Z¦éàí?ÑPbŒbZHOkÞ9jˆ±Rp*‡­†5´¹Þ	à{*Â÷M@ ¿¦¿ÄÚý-PÑ>®HÂ¨‘ºÙ¿O«ö¦¾7ÿýzÇBóínß‘¿D÷o¢¡›kR¦ÑBš”1+IÛë[ß ´j‡jßôÿý¯¯o›/¾Ø5ÍÅw/¿ýª¡®õ××·?5ÏÞÜžÿãû³Ý—_6/¾šÐÆ5‘ÆH£„3),e%Â
+ ­Ü`IEµ\´4¾¸ÜÑæònwqCCLsy3äPÚ\¾Ûýðì¥”¸ÿ^QªÝgûß+Ê¥ÿäþjxÓGþ‹è>Y¸É?ä_rç_!†¯2ã÷Syöcsù—Ý×—˜1âŒ(ns†ˆ+b;^íZÙCÈ!b‚ 7¬Ö}<B”GŸ=˜a°° •`%a¦“T®‘+CÀˆ«í³À®gÍå¿0h	J˜(bC ªƒ«keãÅ1xyò*³bAÄLØN÷Ñ¨XvD=qµ9Ð¨5)k³ª’(¸Zêêó_Ëbí—çCæ{é*pŸŸï8kys¬µ:ý”|v¯â¸À24Ó¬PHM¤3²ÞúVö)ÄòªxK‚²1’ "#|gãOª±ˆs°D)1p?¯E¼ke#®ˆòª#Îƒí†GŽ;Šxµå¢–WÛV6rƒœ'¯¾@i‘û¬í-¿þq¬äòÌU°ÌˆîúöªEÚ«@‰2ZTÄ4v
+`ìIÛÏ´„va¼mÀ8l=yµÎ6¼]X€ãštìØµòÃøO=µy’A?ÏŒU÷½Ä¬/)³,ÆdŒõã‡éÉº7÷n;RðdÐ}ìÐwŸ1Á£9ÙøOrh¢51â$³ãTöäUžœ!g§ÆTÍ5×Çl`|Jke5a\©Ç¬*J ÞÊ(³£¯Ä¥º¢ˆ#¥&”Kéý·|èPÎfGi}îì”F+`?…þYs.ÉSÍÈ;pu,øÙðûÃÀÞºŽHuè§EôŽIP0ñ¬‰æ[4Ïfºã(:
+ý{ØZW1~*uqÜä#‰[ƒâÈÉ1ø‘ÆÛ€¿IEfñÎk+`aFIuÔ``¢Ž:Ã‰6RëZ3ìÉÌHÉyì&×(!HEHoÕ˜A ¯ÖsfÉ„\“bÚ(!	)åˆ4æÈÚaÈx»¸i]SSi“mÐ€$b1‚”XCŠE©Lº{÷?ì›ž;î£©Û}^¹ÿ/Fo»Û‹‹ûqwäïÉñe4Ðòw]Å<9AØÎ Ì,aFÌ™‰°óø>?k41Àd/LåY–HÞ_{2s 8 TûÛ¯F ¸G%QýË®æŸ|÷2Ð©Ž]0M¸àºŽ«ÌwQÆÎN,ÝSJ)ñiÇÄc~Lw$×&ïv?q2üUAoúoGW½¬£<ù;¢KÀ¾éµ"¹žþÀÈÀÏœhÓ`t4ºÎŒŒ‡Ä“y»1~6f;‘="Ó1AÅML‰ƒÑñ{¯†¿¢€Í Fµç†[-÷>O2'ÖY#1lø~sÃÈ%™`õ©å2Yº¥3ò¡¤¨%¿æùË	Žè
+›ŒNo¨ 9NfhgE<Žá¿~™†âtVæôa© ]TRâžQ#Ñ¡S˜,<=N¢	Þ•ru¨>ŸÆ‘©‰öaËƒ:ecnÉTØõ]$ œ×oØQOýÌñ-·cõ7/Bç9‚a¿YaÖì·OþöluŽCzŽKËˆU¢š‰òª] }ºJKÙÐˆ•ŠJYŸLÊå‰¤Á†9ö…ÌA©ÝªåÂ“g2J8¥.ûq	ˆ ’+;Èd¬»­ï0\pÙƒ¡=L×èàu´ï›A(5™®¾ÏA\©$ÊÙ •³2òâ^Þ»šéÇ—@½9^ÎP]O`}¸óó+V¥ªœú\.”©%Mÿ€“ù*)ó¡T¨Näùš€ná§EB=­Ï×¸É"íhMÉ‰eÅÏj¿=5hƒ3K11N`<ÐÿWLËŠ	œËŽGì ù‚ötÄQCŒ£Äû*éª‰†‘BêC…¸µ€³d~|ôl¿ÊÀÑ
+ÎrwÉmWp˜œ¬@`ýa« àf"¯ÂÙºÌÖRŸåòª¦ã© PNŒ2 Dmr?ŽUÃYsn¸ÛLÃØ8¼ '¦Ï\i${	aH¾@HVD¥U¼1Ù“ æ¸‹µ€÷„ I<p ]Bt&rœ¨dôvôûØ”ÊÕ¸ç!øà@ðÏ¼=^Ÿ}ÅÔfšªÏþšy›jéÇ§Ö
+P¿å°K3=ãâïkrVä˜D)V-HƒâNa‰¥@-?ò
+Â¤ßz+Oç»MÉú˜²"£¹œ;ü¬9?‘Šs_-¼#¥&ý”®'xSd“n’|2ß÷šŠ˜B‚Ô‰ó<×­³/˜S5óäÝtÈÅ¿ª¤C)Š5QÅVD•°DZYqeëðÆQz,¯­§µÍíd6î‰Âhž± †(,-FbWaD.«dÍ”Áz÷øî»áKëL¤X>ÀŠA¿¶6'	cÆªf~¡CÄÎŸs±@+){H1"‚jFA"’XàÜ…„Â+Aªî¾¾ËþŠõ_†q¢þ"¼’î»ÄFŠ§‘˜[ß!¢H'jùûš‘ë‚1B­(ßÆW£Dñ2ó3R:hbDî:’@ [êZùXb(qÔåª¼Ÿ.õ‰Žƒ¹í#¬ÇÍ›:9*ýÜ¸Ëu¾ì7A ±cÖ1P‚ÝÆ\WŽÉ)äUãÂž	±{ºM%xm“sTv°'°þ¼}D‘rÆiÑmÞ¹Ì1aò–ºêãUºÇ/‡ýq§‘Ã˜½ÌÀêXçï®g†‘21¼9-D`6*{úŽd4{¯¥ýþupú-¹{ç?ÃÐ¢œ(Ë,òT(n%ËÔ),­ƒYbÝ>»" 7/I
+Ô9Q…G »Þ>Õöäœ"Œ·ƒ„:Yª%¯Àƒp,Îb3ŒˆÂÉà®vz©kæc†Êëh¬Ï•!xÏid~E¦ö ‚ž«Óá±µü¾»¨wô=f9áê4“ ãñyúªÏ‚œ“¸u¢oDLý8ƒ@îåˆPÿàžJ€Ü|¨Ÿ@9žÀÍ`®GR)éß"#!))cÑ­Ó•ÈÔQWG³ÃÒ@[„×æ0„À¸ZÀ#LëÇ‡­-¶Í~ˆD¹yžÀúÃv„pDÐÁù`oGHŒÓ¬vÁi”»ÓLKÀSí¯ràu­|ðPg3ye7LãI!'l¿d\i§ÄNÃ²ç.XõoÚÿ2;õ 1Þ] ïá˜Üåð•Ínéâ€-`®‘Æ{
+äÕæ²ÏÇñœí“±bï4:¼¯ö—¥Ât»ÚÇ8`ÀßƒÚwÎ¤VD[0Ç¹‰…+C˜…QÂÉcô– ½9Î+Q›'ð`Wô–`¼U«¡<¼Žºz zKðÚ|t­Böë	¬Ï“Ç
+óŽíŽÃ-þÆgÚÆêvŸ£õ2* 3¹+ÊÔŠßÆ7ž3†Kôs€dq¢`aÅÁ7óy»àè2þÄÃÔC¨Ï85W-2ÄŒ˜^fÆžáëL »‰±¯Ù]í“®£#Ñ.Zð!Hç²´îdÛÊçB”ïé«Î‰½@,2'…%Æ‘rÌ……Lvå7ö1$hžGÔúk p#–ÅË&9ÜÈ|œÞ\ß»Q¿ÝQÇ4±Üü²XŠ€Þ˜â®PI±ž¾êPO–Tdiš;(ET!¤…Z8õôUƒ4Û™éª‰V†¼oæƒ†ò±=ÕùpéTõ¼pRwÿÌ1Ü‘éùïË&aTâc¼³®àÔêaYü#¬C˜¾ˆ{¶.$(Lô PX_†Y|Œ¹¢»ÇM•ÑÈ
+¯F›Ç`ñà¸ÙóÐ¨2BžÀ­Xâ-¾n²ßçp!u»¾õˆº#°!Æqk©BGE?,–à¸9L­QÉ²ÂÚXÖRûDŸŒ7ZvåÚú*!œmØ)h“>Jð*}˜ºkå#†Ú­(¬Ì“U×mõØRHµXÛ[o‘0ÉH9V­(¸­µCQåZ…µ.;Ît»5©;mI§ÏÚF>r÷¯§¯¶ÞVŒx…ÓÑÞTDŽÆæÝfUÌ5PXy<ŽWwØš†Y§‰4Çµ†‘E^™ÑD'4…'egŠG0iˆP–U,9huÊî´–ôÊÕüé|™ÇºT=çîÀÇé;ì5î¤µ¨¸Äô´¥TçÓr1@¾«œóŒ™„)ËøC:¬†s¢%81´¿$ˆ‘
+ôà¨.»»úþÂwPMhÏ©	×èþm´ï{Hãv"*ê»~¹Ï8%Vñ˜+k!¼Ññ3¨¾¾jg»~ÝºMbØ‰jP‰@cuÎôúá*½´4ÎŠíc=(ÍÝ}ùÓÈ&rÂ%õ´±õ?g»2Ý™“°=&ÞÑÓW—í¿Eò<“nô$h¡öézòŒŒ`ªÝZØÆµgƒ‹1xú*Ë‡¹ºÌý+ã¿öÑ–ÛV> ¨ÐC °ºÀHÅ‹ÜÏb÷Ÿ€¦ˆ+fqŠù
+4új çGà¶æH âDµpè«XÎÑŒ)BÁ~T3ß"lh"]pâ1›ù%oäG‹ZÈõôÕÃ¸ÔÌ/Aì f¾Í8éœ¹ÙÌ??©™
+¶Çøi¾ÊlŸiæŸ-œSÔ’÷pdD0£K Ûhæ[”_äé«-læñßV3ß¢ü&Oa}»ÁÌ?ßjæŸbþcœ¬@_umæŸ1Ü
+lG_uÄ&fþ„Ü™Bl`”*^kPOË^Ì.É­¿É+"ã>ijýl±PÃW5Ÿ+¦£tfÚ^^þ–Nƒõþ,áJƒm@K¢Mæá¹Æ¥¶s©keO& ¨µžžÈ$j¦´r­bŠ@“5s'Fh05™)Ê&½Z¨¥Ô¯æ¦§§Ó*ºþ/“Ý…³}eT¢))¿P3n[…—õæ3rB2Â@)x0rBQ¢Aå—ó.éÉ}ÈT±žÀ$b¿»3óêÉšTirÆaÞ²]$ê¬á@fM‡ÛT>ÍbM8DêÊB½À}ÑÆ¡52ÉR:dmN„0Ì«k¶Î$jF\qw¿UêÁˆ+!‰’TdZhý.ŒØ6„ê<£žÌ$n(y¶ž82)q’H6\qt·^st=an’Ý¯4·Ã~””3[1÷E^U”øiº*^œâÓ=Š€–U^ç±9ÙUB3,rßO)Í\Ñ8ÃGË†µw   Öéz“˜/æy¸ÅúU¶dÑemˆtŽšÜ[JE5¤g£Á”a©;Ûú$ì†Y€ÐøØùíÏo)‘ ÊRÊÈoQ ´æ»Çß¦JpÏýQ„!7Í>«$uŽ6“q:?§ÛÄV]ë¡MAºïtâMl(? uÕ„‚TÑAeÍƒÂ#Y8_¨ÃàùýýëëŸßü³ùáâÅûûû÷ï~tW¿ÿÏÕý}Ó\|óþýý›;wé²ýþ·×?ýrûúþ—÷·ÉSÍ\©FJB§t¼£èpÆÇ—#ãã×æ
 endstream
 endobj
 
-947 0 obj
+953 0 obj
 <<
   /Type /Annot
   /Subtype /Link
@@ -12223,16 +12348,16 @@ endobj
 >>
 endobj
 
-948 0 obj
+954 0 obj
 <<
   /Type /Page
   /Resources <<
     /ProcSet [/PDF /Text /ImageC /ImageB]
     /ColorSpace <<
-      /c0 920 0 R
+      /c0 926 0 R
     >>
     /Font <<
-      /f0 914 0 R
+      /f0 920 0 R
       /f1 896 0 R
       /f2 908 0 R
       /f3 902 0 R
@@ -12243,12 +12368,12 @@ endobj
   /StructParents 6
   /Tabs /S
   /Parent 1 0 R
-  /Contents 949 0 R
-  /Annots [947 0 R]
+  /Contents 955 0 R
+  /Annots [953 0 R]
 >>
 endobj
 
-949 0 obj
+955 0 obj
 <<
   /Length 4667
   /Filter /FlateDecode
@@ -12269,31 +12394,31 @@ J	TMÌ õ¤­Ž—ílÀëôUa¬ÅÅ^ã¯£ƒ~ã™Û¾ášãž¶ëz.>÷X qùšJõÂkeâ±Å]W+Âeo†lb¨‡“'ö¢5Dà
 endstream
 endobj
 
-950 0 obj
+956 0 obj
 <<
   /Title (Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS)
   /Creator (Typst 0.14.2)
-  /ModDate (D:20260622101737+02'00)
-  /CreationDate (D:20260622101737+02'00)
+  /ModDate (D:20260714181710+02'00)
+  /CreationDate (D:20260714181710+02'00)
 >>
 endobj
 
-951 0 obj
+957 0 obj
 <<
   /Length 1155
   /Type /Metadata
   /Subtype /XML
 >>
 stream
-<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="xmp-writer"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:xmp="http://ns.adobe.com/xap/1.0/"  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"  xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"  xmlns:pdf="http://ns.adobe.com/pdf/1.3/" ><dc:title><rdf:Alt><rdf:li xml:lang="x-default">Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS</rdf:li></rdf:Alt></dc:title><xmp:CreatorTool>Typst 0.14.2</xmp:CreatorTool><dc:language><rdf:Bag><rdf:li>en-US</rdf:li></rdf:Bag></dc:language><xmp:ModifyDate>2026-06-22T10:17:37+02:00</xmp:ModifyDate><xmp:CreateDate>2026-06-22T10:17:37+02:00</xmp:CreateDate><xmpTPg:NPages>6</xmpTPg:NPages><dc:format>application/pdf</dc:format><xmpMM:InstanceID>vT1IcPaaqv3X1qzCBokx1A==</xmpMM:InstanceID><xmpMM:DocumentID>vT1IcPaaqv3X1qzCBokx1A==</xmpMM:DocumentID><xmpMM:RenditionClass>proof</xmpMM:RenditionClass><pdf:PDFVersion>1.7</pdf:PDFVersion></rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="xmp-writer"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:xmp="http://ns.adobe.com/xap/1.0/"  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"  xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"  xmlns:pdf="http://ns.adobe.com/pdf/1.3/" ><dc:title><rdf:Alt><rdf:li xml:lang="x-default">Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS</rdf:li></rdf:Alt></dc:title><xmp:CreatorTool>Typst 0.14.2</xmp:CreatorTool><dc:language><rdf:Bag><rdf:li>en-US</rdf:li></rdf:Bag></dc:language><xmp:ModifyDate>2026-07-14T18:17:10+02:00</xmp:ModifyDate><xmp:CreateDate>2026-07-14T18:17:10+02:00</xmp:CreateDate><xmpTPg:NPages>6</xmpTPg:NPages><dc:format>application/pdf</dc:format><xmpMM:InstanceID>L0BDgrutnAS/kexkQ+ZfPA==</xmpMM:InstanceID><xmpMM:DocumentID>L0BDgrutnAS/kexkQ+ZfPA==</xmpMM:DocumentID><xmpMM:RenditionClass>proof</xmpMM:RenditionClass><pdf:PDFVersion>1.7</pdf:PDFVersion></rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>
 endstream
 endobj
 
-952 0 obj
+958 0 obj
 <<
   /Type /Catalog
   /Pages 1 0 R
-  /Metadata 951 0 R
+  /Metadata 957 0 R
   /PageLabels 18 0 R
   /Lang (en-US)
   /StructTreeRoot 19 0 R
@@ -12309,7 +12434,7 @@ endobj
 endobj
 
 xref
-0 953
+0 959
 0000000000 65535 f
 0000000016 00000 n
 0000000122 00000 n
@@ -12331,945 +12456,951 @@ xref
 0000002029 00000 n
 0000002122 00000 n
 0000002405 00000 n
-0000002816 00000 n
-0000003323 00000 n
-0000004278 00000 n
-0000005001 00000 n
-0000005940 00000 n
-0000006555 00000 n
-0000009833 00000 n
-0000009929 00000 n
-0000010051 00000 n
-0000010131 00000 n
-0000010297 00000 n
-0000010434 00000 n
-0000010589 00000 n
-0000010694 00000 n
-0000010790 00000 n
-0000010896 00000 n
-0000011022 00000 n
-0000011154 00000 n
-0000011320 00000 n
-0000011452 00000 n
-0000011618 00000 n
-0000011750 00000 n
-0000011916 00000 n
-0000012048 00000 n
-0000012214 00000 n
-0000012340 00000 n
-0000012472 00000 n
-0000012638 00000 n
-0000012770 00000 n
-0000012936 00000 n
-0000013068 00000 n
-0000013234 00000 n
-0000013366 00000 n
-0000013535 00000 n
-0000013667 00000 n
-0000013833 00000 n
-0000013965 00000 n
-0000014131 00000 n
-0000014263 00000 n
-0000014429 00000 n
-0000014561 00000 n
-0000014727 00000 n
-0000014859 00000 n
-0000015025 00000 n
-0000015157 00000 n
-0000015323 00000 n
-0000015455 00000 n
-0000015621 00000 n
-0000015753 00000 n
-0000015919 00000 n
-0000016051 00000 n
-0000016217 00000 n
-0000016349 00000 n
-0000016515 00000 n
-0000016647 00000 n
-0000016813 00000 n
-0000016939 00000 n
-0000017071 00000 n
-0000017237 00000 n
-0000017369 00000 n
-0000017535 00000 n
-0000017667 00000 n
-0000017833 00000 n
-0000017965 00000 n
-0000018134 00000 n
-0000018266 00000 n
-0000018432 00000 n
-0000018564 00000 n
-0000018730 00000 n
-0000018862 00000 n
-0000019028 00000 n
-0000019160 00000 n
-0000019326 00000 n
-0000019458 00000 n
-0000019624 00000 n
-0000019756 00000 n
-0000019922 00000 n
-0000020054 00000 n
-0000020220 00000 n
-0000020353 00000 n
-0000020520 00000 n
-0000020654 00000 n
-0000020822 00000 n
-0000020956 00000 n
-0000021124 00000 n
-0000021258 00000 n
-0000021426 00000 n
-0000021553 00000 n
-0000021687 00000 n
-0000021855 00000 n
-0000021989 00000 n
-0000022157 00000 n
-0000022291 00000 n
-0000022459 00000 n
-0000022593 00000 n
-0000022761 00000 n
-0000022895 00000 n
-0000023063 00000 n
-0000023197 00000 n
-0000023365 00000 n
-0000023492 00000 n
-0000023626 00000 n
-0000023794 00000 n
-0000023928 00000 n
-0000024096 00000 n
-0000024230 00000 n
-0000024398 00000 n
-0000024532 00000 n
-0000024700 00000 n
-0000024834 00000 n
-0000025005 00000 n
-0000025139 00000 n
-0000025307 00000 n
-0000025441 00000 n
-0000025609 00000 n
-0000025743 00000 n
-0000025911 00000 n
-0000026045 00000 n
-0000026212 00000 n
-0000026346 00000 n
-0000026513 00000 n
-0000026647 00000 n
-0000026814 00000 n
-0000026941 00000 n
-0000027075 00000 n
-0000027242 00000 n
-0000027331 00000 n
-0000027420 00000 n
-0000027564 00000 n
-0000027722 00000 n
-0000027811 00000 n
-0000027929 00000 n
-0000028012 00000 n
-0000028181 00000 n
-0000028264 00000 n
-0000028433 00000 n
-0000028525 00000 n
-0000028614 00000 n
-0000028716 00000 n
-0000028799 00000 n
-0000028968 00000 n
-0000029060 00000 n
-0000029149 00000 n
-0000029251 00000 n
-0000029334 00000 n
-0000029503 00000 n
-0000029595 00000 n
-0000029684 00000 n
-0000029786 00000 n
-0000029869 00000 n
-0000030038 00000 n
-0000030130 00000 n
-0000030218 00000 n
-0000030345 00000 n
-0000030479 00000 n
-0000030647 00000 n
-0000030781 00000 n
-0000030949 00000 n
-0000031083 00000 n
-0000031251 00000 n
-0000031385 00000 n
-0000031553 00000 n
-0000031687 00000 n
-0000031855 00000 n
-0000031989 00000 n
-0000032157 00000 n
-0000032291 00000 n
-0000032459 00000 n
-0000032593 00000 n
-0000032761 00000 n
-0000032895 00000 n
-0000033063 00000 n
-0000033190 00000 n
-0000033324 00000 n
-0000033492 00000 n
-0000033626 00000 n
-0000033794 00000 n
-0000033928 00000 n
-0000034096 00000 n
-0000034230 00000 n
-0000034398 00000 n
-0000034532 00000 n
-0000034700 00000 n
-0000034834 00000 n
-0000035002 00000 n
-0000035136 00000 n
-0000035304 00000 n
-0000035438 00000 n
-0000035606 00000 n
-0000035740 00000 n
-0000035908 00000 n
-0000035996 00000 n
-0000036123 00000 n
-0000036257 00000 n
-0000036425 00000 n
-0000036552 00000 n
-0000036686 00000 n
-0000036854 00000 n
-0000036988 00000 n
-0000037156 00000 n
-0000037290 00000 n
-0000037458 00000 n
-0000037592 00000 n
-0000037760 00000 n
-0000037894 00000 n
-0000038062 00000 n
-0000038196 00000 n
-0000038364 00000 n
-0000038498 00000 n
-0000038666 00000 n
-0000038793 00000 n
-0000038927 00000 n
-0000039095 00000 n
-0000039229 00000 n
-0000039397 00000 n
-0000039524 00000 n
-0000039658 00000 n
-0000039826 00000 n
-0000039960 00000 n
-0000040128 00000 n
-0000040262 00000 n
-0000040430 00000 n
-0000040564 00000 n
-0000040732 00000 n
-0000040866 00000 n
-0000041034 00000 n
-0000041161 00000 n
-0000041295 00000 n
-0000041463 00000 n
-0000041597 00000 n
-0000041765 00000 n
-0000041892 00000 n
-0000042026 00000 n
-0000042194 00000 n
-0000042328 00000 n
-0000042496 00000 n
-0000042623 00000 n
-0000042757 00000 n
-0000042925 00000 n
-0000043059 00000 n
-0000043227 00000 n
-0000043361 00000 n
-0000043529 00000 n
-0000043663 00000 n
-0000043831 00000 n
-0000043958 00000 n
-0000044092 00000 n
-0000044260 00000 n
-0000044394 00000 n
-0000044562 00000 n
-0000044696 00000 n
-0000044864 00000 n
-0000044998 00000 n
-0000045166 00000 n
-0000045300 00000 n
-0000045468 00000 n
-0000045602 00000 n
-0000045770 00000 n
-0000045904 00000 n
-0000046072 00000 n
-0000046206 00000 n
-0000046374 00000 n
-0000046508 00000 n
-0000046676 00000 n
-0000046810 00000 n
-0000046978 00000 n
-0000047112 00000 n
-0000047280 00000 n
-0000047407 00000 n
-0000047541 00000 n
-0000047709 00000 n
-0000047843 00000 n
-0000048011 00000 n
-0000048145 00000 n
-0000048313 00000 n
-0000048447 00000 n
-0000048615 00000 n
-0000048749 00000 n
-0000048917 00000 n
-0000049044 00000 n
-0000049178 00000 n
-0000049346 00000 n
-0000049480 00000 n
-0000049648 00000 n
-0000049782 00000 n
-0000049950 00000 n
-0000050084 00000 n
-0000050252 00000 n
-0000050386 00000 n
-0000050554 00000 n
-0000050688 00000 n
-0000050856 00000 n
-0000050990 00000 n
-0000051158 00000 n
-0000051285 00000 n
-0000051419 00000 n
-0000051587 00000 n
-0000051722 00000 n
-0000051811 00000 n
-0000051910 00000 n
-0000052001 00000 n
-0000052128 00000 n
-0000052262 00000 n
-0000052430 00000 n
-0000052564 00000 n
-0000052732 00000 n
-0000052867 00000 n
-0000052956 00000 n
-0000053049 00000 n
-0000053140 00000 n
-0000053267 00000 n
-0000053401 00000 n
-0000053569 00000 n
-0000053703 00000 n
-0000053871 00000 n
-0000054006 00000 n
-0000054095 00000 n
-0000054188 00000 n
-0000054279 00000 n
-0000054370 00000 n
-0000054496 00000 n
-0000054623 00000 n
-0000054757 00000 n
-0000054925 00000 n
-0000055059 00000 n
-0000055230 00000 n
-0000055364 00000 n
-0000055532 00000 n
-0000055666 00000 n
-0000055834 00000 n
-0000055961 00000 n
-0000056095 00000 n
-0000056263 00000 n
-0000056397 00000 n
-0000056565 00000 n
-0000056699 00000 n
-0000056867 00000 n
-0000057001 00000 n
-0000057168 00000 n
-0000057295 00000 n
-0000057429 00000 n
-0000057596 00000 n
-0000057730 00000 n
-0000057897 00000 n
-0000058031 00000 n
-0000058198 00000 n
-0000058332 00000 n
-0000058499 00000 n
-0000058633 00000 n
-0000058800 00000 n
-0000058934 00000 n
-0000059101 00000 n
-0000059235 00000 n
-0000059402 00000 n
-0000059536 00000 n
-0000059703 00000 n
-0000059830 00000 n
-0000059964 00000 n
-0000060131 00000 n
-0000060258 00000 n
-0000060392 00000 n
-0000060560 00000 n
-0000060673 00000 n
-0000060756 00000 n
-0000060924 00000 n
-0000061007 00000 n
-0000061175 00000 n
-0000061316 00000 n
-0000061426 00000 n
-0000061509 00000 n
-0000061677 00000 n
-0000061760 00000 n
-0000061928 00000 n
-0000062055 00000 n
-0000062189 00000 n
-0000062357 00000 n
-0000062491 00000 n
-0000062659 00000 n
-0000062793 00000 n
-0000062961 00000 n
-0000063095 00000 n
-0000063263 00000 n
-0000063397 00000 n
-0000063565 00000 n
-0000063699 00000 n
-0000063867 00000 n
-0000064001 00000 n
-0000064169 00000 n
-0000064303 00000 n
-0000064471 00000 n
-0000064605 00000 n
-0000064773 00000 n
-0000064907 00000 n
-0000065075 00000 n
-0000065163 00000 n
-0000065313 00000 n
-0000065402 00000 n
-0000065503 00000 n
-0000065586 00000 n
-0000065754 00000 n
-0000065845 00000 n
-0000065934 00000 n
-0000066057 00000 n
-0000066140 00000 n
-0000066308 00000 n
-0000066391 00000 n
-0000066559 00000 n
-0000066642 00000 n
-0000066810 00000 n
-0000066901 00000 n
-0000066990 00000 n
-0000067091 00000 n
-0000067174 00000 n
-0000067342 00000 n
-0000067433 00000 n
-0000067521 00000 n
-0000067648 00000 n
-0000067782 00000 n
-0000067950 00000 n
-0000068084 00000 n
-0000068252 00000 n
-0000068340 00000 n
-0000068442 00000 n
-0000068525 00000 n
-0000068693 00000 n
-0000068833 00000 n
-0000068960 00000 n
-0000069094 00000 n
-0000069262 00000 n
-0000069396 00000 n
-0000069567 00000 n
-0000069701 00000 n
-0000069869 00000 n
-0000070003 00000 n
-0000070171 00000 n
-0000070298 00000 n
-0000070432 00000 n
-0000070600 00000 n
-0000070734 00000 n
-0000070902 00000 n
-0000071036 00000 n
-0000071204 00000 n
-0000071338 00000 n
-0000071506 00000 n
-0000071633 00000 n
-0000071767 00000 n
-0000071935 00000 n
-0000072069 00000 n
-0000072237 00000 n
-0000072371 00000 n
-0000072539 00000 n
-0000072673 00000 n
-0000072841 00000 n
-0000072968 00000 n
-0000073102 00000 n
-0000073270 00000 n
-0000073404 00000 n
-0000073572 00000 n
-0000073706 00000 n
-0000073874 00000 n
-0000074008 00000 n
-0000074176 00000 n
-0000074303 00000 n
-0000074437 00000 n
-0000074605 00000 n
-0000074739 00000 n
-0000074907 00000 n
-0000075041 00000 n
-0000075209 00000 n
-0000075343 00000 n
-0000075511 00000 n
-0000075638 00000 n
-0000075772 00000 n
-0000075940 00000 n
-0000076067 00000 n
-0000076201 00000 n
-0000076369 00000 n
-0000076485 00000 n
-0000076568 00000 n
-0000076736 00000 n
-0000076819 00000 n
-0000076987 00000 n
-0000077117 00000 n
-0000077249 00000 n
-0000077332 00000 n
-0000077499 00000 n
-0000077582 00000 n
-0000077749 00000 n
-0000077832 00000 n
-0000077999 00000 n
-0000078082 00000 n
-0000078249 00000 n
-0000078376 00000 n
-0000078510 00000 n
-0000078679 00000 n
-0000078813 00000 n
-0000078982 00000 n
-0000079116 00000 n
-0000079285 00000 n
-0000079419 00000 n
-0000079588 00000 n
-0000079722 00000 n
-0000079891 00000 n
-0000080025 00000 n
-0000080194 00000 n
-0000080328 00000 n
-0000080497 00000 n
-0000080631 00000 n
-0000080800 00000 n
-0000080934 00000 n
-0000081103 00000 n
-0000081237 00000 n
-0000081406 00000 n
-0000081495 00000 n
-0000081645 00000 n
-0000081734 00000 n
-0000081836 00000 n
-0000081919 00000 n
-0000082088 00000 n
-0000082180 00000 n
-0000082269 00000 n
-0000082379 00000 n
-0000082462 00000 n
-0000082630 00000 n
-0000082721 00000 n
-0000082810 00000 n
-0000082911 00000 n
-0000082994 00000 n
-0000083162 00000 n
-0000083253 00000 n
-0000083341 00000 n
-0000083468 00000 n
-0000083602 00000 n
-0000083770 00000 n
-0000083904 00000 n
-0000084072 00000 n
-0000084160 00000 n
-0000084265 00000 n
-0000084348 00000 n
-0000084516 00000 n
-0000084643 00000 n
-0000084770 00000 n
-0000084904 00000 n
-0000085072 00000 n
-0000085206 00000 n
-0000085374 00000 n
-0000085508 00000 n
-0000085676 00000 n
-0000085810 00000 n
-0000085978 00000 n
-0000086105 00000 n
-0000086239 00000 n
-0000086407 00000 n
-0000086541 00000 n
-0000086709 00000 n
-0000086843 00000 n
-0000087011 00000 n
-0000087145 00000 n
-0000087313 00000 n
-0000087447 00000 n
-0000087615 00000 n
-0000087749 00000 n
-0000087917 00000 n
-0000088051 00000 n
-0000088219 00000 n
-0000088346 00000 n
-0000088480 00000 n
-0000088648 00000 n
-0000088782 00000 n
-0000088950 00000 n
-0000089084 00000 n
-0000089252 00000 n
-0000089386 00000 n
-0000089554 00000 n
-0000089688 00000 n
-0000089856 00000 n
-0000089990 00000 n
-0000090158 00000 n
-0000090292 00000 n
-0000090460 00000 n
-0000090587 00000 n
-0000090721 00000 n
-0000090889 00000 n
-0000091023 00000 n
-0000091191 00000 n
-0000091325 00000 n
-0000091493 00000 n
-0000091627 00000 n
-0000091795 00000 n
-0000091929 00000 n
-0000092097 00000 n
-0000092231 00000 n
-0000092399 00000 n
-0000092533 00000 n
-0000092701 00000 n
-0000092828 00000 n
-0000092962 00000 n
-0000093130 00000 n
-0000093264 00000 n
-0000093432 00000 n
-0000093566 00000 n
-0000093734 00000 n
-0000093868 00000 n
-0000094036 00000 n
-0000094170 00000 n
-0000094338 00000 n
-0000094472 00000 n
-0000094640 00000 n
-0000094767 00000 n
-0000094901 00000 n
-0000095069 00000 n
-0000095203 00000 n
-0000095371 00000 n
-0000095505 00000 n
-0000095673 00000 n
-0000095807 00000 n
-0000095975 00000 n
-0000096102 00000 n
-0000096236 00000 n
-0000096404 00000 n
-0000096538 00000 n
-0000096706 00000 n
-0000096840 00000 n
-0000097008 00000 n
-0000097142 00000 n
-0000097310 00000 n
-0000097444 00000 n
-0000097612 00000 n
-0000097746 00000 n
-0000097914 00000 n
-0000098048 00000 n
-0000098216 00000 n
-0000098343 00000 n
-0000098477 00000 n
-0000098645 00000 n
-0000098779 00000 n
-0000098947 00000 n
-0000099081 00000 n
-0000099249 00000 n
-0000099383 00000 n
-0000099551 00000 n
-0000099685 00000 n
-0000099853 00000 n
-0000099987 00000 n
-0000100155 00000 n
-0000100289 00000 n
-0000100457 00000 n
-0000100584 00000 n
-0000100718 00000 n
-0000100886 00000 n
-0000101020 00000 n
-0000101188 00000 n
-0000101322 00000 n
-0000101490 00000 n
-0000101624 00000 n
-0000101792 00000 n
-0000101926 00000 n
-0000102094 00000 n
-0000102228 00000 n
-0000102396 00000 n
-0000102530 00000 n
-0000102698 00000 n
-0000102825 00000 n
-0000102959 00000 n
-0000103127 00000 n
-0000103261 00000 n
-0000103429 00000 n
-0000103563 00000 n
-0000103731 00000 n
-0000103865 00000 n
-0000104033 00000 n
-0000104167 00000 n
-0000104335 00000 n
-0000104469 00000 n
-0000104637 00000 n
-0000104764 00000 n
-0000104898 00000 n
-0000105066 00000 n
-0000105200 00000 n
-0000105368 00000 n
-0000105502 00000 n
-0000105670 00000 n
-0000105804 00000 n
-0000105972 00000 n
-0000106099 00000 n
-0000106233 00000 n
-0000106401 00000 n
-0000106528 00000 n
-0000106662 00000 n
-0000106830 00000 n
-0000106953 00000 n
-0000107036 00000 n
-0000107204 00000 n
-0000107287 00000 n
-0000107455 00000 n
-0000107538 00000 n
-0000107706 00000 n
-0000107833 00000 n
-0000107920 00000 n
-0000108047 00000 n
-0000108181 00000 n
-0000108348 00000 n
-0000108482 00000 n
-0000108649 00000 n
-0000108783 00000 n
-0000108950 00000 n
-0000109084 00000 n
-0000109251 00000 n
-0000109385 00000 n
-0000109552 00000 n
-0000109686 00000 n
-0000109853 00000 n
-0000109940 00000 n
-0000110090 00000 n
-0000110179 00000 n
-0000110280 00000 n
-0000110363 00000 n
-0000110531 00000 n
-0000110622 00000 n
-0000110711 00000 n
-0000110812 00000 n
-0000110895 00000 n
-0000111063 00000 n
-0000111154 00000 n
-0000111243 00000 n
-0000111344 00000 n
-0000111427 00000 n
-0000111595 00000 n
-0000111686 00000 n
-0000111774 00000 n
-0000111901 00000 n
-0000112035 00000 n
-0000112203 00000 n
-0000112337 00000 n
-0000112505 00000 n
-0000112604 00000 n
-0000112687 00000 n
-0000112855 00000 n
-0000112949 00000 n
-0000113074 00000 n
-0000113162 00000 n
-0000113275 00000 n
-0000113358 00000 n
-0000113526 00000 n
-0000113609 00000 n
-0000113777 00000 n
-0000113904 00000 n
-0000114038 00000 n
-0000114206 00000 n
-0000114333 00000 n
-0000114467 00000 n
-0000114635 00000 n
-0000114769 00000 n
-0000114937 00000 n
-0000115071 00000 n
-0000115239 00000 n
-0000115373 00000 n
-0000115541 00000 n
-0000115668 00000 n
-0000115802 00000 n
-0000115970 00000 n
-0000116104 00000 n
-0000116272 00000 n
-0000116406 00000 n
-0000116574 00000 n
-0000116708 00000 n
-0000116876 00000 n
-0000117010 00000 n
-0000117178 00000 n
-0000117266 00000 n
-0000117357 00000 n
-0000117496 00000 n
-0000117584 00000 n
-0000117711 00000 n
-0000117845 00000 n
-0000118013 00000 n
-0000118147 00000 n
-0000118315 00000 n
-0000118449 00000 n
-0000118617 00000 n
-0000118751 00000 n
-0000118919 00000 n
-0000119053 00000 n
-0000119221 00000 n
-0000119309 00000 n
-0000119436 00000 n
-0000119570 00000 n
-0000119738 00000 n
-0000119872 00000 n
-0000120040 00000 n
-0000120174 00000 n
-0000120342 00000 n
-0000120476 00000 n
-0000120644 00000 n
-0000120778 00000 n
-0000120945 00000 n
-0000121034 00000 n
-0000121140 00000 n
-0000121229 00000 n
-0000121419 00000 n
-0000121562 00000 n
-0000121651 00000 n
-0000121743 00000 n
-0000121833 00000 n
-0000121922 00000 n
-0000122014 00000 n
-0000122104 00000 n
-0000122193 00000 n
-0000122277 00000 n
-0000122366 00000 n
-0000122457 00000 n
-0000122600 00000 n
-0000122689 00000 n
-0000122782 00000 n
-0000122873 00000 n
-0000122962 00000 n
-0000123055 00000 n
-0000123146 00000 n
-0000123235 00000 n
-0000123319 00000 n
-0000123408 00000 n
-0000123499 00000 n
-0000123588 00000 n
-0000123681 00000 n
-0000123772 00000 n
-0000123915 00000 n
-0000124004 00000 n
-0000124097 00000 n
-0000124188 00000 n
-0000124277 00000 n
-0000124370 00000 n
-0000124461 00000 n
-0000124550 00000 n
-0000124634 00000 n
-0000124723 00000 n
-0000124814 00000 n
-0000124903 00000 n
-0000124996 00000 n
-0000125087 00000 n
-0000125175 00000 n
-0000125291 00000 n
-0000125385 00000 n
-0000125496 00000 n
-0000125590 00000 n
-0000125700 00000 n
-0000125797 00000 n
-0000125956 00000 n
-0000126045 00000 n
-0000126138 00000 n
-0000126229 00000 n
-0000126318 00000 n
-0000126411 00000 n
-0000126502 00000 n
-0000126591 00000 n
-0000126684 00000 n
-0000126775 00000 n
-0000126864 00000 n
-0000126957 00000 n
-0000127047 00000 n
-0000127134 00000 n
-0000127225 00000 n
-0000127333 00000 n
-0000127420 00000 n
-0000127511 00000 n
-0000127570 00000 n
-0000127629 00000 n
-0000127688 00000 n
-0000127747 00000 n
-0000127806 00000 n
-0000127865 00000 n
-0000128031 00000 n
-0000129039 00000 n
-0000129130 00000 n
-0000129414 00000 n
-0000130792 00000 n
-0000136962 00000 n
-0000137131 00000 n
-0000138408 00000 n
-0000138497 00000 n
-0000138786 00000 n
-0000140446 00000 n
-0000145691 00000 n
-0000145876 00000 n
-0000146138 00000 n
-0000146224 00000 n
-0000146475 00000 n
-0000147189 00000 n
-0000147738 00000 n
-0000147911 00000 n
-0000148182 00000 n
-0000148273 00000 n
-0000148529 00000 n
-0000150267 00000 n
-0000155688 00000 n
-0000155872 00000 n
-0000156125 00000 n
-0000156211 00000 n
-0000156474 00000 n
-0000157174 00000 n
-0000157790 00000 n
-0000157828 00000 n
-0000158251 00000 n
-0000158299 00000 n
-0000158347 00000 n
-0000158395 00000 n
-0000158443 00000 n
-0000158491 00000 n
-0000158538 00000 n
-0000158584 00000 n
-0000158632 00000 n
-0000158679 00000 n
-0000158726 00000 n
-0000158773 00000 n
-0000158821 00000 n
-0000158868 00000 n
-0000158916 00000 n
-0000158963 00000 n
-0000159273 00000 n
-0000162390 00000 n
-0000162718 00000 n
-0000166402 00000 n
-0000166712 00000 n
-0000170950 00000 n
-0000171260 00000 n
-0000175361 00000 n
-0000175671 00000 n
-0000180130 00000 n
-0000180466 00000 n
-0000180843 00000 n
-0000185590 00000 n
-0000185807 00000 n
-0000187053 00000 n
+0000002808 00000 n
+0000003315 00000 n
+0000004270 00000 n
+0000004993 00000 n
+0000005932 00000 n
+0000006547 00000 n
+0000009825 00000 n
+0000009921 00000 n
+0000010043 00000 n
+0000010123 00000 n
+0000010289 00000 n
+0000010426 00000 n
+0000010581 00000 n
+0000010686 00000 n
+0000010782 00000 n
+0000010888 00000 n
+0000011014 00000 n
+0000011146 00000 n
+0000011312 00000 n
+0000011444 00000 n
+0000011610 00000 n
+0000011742 00000 n
+0000011908 00000 n
+0000012040 00000 n
+0000012206 00000 n
+0000012332 00000 n
+0000012464 00000 n
+0000012630 00000 n
+0000012762 00000 n
+0000012928 00000 n
+0000013060 00000 n
+0000013226 00000 n
+0000013358 00000 n
+0000013527 00000 n
+0000013659 00000 n
+0000013825 00000 n
+0000013957 00000 n
+0000014123 00000 n
+0000014255 00000 n
+0000014421 00000 n
+0000014553 00000 n
+0000014719 00000 n
+0000014851 00000 n
+0000015017 00000 n
+0000015149 00000 n
+0000015315 00000 n
+0000015447 00000 n
+0000015613 00000 n
+0000015745 00000 n
+0000015911 00000 n
+0000016043 00000 n
+0000016209 00000 n
+0000016341 00000 n
+0000016507 00000 n
+0000016639 00000 n
+0000016805 00000 n
+0000016931 00000 n
+0000017063 00000 n
+0000017229 00000 n
+0000017361 00000 n
+0000017527 00000 n
+0000017659 00000 n
+0000017825 00000 n
+0000017957 00000 n
+0000018126 00000 n
+0000018258 00000 n
+0000018424 00000 n
+0000018556 00000 n
+0000018722 00000 n
+0000018854 00000 n
+0000019020 00000 n
+0000019152 00000 n
+0000019318 00000 n
+0000019450 00000 n
+0000019616 00000 n
+0000019748 00000 n
+0000019914 00000 n
+0000020046 00000 n
+0000020212 00000 n
+0000020345 00000 n
+0000020512 00000 n
+0000020646 00000 n
+0000020814 00000 n
+0000020948 00000 n
+0000021116 00000 n
+0000021250 00000 n
+0000021418 00000 n
+0000021545 00000 n
+0000021679 00000 n
+0000021847 00000 n
+0000021981 00000 n
+0000022149 00000 n
+0000022283 00000 n
+0000022451 00000 n
+0000022585 00000 n
+0000022753 00000 n
+0000022887 00000 n
+0000023055 00000 n
+0000023189 00000 n
+0000023357 00000 n
+0000023484 00000 n
+0000023618 00000 n
+0000023786 00000 n
+0000023920 00000 n
+0000024088 00000 n
+0000024222 00000 n
+0000024390 00000 n
+0000024524 00000 n
+0000024692 00000 n
+0000024826 00000 n
+0000024997 00000 n
+0000025131 00000 n
+0000025299 00000 n
+0000025433 00000 n
+0000025601 00000 n
+0000025735 00000 n
+0000025903 00000 n
+0000026037 00000 n
+0000026204 00000 n
+0000026338 00000 n
+0000026505 00000 n
+0000026639 00000 n
+0000026806 00000 n
+0000026933 00000 n
+0000027067 00000 n
+0000027234 00000 n
+0000027323 00000 n
+0000027412 00000 n
+0000027556 00000 n
+0000027714 00000 n
+0000027803 00000 n
+0000027921 00000 n
+0000028004 00000 n
+0000028173 00000 n
+0000028256 00000 n
+0000028425 00000 n
+0000028517 00000 n
+0000028606 00000 n
+0000028708 00000 n
+0000028791 00000 n
+0000028960 00000 n
+0000029052 00000 n
+0000029141 00000 n
+0000029243 00000 n
+0000029326 00000 n
+0000029495 00000 n
+0000029587 00000 n
+0000029676 00000 n
+0000029778 00000 n
+0000029861 00000 n
+0000030030 00000 n
+0000030122 00000 n
+0000030210 00000 n
+0000030337 00000 n
+0000030471 00000 n
+0000030639 00000 n
+0000030773 00000 n
+0000030941 00000 n
+0000031075 00000 n
+0000031243 00000 n
+0000031377 00000 n
+0000031545 00000 n
+0000031679 00000 n
+0000031847 00000 n
+0000031981 00000 n
+0000032149 00000 n
+0000032283 00000 n
+0000032451 00000 n
+0000032585 00000 n
+0000032753 00000 n
+0000032887 00000 n
+0000033055 00000 n
+0000033182 00000 n
+0000033316 00000 n
+0000033484 00000 n
+0000033618 00000 n
+0000033786 00000 n
+0000033920 00000 n
+0000034088 00000 n
+0000034222 00000 n
+0000034390 00000 n
+0000034524 00000 n
+0000034692 00000 n
+0000034826 00000 n
+0000034994 00000 n
+0000035128 00000 n
+0000035296 00000 n
+0000035430 00000 n
+0000035598 00000 n
+0000035732 00000 n
+0000035900 00000 n
+0000035988 00000 n
+0000036115 00000 n
+0000036249 00000 n
+0000036417 00000 n
+0000036544 00000 n
+0000036678 00000 n
+0000036846 00000 n
+0000036980 00000 n
+0000037148 00000 n
+0000037282 00000 n
+0000037450 00000 n
+0000037584 00000 n
+0000037752 00000 n
+0000037886 00000 n
+0000038054 00000 n
+0000038188 00000 n
+0000038356 00000 n
+0000038490 00000 n
+0000038658 00000 n
+0000038785 00000 n
+0000038919 00000 n
+0000039087 00000 n
+0000039221 00000 n
+0000039389 00000 n
+0000039516 00000 n
+0000039650 00000 n
+0000039818 00000 n
+0000039952 00000 n
+0000040120 00000 n
+0000040254 00000 n
+0000040422 00000 n
+0000040556 00000 n
+0000040724 00000 n
+0000040858 00000 n
+0000041026 00000 n
+0000041153 00000 n
+0000041287 00000 n
+0000041455 00000 n
+0000041589 00000 n
+0000041757 00000 n
+0000041884 00000 n
+0000042018 00000 n
+0000042186 00000 n
+0000042320 00000 n
+0000042488 00000 n
+0000042615 00000 n
+0000042749 00000 n
+0000042917 00000 n
+0000043051 00000 n
+0000043219 00000 n
+0000043353 00000 n
+0000043521 00000 n
+0000043655 00000 n
+0000043823 00000 n
+0000043950 00000 n
+0000044084 00000 n
+0000044252 00000 n
+0000044386 00000 n
+0000044554 00000 n
+0000044688 00000 n
+0000044856 00000 n
+0000044990 00000 n
+0000045158 00000 n
+0000045292 00000 n
+0000045460 00000 n
+0000045594 00000 n
+0000045762 00000 n
+0000045896 00000 n
+0000046064 00000 n
+0000046198 00000 n
+0000046366 00000 n
+0000046500 00000 n
+0000046668 00000 n
+0000046802 00000 n
+0000046970 00000 n
+0000047104 00000 n
+0000047272 00000 n
+0000047399 00000 n
+0000047533 00000 n
+0000047701 00000 n
+0000047835 00000 n
+0000048003 00000 n
+0000048137 00000 n
+0000048305 00000 n
+0000048439 00000 n
+0000048607 00000 n
+0000048741 00000 n
+0000048909 00000 n
+0000049036 00000 n
+0000049170 00000 n
+0000049338 00000 n
+0000049472 00000 n
+0000049640 00000 n
+0000049774 00000 n
+0000049942 00000 n
+0000050076 00000 n
+0000050244 00000 n
+0000050378 00000 n
+0000050546 00000 n
+0000050680 00000 n
+0000050848 00000 n
+0000050982 00000 n
+0000051150 00000 n
+0000051277 00000 n
+0000051411 00000 n
+0000051579 00000 n
+0000051714 00000 n
+0000051803 00000 n
+0000051902 00000 n
+0000051993 00000 n
+0000052120 00000 n
+0000052254 00000 n
+0000052422 00000 n
+0000052556 00000 n
+0000052724 00000 n
+0000052859 00000 n
+0000052948 00000 n
+0000053041 00000 n
+0000053132 00000 n
+0000053259 00000 n
+0000053393 00000 n
+0000053561 00000 n
+0000053695 00000 n
+0000053863 00000 n
+0000053998 00000 n
+0000054087 00000 n
+0000054180 00000 n
+0000054271 00000 n
+0000054362 00000 n
+0000054488 00000 n
+0000054615 00000 n
+0000054749 00000 n
+0000054917 00000 n
+0000055051 00000 n
+0000055222 00000 n
+0000055356 00000 n
+0000055524 00000 n
+0000055658 00000 n
+0000055826 00000 n
+0000055953 00000 n
+0000056087 00000 n
+0000056255 00000 n
+0000056389 00000 n
+0000056557 00000 n
+0000056691 00000 n
+0000056859 00000 n
+0000056993 00000 n
+0000057160 00000 n
+0000057287 00000 n
+0000057421 00000 n
+0000057588 00000 n
+0000057722 00000 n
+0000057889 00000 n
+0000058023 00000 n
+0000058190 00000 n
+0000058324 00000 n
+0000058491 00000 n
+0000058625 00000 n
+0000058792 00000 n
+0000058926 00000 n
+0000059093 00000 n
+0000059227 00000 n
+0000059394 00000 n
+0000059528 00000 n
+0000059695 00000 n
+0000059822 00000 n
+0000059956 00000 n
+0000060123 00000 n
+0000060250 00000 n
+0000060384 00000 n
+0000060552 00000 n
+0000060665 00000 n
+0000060748 00000 n
+0000060916 00000 n
+0000060999 00000 n
+0000061167 00000 n
+0000061308 00000 n
+0000061418 00000 n
+0000061501 00000 n
+0000061669 00000 n
+0000061752 00000 n
+0000061920 00000 n
+0000062047 00000 n
+0000062181 00000 n
+0000062349 00000 n
+0000062483 00000 n
+0000062651 00000 n
+0000062785 00000 n
+0000062953 00000 n
+0000063087 00000 n
+0000063255 00000 n
+0000063389 00000 n
+0000063557 00000 n
+0000063691 00000 n
+0000063859 00000 n
+0000063993 00000 n
+0000064161 00000 n
+0000064295 00000 n
+0000064463 00000 n
+0000064597 00000 n
+0000064765 00000 n
+0000064899 00000 n
+0000065067 00000 n
+0000065155 00000 n
+0000065305 00000 n
+0000065394 00000 n
+0000065495 00000 n
+0000065578 00000 n
+0000065746 00000 n
+0000065837 00000 n
+0000065926 00000 n
+0000066049 00000 n
+0000066132 00000 n
+0000066300 00000 n
+0000066383 00000 n
+0000066551 00000 n
+0000066634 00000 n
+0000066802 00000 n
+0000066893 00000 n
+0000066982 00000 n
+0000067083 00000 n
+0000067166 00000 n
+0000067334 00000 n
+0000067425 00000 n
+0000067513 00000 n
+0000067640 00000 n
+0000067774 00000 n
+0000067942 00000 n
+0000068076 00000 n
+0000068244 00000 n
+0000068332 00000 n
+0000068434 00000 n
+0000068517 00000 n
+0000068685 00000 n
+0000068825 00000 n
+0000068952 00000 n
+0000069086 00000 n
+0000069254 00000 n
+0000069388 00000 n
+0000069559 00000 n
+0000069693 00000 n
+0000069861 00000 n
+0000069995 00000 n
+0000070163 00000 n
+0000070290 00000 n
+0000070424 00000 n
+0000070592 00000 n
+0000070726 00000 n
+0000070894 00000 n
+0000071028 00000 n
+0000071196 00000 n
+0000071330 00000 n
+0000071498 00000 n
+0000071625 00000 n
+0000071759 00000 n
+0000071927 00000 n
+0000072061 00000 n
+0000072229 00000 n
+0000072363 00000 n
+0000072531 00000 n
+0000072665 00000 n
+0000072833 00000 n
+0000072960 00000 n
+0000073094 00000 n
+0000073262 00000 n
+0000073396 00000 n
+0000073564 00000 n
+0000073698 00000 n
+0000073866 00000 n
+0000074000 00000 n
+0000074168 00000 n
+0000074295 00000 n
+0000074429 00000 n
+0000074597 00000 n
+0000074731 00000 n
+0000074899 00000 n
+0000075033 00000 n
+0000075201 00000 n
+0000075335 00000 n
+0000075503 00000 n
+0000075630 00000 n
+0000075764 00000 n
+0000075932 00000 n
+0000076059 00000 n
+0000076193 00000 n
+0000076361 00000 n
+0000076477 00000 n
+0000076560 00000 n
+0000076728 00000 n
+0000076811 00000 n
+0000076979 00000 n
+0000077109 00000 n
+0000077241 00000 n
+0000077324 00000 n
+0000077491 00000 n
+0000077574 00000 n
+0000077741 00000 n
+0000077824 00000 n
+0000077991 00000 n
+0000078074 00000 n
+0000078241 00000 n
+0000078368 00000 n
+0000078502 00000 n
+0000078671 00000 n
+0000078805 00000 n
+0000078974 00000 n
+0000079108 00000 n
+0000079277 00000 n
+0000079411 00000 n
+0000079580 00000 n
+0000079714 00000 n
+0000079883 00000 n
+0000080017 00000 n
+0000080186 00000 n
+0000080320 00000 n
+0000080489 00000 n
+0000080623 00000 n
+0000080792 00000 n
+0000080926 00000 n
+0000081095 00000 n
+0000081229 00000 n
+0000081398 00000 n
+0000081487 00000 n
+0000081637 00000 n
+0000081726 00000 n
+0000081828 00000 n
+0000081911 00000 n
+0000082080 00000 n
+0000082172 00000 n
+0000082261 00000 n
+0000082371 00000 n
+0000082454 00000 n
+0000082622 00000 n
+0000082713 00000 n
+0000082802 00000 n
+0000082903 00000 n
+0000082986 00000 n
+0000083154 00000 n
+0000083245 00000 n
+0000083333 00000 n
+0000083460 00000 n
+0000083594 00000 n
+0000083762 00000 n
+0000083896 00000 n
+0000084064 00000 n
+0000084152 00000 n
+0000084257 00000 n
+0000084340 00000 n
+0000084508 00000 n
+0000084635 00000 n
+0000084762 00000 n
+0000084896 00000 n
+0000085064 00000 n
+0000085198 00000 n
+0000085366 00000 n
+0000085500 00000 n
+0000085668 00000 n
+0000085802 00000 n
+0000085970 00000 n
+0000086097 00000 n
+0000086231 00000 n
+0000086399 00000 n
+0000086533 00000 n
+0000086701 00000 n
+0000086835 00000 n
+0000087003 00000 n
+0000087137 00000 n
+0000087305 00000 n
+0000087439 00000 n
+0000087607 00000 n
+0000087741 00000 n
+0000087909 00000 n
+0000088043 00000 n
+0000088211 00000 n
+0000088338 00000 n
+0000088472 00000 n
+0000088640 00000 n
+0000088774 00000 n
+0000088942 00000 n
+0000089076 00000 n
+0000089244 00000 n
+0000089378 00000 n
+0000089546 00000 n
+0000089680 00000 n
+0000089848 00000 n
+0000089982 00000 n
+0000090150 00000 n
+0000090284 00000 n
+0000090452 00000 n
+0000090579 00000 n
+0000090713 00000 n
+0000090881 00000 n
+0000091015 00000 n
+0000091183 00000 n
+0000091317 00000 n
+0000091485 00000 n
+0000091619 00000 n
+0000091787 00000 n
+0000091921 00000 n
+0000092089 00000 n
+0000092223 00000 n
+0000092391 00000 n
+0000092525 00000 n
+0000092693 00000 n
+0000092820 00000 n
+0000092954 00000 n
+0000093122 00000 n
+0000093256 00000 n
+0000093424 00000 n
+0000093558 00000 n
+0000093726 00000 n
+0000093860 00000 n
+0000094028 00000 n
+0000094162 00000 n
+0000094330 00000 n
+0000094464 00000 n
+0000094632 00000 n
+0000094759 00000 n
+0000094893 00000 n
+0000095061 00000 n
+0000095195 00000 n
+0000095363 00000 n
+0000095497 00000 n
+0000095665 00000 n
+0000095799 00000 n
+0000095967 00000 n
+0000096094 00000 n
+0000096228 00000 n
+0000096396 00000 n
+0000096530 00000 n
+0000096698 00000 n
+0000096832 00000 n
+0000097000 00000 n
+0000097134 00000 n
+0000097302 00000 n
+0000097436 00000 n
+0000097604 00000 n
+0000097738 00000 n
+0000097906 00000 n
+0000098040 00000 n
+0000098208 00000 n
+0000098335 00000 n
+0000098469 00000 n
+0000098637 00000 n
+0000098771 00000 n
+0000098939 00000 n
+0000099073 00000 n
+0000099241 00000 n
+0000099375 00000 n
+0000099543 00000 n
+0000099677 00000 n
+0000099845 00000 n
+0000099979 00000 n
+0000100147 00000 n
+0000100281 00000 n
+0000100449 00000 n
+0000100576 00000 n
+0000100710 00000 n
+0000100878 00000 n
+0000101012 00000 n
+0000101180 00000 n
+0000101314 00000 n
+0000101482 00000 n
+0000101616 00000 n
+0000101784 00000 n
+0000101918 00000 n
+0000102086 00000 n
+0000102220 00000 n
+0000102388 00000 n
+0000102522 00000 n
+0000102690 00000 n
+0000102817 00000 n
+0000102951 00000 n
+0000103119 00000 n
+0000103253 00000 n
+0000103421 00000 n
+0000103555 00000 n
+0000103723 00000 n
+0000103857 00000 n
+0000104025 00000 n
+0000104159 00000 n
+0000104327 00000 n
+0000104461 00000 n
+0000104629 00000 n
+0000104756 00000 n
+0000104890 00000 n
+0000105058 00000 n
+0000105192 00000 n
+0000105360 00000 n
+0000105494 00000 n
+0000105662 00000 n
+0000105796 00000 n
+0000105964 00000 n
+0000106091 00000 n
+0000106225 00000 n
+0000106393 00000 n
+0000106520 00000 n
+0000106654 00000 n
+0000106822 00000 n
+0000106945 00000 n
+0000107028 00000 n
+0000107196 00000 n
+0000107279 00000 n
+0000107447 00000 n
+0000107530 00000 n
+0000107698 00000 n
+0000107825 00000 n
+0000107912 00000 n
+0000108039 00000 n
+0000108173 00000 n
+0000108340 00000 n
+0000108474 00000 n
+0000108641 00000 n
+0000108775 00000 n
+0000108942 00000 n
+0000109076 00000 n
+0000109243 00000 n
+0000109377 00000 n
+0000109544 00000 n
+0000109678 00000 n
+0000109845 00000 n
+0000109932 00000 n
+0000110082 00000 n
+0000110171 00000 n
+0000110272 00000 n
+0000110355 00000 n
+0000110523 00000 n
+0000110614 00000 n
+0000110703 00000 n
+0000110804 00000 n
+0000110887 00000 n
+0000111055 00000 n
+0000111146 00000 n
+0000111235 00000 n
+0000111336 00000 n
+0000111419 00000 n
+0000111587 00000 n
+0000111678 00000 n
+0000111766 00000 n
+0000111893 00000 n
+0000112027 00000 n
+0000112195 00000 n
+0000112329 00000 n
+0000112497 00000 n
+0000112596 00000 n
+0000112679 00000 n
+0000112847 00000 n
+0000112941 00000 n
+0000113066 00000 n
+0000113154 00000 n
+0000113267 00000 n
+0000113350 00000 n
+0000113518 00000 n
+0000113601 00000 n
+0000113769 00000 n
+0000113896 00000 n
+0000114030 00000 n
+0000114198 00000 n
+0000114325 00000 n
+0000114459 00000 n
+0000114627 00000 n
+0000114761 00000 n
+0000114929 00000 n
+0000115063 00000 n
+0000115231 00000 n
+0000115365 00000 n
+0000115533 00000 n
+0000115660 00000 n
+0000115794 00000 n
+0000115962 00000 n
+0000116096 00000 n
+0000116264 00000 n
+0000116398 00000 n
+0000116566 00000 n
+0000116700 00000 n
+0000116868 00000 n
+0000117002 00000 n
+0000117170 00000 n
+0000117258 00000 n
+0000117349 00000 n
+0000117488 00000 n
+0000117576 00000 n
+0000117703 00000 n
+0000117837 00000 n
+0000118005 00000 n
+0000118139 00000 n
+0000118307 00000 n
+0000118441 00000 n
+0000118609 00000 n
+0000118743 00000 n
+0000118911 00000 n
+0000119045 00000 n
+0000119213 00000 n
+0000119301 00000 n
+0000119428 00000 n
+0000119562 00000 n
+0000119730 00000 n
+0000119864 00000 n
+0000120032 00000 n
+0000120166 00000 n
+0000120334 00000 n
+0000120468 00000 n
+0000120636 00000 n
+0000120770 00000 n
+0000120937 00000 n
+0000121026 00000 n
+0000121132 00000 n
+0000121221 00000 n
+0000121411 00000 n
+0000121554 00000 n
+0000121643 00000 n
+0000121735 00000 n
+0000121825 00000 n
+0000121914 00000 n
+0000122006 00000 n
+0000122096 00000 n
+0000122185 00000 n
+0000122269 00000 n
+0000122358 00000 n
+0000122449 00000 n
+0000122592 00000 n
+0000122681 00000 n
+0000122774 00000 n
+0000122865 00000 n
+0000122954 00000 n
+0000123047 00000 n
+0000123138 00000 n
+0000123227 00000 n
+0000123311 00000 n
+0000123400 00000 n
+0000123491 00000 n
+0000123580 00000 n
+0000123673 00000 n
+0000123764 00000 n
+0000123907 00000 n
+0000123996 00000 n
+0000124089 00000 n
+0000124180 00000 n
+0000124269 00000 n
+0000124362 00000 n
+0000124453 00000 n
+0000124542 00000 n
+0000124626 00000 n
+0000124715 00000 n
+0000124806 00000 n
+0000124895 00000 n
+0000124988 00000 n
+0000125079 00000 n
+0000125167 00000 n
+0000125283 00000 n
+0000125377 00000 n
+0000125488 00000 n
+0000125582 00000 n
+0000125692 00000 n
+0000125789 00000 n
+0000125948 00000 n
+0000126037 00000 n
+0000126130 00000 n
+0000126221 00000 n
+0000126310 00000 n
+0000126403 00000 n
+0000126494 00000 n
+0000126583 00000 n
+0000126676 00000 n
+0000126767 00000 n
+0000126856 00000 n
+0000126948 00000 n
+0000127038 00000 n
+0000127125 00000 n
+0000127216 00000 n
+0000127324 00000 n
+0000127411 00000 n
+0000127500 00000 n
+0000127559 00000 n
+0000127618 00000 n
+0000127677 00000 n
+0000127736 00000 n
+0000127795 00000 n
+0000127854 00000 n
+0000128017 00000 n
+0000129015 00000 n
+0000129106 00000 n
+0000129392 00000 n
+0000130770 00000 n
+0000137288 00000 n
+0000137457 00000 n
+0000138734 00000 n
+0000138823 00000 n
+0000139112 00000 n
+0000140772 00000 n
+0000146017 00000 n
+0000146202 00000 n
+0000146464 00000 n
+0000146550 00000 n
+0000146801 00000 n
+0000147515 00000 n
+0000148064 00000 n
+0000148237 00000 n
+0000148508 00000 n
+0000148599 00000 n
+0000148855 00000 n
+0000150593 00000 n
+0000156014 00000 n
+0000156184 00000 n
+0000156451 00000 n
+0000156539 00000 n
+0000156793 00000 n
+0000157605 00000 n
+0000159085 00000 n
+0000159269 00000 n
+0000159522 00000 n
+0000159608 00000 n
+0000159871 00000 n
+0000160571 00000 n
+0000161187 00000 n
+0000161225 00000 n
+0000161648 00000 n
+0000161696 00000 n
+0000161744 00000 n
+0000161792 00000 n
+0000161840 00000 n
+0000161888 00000 n
+0000161935 00000 n
+0000161981 00000 n
+0000162029 00000 n
+0000162076 00000 n
+0000162123 00000 n
+0000162170 00000 n
+0000162218 00000 n
+0000162265 00000 n
+0000162313 00000 n
+0000162360 00000 n
+0000162670 00000 n
+0000165729 00000 n
+0000166057 00000 n
+0000169741 00000 n
+0000170051 00000 n
+0000174289 00000 n
+0000174599 00000 n
+0000178700 00000 n
+0000179028 00000 n
+0000183493 00000 n
+0000183829 00000 n
+0000184206 00000 n
+0000188953 00000 n
+0000189170 00000 n
+0000190416 00000 n
 trailer
 <<
-  /Size 953
-  /Root 952 0 R
-  /Info 950 0 R
-  /ID [(vT1IcPaaqv3X1qzCBokx1A==) (vT1IcPaaqv3X1qzCBokx1A==)]
+  /Size 959
+  /Root 958 0 R
+  /Info 956 0 R
+  /ID [(L0BDgrutnAS/kexkQ+ZfPA==) (L0BDgrutnAS/kexkQ+ZfPA==)]
 >>
 startxref
-187315
+190678
 %%EOF
