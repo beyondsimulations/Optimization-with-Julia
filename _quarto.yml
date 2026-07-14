@@ -12,13 +12,15 @@ project:
     - part-02/*.qmd
     - part-03/*.qmd
 website:
+  favicon: images/favicon.svg
   title: "Optimization with Julia"
   repo-url: https://github.com/beyondsimulations/Optimization-with-Julia
   site-url: https://beyondsimulations.github.io/Optimization-with-Julia
   bread-crumbs: true
   sidebar:
     style: floating
-    logo: https://images.beyondsimulations.com/lectures/mj-hall.png
+    logo: images/course-logo.svg
+    logo-alt: "Optimization with Julia"
     collapse-level: 2
     search: true
     contents:
@@ -105,6 +107,7 @@ format:
       url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     include-in-header:
       - general/header.html
+      - general/favicon.html
     include-after-body:
       text: |
         <script defer src="https://oshu.eu/widget.js"></script>

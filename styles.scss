@@ -81,8 +81,31 @@ $presentation-title-slide-text-align: left;
 
 // Animation effect
 .flow {
-    background-image: url("https://images.beyondsimulations.com/logo/main-web.png");
-    background-size: 3840px 2160px;
+    // Animated heading fill. Was a 4.2 MB photo from an external CDN, upscaled
+    // and stretched, that painted #B5C5B5 (1.78:1) into the letterforms.
+    //
+    // These stops are the photo's own dominant colours — it is the image the
+    // whole brand palette was sampled from, so this is the same colourway, not
+    // a new one. Every stop clears the 3:1 large-text bar. The brand gold
+    // #e4b169 is 1.92:1 and is deliberately absent; #b87d33 (3.44:1) carries
+    // the warm glint instead.
+    //
+    // First and last stops are identical and the animation advances exactly one
+    // tile, so the loop is seamless. (The photo version was not: it jumped 0.8
+    // of a tile on every wrap.)
+    background-image: linear-gradient(
+        to right,
+        #363D45 0%,     // darker      10.84:1
+        #506061 14%,    // photo slate  6.50:1
+        #537E8F 28%,    // twoDark      4.36:1
+        #5D969B 42%,    // photo teal   3.29:1
+        #b87d33 54%,    // warm glint   3.44:1
+        #537E8F 68%,
+        #506061 84%,
+        #363D45 100%    // == 0%, for a seamless wrap
+    );
+    background-size: 1400px 100%;
+    background-repeat: repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -91,10 +114,23 @@ $presentation-title-slide-text-align: left;
 }
 
 @keyframes animate {
-    0% {
-        background-position: left 384px top 216px;
+    from {
+        background-position: 0 0;
     }
-    100% {
-        background-position: left 3456px top 1944px;
+    to {
+        background-position: 1400px 0;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flow {
+        animation: none;
+    }
+}
+
+/* Brand logo: the course SVG is viewBox-only, so it needs an explicit bound
+   or it fills the sidebar. The mark is square, so capping height caps width. */
+.sidebar-logo {
+  max-height: 150px;
+  width: auto;
 }
