@@ -9,8 +9,8 @@
     <path d="M67 73 L23 53"></path>
     <path d="M32.4 72.4 L37.6 25.6"></path>
   </g>
-  <path d="M46 58 L56 37" stroke="#52717a" stroke-width="2.88"></path>
-  <path d="M50.6 41.5 L56 37 L55.9 44" stroke="#52717a" stroke-width="2.88"></path>
-  <circle cx="58" cy="34" r="5" fill="#52717a"></circle>
+  <path d="M46 58 L56 37" stroke="#9E2B2B" stroke-width="2.88"></path>
+  <path d="M50.6 41.5 L56 37 L55.9 44" stroke="#9E2B2B" stroke-width="2.88"></path>
+  <circle cx="58" cy="34" r="5" fill="#9E2B2B"></circle>
   </g>
 </svg>
