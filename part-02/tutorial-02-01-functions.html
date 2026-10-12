@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,14 +78,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-018a56f84f553ab074084cbaa177a14c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c366505a46d5b46cf7fae82eb9e8fbfc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-018a56f84f553ab074084cbaa177a14c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fcd1a2993490c2d386cd11edf595946f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2f19b2db3fad15d2f175130959bbc86e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8d6508a0f4ab1fa03a98911d51c1ef8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-2f19b2db3fad15d2f175130959bbc86e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d5407ca14600b690e3963be9f1b8c151.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-bab584308b85d495651bb1f255ad6ca5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d5407ca14600b690e3963be9f1b8c151.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -342,11 +345,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#section-3---multiple-dispatch" id="toc-section-3---multiple-dispatch" class="nav-link" data-scroll-target="#section-3---multiple-dispatch">Section 3 - Multiple Dispatch</a>
   <ul class="collapse">
   <li><a href="#exercise-3.1---match-results-to-assertions" id="toc-exercise-3.1---match-results-to-assertions" class="nav-link" data-scroll-target="#exercise-3.1---match-results-to-assertions">Exercise 3.1 - Match Results to Assertions</a></li>
+  <li><a href="#exercise-3.2---add-your-own-method" id="toc-exercise-3.2---add-your-own-method" class="nav-link" data-scroll-target="#exercise-3.2---add-your-own-method">Exercise 3.2 - Add Your Own Method</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-02-01-functions.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="tutorial-02-01-functions.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li><li><a href="tutorial-02-01-functions.ipynb" download="tutorial-02-01-functions.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-02-01-functions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tutorial-02-01-functions.ipynb" download="tutorial-02-01-functions.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="tutorial-02-01-functions.jl"><i class="bi bi-hand-thumbs-up"></i>Julia</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -375,6 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Introduction</h1>
 <p>Imagine you have a helpful worker. Instead of explaining every little task to it each time, you can teach it specific jobs once, and then just ask it to do those jobs later. In programming, these “jobs” are called functions! This tutorial will show you how to create and use functions in Julia, making your code more organized and reusable.</p>
 <p>Follow the instructions, input your code in the designated areas, and verify your implementations with <code>@assert</code> statements.</p>
+<hr>
 </section>
 <section id="section-1---creating-and-calling-functions" class="level1">
 <h1>Section 1 - Creating and Calling Functions</h1>
@@ -400,22 +405,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="4" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">multiply</span>(a,b)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   a <span class="op">*</span> b</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">multiply</span>(a, b)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">*</span> b</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">multiply</span>(<span class="fl">10</span>, <span class="fl">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>50</code></pre>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"multiply(10, 5) = </span><span class="sc">$</span>(<span class="fu">multiply</span>(<span class="fl">10</span>, <span class="fl">5</span>))<span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>multiply(10, 5) = 50</code></pre>
 </div>
 </div>
-<p>The second function takes two parameters, multiplies them, and returns the result implicitly. In Julia, the last expression is automatically returned, making the <code>return</code> keyword optional. If you explicitly use the <code>return</code> keyword in the function, it will return the value immediately once the function encounters the keyword and stops the further execution of the function. That way, you can also use the keyword in conditional statements and use it to return a value based on a condition. For example:</p>
+<p>The second function takes two parameters, multiplies them, and returns the result implicitly. In Julia, the last expression is automatically returned, making the <code>return</code> keyword optional. If you explicitly use the <code>return</code> keyword in the function, it returns the value immediately when it is encountered. Execution of the rest of the function stops. That way, you can also use the keyword in conditional statements and use it to return a value based on a condition. For example:</p>
 <div id="6" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">do_something</span>(a,b)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> a <span class="op">&gt;</span> b</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> a <span class="op">*</span> b</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   <span class="cf">end</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">do_something</span>(a, b)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> a <span class="op">&gt;</span> b</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a <span class="op">*</span> b</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The result of do_something(10, 5) is </span><span class="sc">$</span>(<span class="fu">do_something</span>(<span class="fl">10</span>, <span class="fl">5</span>))<span class="st">"</span>)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The result of do_something(5, 10) is </span><span class="sc">$</span>(<span class="fu">do_something</span>(<span class="fl">5</span>, <span class="fl">10</span>))<span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -434,7 +439,7 @@ The result of do_something(5, 10) is 15</code></pre>
 <ul>
 <li>The function name is like the skill name (e.g., “make_sandwich”)</li>
 <li>Parameters are things the robot needs to do the job (e.g., bread, filling)</li>
-<li>The code inside are the steps to follow</li>
+<li>The code inside describes the steps to follow</li>
 <li>The return value is the finished product</li>
 </ul>
 </div>
@@ -454,6 +459,7 @@ The result of do_something(5, 10) is 15</code></pre>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The sum computed is </span><span class="sc">$</span>(<span class="fu">add</span>(<span class="fl">10</span>, <span class="fl">5</span>))<span class="st">, wonderful!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<hr>
 </section>
 </section>
 <section id="section-2---scope-within-functions" class="level1">
@@ -473,10 +479,10 @@ The result of do_something(5, 10) is 15</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But this would cause an error:</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(secret_ingredient)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>If you want to access the variable outside of the function, you have to explicitly return it. You can do this by passing <code>return</code> in front of the variable you want to return from the function.</p>
+<p>If you want to access the variable outside of the function, you have to explicitly return it. You can do this by writing <code>return</code> in front of the variable you want to return from the function.</p>
 <section id="exercise-2.1---return-a-local-variable" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2.1---return-a-local-variable">Exercise 2.1 - Return a Local Variable</h2>
-<p>Try to execute the following block of code. The objective is to understand how to return the <code>local_variable_one</code> from the function <code>scope_test</code>. Your task is to change the function, to return the value of <code>local_variable_one</code>.</p>
+<p>Run the block below and then the test underneath it. The block itself executes without an error - it is the test that fails. Before fixing anything, think about why the function returns 20 and not nothing. (Hint: Section 1, implicit return - the last expression is <code>local_variable_two = 20</code>.) Your task is to change the function so that it returns the value of <code>local_variable_one</code>.</p>
 <div id="16" class="cell" data-execution_count="0">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CHANGES BELOW</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scope_test</span>()</span>
@@ -487,8 +493,8 @@ The result of do_something(5, 10) is 15</code></pre>
 </div>
 <div id="18" class="cell" data-execution_count="0">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your function</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">scope_test</span>() <span class="op">==</span> <span class="fl">10</span> <span class="st">"The value exported is </span><span class="sc">$</span>(<span class="fu">scope_test</span>())<span class="st">."</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The value exported is </span><span class="sc">$</span>(<span class="fu">scope_test</span>())<span class="st">, you solved it!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">scope_test</span>() <span class="op">==</span> <span class="fl">10</span> <span class="st">"The value returned is </span><span class="sc">$</span>(<span class="fu">scope_test</span>())<span class="st"> but should be 10."</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The value returned is </span><span class="sc">$</span>(<span class="fu">scope_test</span>())<span class="st">, you solved it!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-2.2---define-an-implicit-return-function" class="level2">
@@ -505,6 +511,7 @@ The result of do_something(5, 10) is 15</code></pre>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The difference computed is </span><span class="sc">$</span>(<span class="fu">subtract</span>(<span class="fl">10</span>, <span class="fl">5</span>))<span class="st">, perfect!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<hr>
 </section>
 </section>
 <section id="section-3---multiple-dispatch" class="level1">
@@ -535,13 +542,14 @@ Generic operation for objects of type String and Int64</code></pre>
 </div>
 <section id="exercise-3.1---match-results-to-assertions" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3.1---match-results-to-assertions">Exercise 3.1 - Match Results to Assertions</h2>
-<p>Match the results from the previous example to the correct assertions:</p>
+<p>The variable names in the assertions below are mixed up. Swap the variable names so that each check passes and matches its message - after your fix, both the checks and their messages should be correct:</p>
 <div id="26" class="cell" data-execution_count="0">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CHANGES BELOW</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> result2 <span class="op">==</span> <span class="fl">30</span> <span class="st">"result1 should be the sum of two numbers"</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> result3 <span class="op">==</span> <span class="st">"Hello, World!"</span> <span class="st">"result2 should be the concatenation of two strings"</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> result1 <span class="op">==</span> <span class="st">"Generic operation for objects of type String and Int64"</span> <span class="st">"result3 should use the generic operation"</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"You solved it, the assertions are now correct!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CHANGES ABOVE</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"You solved it, the assertions are now correct!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -553,6 +561,23 @@ Generic operation for objects of type String and Int64</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="exercise-3.2---add-your-own-method" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3.2---add-your-own-method">Exercise 3.2 - Add Your Own Method</h2>
+<p>Now, add a method to the generic function <code>operation</code> yourself. Define <code>operation</code> for two <code>Bool</code> arguments so that it returns <code>true</code> only if both arguments are <code>true</code> (you can use <code>a &amp;&amp; b</code> for this). This is exactly how you extend an existing function with a new method in Julia.</p>
+<div id="28" class="cell" data-execution_count="0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="30" class="cell" data-execution_count="0">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">operation</span>(<span class="cn">true</span>, <span class="cn">true</span>) <span class="op">==</span> <span class="cn">true</span> <span class="st">"operation(true, true) should be true"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">operation</span>(<span class="cn">true</span>, <span class="cn">false</span>) <span class="op">==</span> <span class="cn">false</span> <span class="st">"operation(true, false) should be false"</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Great, your new method for Bool arguments works!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<hr>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -975,31 +1000,31 @@ Generic operation for objects of type String and Int64</code></pre>
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Mathematical Optimization with Julia, Tobias Vlćek<br>CC BY-SA 4.0</p>
+<p>Mathematical Optimization with Julia, Dr.&nbsp;Tobias Vlćek<br>CC BY-SA 4.0</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/beyondsimulations/Optimization-with-Julia">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="GitHub repository">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
-      <i class="bi bi-linkedin" role="img">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
-      <i class="bi bi-envelope" role="img">
+      <i class="bi bi-envelope" role="img" aria-label="Email">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
-      <i class="bi bi-skip-backward" role="img">
+      <i class="bi bi-skip-backward" role="img" aria-label="All lectures">
 </i> 
     </a>
   </li>  

@@ -4,7 +4,7 @@
     "href": "part-03/tutorial-03-05-transport.html",
     "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
     "section": "",
-    "text": "Welcome to this tutorial on the transportation problem using JuMP! As always, don’t worry if you’re new to optimization - we’ll walk through everything step by step using a real-world example.\nImagine you’re running a solar panel distribution company. You have several warehouses (suppliers) and need to ship solar panels to various solar farms (customers). Your goal is to minimize the total cost of transportation while meeting all customer demands.\nBy the end of this tutorial, you’ll be able to:\n\nUnderstand what a transportation problem is\nSet up a transportation problem using JuMP\nSolve the problem and interpret the results\n\nLet’s start by loading the necessary packages:\n\nusing JuMP, HiGHS\nusing DataFrames, CSV",
+    "text": "Welcome to this tutorial on the transportation problem using JuMP! As always, don’t worry if you’re new to optimization - we’ll walk through everything step by step using a real-world example.\nImagine you’re running a solar panel distribution company. You have several warehouses (suppliers) and need to ship solar panels to various solar farms (customers). Each delivered truckload earns revenue, but it also causes variable costs and transportation costs. Your goal is to plan the shipments that maximize your total profit.\nBy the end of this tutorial, you’ll be able to:\n\nUnderstand what a transportation problem is\nSet up a transportation problem using JuMP\nSolve the problem and interpret the results\n\nLet’s start by loading the necessary packages:\n\nusing JuMP, HiGHS\nusing DataFrames, CSV",
     "crumbs": [
       "III. Optimization",
       "05 - Transport"
@@ -37,29 +37,40 @@
     "href": "part-03/tutorial-03-05-transport.html#define-the-variables",
     "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
     "section": "Define the variables",
-    "text": "Define the variables\nWe can now define the variables of our model. We need to define a variable for each supplier and customer pair. As before, we can use the @variable macro to define the variables. The syntax is @variable(model, varname[index1,index2] &gt;= 0), where model is the model instance, varname is the name of the variable, and index1 and index2 are the indices of the variable. We can use vectors as input for the indices, but we could also use the keys of the dictionaries. In the following code block we mixed both options, to show you that it is possible.\n\n# Define variable\n@variable(\n    transport_model, \n    X[available.supplier,keys(requested_dict)] &gt;= 0\n)",
+    "text": "Define the variables\nWe can now define the variables of our model. We need to define a variable for each warehouse and solar farm pair. As before, we can use the @variable macro to define the variables. The syntax is @variable(model, varname[index1,index2] &gt;= 0), where model is the model instance, varname is the name of the variable, and index1 and index2 are the indices of the variable. We can use vectors as input for the indices, but we could also use the keys of the dictionaries. In the following code block we mixed both options, to show you that it is possible.\n\n# Define variable\n@variable(\n    transport_model,\n    X[available.supplier,keys(requested_dict)] &gt;= 0\n)\n\n\n\n\n\n\n\nMixing indexing styles like this only works because available.supplier and keys(available_dict) contain exactly the same names - just as requested.solar_farm and keys(requested_dict) do. If one of them were a filtered DataFrame or an outdated dictionary, we would get a KeyError - or worse, a silently smaller model without any error message. In your own models, it is safer to pick one style and stick to it.",
     "crumbs": [
       "III. Optimization",
       "05 - Transport"
     ]
   },
   {
-    "objectID": "part-03/tutorial-03-05-transport.html#define-the-objective",
-    "href": "part-03/tutorial-03-05-transport.html#define-the-objective",
+    "objectID": "part-03/tutorial-03-05-transport.html#exercise-4.1---define-the-objective",
+    "href": "part-03/tutorial-03-05-transport.html#exercise-4.1---define-the-objective",
     "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
-    "section": "Define the objective",
-    "text": "Define the objective\nNext, we can define the objective of our model. We want to maximize the profit, which is the revenue minus the variable costs and the transportation costs. As before, we can use the @objective macro to define the objective. The syntax is @objective(model, Max, expression), where model is the model instance, Max indicates that we want to maximize the expression, and expression is the expression we want to maximize.\n\n@objective(transport_model, Max, \n    sum((revenue-varCosts-travelCosts_dict[(i,j)]) * X[i,j] \n    for i in keys(available_dict), j in keys(requested_dict))\n)",
+    "section": "Exercise 4.1 - Define the objective",
+    "text": "Exercise 4.1 - Define the objective\nNow it is your turn to define the objective! We want to maximize the total profit: each truckload shipped from warehouse i to solar farm j earns the margin of 4700 (revenue minus variable costs) and costs the transportation costs of that route. As before, we can use the @objective macro. The syntax is @objective(model, Max, expression), where model is the model instance, Max indicates that we want to maximize the expression, and expression is the expression we want to maximize.\n\n# YOUR CODE BELOW\n# Hint: Sum over all pairs, e.g. with\n# for i in keys(available_dict), j in keys(requested_dict)\n# and look up the transportation costs with travelCosts_dict[(i,j)]\n\n\n\nCode\n# Test your answer\n@assert objective_sense(transport_model) == MOI.MAX_SENSE \"The objective should be maximized, not minimized.\"\n@assert isapprox(\n    coefficient(objective_function(transport_model), X[\"a_1\",\"b_1\"]),\n    revenue - varCosts - travelCosts_dict[(\"a_1\",\"b_1\")];\n    atol = 1e-6\n) \"The profit for each truckload from a_1 to b_1 should be the revenue minus the variable costs minus the transportation costs of that route.\"\nprintln(\"Objective defined successfully!\")",
     "crumbs": [
       "III. Optimization",
       "05 - Transport"
     ]
   },
   {
-    "objectID": "part-03/tutorial-03-05-transport.html#define-the-constraints",
-    "href": "part-03/tutorial-03-05-transport.html#define-the-constraints",
+    "objectID": "part-03/tutorial-03-05-transport.html#exercise-4.2---restrict-the-available-truckloads",
+    "href": "part-03/tutorial-03-05-transport.html#exercise-4.2---restrict-the-available-truckloads",
     "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
-    "section": "Define the constraints",
-    "text": "Define the constraints\nWe can now define the constraints of our model. We need to ensure that the supply from each supplier is enough to cover the demand of each customer. We can use the @constraint macro to define the constraints. The syntax is @constraint(model, expression), where model is the model instance and expression is the expression we want to constrain.\nTo illustrate the use of dictionaries, we will again use the keys of the dictionaries to define the constraints in the following code block.\n\n@constraint(transport_model, \n    restrictAvailable[i in keys(available_dict)], \n    sum(X[i,j] for j in keys(requested_dict)) &lt;= available_dict[i]\n)\n\nNaturally, we could also use the vectors with the names from the DataFrames to define the constraints or we could also just work with ranges from the beginning, e.g. 1:length(available.supplier) and 1:length(requested.solar_farm). Working with names is often more convenient, though.\n\n@constraint(transport_model,\n    restrictDemand[j in requested.solar_farm], \n    sum(X[i,j] for i in available.supplier) &lt;= requested_dict[j]\n)\n\nAnd that’s it! We have now defined the model and can start optimizing.",
+    "section": "Exercise 4.2 - Restrict the available truckloads",
+    "text": "Exercise 4.2 - Restrict the available truckloads\nNext, we define the constraints with the @constraint macro. The first constraint ensures that each warehouse ships at most the number of truckloads it has available. Create it and name it restrictAvailable. The syntax is @constraint(model, name[index], expression), where model is the model instance, name[index] creates one constraint for each element of the index set, and expression is the expression we want to constrain. To practice the use of dictionaries, use the keys of the dictionaries for the indices here.\n\n# YOUR CODE BELOW\n# Hint: For each warehouse i, the sum of X[i,j] over all solar farms j\n# has to be lower than or equal to available_dict[i]\n\n\n\nCode\n# Test your answer\n@assert all(\n    is_valid(transport_model, restrictAvailable[i]) for i in keys(available_dict)\n) \"The model should contain one constraint restrictAvailable for each warehouse.\"\n@assert normalized_rhs(restrictAvailable[\"a_1\"]) == available_dict[\"a_1\"] \"The right-hand side of the constraint for warehouse a_1 should be its available truckloads, $(available_dict[\"a_1\"]).\"\nprintln(\"Supply constraint defined successfully!\")",
+    "crumbs": [
+      "III. Optimization",
+      "05 - Transport"
+    ]
+  },
+  {
+    "objectID": "part-03/tutorial-03-05-transport.html#exercise-4.3---restrict-the-requested-truckloads",
+    "href": "part-03/tutorial-03-05-transport.html#exercise-4.3---restrict-the-requested-truckloads",
+    "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
+    "section": "Exercise 4.3 - Restrict the requested truckloads",
+    "text": "Exercise 4.3 - Restrict the requested truckloads\nThe second constraint ensures that each solar farm receives at most the number of truckloads it requested. Create it and name it restrictDemand. Note the &lt;= here: the demand is an upper limit, not an obligation. If a delivery would lose money, the model is allowed to deliver less than requested. Naturally, you could again use the keys of the dictionaries, but you could also use the vectors with the names from the DataFrames, e.g. requested.solar_farm and available.supplier, as both contain exactly the same names. You could even work with ranges from the beginning, e.g. 1:length(available.supplier) - but working with names is often more convenient.\n\n# YOUR CODE BELOW\n# Hint: For each solar farm j, the sum of X[i,j] over all warehouses i\n# has to be lower than or equal to requested_dict[j]\n\n\n\nCode\n# Test your answer\n@assert all(\n    is_valid(transport_model, restrictDemand[j]) for j in requested.solar_farm\n) \"The model should contain one constraint restrictDemand for each solar farm.\"\n@assert normalized_rhs(restrictDemand[\"b_1\"]) == requested_dict[\"b_1\"] \"The right-hand side of the constraint for solar farm b_1 should be its requested truckloads, $(requested_dict[\"b_1\"]).\"\nprintln(\"Demand constraint defined successfully!\")\n\n\nAnd that’s it! We have now defined the model and can start optimizing.",
     "crumbs": [
       "III. Optimization",
       "05 - Transport"
@@ -70,7 +81,18 @@
     "href": "part-03/tutorial-03-05-transport.html#exercise-5.1---start-optimization",
     "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
     "section": "Exercise 5.1 - Start optimization",
-    "text": "Exercise 5.1 - Start optimization\nStart the optimization as usual by calling the optimize! function on the model instance.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert termination_status(transport_model) == MOI.OPTIMAL\nprintln(\"Model optimized successfully!\")\n\n\nNow, we can access the values of the variables at the optimal solution. But remember, we defined the variables with the keys of the dictionaries, so we need to convert the result back to a DataFrame. Calling the variable itself will just show the structure of the variable, not the values.\n\nfirst(X,5)\n\nThus, we need to use the value function to extract the values from the variable.\n\ntransport_values = value.(X)\n\nThe result is a DenseAxisArray{Float64,2,...} with index sets. To convert it to a DataFrame, we just need to iterate over the keys dictionaries and store the values in a new DataFrame. As we are not interested in values which are zero, we can skip those.\nFirst, we need to initialize an empty DataFrame with the correct column names.\n\ntransport_df = DataFrame(\n    supplier = [],\n    solar_farm = [],\n    truckloads = []\n)\n\n0×3 DataFrame\n\n\n\nRow\nsupplier\nsolar_farm\ntruckloads\n\n\n\nAny\nAny\nAny\n\n\n\n\n\n\n\nThen, we can iterate over the keys of the dictionaries and store the values in the DataFrame if they are greater than zero.\n\nfor i in keys(available_dict)\n    for j in keys(requested_dict)\n        if transport_values[i,j] &gt; 0\n            push!(transport_df, (\n                supplier = i,\n                solar_farm = j,\n                truckloads = transport_values[i,j]\n                )\n            )\n        end\n    end\nend\n\nFinally, we can print the first few rows of the transportation plan to check if it looks correct.\n\nprintln(\"Begining of the transportation plan:\")\nfirst(transport_df,5)\n\n\n\n\n\n\n\nAlthough the above code looks rather complicated, it is essentially just iterating over the keys of the dictionaries and storing the values in a new DataFrame. This is a common pattern in optimization, as we often want to convert the result of an optimization problem into a more convenient format for reporting or further processing.",
+    "text": "Exercise 5.1 - Start optimization\nStart the optimization as usual by calling the optimize! function on the model instance.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert termination_status(transport_model) == MOI.OPTIMAL \"The termination status should be OPTIMAL but is $(termination_status(transport_model))\"\n@assert isapprox(objective_value(transport_model), 100373406; atol = 1e-4) \"The optimal profit should be 100373406 but is $(objective_value(transport_model)). Check the objective and the constraints of your model.\"\nprintln(\"Model optimized successfully! The maximal profit is \", objective_value(transport_model), \".\")\n\n\nNow, we can access the values of the variables at the optimal solution. But remember, we defined the variables with the keys of the dictionaries, so we need to convert the result back to a DataFrame. If we just look at parts of the variable container, we only see the variables themselves, not their optimal values.\n\nfirst(X,5)\n\nThus, we need to use the value function to extract the values from the variable.\n\ntransport_values = value.(X)\n\nThe result is a DenseAxisArray{Float64,2,...} with index sets. To convert it to a DataFrame, we just need to iterate over the keys of the dictionaries and store the values in a new DataFrame. As we are not interested in values which are zero, we can skip those.\nFirst, we need to initialize an empty DataFrame with the correct column names and column types.\n\ntransport_df = DataFrame(\n    supplier = String[],\n    solar_farm = String[],\n    truckloads = Float64[]\n)\n\nThen, we can iterate over the keys of the dictionaries and store the values in the DataFrame if they are greater than zero.\n\nfor i in keys(available_dict)\n    for j in keys(requested_dict)\n        if transport_values[i,j] &gt; 0\n            push!(transport_df, (\n                supplier = i,\n                solar_farm = j,\n                truckloads = transport_values[i,j]\n                )\n            )\n        end\n    end\nend\n\nFinally, we can print the first few rows of the transportation plan to check if it looks correct.\n\nprintln(\"Beginning of the transportation plan:\")\nfirst(transport_df,5)\n\n\n\n\n\n\n\nAlthough the above code looks rather complicated, it is essentially just iterating over the keys of the dictionaries and storing the values in a new DataFrame. This is a common pattern in optimization, as we often want to convert the result of an optimization problem into a more convenient format for reporting or further processing.\n\n\n\n\n\n\n\n\n\nWe defined \\(X_{i,j}\\) as a continuous variable, so fractional truckloads would be allowed in the plan. If you look at the results, you will see whole truckloads everywhere anyway - a well-known property of transportation problems with whole-numbered supply and demand. In other problems, you might have to decide whether fractional values are acceptable or whether you need integer variables.",
+    "crumbs": [
+      "III. Optimization",
+      "05 - Transport"
+    ]
+  },
+  {
+    "objectID": "part-03/tutorial-03-05-transport.html#exercise-6.1---check-the-delivered-truckloads",
+    "href": "part-03/tutorial-03-05-transport.html#exercise-6.1---check-the-delivered-truckloads",
+    "title": "Tutorial III.V - Modelling the Transportation Problem with JuMP",
+    "section": "Exercise 6.1 - Check the delivered truckloads",
+    "text": "Exercise 6.1 - Check the delivered truckloads\nDoes that mean some solar farms receive less than they requested? Find out yourself: compute the total number of truckloads delivered in the optimal plan and save it in a variable called total_delivered.\n\n# YOUR CODE BELOW\n# Hint: Use sum() on the truckloads column of transport_df\n\n\n\nCode\n# Test your answer\n@assert isapprox(total_delivered, sum(requested.truckload_demand); atol = 1e-4) \"total_delivered should be $(sum(requested.truckload_demand)) but is $(total_delivered). Did you sum the truckloads column of transport_df?\"\nprintln(\"Correct! All \", sum(requested.truckload_demand), \" requested truckloads are delivered.\")\n\n\nSurprised? Although two thirds of all routes are unprofitable, every solar farm still receives everything it requested. Two properties of our data explain this: every solar farm has at least one route with costs below the margin (the cheapest route to any farm costs at most 1,932), and the total supply of 30,321 truckloads exceeds the total demand of 28,014. Keep in mind that this is a property of this particular data set, not a guarantee of the model. If the margin were smaller - say, the variable costs rose above 10,000 - some farms would no longer have any profitable route, and the model would leave their demand unmet.",
     "crumbs": [
       "III. Optimization",
       "05 - Transport"
@@ -79,9 +101,9 @@
   {
     "objectID": "part-03/tutorial-03-03-constraints.html",
     "href": "part-03/tutorial-03-03-constraints.html",
-    "title": "Tutorial III.III - Constraints in JuMP",
+    "title": "Tutorial III.III - Objectives and Constraints in JuMP",
     "section": "",
-    "text": "Welcome to this tutorial on constraints in JuMP! In this lesson, we’ll explore how to add rules (constraints) to our optimization problems.\nBy the end of this tutorial, you’ll be able to: 1. Create simple constraints for your optimization problems 2. Use containers (like arrays) to manage multiple similar constraints 3. Create more complex constraints based on conditions\nLet’s start by loading the necessary packages:\n\nusing JuMP, HiGHS\n\nNow, let’s create a model that we’ll use throughout this tutorial:\n\nanother_model = Model(HiGHS.Optimizer)\nprintln(\"Great! We've created a new optimization model.\")",
+    "text": "Welcome to this tutorial on objective functions and constraints in JuMP! In this lesson, we’ll explore how to define objectives and add rules (constraints) to our optimization problems.\nBy the end of this tutorial, you’ll be able to:\n\nDefine objective functions with variables in containers\nUse containers (like arrays) to manage multiple similar constraints\nCreate more complex constraints based on conditions\n\nLet’s start by loading the necessary packages:\n\nusing JuMP, HiGHS\n\nNow, let’s create a model that we’ll use throughout this tutorial:\n\nanother_model = Model(HiGHS.Optimizer)\nprintln(\"Great! We've created a new optimization model.\")\n\nGreat! We've created a new optimization model.",
     "crumbs": [
       "III. Optimization",
       "03 - Constraints"
@@ -90,20 +112,31 @@
   {
     "objectID": "part-03/tutorial-03-03-constraints.html#exercise-1.1---define-arrays",
     "href": "part-03/tutorial-03-03-constraints.html#exercise-1.1---define-arrays",
-    "title": "Tutorial III.III - Constraints in JuMP",
+    "title": "Tutorial III.III - Objectives and Constraints in JuMP",
     "section": "Exercise 1.1 - Define arrays",
-    "text": "Exercise 1.1 - Define arrays\nScenario: Imagine you’re optimizing the production of 8 different products in a factory. Each product has a different profit margin, and you want to maximize total profit.\nDefine an array of variables and an objective function for another_model. The variables should be called profits and have a range from 1:8. It has a lower bound of 0. The objective should be a Maximization of the sum of all profits.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert length(profits) == 8 && all(lower_bound(profits[i]) == 0 for i in 1:8)\n@assert typeof(objective_function(another_model)) == AffExpr\nprintln(\"Objective function with container variables defined successfully!\")",
+    "text": "Exercise 1.1 - Define arrays\nScenario: Imagine you’re optimizing the production of 8 different products in a factory. Each product has a different profit margin per unit, and you want to maximize total profit. The profit margins are given as:\n\nmargin = [3, 2, 4, 5, 3, 6, 2, 4]\n\n8-element Vector{Int64}:\n 3\n 2\n 4\n 5\n 3\n 6\n 2\n 4\n\n\nDefine an array of variables and an objective function for another_model. The variables should be called production and have a range from 1:8, as they describe how many units of each product to make. They have a lower bound of 0. The objective should be a Maximization of the total profit, which is the sum of margin[i] * production[i] over all products.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert length(production) == 8 && all(lower_bound(production[i]) == 0 for i in 1:8)\n@assert typeof(objective_function(another_model)) == AffExpr\n@assert all(coefficient(objective_function(another_model), production[i]) == margin[i]\n    for i in 1:8) \"Check your objective: each variable should be multiplied by its margin.\"\nprintln(\"Objective function with container variables defined successfully!\")",
     "crumbs": [
       "III. Optimization",
       "03 - Constraints"
     ]
   },
   {
-    "objectID": "part-03/tutorial-03-03-constraints.html#exercise-3.1---add-a-conditional-constraints",
-    "href": "part-03/tutorial-03-03-constraints.html#exercise-3.1---add-a-conditional-constraints",
-    "title": "Tutorial III.III - Constraints in JuMP",
-    "section": "Exercise 3.1 - Add a conditional constraints",
-    "text": "Exercise 3.1 - Add a conditional constraints\nScenario extension: The first 4 products are new and have limited market demand.\nAdd a conditional constraint smallProfit to the previous model. Condition: Only the first 4 variables profit have to be lower or equalthan 5.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert all(is_valid(another_model, smallProfit[i]) for i in 1:4)\nprintln(\"Conditional constraint implemented successfully!\")\nprintln(\"Checking successful implementation.\")\noptimize!(another_model)\nstatus = termination_status(another_model)\n@assert status == MOI.OPTIMAL \"Sorry, something didn't work out as the model status is $status\"\n@assert objective_value(another_model) ≈ 68 atol=1e-4 \"Although you have an optimal solution, \n    the should be 68 not $(objective_value(another_model)). Is the model correct?\"\nprintln(\"Model components validated successfully!\")",
+    "objectID": "part-03/tutorial-03-03-constraints.html#exercise-2.1---define-constraints",
+    "href": "part-03/tutorial-03-03-constraints.html#exercise-2.1---define-constraints",
+    "title": "Tutorial III.III - Objectives and Constraints in JuMP",
+    "section": "Exercise 2.1 - Define constraints",
+    "text": "Exercise 2.1 - Define constraints\nContinuing our factory scenario: Each product has a maximum daily production capacity of 12 units due to machine limitations.\nDefine constraints called maxCapacity using an array of variables. The logic: Each production quantity defined in the previous task should be less than or equal to 12.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert all(is_valid(another_model, maxCapacity[i]) for i in 1:8)\nprintln(\"Constraints within containers defined successfully!\")",
+    "crumbs": [
+      "III. Optimization",
+      "03 - Constraints"
+    ]
+  },
+  {
+    "objectID": "part-03/tutorial-03-03-constraints.html#exercise-3.1---add-a-conditional-constraint",
+    "href": "part-03/tutorial-03-03-constraints.html#exercise-3.1---add-a-conditional-constraint",
+    "title": "Tutorial III.III - Objectives and Constraints in JuMP",
+    "section": "Exercise 3.1 - Add a conditional constraint",
+    "text": "Exercise 3.1 - Add a conditional constraint\nScenario extension: The first 4 products are new and have limited market demand.\nAdd a conditional constraint limitedDemand to the previous model. Condition: Only the first 4 production quantities have to be lower than or equal to 5. Use the conditional syntax with ; from the example above.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert limitedDemand isa Containers.SparseAxisArray \"Please use the conditional\n    syntax `[i in 1:8; condition]` from this section to create the constraint.\"\n@assert length(limitedDemand) == 4 \"The constraint should only cover the first 4 products.\"\n@assert all(is_valid(another_model, limitedDemand[i]) for i in 1:4)\nprintln(\"Conditional constraint implemented successfully!\")\nprintln(\"Checking successful implementation.\")\noptimize!(another_model)\nstatus = termination_status(another_model)\n@assert status == MOI.OPTIMAL \"Sorry, something didn't work out as the model status is $status\"\n@assert objective_value(another_model) ≈ 250 atol=1e-4 \"Although you have an optimal solution,\n    the objective should be 250 not $(objective_value(another_model)). Is the model correct?\"\nprintln(\"Model components validated successfully!\")",
     "crumbs": [
       "III. Optimization",
       "03 - Constraints"
@@ -114,7 +147,7 @@
     "href": "part-03/tutorial-03-01-jump.html",
     "title": "Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS",
     "section": "",
-    "text": "Welcome to this beginner-friendly tutorial on mathematical optimization using JuMP and the HiGHS solver in Julia! Don’t worry if these terms sound unfamiliar – we’ll explain everything step by step.\nIn this tutorial, you’ll learn how to:\n\nSet up a simple optimization problem\nDefine variables and constraints\nCreate an objective function\nSolve the problem and interpret the results\n\nWe’ll use a real-world example to make these concepts more relatable. Imagine you’re managing a small factory that produces two types of products. Your goal is to maximize profit while working within certain limitations. This is exactly the kind of problem that mathematical optimization can solve!\n\n\nJuMP (Julia for Mathematical Programming) is a powerful tool that helps us describe optimization problems in a way that computers can understand and solve. Think of it as a translator between your business problem and the mathematical solver.\n\n\n\nHiGHS is an open-source solver that can find solutions to the optimization problems we describe using JuMP. It’s like a very smart calculator that can handle complex problems quickly and efficiently.\n\n\n\nLet’s break down our factory management problem:\n\nYou produce two products: Product A and Product B\nEach product gives you a different profit:\n\nProduct A: 100 profit per unit\nProduct B: 150 profit per unit\n\nYou have two departments: Cutting and Finishing\nEach product requires different amounts of time in each department:\n\nProduct A: 2 hours in Cutting, 4 hours in Finishing\nProduct B: 4 hours in Cutting, 3 hours in Finishing\n\nYou have limited time available in each department:\n\nCutting: 40 hours total\nFinishing: 60 hours total\n\n\nYour goal is to decide how many of each product to make to maximize your total profit, while not exceeding the available time in each department.\n\n\n\nFirst, we need to install and load the necessary packages. If you haven’t already installed JuMP and HiGHS, run the following code:\n\nimport Pkg; Pkg.add([\"JuMP\",\"HiGHS\"])\n\nNow, let’s load these packages:\n\nusing JuMP, HiGHS\n\nGreat! We’re now ready to start building our optimization model.",
+    "text": "Welcome to this beginner-friendly tutorial on mathematical optimization using JuMP and the HiGHS solver in Julia! Don’t worry if these terms sound unfamiliar – we’ll explain everything step by step.\nIn this tutorial, you’ll learn how to:\n\nSet up a simple optimization problem\nDefine variables and constraints\nCreate an objective function\nSolve the problem and interpret the results\n\nWe’ll use a real-world example to make these concepts more relatable. Imagine you’re managing a small factory that produces two types of products. Your goal is to maximize profit while working within certain limitations. This is exactly the kind of problem that mathematical optimization can solve!\n\n\nJuMP (Julia for Mathematical Programming) is a powerful tool that helps us describe optimization problems in a way that computers can understand and solve. Think of it as a translator between your business problem and the mathematical solver.\n\n\n\nHiGHS is an open-source solver that can find solutions to the optimization problems we describe using JuMP. It’s like a very smart calculator that can handle complex problems quickly and efficiently.\n\n\n\nLet’s break down our factory management problem:\n\nYou produce two products: Product A and Product B\nEach product gives you a different profit:\n\nProduct A: 100 profit per unit\nProduct B: 150 profit per unit\n\nYou have two departments: Cutting and Finishing\nEach product requires different amounts of time in each department:\n\nProduct A: 2 hours in Cutting, 4 hours in Finishing\nProduct B: 4 hours in Cutting, 3 hours in Finishing\n\nYou have limited time available in each department:\n\nCutting: 40 hours total\nFinishing: 60 hours total\n\n\nYour goal is to decide how many of each product to make to maximize your total profit, while not exceeding the available time in each department.\n\n\n\nFirst, we need to install and load the necessary packages. If you haven’t already installed JuMP and HiGHS, you can do so by running import Pkg and then Pkg.add([\"JuMP\",\"HiGHS\"]).\nNow, let’s load these packages:\n\nusing JuMP, HiGHS\n\nGreat! We’re now ready to start building our optimization model.",
     "crumbs": [
       "III. Optimization",
       "01 - JuMP"
@@ -158,7 +191,7 @@
     "href": "part-03/tutorial-03-01-jump.html#setting-up",
     "title": "Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS",
     "section": "",
-    "text": "First, we need to install and load the necessary packages. If you haven’t already installed JuMP and HiGHS, run the following code:\n\nimport Pkg; Pkg.add([\"JuMP\",\"HiGHS\"])\n\nNow, let’s load these packages:\n\nusing JuMP, HiGHS\n\nGreat! We’re now ready to start building our optimization model.",
+    "text": "First, we need to install and load the necessary packages. If you haven’t already installed JuMP and HiGHS, you can do so by running import Pkg and then Pkg.add([\"JuMP\",\"HiGHS\"]).\nNow, let’s load these packages:\n\nusing JuMP, HiGHS\n\nGreat! We’re now ready to start building our optimization model.",
     "crumbs": [
       "III. Optimization",
       "01 - JuMP"
@@ -169,7 +202,7 @@
     "href": "part-03/tutorial-03-01-jump.html#exercise-2.1---create-variables",
     "title": "Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS",
     "section": "Exercise 2.1 - Create Variables",
-    "text": "Exercise 2.1 - Create Variables\nNow it’s your turn! Create two continuous variables equal to or larger than 0 called productA and productB that represent the number of units produced in our problem for our model model.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert @isdefined productA\n@assert typeof(productA) == VariableRef\n@assert has_upper_bound(productA) == false\n@assert has_lower_bound(productA) == true\n@assert lower_bound(productA) == 0\n@assert @isdefined productA\n@assert typeof(productB) == VariableRef\n@assert has_upper_bound(productB) == false\n@assert has_lower_bound(productB) == true\n@assert lower_bound(productB) == 0\nprintln(\"Variables added to the model successfully!\")",
+    "text": "Exercise 2.1 - Create Variables\nNow it’s your turn! Create two continuous variables equal to or larger than 0 called productA and productB that represent the number of units produced in our problem for our model model.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert @isdefined productA\n@assert typeof(productA) == VariableRef\n@assert has_upper_bound(productA) == false\n@assert has_lower_bound(productA) == true\n@assert lower_bound(productA) == 0\n@assert @isdefined productB\n@assert typeof(productB) == VariableRef\n@assert has_upper_bound(productB) == false\n@assert has_lower_bound(productB) == true\n@assert lower_bound(productB) == 0\nprintln(\"Variables added to the model successfully!\")\n\n\n\n\n\n\n\n\nOur variables count units produced, but we declared them as continuous variables. That is fine here, as the optimal solution of this problem happens to be whole numbers anyway. The next tutorial shows how to declare integer variables.",
     "crumbs": [
       "III. Optimization",
       "01 - JuMP"
@@ -180,7 +213,7 @@
     "href": "part-03/tutorial-03-01-jump.html#exercise-3.1---create-constraints",
     "title": "Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS",
     "section": "Exercise 3.1 - Create Constraints",
-    "text": "Exercise 3.1 - Create Constraints\nCreate two constraints based on the on the Cutting and Finishing department hours of the problem description in this tutorial. Call the first constraint cutting_constraint and the second constraint finishing_constraint.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert is_valid(model, cutting_constraint)\n@assert is_valid(model, finishing_constraint)\nprintln(\"Constraints added to the model successfully!\")\nprintln(\"Note, that only the existence of these constraints was checked!\")\nprintln(\"The optimization later will show, whether the formulation was correct.\")",
+    "text": "Exercise 3.1 - Create Constraints\nCreate two constraints based on the Cutting and Finishing department hours of the problem description in this tutorial. Call the first constraint cutting_constraint and the second constraint finishing_constraint.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert is_valid(model, cutting_constraint)\n@assert is_valid(model, finishing_constraint)\nprintln(\"Constraints added to the model successfully!\")\nprintln(\"Note that only the existence of these constraints was checked!\")\nprintln(\"The optimization later will show whether the formulation was correct.\")",
     "crumbs": [
       "III. Optimization",
       "01 - JuMP"
@@ -191,7 +224,7 @@
     "href": "part-03/tutorial-03-01-jump.html#exercise-4.1---create-the-objective-function",
     "title": "Tutorial III.I - Introduction to Mathematical Optimization with JuMP and HiGHS",
     "section": "Exercise 4.1 - Create the Objective Function",
-    "text": "Exercise 4.1 - Create the Objective Function\nCreate the objective function based on the problem description of this tutorial. The objective is to maximize profit based on the values of productA and productB.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert typeof(objective_function(model)) == AffExpr\nprintln(\"An objective function defined successfully!\")\nprintln(\"The optimization later will show, whether the formulation was correct.\")",
+    "text": "Exercise 4.1 - Create the Objective Function\nCreate the objective function based on the problem description of this tutorial. The objective is to maximize profit based on the values of productA and productB.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert objective_sense(model) == MOI.MAX_SENSE \"The objective should be maximized. Did you define it with @objective(model, Max, ...)?\"\n@assert coefficient(objective_function(model), productA) != 0 \"The objective should include productA.\"\n@assert coefficient(objective_function(model), productB) != 0 \"The objective should include productB.\"\nprintln(\"An objective function defined successfully!\")\nprintln(\"The optimization later will show whether the formulation was correct.\")",
     "crumbs": [
       "III. Optimization",
       "01 - JuMP"
@@ -213,7 +246,7 @@
     "href": "part-02/tutorial-02-04-IO.html#exercise-1.1---read-a-csv-file",
     "title": "Tutorial II.IV - Input and Output",
     "section": "Exercise 1.1 - Read a CSV File",
-    "text": "Exercise 1.1 - Read a CSV File\nNow it’s your turn! Let’s read the CSV file we just created.\n\n\n\n\n\n\nTo learn how to use a Julia function, you can type ? followed by the function name in the REPL (Julia’s command-line interface). For example, ?readdlm will show you information about the readdlm() function.\n\n\n\nUse the readdlm() function to read the ‘matrix.csv’ file we just created. Save the result in a variable called read_matrix.\n\n# YOUR CODE BELOW\n# Don't forget to use the @__DIR__ macro to get the correct file path!\n\n\n\nCode\n# Test your answer\n@assert read_matrix == new_data\nprintln(\"File 'matrix.csv' read successfully!\")",
+    "text": "Exercise 1.1 - Read a CSV File\nNow it’s your turn! Let’s read the CSV file we just created. Make sure you have run the code block from Section 1 first, as it creates the file and defines new_data.\n\n\n\n\n\n\nTo learn how to use a Julia function, you can type ? followed by the function name in the REPL (Julia’s command-line interface). For example, ?readdlm will show you information about the readdlm() function.\n\n\n\nUse the readdlm() function to read the ‘matrix.csv’ file we just created. Save the result in a variable called read_matrix.\n\n\n\n\n\n\nWe wrote the file with ',' as the delimiter, but readdlm() assumes whitespace by default. You have to tell readdlm() the delimiter we used when writing, e.g. readdlm(path, ',').\n\n\n\n\n# YOUR CODE BELOW\n# Don't forget to use the @__DIR__ macro to get the correct file path!\n\n\n\nCode\n# Test your answer\n@assert read_matrix == new_data \"The read matrix does not match the original one.\n    Did you pass the delimiter ',' to readdlm()?\"\nprintln(\"File 'matrix.csv' read successfully!\")",
     "crumbs": [
       "II. Data",
       "04 - Input and Output"
@@ -224,18 +257,40 @@
     "href": "part-02/tutorial-02-04-IO.html#exercise-2.1---write-a-dataframe-to-a-csv-file",
     "title": "Tutorial II.IV - Input and Output",
     "section": "Exercise 2.1 - Write a DataFrame to a CSV File",
-    "text": "Exercise 2.1 - Write a DataFrame to a CSV File\nWrite the following given DataFrame to a CSV file table_out.csv in the folder ExampleData. This can be done by using the function CSV.write(). To learn the syntax, ask the inbuild help with ? and the function name.\n\nusing CSV, DataFrames\ndata = DataFrame(Name = [\"Elio\", \"Bob\", \"Yola\"], Age = [18, 25, 29])\ncsv_file_path = \"$(@__DIR__)/ExampleData/table_out.csv\"\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert isfile(\"ExampleData/table_out.csv\") \"Sorry, the file could not be found. \n    Have you followed all steps?\"\nprintln(\"CSV file 'data.csv' written successfully!\")",
+    "text": "Exercise 2.1 - Write a DataFrame to a CSV File\nWrite the following given DataFrame to a CSV file table_out.csv in the folder ExampleData. This can be done by using the function CSV.write(). To learn the syntax, ask the built-in help with ? and the function name.\n\nusing CSV, DataFrames\ndata = DataFrame(Name = [\"Elio\", \"Bob\", \"Yola\"], Age = [18, 25, 29])\ncsv_file_path = \"$(@__DIR__)/ExampleData/table_out.csv\"\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert isfile(\"$(@__DIR__)/ExampleData/table_out.csv\") \"Sorry, the file could not be found.\n    Have you followed all steps?\"\nprintln(\"CSV file 'table_out.csv' written successfully!\")",
     "crumbs": [
       "II. Data",
       "04 - Input and Output"
     ]
   },
   {
-    "objectID": "part-02/tutorial-02-04-IO.html#exercise-2.2---read-a-csv-file-in",
-    "href": "part-02/tutorial-02-04-IO.html#exercise-2.2---read-a-csv-file-in",
+    "objectID": "part-02/tutorial-02-04-IO.html#exercise-2.2---read-in-a-csv-file",
+    "href": "part-02/tutorial-02-04-IO.html#exercise-2.2---read-in-a-csv-file",
     "title": "Tutorial II.IV - Input and Output",
-    "section": "Exercise 2.2 - Read a CSV File in",
-    "text": "Exercise 2.2 - Read a CSV File in\nRead the CSV file table_out.csv in the folder ExampleData into the variable read_data. Here you can use the function CSV.read(), e.g.:\nread_data = CSV.read(\"Path/datatable.csv\", DataFrame)\n\n\n\n\n\n\nNote, that you need to provide a sink for the data when using CSV.read(), e.g. a DataFrame.\n\n\n\n\n# YOUR CODE BELOW\n# Again, don't forget to use the @__DIR__ macro to get the correct file path!\n\n\n\nCode\n# Test your answer\n@assert read_data[1,1] == \"Elio\"\nprintln(\"CSV file 'table_out.csv' read successfully!\")",
+    "section": "Exercise 2.2 - Read in a CSV File",
+    "text": "Exercise 2.2 - Read in a CSV File\nRead the CSV file table_out.csv in the folder ExampleData into the variable read_data. Here you can use the function CSV.read(), e.g.:\nread_data = CSV.read(\"Path/datatable.csv\", DataFrame)\n\n\n\n\n\n\nNote, that you need to provide a sink for the data when using CSV.read(), e.g. a DataFrame.\n\n\n\n\n# YOUR CODE BELOW\n# Again, don't forget to use the @__DIR__ macro to get the correct file path!\n\n\n\nCode\n# Test your answer\n@assert read_data[1,1] == \"Elio\"\nprintln(\"CSV file 'table_out.csv' read successfully!\")",
+    "crumbs": [
+      "II. Data",
+      "04 - Input and Output"
+    ]
+  },
+  {
+    "objectID": "part-02/tutorial-02-04-IO.html#exercise-2.3---read-the-brewerys-order-file",
+    "href": "part-02/tutorial-02-04-IO.html#exercise-2.3---read-the-brewerys-order-file",
+    "title": "Tutorial II.IV - Input and Output",
+    "section": "Exercise 2.3 - Read the Brewery’s Order File",
+    "text": "Exercise 2.3 - Read the Brewery’s Order File\nThe order file of a brewery lands on your desk. The sales team exported it from a German spreadsheet: columns are separated by ;, and numbers use a decimal comma, like 60,0. The following code writes the file to ExampleData/orders.csv exactly as you received it:\n\nmkpath(\"$(@__DIR__)/ExampleData\")\nwrite(\"$(@__DIR__)/ExampleData/orders.csv\", \"\"\"\nweek;crates;note\n1;53;\n2;60,0;\n3;61;\n4;;\n5;56;\n6;126;harbour festival\n7;60;\n7;60;\n8;59;\n\"\"\")\nprintln(\"File 'orders.csv' written to the folder ExampleData!\")\n\nFirst, read the file with plain CSV.read(path, DataFrame) and print it. What type does the crates column have, and why? Then read the file again into the variable orders, this time telling CSV.read() how the file was written: delim=';' and decimal=','.\n\n\n\n\n\n\nKeyword arguments come after a semicolon: CSV.read(path, DataFrame; delim=';', decimal=','). Other tools treat the comma as a thousands separator and read 60,0 as 600.\n\n\n\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert orders.crates[2] == 60.0 \"Week 2 should read 60.0 crates. Did you set decimal=','?\"\n@assert ismissing(orders.crates[4]) \"Week 4 has no number in the file, so it should be missing.\"\nprintln(\"Order file read successfully!\")",
+    "crumbs": [
+      "II. Data",
+      "04 - Input and Output"
+    ]
+  },
+  {
+    "objectID": "part-02/tutorial-02-04-IO.html#exercise-2.4---clean-the-order-file",
+    "href": "part-02/tutorial-02-04-IO.html#exercise-2.4---clean-the-order-file",
+    "title": "Tutorial II.IV - Input and Output",
+    "section": "Exercise 2.4 - Clean the Order File",
+    "text": "Exercise 2.4 - Clean the Order File\nTwo problems remain: week 7 appears twice, and week 4 is missing. Remove the duplicated row with unique!(), then replace the missing value with the median of the other weeks. Week 6 looks unusual too, but read its note before you touch it.\n\n\n\n\n\n\nmedian() comes with the Statistics package (using Statistics; it ships with Julia). skipmissing() ignores missing values, and coalesce.(column, value) replaces every missing entry with value.\n\n\n\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert nrow(orders) == 8 \"Week 7 should appear only once. Did you remove the duplicated row?\"\n@assert count(ismissing, orders.crates) == 0 \"There are still missing values in the crates column.\"\n@assert orders.crates[4] == 60.0 \"Week 4 should get the median of the other weeks, 60 crates.\"\n@assert orders.crates[6] == 126 \"The harbour festival in week 6 was real: keep its 126 crates.\"\nprintln(\"Order file cleaned successfully!\")",
     "crumbs": [
       "II. Data",
       "04 - Input and Output"
@@ -257,7 +312,7 @@
     "href": "part-02/tutorial-02-02-handling.html#exercise-1.1---import-the-pkg-module",
     "title": "Tutorial II.II - Package Management",
     "section": "Exercise 1.1 - Import the Pkg Module",
-    "text": "Exercise 1.1 - Import the Pkg Module\nImport the Pkg module to start managing packages effectively.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\ntry \n    Pkg.update()\n    println(\"Pkg module imported successfully and packages were updated!\")\ncatch e\n    @error \"The Pkg module was not imported yet! Have you used the correct syntax?\"\nend",
+    "text": "Exercise 1.1 - Import the Pkg Module\nImport the Pkg module to start managing packages effectively.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n# Note: This test passes as soon as Pkg is loaded in the current session,\n# even if an earlier cell imported it. To really test your own line,\n# restart the kernel first.\ntry\n    Pkg.status()\n    println(\"Pkg module imported successfully!\")\ncatch e\n    @error \"The Pkg module was not imported yet! Have you used the correct syntax?\"\nend",
     "crumbs": [
       "II. Data",
       "02 - Packages"
@@ -268,117 +323,18 @@
     "href": "part-02/tutorial-02-02-handling.html#exercise-2.1---add-the-dataframes-package",
     "title": "Tutorial II.II - Package Management",
     "section": "Exercise 2.1 - Add the DataFrames Package",
-    "text": "Exercise 2.1 - Add the DataFrames Package\nLet’s add a popular package called DataFrames. It’s great for working with structured data, like spreadsheets.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\ntry \n    using DataFrames\n    println(\"Package added successfully!\")\ncatch e\n    @error \"Package was not added yet! Have you used the correct syntax?\"\nend",
+    "text": "Exercise 2.1 - Add the DataFrames Package\nLet’s add a popular package called DataFrames. It’s great for working with structured data, like spreadsheets.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\ntry\n    using DataFrames\n    println(\"Package added successfully!\")\ncatch e\n    @error \"Package was not added yet! Have you used the correct syntax?\"\nend",
     "crumbs": [
       "II. Data",
       "02 - Packages"
     ]
   },
   {
-    "objectID": "part-02/tutorial-02-02-handling.html#why-environments-matter",
-    "href": "part-02/tutorial-02-02-handling.html#why-environments-matter",
+    "objectID": "part-02/tutorial-02-02-handling.html#exercise-3.1---which-command",
+    "href": "part-02/tutorial-02-02-handling.html#exercise-3.1---which-command",
     "title": "Tutorial II.II - Package Management",
-    "section": "4.1 Why Environments Matter",
-    "text": "4.1 Why Environments Matter\n\n\n\n\n\n\nEven if you’re working primarily with Jupyter notebooks, understanding environments will save you from headaches later! When you encounter a “Package not found” error, knowing how to activate the right environment is the solution.\n\n\n\nFor this course, we’ve prepared an environment with all the packages you’ll need. This means you don’t have to install each package individually - you just need to activate the course environment and you’re ready to go!",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#activating-the-course-environment",
-    "href": "part-02/tutorial-02-02-handling.html#activating-the-course-environment",
-    "title": "Tutorial II.II - Package Management",
-    "section": "4.2 Activating the Course Environment",
-    "text": "4.2 Activating the Course Environment\nThe course materials come with a pre-configured environment containing all necessary packages. To use it, you need to activate it and then instantiate (download) the packages.\nHere’s how to activate an environment at a specific path:\nimport Pkg\nPkg.activate(\"/path/to/course/folder\")\nPkg.instantiate()  # Downloads all packages listed in Project.toml\nThe instantiate() command reads the Project.toml file and installs all the required packages. You only need to run this once when you first set up the course.",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#exercise-4.1---activate-the-course-environment",
-    "href": "part-02/tutorial-02-02-handling.html#exercise-4.1---activate-the-course-environment",
-    "title": "Tutorial II.II - Package Management",
-    "section": "Exercise 4.1 - Activate the Course Environment",
-    "text": "Exercise 4.1 - Activate the Course Environment\nActivate the course environment. Replace the path below with the actual path to your course folder (where you downloaded the course materials).\n\n# YOUR CODE BELOW\n# Hint: Use Pkg.activate(\"path/to/your/course/folder\")\n# Then use Pkg.instantiate() to install all packages\n\n\n\nCode\n# Test your answer\ntry\n    Pkg.status()\n    println(\"Environment activated! Check the package list above.\")\ncatch e\n    @error \"Something went wrong. Make sure you've imported Pkg first!\"\nend",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#activating-an-environment-in-your-current-directory",
-    "href": "part-02/tutorial-02-02-handling.html#activating-an-environment-in-your-current-directory",
-    "title": "Tutorial II.II - Package Management",
-    "section": "4.3 Activating an Environment in Your Current Directory",
-    "text": "4.3 Activating an Environment in Your Current Directory\nOften, you’ll want to create an environment right in the folder where you’re working. The simplest way to do this is using a dot (.) which means “the current directory”:\nimport Pkg\nPkg.activate(\".\")\nThis is particularly useful when:\n\nYou’re starting a new project in a specific folder\nYou want to keep your packages local to one project\nYou’re working in a notebook and want packages specific to that folder\n\n\n\n\n\n\n\nWhen you activate a new environment that doesn’t have a Project.toml yet, Julia will create one for you automatically when you add your first package.",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#exercise-4.2---create-and-activate-a-local-environment",
-    "href": "part-02/tutorial-02-02-handling.html#exercise-4.2---create-and-activate-a-local-environment",
-    "title": "Tutorial II.II - Package Management",
-    "section": "Exercise 4.2 - Create and Activate a Local Environment",
-    "text": "Exercise 4.2 - Create and Activate a Local Environment\nCreate and activate an environment in your current working directory.\n\n# YOUR CODE BELOW\n# Hint: Use the dot notation to refer to the current directory\n\n\n\nCode\n# Test your answer\n# After running your code, this should show an empty or minimal environment\nPkg.status()\nprintln(\"Local environment activated!\")",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#checking-whats-installed",
-    "href": "part-02/tutorial-02-02-handling.html#checking-whats-installed",
-    "title": "Tutorial II.II - Package Management",
-    "section": "4.4 Checking What’s Installed",
-    "text": "4.4 Checking What’s Installed\nTo see which packages are installed in your current environment, use Pkg.status():\nPkg.status()\nThis shows you:\n\nThe name of each installed package\nThe version number\nWhether the package was added directly or as a dependency\n\n\n\n\n\n\n\nIf you see fewer packages than expected, you might be in the wrong environment! Use Pkg.status() to diagnose package issues.",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#exercise-4.3---check-your-environment-status",
-    "href": "part-02/tutorial-02-02-handling.html#exercise-4.3---check-your-environment-status",
-    "title": "Tutorial II.II - Package Management",
-    "section": "Exercise 4.3 - Check Your Environment Status",
-    "text": "Exercise 4.3 - Check Your Environment Status\nCheck what packages are available in your current environment.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Expected: You should see a list of packages\n# If the list is empty, you may need to activate the course environment\nprintln(\"Tip: If the list is empty, try activating the course environment!\")",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#adding-packages-to-your-environment",
-    "href": "part-02/tutorial-02-02-handling.html#adding-packages-to-your-environment",
-    "title": "Tutorial II.II - Package Management",
-    "section": "4.5 Adding Packages to Your Environment",
-    "text": "4.5 Adding Packages to Your Environment\nOnce you’ve activated an environment, any packages you add will be installed into that specific environment:\n# First, make sure you're in the right environment\nPkg.activate(\".\")  # or your specific path\n\n# Then add packages\nPkg.add(\"PackageName\")\nYou can also add multiple packages at once:\nPkg.add([\"JuMP\", \"HiGHS\", \"CSV\", \"Plots\"])\n\n\n\n\n\n\nNoteMain Course Packages\n\n\n\nFor this course, the main packages you’ll need are:\n\nJuMP and HiGHS: For optimization problems\nDataFrames and CSV: For working with data\nPlots and StatsPlots: For visualization",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#keeping-your-environment-active-in-notebooks",
-    "href": "part-02/tutorial-02-02-handling.html#keeping-your-environment-active-in-notebooks",
-    "title": "Tutorial II.II - Package Management",
-    "section": "4.6 Keeping Your Environment Active in Notebooks",
-    "text": "4.6 Keeping Your Environment Active in Notebooks\nWhen working with Jupyter notebooks, you’ll want to make sure the correct environment is active. Here’s a reliable pattern to use at the start of your notebooks:\n# Add this at the top of your notebook\nimport Pkg\nPkg.activate(\"/path/to/course/folder\")  # Activate course environment\n\n# Now you can use the packages\nusing JuMP, HiGHS\nusing DataFrames, CSV\nusing Plots\n\n\n\n\n\n\nTipPro Tips for Notebooks\n\n\n\n\nAlways activate first: Put the Pkg.activate() command in the first cell of your notebook\nUse absolute paths: This ensures the environment is found regardless of where Jupyter starts\nRun activation each session: The environment needs to be activated every time you restart the notebook kernel\n\n\n\n\n\n\n\n\n\nIf you keep your notebook in the same folder as the course materials, you can use Pkg.activate(\".\") and Julia will find the Project.toml in that directory.",
-    "crumbs": [
-      "II. Data",
-      "02 - Packages"
-    ]
-  },
-  {
-    "objectID": "part-02/tutorial-02-02-handling.html#conclusion",
-    "href": "part-02/tutorial-02-02-handling.html#conclusion",
-    "title": "Tutorial II.II - Package Management",
-    "section": "Conclusion",
-    "text": "Conclusion\nCongratulations! You’ve completed the tutorial on packages and package management in Julia. These skills are important for effectively managing and utilizing external libraries. Continue to the next file to learn more.",
+    "section": "Exercise 3.1 - Which Command?",
+    "text": "Exercise 3.1 - Which Command?\nImagine you no longer need DataFrames in the current environment. Which function removes it? Assign the name of the function as a string to the variable remove_command: \"add\", \"update\", or \"rm\".\n\n# YOUR CODE BELOW\nremove_command = \"\"\n\n\n\nCode\n# Test your answer\n@assert remove_command in [\"add\", \"update\", \"rm\"] \"Please assign one of the strings \\\"add\\\", \\\"update\\\" or \\\"rm\\\" to remove_command.\"\n@assert remove_command == \"rm\" \"Not quite! Have another look at the list above: which function removes a package from the environment?\"\nprintln(\"Correct! Pkg.rm(\\\"DataFrames\\\") removes the package from the current environment, but it stays in the depot on your computer.\")",
     "crumbs": [
       "II. Data",
       "02 - Packages"
@@ -389,18 +345,18 @@
     "href": "part-01/tutorial-01-05-dicts.html",
     "title": "Tutorial I.V - Dictionaries",
     "section": "",
-    "text": "Imagine you have a school directory where each student’s name is associated with their unique student ID. This is similar to how dictionaries work in programming - they allow you to store and retrieve information using key-value pairs.\nFollow the structured instructions, implement your code in the designated blocks, and affirm your comprehension with @assert statements.",
+    "text": "Imagine you have a school directory where each student’s name is associated with their unique student ID. This is similar to how dictionaries work in programming - they allow you to store and retrieve information using key-value pairs.\nDictionaries are not just a generic programming topic: later in this course, they will store the data of our optimization models - for example, transport costs keyed by city, as in costs = Dict(\"Hamburg\" =&gt; 10.0, \"Berlin\" =&gt; 7.5). Time spent here pays off directly later.\nFollow the structured instructions, implement your code in the designated blocks, and verify your implementations with @assert statements.",
     "crumbs": [
       "I. First Steps",
       "05 - Dictionaries"
     ]
   },
   {
-    "objectID": "part-01/tutorial-01-05-dicts.html#exercise-1.1---create-and-modify-a-dictionary",
-    "href": "part-01/tutorial-01-05-dicts.html#exercise-1.1---create-and-modify-a-dictionary",
+    "objectID": "part-01/tutorial-01-05-dicts.html#exercise-1.1---add-to-a-dictionary",
+    "href": "part-01/tutorial-01-05-dicts.html#exercise-1.1---add-to-a-dictionary",
     "title": "Tutorial I.V - Dictionaries",
-    "section": "Exercise 1.1 - Create and Modify a Dictionary",
-    "text": "Exercise 1.1 - Create and Modify a Dictionary\nAdd a new book called “Harry Potter and the Philosopher’s Stone” with the author “J.K. Rowling” to the created dictionary.\n\n# Creates a dictionary of books and authors\nbooks = Dict(\n    \"1984\" =&gt; \"George Orwell\", \n    \"Nexus\" =&gt; \"Yuval Noah Harari\"\n)\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert haskey(books, \"Harry Potter and the Philosopher's Stone\")\nprintln(\"Great! You've successfully added a new book to the books dictionary.\")",
+    "section": "Exercise 1.1 - Add to a Dictionary",
+    "text": "Exercise 1.1 - Add to a Dictionary\nAdd a new book called “Harry Potter and the Philosopher’s Stone” with the author “J.K. Rowling” to the created dictionary.\n\n# Creates a dictionary of books and authors\nbooks = Dict(\n    \"1984\" =&gt; \"George Orwell\",\n    \"Nexus\" =&gt; \"Yuval Noah Harari\"\n)\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert haskey(books, \"Harry Potter and the Philosopher's Stone\")\n@assert books[\"Harry Potter and the Philosopher's Stone\"] == \"J.K. Rowling\"\nprintln(\"Great! You've successfully added a new book to the books dictionary.\")",
     "crumbs": [
       "I. First Steps",
       "05 - Dictionaries"
@@ -411,18 +367,18 @@
     "href": "part-01/tutorial-01-05-dicts.html#exercise-1.2---modify-a-dictionary",
     "title": "Tutorial I.V - Dictionaries",
     "section": "Exercise 1.2 - Modify a Dictionary",
-    "text": "Exercise 1.2 - Modify a Dictionary\nChange the author of “1984” to “Eric Blair” (George Orwell’s real name).\n\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert books[\"1984\"] == \"Eric Blair\"\nprintln(\"Great! You've successfully modified the books dictionary.\")",
+    "text": "Exercise 1.2 - Modify a Dictionary\nChange the author of “1984” to “Eric Blair” (George Orwell’s real name).\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert books[\"1984\"] == \"Eric Blair\"\nprintln(\"Great! You've successfully modified the books dictionary.\")",
     "crumbs": [
       "I. First Steps",
       "05 - Dictionaries"
     ]
   },
   {
-    "objectID": "part-01/tutorial-01-05-dicts.html#conclusion",
-    "href": "part-01/tutorial-01-05-dicts.html#conclusion",
+    "objectID": "part-01/tutorial-01-05-dicts.html#exercise-2.1---compute-averages-into-a-new-dictionary",
+    "href": "part-01/tutorial-01-05-dicts.html#exercise-2.1---compute-averages-into-a-new-dictionary",
     "title": "Tutorial I.V - Dictionaries",
-    "section": "Conclusion",
-    "text": "Conclusion\nGreat! You’ve just navigated through the basics of dictionaries in Julia. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Continue to the next file to learn more advanced Julia concepts.",
+    "section": "Exercise 2.1 - Compute Averages into a New Dictionary",
+    "text": "Exercise 2.1 - Compute Averages into a New Dictionary\nCompute the average grade for each student and store it in the dictionary averages. The keys should be the student names and the values their average grades. The next line initializes averages as an empty dictionary.\n\naverages = Dict()\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert averages[\"Elio\"] == 85.0\n@assert averages[\"Mike\"] == 86.0\n@assert averages[\"Yola\"] == 90.0\nprintln(\"Great! You've computed all averages: \", averages)\n\n\n\n\n\n\n\n\nLoop over the key-value pairs of grades as shown in the example above. Inside the loop, you can add an entry to averages with averages[student] = ....",
     "crumbs": [
       "I. First Steps",
       "05 - Dictionaries"
@@ -433,7 +389,7 @@
     "href": "part-01/tutorial-01-03-comparisons.html",
     "title": "Tutorial I.III - Comparison Operators",
     "section": "",
-    "text": "Imagine you’re teaching a computer to make decisions. Just like we compare things in everyday life (“Is it raining?”, “Do I have enough money?”), computers need ways to compare values and make choices. This tutorial will show you how to help computers make these comparisons!\nFollow the instructions, write your code in the designated code blocks, and execute the corresponding code cell.",
+    "text": "Imagine you’re teaching a computer to make decisions. Just like we compare things in everyday life (“Is it raining?”, “Do I have enough money?”), computers need ways to compare values and make choices. This tutorial will show you how to help computers make these comparisons! In the next tutorial, you will then use the results of these comparisons in if statements to let your programs actually act on them.\nFollow the instructions, write your code in the designated code blocks, and execute the corresponding code cell.",
     "crumbs": [
       "I. First Steps",
       "03 - Comparisons"
@@ -466,7 +422,7 @@
     "href": "part-01/tutorial-01-03-comparisons.html#exercise-2.1---use-the-and-operator",
     "title": "Tutorial I.III - Comparison Operators",
     "section": "Exercise 2.1 - Use the AND operator",
-    "text": "Exercise 2.1 - Use the AND operator\nUse the AND operator to check if 10 is greater than 5 and hello is equal to hello. Store the result in logic1.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert logic1 == true\nprintln(\"logic1 is \", logic1)",
+    "text": "Exercise 2.1 - Use the AND operator\nUse the AND operator to check if 10 is greater than 5 and the string \"hello\" is equal to \"hello\". Store the result in logic1.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert logic1 == true\nprintln(\"logic1 is \", logic1)",
     "crumbs": [
       "I. First Steps",
       "03 - Comparisons"
@@ -477,7 +433,7 @@
     "href": "part-01/tutorial-01-03-comparisons.html#exercise-2.2---use-the-or-operator",
     "title": "Tutorial I.III - Comparison Operators",
     "section": "Exercise 2.2 - Use the OR operator",
-    "text": "Exercise 2.2 - Use the OR operator\nUse the OR operator to check if 10 is less than 5 or hello is equal to hello. Store the result in logic2.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert logic2 == true\nprintln(\"logic2 is \", logic2)\n\n\n\n\n\n\n\n\nJulia uses short-circuit evaluation for && and || operators. This means that the second operand is only evaluated if necessary.",
+    "text": "Exercise 2.2 - Use the OR operator\nUse the OR operator to check if 10 is less than 5 or the string \"hello\" is equal to \"hello\". Store the result in logic2.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert logic2 == true\nprintln(\"logic2 is \", logic2)\n\n\n\n\n\n\n\n\nJulia uses short-circuit evaluation for && and || operators. This means that the second operand is only evaluated if necessary.\n\n\n\nLet’s see short-circuiting in action:\n\nx = 0\n(x != 0) && (1/x &gt; 1)\n\nfalse\n\n\nBecause x != 0 is already false, the whole && expression must be false - so Julia never computes 1/x and no division by zero happens. You will often see this pattern in real Julia code, for example condition && error(\"Something went wrong\").",
     "crumbs": [
       "I. First Steps",
       "03 - Comparisons"
@@ -488,18 +444,18 @@
     "href": "part-01/tutorial-01-03-comparisons.html#exercise-2.3---use-the-not-operator",
     "title": "Tutorial I.III - Comparison Operators",
     "section": "Exercise 2.3 - Use the NOT operator",
-    "text": "Exercise 2.3 - Use the NOT operator\nCheck whether 10 is greater than 5 and store the result in logic3. Then, use the NOT operator to invert logic3. Store the result in logic4.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert logic3 == true\n@assert logic4 == false\nprintln(\"logic3 is \", logic3,\" and logic4 is\", logic4)",
+    "text": "Exercise 2.3 - Use the NOT operator\nCheck whether 10 is greater than 5 and store the result in logic3. Then, use the NOT operator to invert logic3. Store the result in logic4.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert logic3 == true\n@assert logic4 == false\nprintln(\"logic3 is \", logic3, \" and logic4 is \", logic4)",
     "crumbs": [
       "I. First Steps",
       "03 - Comparisons"
     ]
   },
   {
-    "objectID": "part-01/tutorial-01-03-comparisons.html#exercise-2.4---chaining-comparisons",
-    "href": "part-01/tutorial-01-03-comparisons.html#exercise-2.4---chaining-comparisons",
+    "objectID": "part-01/tutorial-01-03-comparisons.html#exercise-3.1---chain-a-comparison",
+    "href": "part-01/tutorial-01-03-comparisons.html#exercise-3.1---chain-a-comparison",
     "title": "Tutorial I.III - Comparison Operators",
-    "section": "Exercise 2.4 - Chaining Comparisons",
-    "text": "Exercise 2.4 - Chaining Comparisons\nJulia has a neat feature that lets you write comparisons the way you think about them:\n# Instead of writing:\nage &gt;= 13 && age &lt;= 19    # Is age between 13 and 19?\n\n# You can write:\n13 &lt;= age &lt;= 19          # Much more natural!\nReal-world examples:\n# Is the body temperature normal?\nnormal_temperature = (36.5 &lt;= body_temp &lt;= 37.5)\n\n# Is the current hour within working hours?\nworking_hours = (9 &lt;= current_hour &lt; 17)\nCheck if x is between 1 and 10 (exclusive) using a chained comparison. Store the result in chained_comparison.\n\nx = 5\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert chained_comparison == true\nprintln(\"chained_comparison is \", chained_comparison)",
+    "section": "Exercise 3.1 - Chain a Comparison",
+    "text": "Exercise 3.1 - Chain a Comparison\nCheck if x is strictly between 1 and 10 - excluding both boundaries, so use &lt; instead of &lt;= - using a chained comparison. Store the result in chained_comparison. As x is 10 here, the correct result is false, because 10 is not strictly smaller than 10.\n\nx = 10\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert chained_comparison == false \"Remember: strictly between means using &lt; instead of &lt;=. As x is 10, the result should be false.\"\nprintln(\"chained_comparison is \", chained_comparison)",
     "crumbs": [
       "I. First Steps",
       "03 - Comparisons"
@@ -510,7 +466,18 @@
     "href": "part-01/tutorial-01-01-variables.html",
     "title": "Tutorial I.I - Variables and Types",
     "section": "",
-    "text": "Welcome to this interactive Julia tutorial which introduces the basics of variables and types. Understanding variables and their types is crucial as they are the building blocks of any program. They determine how data is stored, manipulated, and how efficiently your code runs.\nThis script is designed to be interactive. Follow the instructions, write your code in the designated code blocks, and then execute the corresponding code. Each exercise is followed by an @assert statement that checks your solution.\nThere are two ways to run the code:\n\nThe easiest way to run the code is by using VS Code. First, install the Julia and the Jupyter Extension. Then, you can open the downloaded .ipynb files and run the code from there.\nThe second way is by using IJulia. Start Julia, and type using IJulia; notebook() in the Julia prompt. This will open a new browser window where you can run the code. If you have not installed IJulia yet, you can do so by typing ] in the Julia prompt to open the package manager, and then installing IJulia by typing add IJulia.\n\n\n\n\n\n\n\nAlways replace ‘YOUR CODE BELOW’ with your actual code.",
+    "text": "Welcome to this interactive Julia tutorial which introduces the basics of variables and types. Understanding variables and their types is crucial as they are the building blocks of any program. They determine how data is stored, manipulated, and how efficiently your code runs.\nThis script is designed to be interactive. Follow the instructions, write your code in the designated code blocks, and then execute the corresponding code. Each exercise is followed by an @assert statement that checks your solution.\n\n\n\nFirst, install the Julia extension for syntax support: open the command palette (Ctrl+Shift+P, macOS Cmd+Shift+P), choose zed: extensions, and search for “Julia”.\nCreate (or pick) the folder where you want to save all the files for this workshop.\nOpen a terminal in that folder and run:\njulia --project=optimization-workshop\nThis starts Julia with the workshop project environment.\nIn the Julia REPL that opens, run:\nusing Pkg\nPkg.add([\"IJulia\", \"JuMP\", \"HiGHS\", \"Plots\", \"CSV\", \"DataFrames\", \"StatsPlots\"])\nThis adds IJulia and the packages of this workshop to the environment.\nStill in Julia, run:\nusing IJulia\nIJulia.installkernel(\"Optimization with Julia\", \"--project=\" * abspath(\"optimization-workshop\"))\nThis creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code.\nType exit() or press Ctrl+D to exit the Julia REPL.\nDownload this tutorial as a .jl file from the workshop website and save it in your workshop folder. You can do so by clicking on the “Julia” link in the sidebar (under “Code Links”) on the tutorial page.\nOpen the .jl file in Zed. The file is split into cells by # %% markers.\nPut the cursor in a cell and press Ctrl+Shift+Enter (also on macOS), or run repl: run from the command palette. This runs the cell and jumps to the next one. The first time, pick the kernel that starts with optimization-with-julia — that is the kernel you just installed. Output appears right below the code.\n\n\n\n\n\n\n\nSorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.\n\n\n\n\n\n\n\n\n\nThese steps ensure you’re working in a clean Julia environment for the workshop. The --project=optimization-workshop flag tells Julia to create (or later reuse) an environment in a subfolder called optimization-workshop, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: after updating Julia (for example with juliaup update), run steps 3 and 5 again.\n\n\n\n\n\n\n\n\n\nTipFallback: VS Code\n\n\n\n\n\nIf Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install VS Code with the Julia extension instead. Open the same .jl file there: the extension recognizes the # %% cell markers, and Alt+Enter (or Shift+Enter) runs the current cell in the Julia REPL using the workshop environment.\n\n\n\n\n\n\n\n\n\nTipAlternative: Jupyter Notebook\n\n\n\n\n\nEvery tutorial of this workshop is also available as a notebook: the “Jupyter” link in the sidebar (under “Other Formats”) downloads it as an .ipynb file. Zed runs the .jl file, so open the notebook in VS Code with the Julia and the Jupyter extension instead, or in any other Jupyter installation. There, select the kernel Optimization with Julia from step 5.",
+    "crumbs": [
+      "I. First Steps",
+      "01 - Variables"
+    ]
+  },
+  {
+    "objectID": "part-01/tutorial-01-01-variables.html#julia-in-zed",
+    "href": "part-01/tutorial-01-01-variables.html#julia-in-zed",
+    "title": "Tutorial I.I - Variables and Types",
+    "section": "",
+    "text": "First, install the Julia extension for syntax support: open the command palette (Ctrl+Shift+P, macOS Cmd+Shift+P), choose zed: extensions, and search for “Julia”.\nCreate (or pick) the folder where you want to save all the files for this workshop.\nOpen a terminal in that folder and run:\njulia --project=optimization-workshop\nThis starts Julia with the workshop project environment.\nIn the Julia REPL that opens, run:\nusing Pkg\nPkg.add([\"IJulia\", \"JuMP\", \"HiGHS\", \"Plots\", \"CSV\", \"DataFrames\", \"StatsPlots\"])\nThis adds IJulia and the packages of this workshop to the environment.\nStill in Julia, run:\nusing IJulia\nIJulia.installkernel(\"Optimization with Julia\", \"--project=\" * abspath(\"optimization-workshop\"))\nThis creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code.\nType exit() or press Ctrl+D to exit the Julia REPL.\nDownload this tutorial as a .jl file from the workshop website and save it in your workshop folder. You can do so by clicking on the “Julia” link in the sidebar (under “Code Links”) on the tutorial page.\nOpen the .jl file in Zed. The file is split into cells by # %% markers.\nPut the cursor in a cell and press Ctrl+Shift+Enter (also on macOS), or run repl: run from the command palette. This runs the cell and jumps to the next one. The first time, pick the kernel that starts with optimization-with-julia — that is the kernel you just installed. Output appears right below the code.\n\n\n\n\n\n\n\nSorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.\n\n\n\n\n\n\n\n\n\nThese steps ensure you’re working in a clean Julia environment for the workshop. The --project=optimization-workshop flag tells Julia to create (or later reuse) an environment in a subfolder called optimization-workshop, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: after updating Julia (for example with juliaup update), run steps 3 and 5 again.\n\n\n\n\n\n\n\n\n\nTipFallback: VS Code\n\n\n\n\n\nIf Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install VS Code with the Julia extension instead. Open the same .jl file there: the extension recognizes the # %% cell markers, and Alt+Enter (or Shift+Enter) runs the current cell in the Julia REPL using the workshop environment.\n\n\n\n\n\n\n\n\n\nTipAlternative: Jupyter Notebook\n\n\n\n\n\nEvery tutorial of this workshop is also available as a notebook: the “Jupyter” link in the sidebar (under “Other Formats”) downloads it as an .ipynb file. Zed runs the .jl file, so open the notebook in VS Code with the Julia and the Jupyter extension instead, or in any other Jupyter installation. There, select the kernel Optimization with Julia from step 5.",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -521,7 +488,7 @@
     "href": "part-01/tutorial-01-01-variables.html#exercise-1.1---declare-a-variable",
     "title": "Tutorial I.I - Variables and Types",
     "section": "Exercise 1.1 - Declare a Variable",
-    "text": "Exercise 1.1 - Declare a Variable\nDeclare a variable named x and assign it the value 1.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert x == 1 \"Check again, the value of x should be 1. Remember to assign the value directly to x.\"\nprintln(\"Great, you have correctly assigned the value $x to the variable 'x'.\")",
+    "text": "Exercise 1.1 - Declare a Variable\nDeclare a variable named x and assign it the value 1.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert x == 1 \"Check again, the value of x should be 1. Remember to assign the value directly to x.\"\nprintln(\"Great, you have correctly assigned the value $x to the variable 'x'.\")\n\n\n\n\n\n\n\n\nAlways replace ‘YOUR CODE BELOW’ with your actual code.",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -532,7 +499,7 @@
     "href": "part-01/tutorial-01-01-variables.html#exercise-1.2---declare-a-string-variable",
     "title": "Tutorial I.I - Variables and Types",
     "section": "Exercise 1.2 - Declare a String Variable",
-    "text": "Exercise 1.2 - Declare a String Variable\nDeclare a variable named hi and assign it the string \"Hello, Optimization!\".\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert hi == \"Hello, Optimization!\" \"Make sure the variable 'hi' contains the exact string \\\"Hello, Optimization\\\"!\"\nprintln(\"Good, the variable 'hi' now states \\\"$hi\\\".\")",
+    "text": "Exercise 1.2 - Declare a String Variable\nDeclare a variable named hi and assign it the string \"Hello, Optimization!\".\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert hi == \"Hello, Optimization!\" \"Make sure the variable 'hi' contains the exact string \\\"Hello, Optimization!\\\" - including the exclamation mark.\"\nprintln(\"Good, the variable 'hi' now states \\\"$hi\\\".\")",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -543,7 +510,7 @@
     "href": "part-01/tutorial-01-01-variables.html#exercise-2.1---create-an-integer-variable",
     "title": "Tutorial I.I - Variables and Types",
     "section": "Exercise 2.1 - Create an Integer Variable",
-    "text": "Exercise 2.1 - Create an Integer Variable\nCreate an Integer variable answerUniverse and set it to 42.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert answerUniverse == 42 \"The variable 'answerUniverse' should hold 42.\"\nprintln(\"Great, the answer to all questions on the universe is $answerUniverse now.\")",
+    "text": "Exercise 2.1 - Create an Integer Variable\nCreate an Integer variable answerUniverse and set it to 42.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert answerUniverse == 42 && answerUniverse isa Int \"The variable 'answerUniverse' should hold the Integer 42. Note that 42.0 would be a Float, not an Integer - you can check with typeof(answerUniverse).\"\nprintln(\"Great, the answer to all questions on the universe is $answerUniverse now.\")",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -554,7 +521,7 @@
     "href": "part-01/tutorial-01-01-variables.html#exercise-2.2---create-a-float-variable",
     "title": "Tutorial I.I - Variables and Types",
     "section": "Exercise 2.2 - Create a Float Variable",
-    "text": "Exercise 2.2 - Create a Float Variable\nCreate a Float variable money and set it to 1.35.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert money == 1.35 \"The variable 'money' should hold the Float64 1.35.\"\nprintln(\"Perfect, the you have stored $money in the variable 'money'.\")",
+    "text": "Exercise 2.2 - Create a Float Variable\nCreate a Float variable money and set it to 1.35.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert money == 1.35 && money isa Float64 \"The variable 'money' should hold the Float64 1.35. Remember the decimal point - you can check the type with typeof(money).\"\nprintln(\"Perfect, you have stored $money in the variable 'money'.\")",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -565,7 +532,7 @@
     "href": "part-01/tutorial-01-01-variables.html#exercise-2.3---create-a-boolean-variable",
     "title": "Tutorial I.I - Variables and Types",
     "section": "Exercise 2.3 - Create a Boolean Variable",
-    "text": "Exercise 2.3 - Create a Boolean Variable\nCreate a Boolean variable isStudent and set it to true.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert isStudent == true \"The variable 'isStudent' should be set to true.\"\nprintln(\"Correct, you are a student now.\")",
+    "text": "Exercise 2.3 - Create a Boolean Variable\nCreate a Boolean variable isStudent and set it to true.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert isStudent isa Bool && isStudent == true \"The variable 'isStudent' should be the Boolean value true - not the number 1.\"\nprintln(\"Correct, you are a student now.\")",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -587,7 +554,7 @@
     "href": "part-01/tutorial-01-01-variables.html#exercise-4.1---string-interpolation",
     "title": "Tutorial I.I - Variables and Types",
     "section": "Exercise 4.1 - String Interpolation",
-    "text": "Exercise 4.1 - String Interpolation\nCreate a string message that says \"y is [value of y]\" using string interpolation.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert message == \"y is 5\" \"Make sure your string includes the correct value of y.\"\nprintln(\"Excellent! Your interpolated string is: $message\")",
+    "text": "Exercise 4.1 - String Interpolation\nCreate a string message that says \"y is [value of y]\" using string interpolation. This uses the variable y you created in Exercise 3.1 - if you get an UndefVarError, run that exercise again first.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert message == \"y is 5\" \"Make sure your string includes the correct value of y.\"\nprintln(\"Excellent! Your interpolated string is: $message\")",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -892,27 +859,17 @@
     "href": "introduction.html#installing-julia-1",
     "title": "Introduction",
     "section": "Installing Julia",
-    "text": "Installing Julia\n\n\nHead to julialang.org and follow the instructions.\n\n\n\n\n\n\n\nIf you are ever asked to add something to your “PATH”, do so!",
+    "text": "Installing Julia\n\n\nHead to julialang.org and follow the instructions.\nThe easiest way to install Julia is via the shell/terminal\nLater, you can then manage Julia with juliaup\n\n\n\n\n\n\n\nIf you are ever asked to add something to your “PATH”, do so!",
     "crumbs": [
       "Introduction"
     ]
   },
   {
-    "objectID": "introduction.html#vs-code",
-    "href": "introduction.html#vs-code",
+    "objectID": "introduction.html#zed",
+    "href": "introduction.html#zed",
     "title": "Introduction",
-    "section": "VS Code",
-    "text": "VS Code\n\nNext, we are going to install VS Code\nAlternatively, you can install VS Codium\nIt is essentially VS Code but without any tracking by MS",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#installing-vs-code",
-    "href": "introduction.html#installing-vs-code",
-    "title": "Introduction",
-    "section": "Installing VS Code",
-    "text": "Installing VS Code\n\nHead to the website code.visualstudio.com\nOR to the webside vscodium.com\nDownload and install the latest release",
+    "section": "Zed",
+    "text": "Zed\n\nNext, we are going to install Zed, the editor of this workshop\nmacOS: brew install --cask zed (or the installer from zed.dev)\nWindows: installer from zed.dev/windows\nLinux: curl -f https://zed.dev/install.sh | sh\n\n\n\n\n\n\n\nOn Windows, Zed needs a DirectX-11-capable GPU. If it only shows a blank window, use VS Code with the “Julia (Julia Language Support)” extension instead: everything in this workshop works there too.",
     "crumbs": [
       "Introduction"
     ]
@@ -922,7 +879,7 @@
     "href": "introduction.html#verify-the-installation",
     "title": "Introduction",
     "section": "Verify the Installation",
-    "text": "Verify the Installation\n\nStart the IDE and take a look around\nSearch for the field “Extensions” on the left sidebar\nClick it and search for “Julia”\nDownload and install “Julia (Julia Language Support)”",
+    "text": "Verify the Installation\n\nStart Zed and take a look around\nOpen the command palette: Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (macOS)\nChoose zed: extensions and search for “Julia”\nInstall the Julia extension for syntax support",
     "crumbs": [
       "Introduction"
     ]
@@ -932,7 +889,7 @@
     "href": "introduction.html#create-a-new-file",
     "title": "Introduction",
     "section": "Create a new file",
-    "text": "Create a new file\n\nCreate a new file with a “.jl” ending\nSave it somewhere on your computer\ne.g., in a folder that you will use in the course\n\n\nprint(\"Hello World!\")\n\nHello World!\n\n\n\nRun the file by clicking “run” in the upper right corner\nOR by pressing “Control+Enter” or “STRG+Enter”",
+    "text": "Create a new file\n\nCreate a new file with a “.jl” ending\nSave it somewhere on your computer\ne.g., in a folder that you will use in the course\n\n\nprint(\"Hello World!\")\n\nHello World!\n\n\n\nOpen a terminal in that folder and run the file with:\njulia test.jl",
     "crumbs": [
       "Introduction"
     ]
@@ -942,7 +899,17 @@
     "href": "introduction.html#everything-working",
     "title": "Introduction",
     "section": "Everything working?",
-    "text": "Everything working?\n\nIf the terminal opens with a Hello World! → perfect!\nIf not, it is likely that the IDE cannot find the path to Julia\nTry to determine the path and save it to VS Code\nAfter saving it, try to run the file again",
+    "text": "Everything working?\n\nIf the terminal prints Hello World! → perfect!\nIf not, the terminal likely cannot find the path to Julia\nClose and reopen the terminal after installing Julia, and say yes to any “PATH” question during installation\nThen try to run the file again",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#installation-checklist",
+    "href": "introduction.html#installation-checklist",
+    "title": "Introduction",
+    "section": "Installation Checklist",
+    "text": "Installation Checklist\nBefore you start with the first tutorial, make sure you can:\n\nOpen Zed\nSee the Julia extension installed in zed: extensions\nCreate a new .jl file\nSee syntax highlighting in your Julia file\nRun code and see output in the terminal",
     "crumbs": [
       "Introduction"
     ]
@@ -958,51 +925,21 @@
     ]
   },
   {
-    "objectID": "introduction.html#notebooks-in-vs-code",
-    "href": "introduction.html#notebooks-in-vs-code",
+    "objectID": "introduction.html#tutorials-in-zed",
+    "href": "introduction.html#tutorials-in-zed",
     "title": "Introduction",
-    "section": "Notebooks in VS Code",
-    "text": "Notebooks in VS Code\n\nThe easiest way is by using VS Code\nInstall the Jupyter Extension\nNow, you can open .ipynb files\nHere you can run the code in the cells",
+    "section": "Tutorials in Zed",
+    "text": "Tutorials in Zed\n\nThe easiest way to work on the tutorials is a .jl file in Zed, run cell by cell\nFor detailed instructions, just open the first tutorial\nIt explains step-by-step how to set up the workshop environment and run the cells",
     "crumbs": [
       "Introduction"
     ]
   },
   {
-    "objectID": "introduction.html#downloading-the-notebooks",
-    "href": "introduction.html#downloading-the-notebooks",
+    "objectID": "introduction.html#downloading-the-files",
+    "href": "introduction.html#downloading-the-files",
     "title": "Introduction",
-    "section": "Downloading the Notebooks",
-    "text": "Downloading the Notebooks\n\nYou will find the notebooks next to the sections pages\nOn each page, you will find a button Jupyter on the right\nClick it to download the notebook and save it\nI’d recommend storing the notebooks in a separate directory for this workshop",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#ijulia",
-    "href": "introduction.html#ijulia",
-    "title": "Introduction",
-    "section": "IJulia",
-    "text": "IJulia\n\nIJulia is an interface between Julia and Jupyter Notebooks\nPopular tool for data analysis and visualization\nYou can use IJulia to run Julia code in the notebooks",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#installing-ijulia",
-    "href": "introduction.html#installing-ijulia",
-    "title": "Introduction",
-    "section": "Installing IJulia",
-    "text": "Installing IJulia\n\nOpen the VS Code IDE and start a terminal\nStart Julia by typing julia in the terminal\nInstall IJulia by typing ] to open the package manager\nInstall IJulia by typing add IJulia\nPress Enter",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#running-ijulia",
-    "href": "introduction.html#running-ijulia",
-    "title": "Introduction",
-    "section": "Running IJulia",
-    "text": "Running IJulia\nusing IJulia; notebook()\n\nStart IJulia by typing the above code in the Julia prompt\nThis will open a new browser window\nYou can now run code in the notebooks\n\n\n\n\n\n\n\nYou can also run the notebooks in VS Code, if you prefer!",
+    "section": "Downloading the Files",
+    "text": "Downloading the Files\n\nYou will find the tutorial files next to the sections pages\nOn each page, you will find a link Julia on the right (under “Code Links”)\nClick it to download the .jl file and save it\nPrefer a notebook? The link Jupyter (under “Other Formats”) downloads the same tutorial as .ipynb\nI’d recommend storing the files in a separate directory for this workshop",
     "crumbs": [
       "Introduction"
     ]
@@ -1012,7 +949,7 @@
     "href": "introduction.html#get-started-with-the-sections",
     "title": "Introduction",
     "section": "Get started with the sections",
-    "text": "Get started with the sections\n\nDownload the first notebook and open it\nStart with the first problem and solve it step by step\nYou can find the sections here on the website\nYou can ask questions anytime!",
+    "text": "Get started with the sections\n\nDownload the first .jl file and open it in Zed\nStart with the first problem and solve it step by step\nYou can find the sections here on the website\nYou can ask questions anytime!",
     "crumbs": [
       "Introduction"
     ]
@@ -1032,7 +969,7 @@
     "href": "index.html",
     "title": "Welcome to Optimization with Julia!",
     "section": "",
-    "text": "Description\nThis small workshop will introduce you to the basics of mathematical optimization using Julia. Throughout the workshop, you will learn the basics of Julia and JuMP, the de facto standard for mathematical optimization in Julia. We will work with simple, practical examples to help you understand the core concepts. You will learn how to formulate basic optimization problems and translate them into code. The workshop was originally part of the course Applied Optimization but it is now also offered as a standalone small workshop.\n\n\nLearning Outcomes\nMy goal is to introduce you to the Julia programming language and the JuMP package for mathematical optimization. Both are widely used in academia and industry and are great tools to know. Julia is a fast, flexible, and powerful programming language that is becoming more and more popular in academia and industry. JuMP is a package that allows you to formulate and solve optimization problems in Julia, it is an alternative to other popular optimization software such as GAMS, AMPL, Pyomo, etc.\nUpon completion of the workshop, you will be able to:\n\nApply the basics of the Julia programming language\nImplement basic optimization problems in Julia\nUnderstand the core concepts of optimization\nApply optimization techniques to practical problems\n\nPlease note that this workshop is designed to be accessible to everyone, including complete beginners. No advanced knowledge or experience in programming is required to follow along, although knowledge of programming is helpful! The teaching format accommodates different levels of programming skills, ensuring that every participant can get the most out of the workshop.\n\n\nCourse Blocks\nThe core content of the workshop is organized in four blocks:\n\nIntroduction\nPart I: Variables and Types\nPart II: Functions, Data Frames and Plots\nPart III: Optimization with JuMP\n\n\n\nTutorials\nThe workshop is organized in a series of tutorials. Each tutorial is a self-contained document that you can run online in Google Colab or download and run locally.\n\nYou can find the content for each part in the corresponding folder\nTo run the code, you can use VS Code or Google Colab\nTo do so, download the corresponding .ipynb file and open it in VS Code or Google Colab\n\n\n\nQuestions\nIf you have any questions regarding the workshop, please contact me under tobias.vlcek@uni-hamburg.de.",
+    "text": "Description\nThis small workshop will introduce you to the basics of mathematical optimization using Julia. Throughout the workshop, you will learn the basics of Julia and JuMP, the de facto standard for mathematical optimization in Julia. We will work with simple, practical examples to help you understand the core concepts. You will learn how to formulate basic optimization problems and translate them into code. The workshop was originally part of the course Applied Optimization but it is now also offered as a standalone small workshop.\n\n\nLearning Outcomes\nMy goal is to introduce you to the Julia programming language and the JuMP package for mathematical optimization. Both are widely used in academia and industry and are great tools to know. Julia is a fast, flexible, and powerful programming language that is becoming more and more popular in academia and industry. JuMP is a package that allows you to formulate and solve optimization problems in Julia, it is an alternative to other popular optimization software such as GAMS, AMPL, Pyomo, etc.\nUpon completion of the workshop, you will be able to:\n\nApply the basics of the Julia programming language\nImplement basic optimization problems in Julia\nUnderstand the core concepts of optimization\nApply optimization techniques to practical problems\n\nPlease note that this workshop is designed to be accessible to everyone, including complete beginners. No advanced knowledge or experience in programming is required to follow along, although knowledge of programming is helpful! The teaching format accommodates different levels of programming skills, ensuring that every participant can get the most out of the workshop.\n\n\nCourse Blocks\nThe core content of the workshop is organized in four blocks:\n\nIntroduction\nPart I: Variables and Types\nPart II: Functions, Data Frames and Plots\nPart III: Optimization with JuMP\n\n\n\nTutorials\nThe workshop is organized in a series of tutorials. Each tutorial is a self-contained document that you can download and run locally.\n\nYou can find the content for each part in the corresponding folder\nTo run the code, download the tutorial as a .jl file (the Julia link on each page) and work through it cell by cell in Zed; the introduction walks you through installing Julia and Zed, and the first tutorial through the workshop’s package environment and the Jupyter kernel\nEach tutorial is also available as a Jupyter notebook (the Jupyter link on each page), if you prefer to work with .ipynb files\nIf you cannot install anything on your machine, you can still read every tutorial here on the website: all results are already executed on the pages\n\n\n\nAI Policy\nCourse chatbot. A course chatbot is available on this website for exploratory study. It is designed to guide your problem-solving process rather than hand out answers: expect hints and questions back, not finished solutions. It runs on EU-hosted infrastructure (Mistral models, servers in Germany), and your conversations are not used to train models. Details are on the privacy page.\nExternal AI tools. You may use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). You are responsible for every line of code you rely on: understand what the AI produced before you build on it. Letting AI solve the exercises for you defeats their purpose.\nNo graded submissions. This workshop has no graded hand-ins and no exam; the exercises and self-checks are for you. The only person an AI shortcut cheats here is yourself.\n\n\nQuestions\nIf you have any questions regarding the workshop, please contact me under tobias.vlcek@uni-hamburg.de.",
     "crumbs": [
       "Welcome"
     ]
@@ -1385,42 +1322,42 @@
     "href": "general/privacy.html",
     "title": "Privacy Policy",
     "section": "",
-    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the AI chat assistant (“Oshu”) embedded on this website and the privacy-friendly web analytics (Umami) used to measure site usage. To exercise your rights or for any questions about data processing, please contact us using the details above."
+    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the hosting of this website, the AI chat assistant (“Oshu”) embedded on it, the privacy-friendly web analytics (Umami) used to measure site usage, and content that pages load from other providers. To exercise your rights or for any questions about data processing, please contact us using the details above."
   },
   {
     "objectID": "general/privacy.html#controller",
     "href": "general/privacy.html#controller",
     "title": "Privacy Policy",
     "section": "",
-    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the AI chat assistant (“Oshu”) embedded on this website and the privacy-friendly web analytics (Umami) used to measure site usage. To exercise your rights or for any questions about data processing, please contact us using the details above."
+    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the hosting of this website, the AI chat assistant (“Oshu”) embedded on it, the privacy-friendly web analytics (Umami) used to measure site usage, and content that pages load from other providers. To exercise your rights or for any questions about data processing, please contact us using the details above."
   },
   {
     "objectID": "general/privacy.html#ai-chat-assistant-oshu",
     "href": "general/privacy.html#ai-chat-assistant-oshu",
     "title": "Privacy Policy",
     "section": "2. AI chat assistant (Oshu)",
-    "text": "2. AI chat assistant (Oshu)\nOn this website we use an embeddable AI chat assistant operated on our behalf by BeyondSimulations GmbH, Am Eich 9d, 22113 Oststeinbek, Germany (“Oshu”) as our processor. A data processing agreement under Art. 28 GDPR is in place with Oshu.\nPurpose: the assistant answers visitor questions based on content we have provided.\nData processed: when you use the chat, the messages you enter, the generated responses, and a conversation identifier are processed. Technical data such as your IP address is processed only transiently for security and abuse prevention and is not stored permanently with the conversation. Please do not enter special categories of personal data (Art. 9 GDPR) into the chat.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in answering enquiries efficiently). If the chat forms part of a contractual service, Art. 6(1)(b) GDPR."
+    "text": "2. AI chat assistant (Oshu)\nOn this website we use an embeddable AI chat assistant operated on our behalf by BeyondSimulations GmbH, Am Eich 9d, 22113 Oststeinbek, Germany (“Oshu”) as our processor. A data processing agreement under Art. 28 GDPR is in place with Oshu.\nPurpose: the assistant answers visitor questions based on content we have provided.\nData processed: when you use the chat, the messages you enter, the generated responses, and a conversation identifier are processed. The chat needs no login: conversations are stored under this identifier, without your name. Technical data such as your IP address is processed only transiently for security and abuse prevention and is not stored permanently with the conversation. Please do not enter personal data into the chat, in particular no special categories of personal data (Art. 9 GDPR).\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in answering enquiries efficiently). If the chat forms part of a contractual service, Art. 6(1)(b) GDPR."
   },
   {
-    "objectID": "general/privacy.html#hosting-and-inference",
-    "href": "general/privacy.html#hosting-and-inference",
+    "objectID": "general/privacy.html#hosting-and-inference-of-the-chat-assistant",
+    "href": "general/privacy.html#hosting-and-inference-of-the-chat-assistant",
     "title": "Privacy Policy",
-    "section": "3. Hosting and inference",
-    "text": "3. Hosting and inference\nData is processed on servers of Hetzner Online GmbH in Falkenstein, Germany. Responses are generated via the EU API of Mistral AI SAS in Paris, France. There is no transfer to a third country, and the content is not used to train AI models."
+    "section": "3. Hosting and inference of the chat assistant",
+    "text": "3. Hosting and inference of the chat assistant\nData is processed on servers of Hetzner Online GmbH in Falkenstein, Germany. Responses are generated via the EU API of Mistral AI SAS in Paris, France. There is no transfer to a third country, and the content is not used to train AI models."
   },
   {
     "objectID": "general/privacy.html#cookies",
     "href": "general/privacy.html#cookies",
     "title": "Privacy Policy",
     "section": "4. Cookies",
-    "text": "4. Cookies\nThe widget sets two strictly necessary first-party cookies so a conversation can be resumed:\n\ncw_conv_&lt;agent&gt; — conversation identifier\ncw_conv_session_&lt;agent&gt; — signed session token to retrieve the conversation history\n\nBoth last approximately 24 hours, with SameSite=Lax and the Secure flag. No tracking, marketing, or third-party cookies are set.\nLegal basis: § 25(2) TDDDG (strictly necessary cookies)."
+    "text": "4. Cookies\nThe widget sets two strictly necessary first-party cookies so a conversation can be resumed:\n\ncw_conv_&lt;agent&gt; — conversation identifier\ncw_conv_session_&lt;agent&gt; — signed session token to retrieve the conversation history\n\nBoth last approximately 24 hours, with SameSite=Lax and the Secure flag. The widget sets no tracking, marketing, or third-party cookies.\nLegal basis: § 25(2) TDDDG (strictly necessary cookies)."
   },
   {
     "objectID": "general/privacy.html#retention",
     "href": "general/privacy.html#retention",
     "title": "Privacy Policy",
     "section": "5. Retention",
-    "text": "5. Retention\nConversation logs are automatically deleted after at most 12 months. If “private mode” is enabled, the content of visitor messages is not stored."
+    "text": "5. Retention\nConversation logs are automatically deleted after at most 12 months."
   },
   {
     "objectID": "general/privacy.html#web-analytics-umami",
@@ -1430,25 +1367,39 @@
     "text": "6. Web analytics (Umami)\nTo understand how this website is used and to improve its content, we use Umami, a privacy-friendly web analytics tool. Umami is self-hosted on our own infrastructure (umi.byndsim.com) on servers of Hetzner Online GmbH in Germany; usage data is not shared with third parties and there is no transfer to a third country.\nNo cookies, no tracking across sites: Umami does not set cookies and does not store any information on your device. It does not create a persistent identifier and does not track you across other websites.\nData processed: Umami collects aggregated, anonymized usage statistics such as the pages viewed, the referring website, and general information about your browser, operating system, device type, and country. Your IP address is used only transiently to derive this information and is not stored.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in analyzing and improving our website). Because Umami does not store or access information on your device, no consent under § 25(1) TDDDG is required."
   },
   {
+    "objectID": "general/privacy.html#website-hosting-and-file-delivery",
+    "href": "general/privacy.html#website-hosting-and-file-delivery",
+    "title": "Privacy Policy",
+    "section": "7. Website hosting and file delivery",
+    "text": "7. Website hosting and file delivery\nThis website is served by GitHub Pages, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Where pages or slides embed images from our own image host (images.beyondsimulations.com) or load scripts from cdnjs.cloudflare.com, these files are delivered through the network of Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA.\nData processed: when you open a page, GitHub processes technically necessary connection data in server logs, in particular your IP address, the date and time of the request, and information about your browser and operating system. We have no influence on the scope and duration of GitHub’s processing. When your browser loads a file that is delivered by Cloudflare, Cloudflare processes the same kind of connection data. This is needed to deliver the pages and files and to keep the services secure.\nTransfer to a third country: a transfer to the USA is possible. GitHub, Inc. and Cloudflare, Inc. are certified under the EU-U.S. Data Privacy Framework (list of participants).\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in a secure and efficient delivery of the teaching material). Details are in the GitHub Privacy Statement and the Cloudflare Privacy Policy."
+  },
+  {
+    "objectID": "general/privacy.html#content-from-other-providers",
+    "href": "general/privacy.html#content-from-other-providers",
+    "title": "Privacy Policy",
+    "section": "8. Content from other providers",
+    "text": "8. Content from other providers\nSome pages load content from other providers. When you open such a page, your browser connects to the provider, which receives your IP address and technical request data such as the browser type and the page you came from. On this website this concerns:\n\nScript libraries such as MathJax (for formulas), jQuery and RequireJS are loaded from the content delivery network jsDelivr (cdn.jsdelivr.net), operated by Volentio JSD Limited, a company registered in England and Wales. jsDelivr delivers the files through infrastructure providers (Cloudflare, Fastly, Gcore). See the jsDelivr privacy policy.\n\nA transfer to countries outside the EU, in particular to the United Kingdom and the USA, is possible.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in a reliable and clear presentation of the teaching material)."
+  },
+  {
     "objectID": "general/privacy.html#your-data-protection-rights",
     "href": "general/privacy.html#your-data-protection-rights",
     "title": "Privacy Policy",
-    "section": "7. Your data protection rights",
-    "text": "7. Your data protection rights\nUnder the EU General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:\n\nRight to access (Art. 15 GDPR)\nRight to rectification (Art. 16 GDPR)\nRight to erasure (Art. 17 GDPR)\nRight to restrict processing (Art. 18 GDPR)\nRight to data portability (Art. 20 GDPR)\nRight to object (Art. 21 GDPR)\n\nTo exercise any of these rights, please contact us as the controller using the details in Section 1. You also have the right to lodge a complaint with a supervisory authority, in particular in the EU member state of your habitual residence, place of work, or the place of the alleged infringement."
+    "section": "9. Your data protection rights",
+    "text": "9. Your data protection rights\nUnder the EU General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:\n\nRight to access (Art. 15 GDPR)\nRight to rectification (Art. 16 GDPR)\nRight to erasure (Art. 17 GDPR)\nRight to restrict processing (Art. 18 GDPR)\nRight to data portability (Art. 20 GDPR)\nRight to object (Art. 21 GDPR)\n\nTo exercise any of these rights, please contact us as the controller using the details in Section 1. You also have the right to lodge a complaint with a supervisory authority, in particular in the EU member state of your habitual residence, place of work, or the place of the alleged infringement."
   },
   {
     "objectID": "general/privacy.html#changes-to-this-privacy-policy",
     "href": "general/privacy.html#changes-to-this-privacy-policy",
     "title": "Privacy Policy",
-    "section": "8. Changes to this Privacy Policy",
-    "text": "8. Changes to this Privacy Policy\nWe may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the date at the top. We encourage you to review this policy periodically."
+    "section": "10. Changes to this Privacy Policy",
+    "text": "10. Changes to this Privacy Policy\nWe may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the date at the top. We encourage you to review this policy periodically."
   },
   {
     "objectID": "part-01/tutorial-01-02-vectors.html",
     "href": "part-01/tutorial-01-02-vectors.html",
     "title": "Tutorial I.II - Vectors and Matrices",
     "section": "",
-    "text": "This interactive Julia script introduces the basics of vectors, matrices, and tuples.\n\nA vector is like a single row in a spreadsheet or a shopping list - it stores items in a line\nA matrix is like a spreadsheet - it has rows and columns\nA tuple is like a sealed package containing different types of items\n\nUnderstanding these data structures and how to manipulate them is crucial in Julia. Follow the instructions, write your code in the designated code blocks, and execute the corresponding code cell.\n\n\n\n\n\n\nIf a cell is marked with YOUR CODE BELOW, you are expected to write your code in that cell.",
+    "text": "This interactive Julia script introduces the basics of vectors, matrices, and tuples.\n\nA vector is like a single column in a spreadsheet or a shopping list - it stores items one after another\nA matrix is like a spreadsheet - it has rows and columns\nA tuple is like a sealed package containing different types of items\n\nUnderstanding these data structures and how to manipulate them is crucial in Julia. Follow the instructions, write your code in the designated code blocks, and execute the corresponding code cell.\n\n\n\n\n\n\nIf a cell is marked with YOUR CODE BELOW, you are expected to write your code in that cell.\n\n\n\n\n\n\n\n\n\nThe exercises in this tutorial build on each other: later exercises use variables created in earlier ones. If an assert suddenly fails or you see an UndefVarError, re-run the previous exercises from the top.",
     "crumbs": [
       "I. First Steps",
       "02 - Vectors"
@@ -1492,7 +1443,7 @@
     "href": "part-01/tutorial-01-02-vectors.html#exercise-1.4---access-and-save-the-first-three-elements",
     "title": "Tutorial I.II - Vectors and Matrices",
     "section": "Exercise 1.4 - Access and Save the First Three Elements",
-    "text": "Exercise 1.4 - Access and Save the First Three Elements\nAccess and save the first three elements of fib, to first_three_elements.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert first_three_elements == fib[1:3]\nprintln(\"The first three elements of the 'fib' vector: \", first_three_elements)",
+    "text": "Exercise 1.4 - Access and Save the First Three Elements\nAccess and save the first three elements of fib, to first_three_elements.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert first_three_elements == [1, 2, 3]\nprintln(\"The first three elements of the 'fib' vector: \", first_three_elements)",
     "crumbs": [
       "I. First Steps",
       "02 - Vectors"
@@ -1547,7 +1498,7 @@
     "href": "part-01/tutorial-01-02-vectors.html#exercise-3.1---create-a-tuple",
     "title": "Tutorial I.II - Vectors and Matrices",
     "section": "Exercise 3.1 - Create a Tuple",
-    "text": "Exercise 3.1 - Create a Tuple\nCreate a tuple my_tuple with three elements: 4.0, your matrix added_matrices, and \"Hi there!\".\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert my_tuple == (4.0, added_matrices, \"Hi there!\")\nprintln(\"The 'my_tuple': \", my_tuple)",
+    "text": "Exercise 3.1 - Create a Tuple\nCreate a tuple my_tuple with three elements: 4.0, your matrix added_matrices, and \"Hi there!\".\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert my_tuple == (4.0, added_matrices, \"Hi there!\")\nprintln(\"The 'my_tuple': \", my_tuple)\n\n\n\n\n\n\n\n\nWait - didn’t we say tuples can’t change? The tuple’s slots are sealed: you cannot replace my_tuple[2] with a different object. But the matrix stored in that slot is still a mutable object, so something like my_tuple[2][1, 1] = 99 would change the matrix itself. The package is sealed, but a box inside it can still be opened.",
     "crumbs": [
       "I. First Steps",
       "02 - Vectors"
@@ -1580,7 +1531,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-1.1---sum-the-numbers-from-1-to-5",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 1.1 - Sum the Numbers from 1 to 5",
-    "text": "Exercise 1.1 - Sum the Numbers from 1 to 5\nSum the numbers from 1 to 5 in a loop. The next lines initialize sum_numbers to 0. The sum you compute should accumulate in this variable.\n\nsum_numbers = 0\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert sum_numbers == 15\nprintln(\"Sum of numbers from 1 to 5: \", sum_numbers)",
+    "text": "Exercise 1.1 - Sum the Numbers from 1 to 5\nSum the numbers from 1 to 5 in a loop. The next lines initialize sum_numbers to 0. The sum you compute should accumulate in this variable.\n\nsum_numbers = 0\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert sum_numbers == 15\nprintln(\"Sum of numbers from 1 to 5: \", sum_numbers)",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1591,7 +1542,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-1.2---sum-only-the-even-numbers-from-1-to-10",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 1.2 - Sum Only the Even Numbers from 1 to 10",
-    "text": "Exercise 1.2 - Sum Only the Even Numbers from 1 to 10\nSum only the even numbers from 1 to 10. Again, we initialize a variable sum_evens to 0. The sum you compute should accumulate in this variable.\n\nsum_evens = 0\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert sum_evens == 30\nprintln(\"Sum of even numbers from 1 to 10: \", sum_evens)\n\n\n\n\n\n\n\nHint: You can use the modulo operator % to check if a number is even. The modulo operator returns the remainder of the division of two numbers. If a number is divisible by another number, the remainder is 0. The following example checks if 4 is even: 4 % 2 == 0.",
+    "text": "Exercise 1.2 - Sum Only the Even Numbers from 1 to 10\nSum only the even numbers from 1 to 10. Again, we initialize a variable sum_evens to 0. The sum you compute should accumulate in this variable.\n\nsum_evens = 0\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert sum_evens == 30\nprintln(\"Sum of even numbers from 1 to 10: \", sum_evens)\n\n\n\n\n\n\n\n\nHint: You can use the modulo operator % to check if a number is even. The modulo operator returns the remainder of the division of two numbers. If a number is divisible by another number, the remainder is 0. The following example checks if 4 is even: 4 % 2 == 0.",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1602,7 +1553,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-1.3---exit-the-loop-if-the-current-fruit-is-banana",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 1.3 - Exit the Loop if the Current Fruit is Banana",
-    "text": "Exercise 1.3 - Exit the Loop if the Current Fruit is Banana\nIterate over each fruit in the fruits array, store the current fruit in current_fruit, and exit the loop if current_fruit is banana. The next lines initialize the fruits array and current_fruit variable.\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\ncurrent_fruit = \"None\"\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert current_fruit == \"banana\"\nprintln(\"The current fruit is: \", current_fruit)",
+    "text": "Exercise 1.3 - Exit the Loop if the Current Fruit is Banana\nIterate over each fruit in the fruits array, store the current fruit in current_fruit, and exit the loop if current_fruit is \"banana\". The next lines initialize the fruits array and current_fruit variable.\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\ncurrent_fruit = \"None\"\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert current_fruit == \"banana\"\nprintln(\"The current fruit is: \", current_fruit)",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1613,7 +1564,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-2.1---subtract-from-10-in-increments-of-1-until-the-result-is-less-than-3",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 2.1 - Subtract from 10 in Increments of 1 Until the Result is Less Than 3",
-    "text": "Exercise 2.1 - Subtract from 10 in Increments of 1 Until the Result is Less Than 3\nSubtract from 10 in increments of 1 until the result is less than 3. The next line initializes current_value to 10. The result should be in this variable.\n\ncurrent_value = 10\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert current_value == 2\nprintln(\"The first value smaller than 3 is: \", current_value)",
+    "text": "Exercise 2.1 - Subtract from 10 in Increments of 1 Until the Result is Less Than 3\nSubtract from 10 in increments of 1 until the result is less than 3. The next line initializes current_value to 10. The result should be in this variable.\n\ncurrent_value = 10\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert current_value == 2\nprintln(\"The first value smaller than 3 is: \", current_value)",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1624,7 +1575,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-2.2---find-the-first-multiple-of-7-greater-than-50",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 2.2 - Find the First Multiple of 7 Greater Than 50",
-    "text": "Exercise 2.2 - Find the First Multiple of 7 Greater Than 50\nFind the first multiple of 7 greater than 50 using an indefinite loop. The next line initializes first_multiple_of_7 to 0. The first multiple should be in this variable.\n\nfirst_multiple_of_7 = 0\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert first_multiple_of_7 == 56\nprintln(\"First multiple of 7 greater than 50: \", first_multiple_of_7)\n\n\n\n\n\n\n\n‘while true … end’ constructs an infinite loop. You can exit the loop using a ‘break’ statement if a condition is met.",
+    "text": "Exercise 2.2 - Find the First Multiple of 7 Greater Than 50\nFind the first multiple of 7 greater than 50 using an indefinite loop. The next line initializes first_multiple_of_7 to 0. The first multiple should be in this variable.\n\nfirst_multiple_of_7 = 0\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert first_multiple_of_7 == 56\nprintln(\"First multiple of 7 greater than 50: \", first_multiple_of_7)\n\n\n\n\n\n\n\n\n‘while true … end’ constructs an infinite loop. You can exit the loop using a ‘break’ statement if a condition is met.",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1635,7 +1586,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-3.1---compute-the-product-of-each-pair-of-elements-from-two-arrays",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 3.1 - Compute the Product of Each Pair of Elements from Two Arrays",
-    "text": "Exercise 3.1 - Compute the Product of Each Pair of Elements from Two Arrays\nCompute the product of each pair of elements from two arrays. For example, the product of two numbers a and b is a * b. The next lines initialize numbers1, numbers2 arrays, and the products array to store your results.\n\nnumbers1 = [1, 2, 3]\nnumbers2 = [4, 5, 6]\nproducts = []\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert products == [4, 5, 6, 8, 10, 12, 12, 15, 18]\nprintln(\"Products of each pair from two arrays: \", products)\n\n\n\n\n\n\n\nRemember, you can use push!() to append elements to an array.",
+    "text": "Exercise 3.1 - Compute the Product of Each Pair of Elements from Two Arrays\nCompute the product of each pair of elements from two arrays. For example, the product of two numbers a and b is a * b. The next lines initialize numbers1, numbers2 arrays, and the products array to store your results.\n\nnumbers1 = [1, 2, 3]\nnumbers2 = [4, 5, 6]\nproducts = Int[]\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert products == [4, 5, 6, 8, 10, 12, 12, 15, 18]\nprintln(\"Products of each pair from two arrays: \", products)\n\n\n\n\n\n\n\n\nRemember, you can use push!() to append elements to an array. Loop over numbers1 in the outer loop and over numbers2 in the inner loop, so your products appear in the expected order. By the way: Int[] creates an empty array that can only hold integers - this is better practice than a plain [], which can hold anything.",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1646,7 +1597,7 @@
     "href": "part-01/tutorial-01-04-loops.html#exercise-4.1---create-a-list-of-even-numbers",
     "title": "Tutorial I.IV - Loops",
     "section": "Exercise 4.1 - Create a List of Even Numbers",
-    "text": "Exercise 4.1 - Create a List of Even Numbers\nCreate a list of even numbers from 1 to 10 using a list comprehension.\n\n# YOUR CODE BELOW\n\n\n# Test your answer\n@assert even_numbers == [2, 4, 6, 8, 10]\nprintln(\"Even numbers from 1 to 10: \", even_numbers)",
+    "text": "Exercise 4.1 - Create a List of Even Numbers\nCreate a list of even numbers from 1 to 10 using a list comprehension and store it in even_numbers.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert even_numbers == [2, 4, 6, 8, 10]\nprintln(\"Even numbers from 1 to 10: \", even_numbers)",
     "crumbs": [
       "I. First Steps",
       "04 - Loops"
@@ -1679,7 +1630,7 @@
     "href": "part-02/tutorial-02-01-functions.html#exercise-2.1---return-a-local-variable",
     "title": "Tutorial II.I - Functions in Julia",
     "section": "Exercise 2.1 - Return a Local Variable",
-    "text": "Exercise 2.1 - Return a Local Variable\nTry to execute the following block of code. The objective is to understand how to return the local_variable_one from the function scope_test. Your task is to change the function, to return the value of local_variable_one.\n\n# YOUR CHANGES BELOW\nfunction scope_test()\n    local_variable_one = 10\n    local_variable_two = 20\nend\n# YOUR CHANGES ABOVE\n\n\n# Test your function\n@assert scope_test() == 10 \"The value exported is $(scope_test()).\"\nprintln(\"The value exported is $(scope_test()), you solved it!\")",
+    "text": "Exercise 2.1 - Return a Local Variable\nRun the block below and then the test underneath it. The block itself executes without an error - it is the test that fails. Before fixing anything, think about why the function returns 20 and not nothing. (Hint: Section 1, implicit return - the last expression is local_variable_two = 20.) Your task is to change the function so that it returns the value of local_variable_one.\n\n# YOUR CHANGES BELOW\nfunction scope_test()\n    local_variable_one = 10\n    local_variable_two = 20\nend\n# YOUR CHANGES ABOVE\n\n\n# Test your function\n@assert scope_test() == 10 \"The value returned is $(scope_test()) but should be 10.\"\nprintln(\"The value returned is $(scope_test()), you solved it!\")",
     "crumbs": [
       "II. Data",
       "01 - Functions"
@@ -1701,7 +1652,18 @@
     "href": "part-02/tutorial-02-01-functions.html#exercise-3.1---match-results-to-assertions",
     "title": "Tutorial II.I - Functions in Julia",
     "section": "Exercise 3.1 - Match Results to Assertions",
-    "text": "Exercise 3.1 - Match Results to Assertions\nMatch the results from the previous example to the correct assertions:\n\n# YOUR CHANGES BELOW\n@assert result2 == 30 \"result1 should be the sum of two numbers\"\n@assert result3 == \"Hello, World!\" \"result2 should be the concatenation of two strings\"\n@assert result1 == \"Generic operation for objects of type String and Int64\" \"result3 should use the generic operation\"\nprintln(\"You solved it, the assertions are now correct!\")\n\n\n\n\n\n\n\nHint: Look at the types of arguments used in each operation call and match them to the appropriate method.",
+    "text": "Exercise 3.1 - Match Results to Assertions\nThe variable names in the assertions below are mixed up. Swap the variable names so that each check passes and matches its message - after your fix, both the checks and their messages should be correct:\n\n# YOUR CHANGES BELOW\n@assert result2 == 30 \"result1 should be the sum of two numbers\"\n@assert result3 == \"Hello, World!\" \"result2 should be the concatenation of two strings\"\n@assert result1 == \"Generic operation for objects of type String and Int64\" \"result3 should use the generic operation\"\n# YOUR CHANGES ABOVE\nprintln(\"You solved it, the assertions are now correct!\")\n\n\n\n\n\n\n\nHint: Look at the types of arguments used in each operation call and match them to the appropriate method.",
+    "crumbs": [
+      "II. Data",
+      "01 - Functions"
+    ]
+  },
+  {
+    "objectID": "part-02/tutorial-02-01-functions.html#exercise-3.2---add-your-own-method",
+    "href": "part-02/tutorial-02-01-functions.html#exercise-3.2---add-your-own-method",
+    "title": "Tutorial II.I - Functions in Julia",
+    "section": "Exercise 3.2 - Add Your Own Method",
+    "text": "Exercise 3.2 - Add Your Own Method\nNow, add a method to the generic function operation yourself. Define operation for two Bool arguments so that it returns true only if both arguments are true (you can use a && b for this). This is exactly how you extend an existing function with a new method in Julia.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert operation(true, true) == true \"operation(true, true) should be true\"\n@assert operation(true, false) == false \"operation(true, false) should be false\"\nprintln(\"Great, your new method for Bool arguments works!\")",
     "crumbs": [
       "II. Data",
       "01 - Functions"
@@ -1723,7 +1685,7 @@
     "href": "part-02/tutorial-02-03-DataFrames.html#exercise-1.1---create-a-dataframe",
     "title": "Tutorial II.III - DataFrames in Julia",
     "section": "Exercise 1.1 - Create a DataFrame",
-    "text": "Exercise 1.1 - Create a DataFrame\nCreate and Test a DataFrame. Create a DataFrame named employees with the columns Name, Age, and Salary, and populate it with the specified data: John is 28 years old and earns 50000, Mike is 23 years old and earns 62000. Frank is 37 years old and earns 90000.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert employees == DataFrame(\n    Name = [\"John\", \"Mike\", \"Frank\"], \n    Age = [28, 23, 37], \n    Salary = [50000, 62000, 90000]\n)\nprintln(\"DataFrame created successfully!\")\nprintln(employees)\n\n\n\n\n\n\n\n\nRemember, for more help, use ? in the REPL and type DataFrame.",
+    "text": "Exercise 1.1 - Create a DataFrame\nCreate and Test a DataFrame. Create a DataFrame named employees with the columns Name, Age, and Salary, and populate it with the specified data: John is 28 years old and earns 50000. Mike is 23 years old and earns 62000. Frank is 37 years old and earns 90000.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert employees == DataFrame(\n    Name = [\"John\", \"Mike\", \"Frank\"],\n    Age = [28, 23, 37],\n    Salary = [50000, 62000, 90000]\n) \"Check the column names, their order, and the values - they should be Name, Age and Salary with the data from the task.\"\nprintln(\"DataFrame created successfully!\")\nprintln(employees)\n\n\n\n\n\n\n\n\nRemember, for more help, use ? in the REPL and type DataFrame.",
     "crumbs": [
       "II. Data",
       "03 - DataFrames"
@@ -1767,7 +1729,7 @@
     "href": "part-02/tutorial-02-03-DataFrames.html#exercise-4.1---sort-the-dataframe",
     "title": "Tutorial II.III - DataFrames in Julia",
     "section": "Exercise 4.1 - Sort the DataFrame",
-    "text": "Exercise 4.1 - Sort the DataFrame\nSort the DataFrame based on the Age column and save it as sorted_df.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert sorted_df.Age[1] == 23\nprintln(\"DataFrame sorted by age: \")\nprintln(sorted_df)\n\n\n\n\n\n\n\n\nIf you have more complicated data structures, take a look at JSON files which can be used to work with all kind of differently structured data sets.",
+    "text": "Exercise 4.1 - Sort the DataFrame\nSort the DataFrame based on the Age column and save it as sorted_df.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert sorted_df.Age[1] == 23\nprintln(\"DataFrame sorted by age: \")\nprintln(sorted_df)",
     "crumbs": [
       "II. Data",
       "03 - DataFrames"
@@ -1778,7 +1740,18 @@
     "href": "part-02/tutorial-02-03-DataFrames.html#exercise-5.1---loop-over-dataframe",
     "title": "Tutorial II.III - DataFrames in Julia",
     "section": "Exercise 5.1 - Loop over DataFrame",
-    "text": "Exercise 5.1 - Loop over DataFrame\nCreate a new column called Bonus in the employees DataFrame. The bonus should be calculated as 10% of the salary for employees over 30, and 5% for those 30 and under. Use a loop to iterate over the rows and calculate the bonus.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert filter(\n    row -&gt; row.Bonus == 2950, \n    employees\n).Name == [\"John\"] \"John should have a bonus of 2950\"\n@assert filter(\n    row -&gt; row.Bonus == 3100, \n    employees\n).Name == [\"Mike\"] \"Mike should have a bonus of 3100\"\n@assert filter(\n    row -&gt; row.Bonus == 9000, \n    employees\n).Name == [\"Frank\"] \"Frank should have a bonus of 9000\"\nprintln(\"Great job! All the bonuses are correct!\")",
+    "text": "Exercise 5.1 - Loop over DataFrame\nCreate a new column called Bonus in the employees DataFrame. The bonus should be calculated as 10% of the salary for employees over 30, and 5% for those 30 and under. Use a loop to iterate over the rows and calculate the bonus.\n\n\n\n\n\n\nThis exercise assumes that you updated John’s salary to 59000 in Exercise 2.2. If you skipped that exercise, go back and complete it first - otherwise the test below will fail.\n\n\n\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert filter(\n    row -&gt; row.Bonus == 2950,\n    employees\n).Name == [\"John\"] \"John should have a bonus of 2950\"\n@assert filter(\n    row -&gt; row.Bonus == 3100,\n    employees\n).Name == [\"Mike\"] \"Mike should have a bonus of 3100\"\n@assert filter(\n    row -&gt; row.Bonus == 9000,\n    employees\n).Name == [\"Frank\"] \"Frank should have a bonus of 9000\"\nprintln(\"Great job! All the bonuses are correct!\")",
+    "crumbs": [
+      "II. Data",
+      "03 - DataFrames"
+    ]
+  },
+  {
+    "objectID": "part-02/tutorial-02-03-DataFrames.html#exercise-6.1---fill-a-new-dataframe-with-push",
+    "href": "part-02/tutorial-02-03-DataFrames.html#exercise-6.1---fill-a-new-dataframe-with-push",
+    "title": "Tutorial II.III - DataFrames in Julia",
+    "section": "Exercise 6.1 - Fill a new DataFrame with push!",
+    "text": "Exercise 6.1 - Fill a new DataFrame with push!\nNow practice this pattern yourself. Create a new DataFrame called Overtime with the columns Name (a String column) and ExtraHours (an Int column). Then, loop over the rows of the employees DataFrame with eachrow and push! one row per employee: employees with a salary above 60000 get 5 extra hours, all others get 10.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert nrow(Overtime) == 3 \"Overtime should have one row per employee, thus 3 rows.\"\n@assert Overtime.Name == [\"John\", \"Mike\", \"Frank\"] \"The names should appear in the same order as in employees.\"\n@assert Overtime.ExtraHours == [10, 5, 5] \"John should have 10 extra hours, Mike and Frank 5 each.\"\nprintln(\"Perfect, you filled a new DataFrame row by row!\")",
     "crumbs": [
       "II. Data",
       "03 - DataFrames"
@@ -1787,9 +1760,9 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html",
     "href": "part-02/tutorial-02-05-Plotting.html",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "",
-    "text": "Welcome to this tutorial on plotting in Julia! We’ll be using the powerful Plots.jl package to create beautiful and informative visualizations. Don’t worry if you’re new to plotting – we’ll start with the basics and gradually build up to more advanced techniques.\nIn this tutorial, you’ll learn how to: 1. Create simple plots like line graphs and scatter plots 2. Customize your plots with colors, labels, and styles 3. Add multiple data series to a single plot 4. Save your plots as image files for use in reports or presentations\nFollow the instructions, write your code in the designated code blocks, and validate your results with @assert statements.\nBefore we begin, let’s make sure you have the necessary packages installed. If you’ve been following the course, you’ll need to install the Plots and StatsPlots packages:\n\nimport Pkg; Pkg.add([\"Plots\",\"StatsPlots\"])\n\nNow, let’s load these packages:\n\nusing Plots, StatsPlots",
+    "text": "Welcome to this tutorial on plotting in Julia! We’ll be using the powerful Plots.jl package to create beautiful and informative visualizations. Don’t worry if you’re new to plotting – we’ll start with the basics and gradually build up to more advanced techniques.\nIn this tutorial, you’ll learn how to: 1. Create simple plots like line graphs and scatter plots 2. Customize your plots with colors, labels, and styles 3. Add multiple data series to a single plot 4. Save your plots as image files for use in reports or presentations\nFollow the instructions, write your code in the designated code blocks, and validate your results with @assert statements.\nBefore we begin, let’s make sure you have the necessary packages installed. If you’ve been following the course, you’ll need to install the Plots and StatsPlots packages (StatsPlots adds statistical plot recipes like boxplot, which we will use at the end of this tutorial):\n\nimport Pkg\nPkg.add([\"Plots\",\"StatsPlots\"])\n\nNow, let’s load these packages:\n\nusing Plots, StatsPlots",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -1798,9 +1771,9 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html#exercise-1.1---create-a-scatter-plot",
     "href": "part-02/tutorial-02-05-Plotting.html#exercise-1.1---create-a-scatter-plot",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "Exercise 1.1 - Create a Scatter Plot",
-    "text": "Exercise 1.1 - Create a Scatter Plot\nNow it’s your turn! Create a scatter plot using the scatter() function instead of plot(). Use a range from 1 to 20 for x, and generate 20 random numbers for y.\n\n# YOUR CODE BELOW\n# Hint: Use x = 1:20 and y = rand(20)\n\n\n\nCode\n# Test your answer\n@assert @isdefined scatter_plot\nprintln(\"Great job! You've created your first scatter plot.\")",
+    "text": "Exercise 1.1 - Create a Scatter Plot\nNow it’s your turn! Create a scatter plot using the scatter() function instead of plot(). Use a range from 1 to 20 for x, and generate 20 random numbers for y.\n\n# YOUR CODE BELOW\n# Hint: Use x = 1:20 and y = rand(20)\n\n\n\nCode\n# Test your answer\n@assert @isdefined scatter_plot\n@assert scatter_plot isa Plots.Plot \"scatter_plot should be a plot object\"\nprintln(\"Great job! You've created your first scatter plot.\")",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -1809,9 +1782,9 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html#exercise-2.1---customize-a-line-plot",
     "href": "part-02/tutorial-02-05-Plotting.html#exercise-2.1---customize-a-line-plot",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "Exercise 2.1 - Customize a Line Plot",
-    "text": "Exercise 2.1 - Customize a Line Plot\nNow it’s your turn to get creative! Customize a line plot with your choice of colors, line styles, and markers. Save your masterpiece in the variable custom_line_plot.\n\n# YOUR CODE BELOW\n# Hint: Try different line styles (:dash, :dot), colors (:blue, :green), and markers (:star, :diamond)\n\n\n\nCode\n# Test your answer\n@assert @isdefined custom_line_plot\nprintln(\"Excellent! You've created a custom line plot.\")\n\n\n\n\n\n\n\n\nFeel free to experiment with different options. There’s no “right” answer here – it’s all about what looks good to you!",
+    "text": "Exercise 2.1 - Customize a Line Plot\nNow it’s your turn to get creative! Customize a line plot with your choice of colors, line styles, and markers. Save your masterpiece in the variable custom_line_plot.\n\n# YOUR CODE BELOW\n# Hint: Try different line styles (:dash, :dot), colors (:blue, :green), and markers (:star, :diamond)\n\n\n\nCode\n# Test your answer\n@assert @isdefined custom_line_plot\n@assert custom_line_plot isa Plots.Plot \"custom_line_plot should be a plot object\"\nprintln(\"Excellent! You've created a custom line plot.\")\n\n\n\n\n\n\n\n\nFeel free to experiment with different options. There’s no “right” answer here – it’s all about what looks good to you!",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -1820,20 +1793,20 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html#exercise-3.1---create-a-multiple-series-plot",
     "href": "part-02/tutorial-02-05-Plotting.html#exercise-3.1---create-a-multiple-series-plot",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "Exercise 3.1 - Create a Multiple Series Plot",
-    "text": "Exercise 3.1 - Create a Multiple Series Plot\nNYour turn! Create a plot called multi_series_plot with three data series y1, y2, and y3. Make sure to give each series a different color and label.\n\n# YOUR CODE BELOW\n# Hint: Use plot() for the first series, then plot!() for the second and third\n\n\n\nCode\n# Test your answer\n@assert @isdefined y1\n@assert @isdefined y2\n@assert @isdefined y3\n@assert @isdefined multi_series_plot\nprintln(\"Fantastic! You've created a plot with multiple series.\")",
+    "text": "Exercise 3.1 - Create a Multiple Series Plot\nYour turn! Create a plot called multi_series_plot with three data series y1, y2, and y3. Give each series a label. You don’t have to pick colors yourself - Plots.jl automatically cycles through different colors for each series - but feel free to set your own with color=.\n\n# YOUR CODE BELOW\n# Hint: Use plot() for the first series, then plot!() for the second and third\n\n\n\nCode\n# Test your answer\n@assert @isdefined y1\n@assert @isdefined y2\n@assert @isdefined y3\n@assert @isdefined multi_series_plot\n@assert multi_series_plot isa Plots.Plot \"multi_series_plot should be a plot object\"\nprintln(\"Fantastic! You've created a plot with multiple series.\")",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
     ]
   },
   {
-    "objectID": "part-02/tutorial-02-05-Plotting.html#exercise-3.1---save-a-plot-to-a-file",
-    "href": "part-02/tutorial-02-05-Plotting.html#exercise-3.1---save-a-plot-to-a-file",
-    "title": "Tutorial II.V - Plotting Graphs",
-    "section": "Exercise 3.1 - Save a Plot to a File",
-    "text": "Exercise 3.1 - Save a Plot to a File\nSave your multi_series_plot as a PNG file named “saved_plot.png” in the “ExampleData” folder.\n\n# YOUR CODE BELOW\n# Don't forget to use the @__DIR__ macro to get the correct file path!\n\n\n\nCode\n# Test your answer\n@assert isfile(\"$(@__DIR__)/ExampleData/saved_plot.png\") \"File does not exist yet.\"\nprintln(\"Well done! You've saved your plot as an image file.\")",
+    "objectID": "part-02/tutorial-02-05-Plotting.html#exercise-4.1---save-a-plot-to-a-file",
+    "href": "part-02/tutorial-02-05-Plotting.html#exercise-4.1---save-a-plot-to-a-file",
+    "title": "Tutorial II.V - Plotting in Julia",
+    "section": "Exercise 4.1 - Save a Plot to a File",
+    "text": "Exercise 4.1 - Save a Plot to a File\nSave your multi_series_plot as a PNG file named “saved_plot.png” in the “ExampleData” folder. The first line in the code block below creates the folder in case it does not exist yet - do you remember mkpath from the previous tutorial?\n\n# This creates the ExampleData folder if it does not exist yet\nmkpath(\"$(@__DIR__)/ExampleData\")\n# YOUR CODE BELOW\n# Don't forget to use the @__DIR__ macro to get the correct file path!\n\n\n\nCode\n# Test your answer\n@assert isfile(\"$(@__DIR__)/ExampleData/saved_plot.png\") \"File does not exist yet.\"\nprintln(\"Well done! You've saved your plot as an image file.\")",
     "crumbs": [
       "II. Data",
       "05 - Plotting"
@@ -1842,7 +1815,7 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html#bar-plot",
     "href": "part-02/tutorial-02-05-Plotting.html#bar-plot",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "Bar Plot",
     "text": "Bar Plot\n\n# Bar plot\nx_categories = [\"A\", \"B\", \"C\", \"D\"]\ny_values = [15, 23, 18, 30]\nbar_plot = bar(\n    x_categories,\n    y_values,\n    title=\"Bar Plot Example\"\n)\ndisplay(bar_plot)",
     "crumbs": [
@@ -1853,7 +1826,7 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html#histogram",
     "href": "part-02/tutorial-02-05-Plotting.html#histogram",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "Histogram",
     "text": "Histogram\n\ndata = randn(1000)\nhist_plot = histogram(\n    data,\n    bins=30,\n    title=\"Histogram Example\"\n)\ndisplay(hist_plot)",
     "crumbs": [
@@ -1864,7 +1837,7 @@
   {
     "objectID": "part-02/tutorial-02-05-Plotting.html#box-plot",
     "href": "part-02/tutorial-02-05-Plotting.html#box-plot",
-    "title": "Tutorial II.V - Plotting Graphs",
+    "title": "Tutorial II.V - Plotting in Julia",
     "section": "Box Plot",
     "text": "Box Plot\n\n# Box plot\ngroup = repeat(1:4, inner=50)\ny = randn(200) .+ group\nbox_plot = boxplot(\n    group,\n    y,\n    title=\"Box Plot Example\"\n)\ndisplay(box_plot)",
     "crumbs": [
@@ -1877,7 +1850,7 @@
     "href": "part-03/tutorial-03-02-bounds.html",
     "title": "Tutorial III.II - Variables and Bounds in JuMP",
     "section": "",
-    "text": "Welcome to this beginner-friendly tutorial on variables and bounds in JuMP! In this lesson, we’ll explore different types of variables and how to set limits (or bounds) on them. Don’t worry if you’re new to optimization - we’ll explain everything step by step using real-world examples.\nFollow the instructions, write your code in the designated code blocks, and confirm your understanding with @assert statements. Make sure to have the JuMP package installed to follow this tutorial.\nLet’s start by loading the JuMP package:\n\nusing JuMP\n\nNow, let’s create a model that we’ll use throughout this tutorial:\n\nmodel = Model()\nprintln(\"Great! We've created a new optimization model.\")\n\nGreat! We've created a new optimization model.",
+    "text": "Welcome to this beginner-friendly tutorial on variables and bounds in JuMP! In this lesson, we’ll explore different types of variables and how to set limits (or bounds) on them. Don’t worry if you’re new to optimization - we’ll explain everything step by step using real-world examples.\nFollow the instructions, write your code in the designated code blocks, and confirm your understanding with @assert statements. Make sure to have the JuMP package installed to follow this tutorial.\nBy the end of this tutorial, you’ll be able to:\n\nCreate continuous, integer, and binary variables\nGroup many similar variables in containers like arrays and matrices\nSet and change lower and upper bounds on variables\n\nLet’s start by loading the JuMP package:\n\nusing JuMP\n\nNow, let’s create a model that we’ll use throughout this tutorial:\n\nmodel = Model()\nprintln(\"Great! We've created a new optimization model.\")\n\nGreat! We've created a new optimization model.\n\n\n\n\n\n\n\n\nIn the last tutorial, we wrote Model(HiGHS.Optimizer) to tell JuMP which solver to use. Here we write Model() without a solver, because in this tutorial we only create variables and never solve the model. If you want to solve a model later, you can still attach a solver with set_optimizer(model, HiGHS.Optimizer).",
     "crumbs": [
       "III. Optimization",
       "02 - Bounds"
@@ -1888,7 +1861,7 @@
     "href": "part-03/tutorial-03-02-bounds.html#exercise-1.1---create-variables",
     "title": "Tutorial III.II - Variables and Bounds in JuMP",
     "section": "Exercise 1.1 - Create Variables",
-    "text": "Exercise 1.1 - Create Variables\nNow it’s your turn! Create three variables:\n\nA continuous variable called water_amount\nAn integer variable called cars_produced\nA binary variable called build_store\n\n\n# YOUR CODE BELOW\n# Hint: Use the @variable macro three times, once for each variable\n\n\n\nCode\n# Test your answer\n@assert typeof(water_amount) == VariableRef && !is_integer(water_amount) && !is_binary(water_amount)\n@assert typeof(cars_produced) == VariableRef && is_integer(cars_produced)\n@assert typeof(build_store) == VariableRef && is_binary(build_store)\nprintln(\"Excellent work! You've successfully created continuous, integer, and binary variables.\")",
+    "text": "Exercise 1.1 - Create Variables\nNow it’s your turn! Create three variables:\n\nA continuous variable called water_amount\nAn integer variable called cars_produced\nA binary variable called build_store\n\n\n# YOUR CODE BELOW\n# Hint: Use the @variable macro three times, once for each variable\n\n\n\nCode\n# Test your answer\n@assert typeof(water_amount) == VariableRef && !is_integer(water_amount) && !is_binary(water_amount)\n@assert typeof(cars_produced) == VariableRef && is_integer(cars_produced)\n@assert typeof(build_store) == VariableRef && is_binary(build_store)\n@assert is_valid(model, water_amount) && is_valid(model, cars_produced) && is_valid(model, build_store)\nprintln(\"Excellent work! You've successfully created continuous, integer, and binary variables.\")",
     "crumbs": [
       "III. Optimization",
       "02 - Bounds"
@@ -1899,7 +1872,7 @@
     "href": "part-03/tutorial-03-02-bounds.html#exercise-2.1---create-an-array",
     "title": "Tutorial III.II - Variables and Bounds in JuMP",
     "section": "Exercise 2.1 - Create an Array",
-    "text": "Exercise 2.1 - Create an Array\nImagine you’re planning production for a week. Create an array daily_production with 7 non-negative variables, one for each day of the week.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert length(daily_production) == 7\n@assert all(lower_bound(daily_production[i]) == 0 for i in 1:7)\nprintln(\"Great job! You've created an array of 7 non-negative variables for daily production.\")",
+    "text": "Exercise 2.1 - Create an Array\nImagine you’re planning production for a week. Create an array daily_production with 7 non-negative variables, one for each day of the week.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert length(daily_production) == 7\n@assert all(lower_bound(daily_production[i]) == 0 for i in 1:7)\n@assert all(is_valid(model, daily_production[i]) for i in 1:7)\nprintln(\"Great job! You've created an array of 7 non-negative variables for daily production.\")",
     "crumbs": [
       "III. Optimization",
       "02 - Bounds"
@@ -1910,7 +1883,7 @@
     "href": "part-03/tutorial-03-02-bounds.html#exercise-2.2---create-a-matrix-of-variables",
     "title": "Tutorial III.II - Variables and Bounds in JuMP",
     "section": "Exercise 2.2 - Create a Matrix of Variables",
-    "text": "Exercise 2.2 - Create a Matrix of Variables\nNow, imagine you’re deciding whether to stock 4 different products in 3 different stores. Create a 3x4 matrix of binary variables called stock_decision.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert size(stock_decision) == (3, 4)\n@assert all(is_binary(stock_decision[i,j]) for i in 1:3, j in 1:4)\nprintln(\"Excellent! You've created a 3x4 matrix of binary variables for stocking decisions.\")",
+    "text": "Exercise 2.2 - Create a Matrix of Variables\nNow, imagine you’re deciding whether to stock 4 different products in 3 different stores. Create a 3x4 matrix of binary variables called stock_decision.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert size(stock_decision) == (3, 4)\n@assert all(is_binary(stock_decision[i,j]) for i in 1:3, j in 1:4)\n@assert all(is_valid(model, stock_decision[i,j]) for i in 1:3, j in 1:4)\nprintln(\"Excellent! You've created a 3x4 matrix of binary variables for stocking decisions.\")\n\n\nMatrices of variables like this one are the backbone of many optimization models. For example, the transportation problem in Tutorial III.V uses exactly this shape to decide how much to ship from each supplier to each customer.",
     "crumbs": [
       "III. Optimization",
       "02 - Bounds"
@@ -1921,7 +1894,7 @@
     "href": "part-03/tutorial-03-02-bounds.html#exercise-3.1---set-bounds-on-a-variable",
     "title": "Tutorial III.II - Variables and Bounds in JuMP",
     "section": "Exercise 3.1 - Set Bounds on a Variable",
-    "text": "Exercise 3.1 - Set Bounds on a Variable\nCreate a variable temperature that represents the temperature setting on a thermostat. It should be between 0 and 37 degrees.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert lower_bound(temperature) == 0\n@assert upper_bound(temperature) == 37\nprintln(\"Well done! You've created a variable for temperature with appropriate bounds.\")",
+    "text": "Exercise 3.1 - Set Bounds on a Variable\nCreate a variable temperature that represents the temperature setting on a thermostat. It should be between 0 and 37 degrees Celsius. The test checks both the lower and the upper bound, so set both at once using the interval syntax lower &lt;= variable &lt;= upper from the examples above.\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert is_valid(model, temperature)\n@assert lower_bound(temperature) == 0\n@assert upper_bound(temperature) == 37\nprintln(\"Well done! You've created a variable for temperature with appropriate bounds.\")",
     "crumbs": [
       "III. Optimization",
       "02 - Bounds"
@@ -1932,7 +1905,7 @@
     "href": "part-03/tutorial-03-04-advanced.html",
     "title": "Tutorial III.IV - Advanced Solver Options with HiGHS in JuMP",
     "section": "",
-    "text": "Welcome to this tutorial on advanced solver options in JuMP using the HiGHS solver! Don’t worry if “advanced solver options” sounds intimidating - we’ll break everything down into simple, easy-to-understand concepts.\nImagine you’re using a GPS app to find the best route to a new restaurant. Just like how you can adjust settings in your GPS (like avoiding toll roads or preferring highways), we can adjust settings in our optimization solver to help it find solutions more efficiently or to meet specific requirements.\nBy the end of this tutorial, you’ll be able to: 1. Understand what solver options are and why they’re useful 2. Set basic solver options like time limits and solution tolerances 3. Interpret solver output to understand how well your problem was solved\nLet’s start by loading the necessary packages:\n\nusing JuMP, HiGHS",
+    "text": "Welcome to this tutorial on advanced solver options in JuMP using the HiGHS solver! Don’t worry if “advanced solver options” sounds intimidating - we’ll break everything down into simple, easy-to-understand concepts.\nImagine you’re using a GPS app to find the best route to a new restaurant. Just like how you can adjust settings in your GPS (like avoiding toll roads or preferring highways), we can adjust settings in our optimization solver to help it find solutions more efficiently or to meet specific requirements.\nBy the end of this tutorial, you’ll be able to:\n\nUnderstand what solver options are and why they’re useful\nSet basic solver options like time limits and solution tolerances\nInterpret solver output to understand how well your problem was solved\n\nLet’s start by loading the necessary packages:\n\nusing JuMP, HiGHS",
     "crumbs": [
       "III. Optimization",
       "04 - Advanced"
@@ -1943,7 +1916,7 @@
     "href": "part-03/tutorial-03-04-advanced.html#exercise-1.1---set-solver-options",
     "title": "Tutorial III.IV - Advanced Solver Options with HiGHS in JuMP",
     "section": "Exercise 1.1 - Set Solver Options",
-    "text": "Exercise 1.1 - Set Solver Options\nNow it’s your turn! Set the following solver options: 1. A time limit of 120 seconds 2. A MIP gap tolerance of 0.5% 3. Turn off presolve\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert time_limit_sec(model) == 120 \"The time limit should be 120 seconds but is $(time_limit_sec(model))\"\n@assert solver_name(model) == \"HiGHS\" \"The solver should be HiGHS but is $(solver_name(model))\"\n@assert MOI.get(model, MOI.RawOptimizerAttribute(\"mip_rel_gap\")) == 0.005 \"The MIP gap should be 0.5% but is $(MOI.get(model, MOI.RawOptimizerAttribute(\"mip_rel_gap\")))\"\n@assert MOI.get(model, MOI.RawOptimizerAttribute(\"presolve\")) == \"off\" \"Presolve should be off but is $(MOI.get(model, MOI.RawOptimizerAttribute(\"presolve\")))\"\nprintln(\"Great job! You've successfully set advanced solver options.\")",
+    "text": "Exercise 1.1 - Set Solver Options\nNow it’s your turn! Set the following solver options:\n\nA time limit of 120 seconds\nA MIP gap tolerance of 0.5%\nTurn off presolve\n\n\n# YOUR CODE BELOW\n\n\n\nCode\n# Test your answer\n@assert time_limit_sec(model) == 120 \"The time limit should be 120 seconds but is $(time_limit_sec(model))\"\n@assert solver_name(model) == \"HiGHS\" \"The solver should be HiGHS but is $(solver_name(model))\"\n@assert MOI.get(model, MOI.RawOptimizerAttribute(\"mip_rel_gap\")) == 0.005 \"The MIP gap should be 0.5% but is $(MOI.get(model, MOI.RawOptimizerAttribute(\"mip_rel_gap\")))\"\n@assert MOI.get(model, MOI.RawOptimizerAttribute(\"presolve\")) == \"off\" \"Presolve should be off but is $(MOI.get(model, MOI.RawOptimizerAttribute(\"presolve\")))\"\nprintln(\"Great job! You've successfully set advanced solver options.\")",
     "crumbs": [
       "III. Optimization",
       "04 - Advanced"
@@ -1954,7 +1927,7 @@
     "href": "part-03/tutorial-03-04-advanced.html#exercise-2.1---modify-and-solve-the-problem",
     "title": "Tutorial III.IV - Advanced Solver Options with HiGHS in JuMP",
     "section": "Exercise 2.1 - Modify and Solve the Problem",
-    "text": "Exercise 2.1 - Modify and Solve the Problem\nNow it’s your turn! Modify the problem above by:\n\nChanging the production time constraint to 300 minutes\nIncreasing the profit for widgets to 30\nSolving the modified problem and printing the results\n\n\n# YOUR CODE BELOW\n# Hint: Copy the code above and make the necessary changes\nmodel = Model(HiGHS.Optimizer) # Don't forget to re-initialize the model\n\n\n\nCode\n# Test your answer\n@assert termination_status(model) == MOI.OPTIMAL \"The termination status should be OPTIMAL but is $(termination_status(model))\"\n@assert isapprox(objective_value(model), 3780, atol=1e-6) \"The objective value should be 3780 but is $(objective_value(model))\"\n@assert isapprox(value(widgets), 80, atol=1e-6) \"The number of widgets to produce should be 80 but is $(value(widgets))\"\n@assert isapprox(value(gadgets), 46, atol=1e-6) \"The number of gadgets to produce should be 46 but is $(value(gadgets))\"\nprintln(\"Excellent work! You've successfully modified and solved the optimization problem.\")",
+    "text": "Exercise 2.1 - Modify and Solve the Problem\nNow it’s your turn! Modify the problem above by:\n\nChanging the production time constraint to 300 minutes\nIncreasing the profit for widgets to 30\nSolving the modified problem and printing the results\n\n\n\n\n\n\n\nRe-initializing with Model(HiGHS.Optimizer) gives you a completely fresh model. Remember from Section 1 that solver options belong to the model - the time limit, MIP gap, and presolve settings you set earlier are gone, and you would have to set them again if you need them.\n\n\n\n\n# YOUR CODE BELOW\n# Hint: Copy the code above and make the necessary changes\nmodel = Model(HiGHS.Optimizer) # Don't forget to re-initialize the model\n\n\n\nCode\n# Test your answer\n@assert termination_status(model) == MOI.OPTIMAL \"The termination status should be OPTIMAL but is $(termination_status(model))\"\n@assert isapprox(objective_value(model), 3780, atol=1e-6) \"The objective value should be 3780 but is $(objective_value(model))\"\nprintln(\"Excellent work! You've successfully modified and solved the optimization problem.\")\n\n\n\n\n\n\n\n\nWhy does the test only check the profit and not the number of widgets and gadgets? Because the modified problem has several optimal plans: 80 widgets and 46 gadgets, 79 and 47, and 78 and 48 all respect the time limit and earn exactly 3780. Both products now bring in the same profit per unit, so the solver is free to return any of these plans - which one you get depends on the solver’s internal path. Whenever a problem can have several optimal solutions, test the objective value, not the variable values.",
     "crumbs": [
       "III. Optimization",
       "04 - Advanced"

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,14 +78,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-018a56f84f553ab074084cbaa177a14c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c366505a46d5b46cf7fae82eb9e8fbfc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-018a56f84f553ab074084cbaa177a14c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-fcd1a2993490c2d386cd11edf595946f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2f19b2db3fad15d2f175130959bbc86e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8d6508a0f4ab1fa03a98911d51c1ef8f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-2f19b2db3fad15d2f175130959bbc86e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d5407ca14600b690e3963be9f1b8c151.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-bab584308b85d495651bb1f255ad6ca5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d5407ca14600b690e3963be9f1b8c151.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -344,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-2.3---perform-matrix-addition" id="toc-exercise-2.3---perform-matrix-addition" class="nav-link" data-scroll-target="#exercise-2.3---perform-matrix-addition">Exercise 2.3 - Perform Matrix Addition</a></li>
   <li><a href="#exercise-2.4---add-10-to-each-element" id="toc-exercise-2.4---add-10-to-each-element" class="nav-link" data-scroll-target="#exercise-2.4---add-10-to-each-element">Exercise 2.4 - Add 10 to Each Element</a></li>
   </ul></li>
-  <li><a href="#section-3-tuples" id="toc-section-3-tuples" class="nav-link" data-scroll-target="#section-3-tuples">Section 3: Tuples</a>
+  <li><a href="#section-3---tuples" id="toc-section-3---tuples" class="nav-link" data-scroll-target="#section-3---tuples">Section 3 - Tuples</a>
   <ul class="collapse">
   <li><a href="#exercise-3.1---create-a-tuple" id="toc-exercise-3.1---create-a-tuple" class="nav-link" data-scroll-target="#exercise-3.1---create-a-tuple">Exercise 3.1 - Create a Tuple</a></li>
   <li><a href="#exercise-3.2---access-the-second-element" id="toc-exercise-3.2---access-the-second-element" class="nav-link" data-scroll-target="#exercise-3.2---access-the-second-element">Exercise 3.2 - Access the Second Element</a></li>
@@ -352,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-01-02-vectors.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="tutorial-01-02-vectors.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li><li><a href="tutorial-01-02-vectors.ipynb" download="tutorial-01-02-vectors.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-01-02-vectors.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tutorial-01-02-vectors.ipynb" download="tutorial-01-02-vectors.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="tutorial-01-02-vectors.jl"><i class="bi bi-hand-thumbs-up"></i>Julia</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -381,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Introduction</h1>
 <p>This interactive Julia script introduces the basics of vectors, matrices, and tuples.</p>
 <ul>
-<li>A vector is like a single row in a spreadsheet or a shopping list - it stores items in a line</li>
+<li>A vector is like a single column in a spreadsheet or a shopping list - it stores items one after another</li>
 <li>A matrix is like a spreadsheet - it has rows and columns</li>
 <li>A tuple is like a sealed package containing different types of items</li>
 </ul>
@@ -396,10 +399,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The exercises in this tutorial build on each other: later exercises use variables created in earlier ones. If an assert suddenly fails or you see an <code>UndefVarError</code>, re-run the previous exercises from the top.</p>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="section-1---vectors" class="level1">
 <h1>Section 1 - Vectors</h1>
-<p>Vectors in Julia are one-dimensional arrays used to store sequences of elements. They’re powerful for numerical operations and data handling. A vector is the simplest way to store a list of items. Think of it as a row of boxes, where each box can hold a number or other type of data. Create vectors with square brackets, separate elements with commas.</p>
+<p>Vectors in Julia are one-dimensional arrays used to store sequences of elements. They’re powerful for numerical operations and data handling. A vector is the simplest way to store a list of items. Think of it as a line of boxes, where each box can hold a number or other type of data. Create vectors with square brackets, separate elements with commas.</p>
 <div id="2" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a simple vector (list) of numbers</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> [<span class="fl">95</span>, <span class="fl">87</span>, <span class="fl">91</span>, <span class="fl">78</span>, <span class="fl">88</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -422,6 +436,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  "Elio"</code></pre>
 </div>
 </div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Commas and spaces mean different things in Julia! <code>[1, 2, 3]</code> with commas creates a vector, which Julia treats as a <em>column</em> of numbers. <code>[1 2 3]</code> with spaces creates a 1x3 matrix, a single <em>row</em>. You can see the difference yourself: <code>typeof([1, 2, 3])</code> shows <code>Vector{Int64}</code>, while <code>typeof([1 2 3])</code> shows <code>Matrix{Int64}</code>. The two are different objects, so <code>[1, 2, 3] == [1 2 3]</code> is <code>false</code>. In this course, use commas unless you really want a row of a matrix.</p>
+</div>
+</div>
+</div>
 <p>Vectors are mutable, and you can:</p>
 <ul>
 <li>Add items to the end (like adding to a shopping list): <code>push!(grades, 82)</code></li>
@@ -440,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Use ‘?’ in the REPL for function details.</p>
+<p>Type <code>?push!</code> (or <code>?</code> followed by any other function name) in the REPL to read a function’s documentation.</p>
 <section id="exercise-1.1---create-a-vector" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.1---create-a-vector">Exercise 1.1 - Create a Vector</h2>
 <p>Create a vector ‘fib’ with the first five Fibonacci numbers: <code>1, 1, 2, 3, 5</code>.</p>
@@ -496,15 +520,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> first_three_elements <span class="op">==</span> fib[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> first_three_elements <span class="op">==</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The first three elements of the 'fib' vector: "</span>, first_three_elements)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<hr>
 </section>
 </section>
 <section id="section-2---matrices" class="level1">
 <h1>Section 2 - Matrices</h1>
-<p>A matrix in Julia is a 2D array, great for linear algebra and data representation. Create matrices with square brackets, separate elements with spaces, rows with semicolons. Access elements with square brackets (e.g., <code>matrix[2,2]</code>). You can add or substract matrices of the same dimensions element-wise if you add or substract them.</p>
+<p>A matrix in Julia is a 2D array, great for linear algebra and data representation. Create matrices with square brackets, separate elements with spaces, rows with semicolons. Access elements with square brackets in the order <code>matrix[row, column]</code> - for example, <code>matrix[2, 3]</code> is the element in the 2nd row and 3rd column. You can add or subtract matrices of the same dimensions; these operations work element-wise.</p>
 <p>For example:</p>
 <div id="22" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>matrix1 <span class="op">=</span> [<span class="fl">2</span> <span class="fl">2</span>; <span class="fl">3</span> <span class="fl">3</span>] <span class="op">+</span> [<span class="fl">1</span> <span class="fl">2</span>; <span class="fl">3</span> <span class="fl">4</span>]</span>
@@ -524,7 +549,7 @@ matrix2 is [1 0; 0 -1].</code></pre>
 <pre><code>matrix3 is [8 12; 12 18].</code></pre>
 </div>
 </div>
-<p>But we can change this by using broadcasting!</p>
+<p>Here, <code>*</code> computes the matrix product from linear algebra: each entry is a row of the first matrix multiplied with a column of the second. You will meet this operation again later in the course. If we want to apply an operation element-wise instead, we use broadcasting!</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -612,10 +637,11 @@ matrix2 is [1 0; 0 -1].</code></pre>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Result of adding 10 to each element in 'added_matrices':</span><span class="sc">\n</span><span class="st">"</span>, added_matrices)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<hr>
 </section>
 </section>
-<section id="section-3-tuples" class="level1">
-<h1>Section 3: Tuples</h1>
+<section id="section-3---tuples" class="level1">
+<h1>Section 3 - Tuples</h1>
 <p>A tuple is like a sealed package - once you create it, you can’t change what’s inside. That’s why we call it “immutable”. It’s perfect for grouping related items that shouldn’t change. For example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A person's basic info that won't change</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> (<span class="st">"Elio Smith"</span>, <span class="fl">18</span>, <span class="st">"Hamburg"</span>)</span>
@@ -637,6 +663,16 @@ matrix2 is [1 0; 0 -1].</code></pre>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The 'my_tuple': "</span>, my_tuple)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Wait - didn’t we say tuples can’t change? The tuple’s <em>slots</em> are sealed: you cannot replace <code>my_tuple[2]</code> with a different object. But the matrix stored in that slot is still a mutable object, so something like <code>my_tuple[2][1, 1] = 99</code> would change the matrix itself. The package is sealed, but a box inside it can still be opened.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="exercise-3.2---access-the-second-element" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3.2---access-the-second-element">Exercise 3.2 - Access the Second Element</h2>
@@ -652,6 +688,7 @@ matrix2 is [1 0; 0 -1].</code></pre>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"The second element of 'my_tuple':</span><span class="sc">\n</span><span class="st">"</span>, second_element)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<hr>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -1074,31 +1111,31 @@ matrix2 is [1 0; 0 -1].</code></pre>
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Mathematical Optimization with Julia, Tobias Vlćek<br>CC BY-SA 4.0</p>
+<p>Mathematical Optimization with Julia, Dr.&nbsp;Tobias Vlćek<br>CC BY-SA 4.0</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/beyondsimulations/Optimization-with-Julia">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="GitHub repository">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
-      <i class="bi bi-linkedin" role="img">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
-      <i class="bi bi-envelope" role="img">
+      <i class="bi bi-envelope" role="img" aria-label="Email">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
-      <i class="bi bi-skip-backward" role="img">
+      <i class="bi bi-skip-backward" role="img" aria-label="All lectures">
 </i> 
     </a>
   </li>  

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -76,14 +79,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-018a56f84f553ab074084cbaa177a14c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c366505a46d5b46cf7fae82eb9e8fbfc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-018a56f84f553ab074084cbaa177a14c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-fcd1a2993490c2d386cd11edf595946f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e81b3370a5291e7f30fae0eedc171a60.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3827d975cc6296768f49b2852163a105.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-e81b3370a5291e7f30fae0eedc171a60.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6638f692058daa0508c5e84165cb7d72.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-13d106b5ed7a8cf362f8ff11c4307a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6638f692058daa0508c5e84165cb7d72.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -378,23 +381,17 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#download-and-install-julia" id="toc-download-and-install-julia" class="nav-link" data-scroll-target="#download-and-install-julia">Download and Install Julia</a></li>
   <li><a href="#installing-julia-1" id="toc-installing-julia-1" class="nav-link" data-scroll-target="#installing-julia-1">Installing Julia</a></li>
-  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
-  <li><a href="#installing-vs-code" id="toc-installing-vs-code" class="nav-link" data-scroll-target="#installing-vs-code">Installing VS Code</a></li>
+  <li><a href="#zed" id="toc-zed" class="nav-link" data-scroll-target="#zed">Zed</a></li>
   <li><a href="#verify-the-installation" id="toc-verify-the-installation" class="nav-link" data-scroll-target="#verify-the-installation">Verify the Installation</a></li>
   <li><a href="#create-a-new-file" id="toc-create-a-new-file" class="nav-link" data-scroll-target="#create-a-new-file">Create a new file</a></li>
   <li><a href="#everything-working" id="toc-everything-working" class="nav-link" data-scroll-target="#everything-working">Everything working?</a></li>
+  <li><a href="#installation-checklist" id="toc-installation-checklist" class="nav-link" data-scroll-target="#installation-checklist">Installation Checklist</a></li>
   <li><a href="#how-to-get-started" id="toc-how-to-get-started" class="nav-link" data-scroll-target="#how-to-get-started">How to get started?</a></li>
   </ul></li>
-  <li><a href="#working-with-vs-code" id="toc-working-with-vs-code" class="nav-link" data-scroll-target="#working-with-vs-code"><span class="flow">Working with VS Code</span></a>
+  <li><a href="#julia-in-zed" id="toc-julia-in-zed" class="nav-link" data-scroll-target="#julia-in-zed"><span class="flow">Julia in Zed</span></a>
   <ul class="collapse">
-  <li><a href="#notebooks-in-vs-code" id="toc-notebooks-in-vs-code" class="nav-link" data-scroll-target="#notebooks-in-vs-code">Notebooks in VS Code</a></li>
-  <li><a href="#downloading-the-notebooks" id="toc-downloading-the-notebooks" class="nav-link" data-scroll-target="#downloading-the-notebooks">Downloading the Notebooks</a></li>
-  </ul></li>
-  <li><a href="#working-with-ijulia" id="toc-working-with-ijulia" class="nav-link" data-scroll-target="#working-with-ijulia"><span class="flow">Working with IJulia</span></a>
-  <ul class="collapse">
-  <li><a href="#ijulia" id="toc-ijulia" class="nav-link" data-scroll-target="#ijulia">IJulia</a></li>
-  <li><a href="#installing-ijulia" id="toc-installing-ijulia" class="nav-link" data-scroll-target="#installing-ijulia">Installing IJulia</a></li>
-  <li><a href="#running-ijulia" id="toc-running-ijulia" class="nav-link" data-scroll-target="#running-ijulia">Running IJulia</a></li>
+  <li><a href="#tutorials-in-zed" id="toc-tutorials-in-zed" class="nav-link" data-scroll-target="#tutorials-in-zed">Tutorials in Zed</a></li>
+  <li><a href="#downloading-the-files" id="toc-downloading-the-files" class="nav-link" data-scroll-target="#downloading-the-files">Downloading the Files</a></li>
   <li><a href="#get-started-with-the-sections" id="toc-get-started-with-the-sections" class="nav-link" data-scroll-target="#get-started-with-the-sections">Get started with the sections</a></li>
   </ul></li>
   <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature"><span class="flow">Literature</span></a>
@@ -402,7 +399,7 @@ window.Quarto = {
   <li><a href="#literature-1" id="toc-literature-1" class="nav-link" data-scroll-target="#literature-1">Literature</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="introduction.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -594,9 +591,11 @@ b_{i}   &amp;: \text{parameters}
 </section>
 <section id="installing-julia-1" class="level2">
 <h2 class="anchored" data-anchor-id="installing-julia-1">Installing Julia</h2>
-<p><img src="https://images.beyondsimulations.com/ao/ao_julia2.png" class="img-fluid" data-max-width="400px"></p>
+<p><img src="https://images.beyondsimulations.com/ao/ao_julia2.png" class="img-fluid" data-max-width="400px" alt="Screenshot of the julialang.org homepage, headed The Julia Programming Language, with a green Download button next to a Documentation button."></p>
 <ul>
 <li>Head to <a href="https://julialang.org">julialang.org</a> and follow the instructions.</li>
+<li>The easiest way to install Julia is via the shell/terminal</li>
+<li>Later, you can then manage Julia with <code>juliaup</code></li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -609,29 +608,32 @@ b_{i}   &amp;: \text{parameters}
 </div>
 </div>
 </section>
-<section id="vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="vs-code">VS Code</h2>
+<section id="zed" class="level2">
+<h2 class="anchored" data-anchor-id="zed">Zed</h2>
 <ul>
-<li>Next, we are going to install VS Code</li>
-<li>Alternatively, you can install VS Codium</li>
-<li>It is essentially VS Code but without any tracking by MS</li>
+<li>Next, we are going to install <a href="https://zed.dev">Zed</a>, the editor of this workshop</li>
+<li>macOS: <code>brew install --cask zed</code> (or the installer from <a href="https://zed.dev">zed.dev</a>)</li>
+<li>Windows: installer from <a href="https://zed.dev/windows">zed.dev/windows</a></li>
+<li>Linux: <code>curl -f https://zed.dev/install.sh | sh</code></li>
 </ul>
-</section>
-<section id="installing-vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h2>
-<ul>
-<li>Head to the website <a href="https://code.visualstudio.com">code.visualstudio.com</a></li>
-<li>OR to the webside <a href="https://vscodium.com">vscodium.com</a></li>
-<li>Download and install the latest release</li>
-</ul>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>On Windows, Zed needs a DirectX-11-capable GPU. If it only shows a blank window, use <a href="https://code.visualstudio.com">VS Code</a> with the “Julia (Julia Language Support)” extension instead: everything in this workshop works there too.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="verify-the-installation" class="level2">
 <h2 class="anchored" data-anchor-id="verify-the-installation">Verify the Installation</h2>
 <ul>
-<li>Start the IDE and take a look around</li>
-<li>Search for the field “Extensions” on the left sidebar</li>
-<li>Click it and search for “Julia”</li>
-<li>Download and install “Julia (Julia Language Support)”</li>
+<li>Start Zed and take a look around</li>
+<li>Open the command palette: <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (macOS)</li>
+<li>Choose <strong>zed: extensions</strong> and search for “Julia”</li>
+<li>Install the Julia extension for syntax support</li>
 </ul>
 </section>
 <section id="create-a-new-file" class="level2">
@@ -648,17 +650,28 @@ b_{i}   &amp;: \text{parameters}
 </div>
 </div>
 <ul>
-<li>Run the file by clicking “run” in the upper right corner</li>
-<li>OR by pressing “Control+Enter” or “STRG+Enter”</li>
+<li>Open a terminal in that folder and run the file with:</li>
+<li><code>julia test.jl</code></li>
 </ul>
 </section>
 <section id="everything-working" class="level2">
 <h2 class="anchored" data-anchor-id="everything-working">Everything working?</h2>
 <ul>
-<li>If the terminal opens with a <code>Hello World!</code> → perfect!</li>
-<li>If not, it is likely that the IDE <span class="highlight">cannot find the path</span> to Julia</li>
-<li>Try to determine the path and save it to VS Code</li>
-<li>After saving it, try to run the file again</li>
+<li>If the terminal prints <code>Hello World!</code> → perfect!</li>
+<li>If not, the terminal likely <span class="highlight">cannot find the path</span> to Julia</li>
+<li>Close and reopen the terminal after installing Julia, and say yes to any “PATH” question during installation</li>
+<li>Then try to run the file again</li>
+</ul>
+</section>
+<section id="installation-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="installation-checklist">Installation Checklist</h2>
+<p>Before you start with the first tutorial, make sure you can:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Open Zed</label></li>
+<li><label><input type="checkbox">See the Julia extension installed in <strong>zed: extensions</strong></label></li>
+<li><label><input type="checkbox">Create a new <code>.jl</code> file</label></li>
+<li><label><input type="checkbox">See syntax highlighting in your Julia file</label></li>
+<li><label><input type="checkbox">Run code and see output in the terminal</label></li>
 </ul>
 </section>
 <section id="how-to-get-started" class="level2">
@@ -671,70 +684,30 @@ b_{i}   &amp;: \text{parameters}
 </ul>
 </section>
 </section>
-<section id="working-with-vs-code" class="level1 title">
-<h1 class="title"><span class="flow">Working with VS Code</span></h1>
-<section id="notebooks-in-vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-in-vs-code">Notebooks in VS Code</h2>
+<section id="julia-in-zed" class="level1 title">
+<h1 class="title"><span class="flow">Julia in Zed</span></h1>
+<section id="tutorials-in-zed" class="level2">
+<h2 class="anchored" data-anchor-id="tutorials-in-zed">Tutorials in Zed</h2>
 <ul>
-<li>The easiest way is by using VS Code</li>
-<li>Install the Jupyter Extension</li>
-<li>Now, you can open <code>.ipynb</code> files</li>
-<li>Here you can run the code in the cells</li>
+<li>The easiest way to work on the tutorials is a <code>.jl</code> file in Zed, run cell by cell</li>
+<li>For detailed instructions, just open the <a href="./part-01/tutorial-01-01-variables.html">first tutorial</a></li>
+<li>It explains step-by-step how to set up the workshop environment and run the cells</li>
 </ul>
 </section>
-<section id="downloading-the-notebooks" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-the-notebooks">Downloading the Notebooks</h2>
+<section id="downloading-the-files" class="level2">
+<h2 class="anchored" data-anchor-id="downloading-the-files">Downloading the Files</h2>
 <ul>
-<li>You will find the notebooks next to the sections pages</li>
-<li>On each page, you will find a button <code>Jupyter</code> on the right</li>
-<li>Click it to download the notebook and save it</li>
-<li>I’d recommend storing the notebooks <span class="highlight">in a separate directory for this workshop</span></li>
+<li>You will find the tutorial files next to the sections pages</li>
+<li>On each page, you will find a link <code>Julia</code> on the right (under “Code Links”)</li>
+<li>Click it to download the <code>.jl</code> file and save it</li>
+<li>Prefer a notebook? The link <code>Jupyter</code> (under “Other Formats”) downloads the same tutorial as <code>.ipynb</code></li>
+<li>I’d recommend storing the files <span class="highlight">in a separate directory for this workshop</span></li>
 </ul>
-</section>
-</section>
-<section id="working-with-ijulia" class="level1 title">
-<h1 class="title"><span class="flow">Working with IJulia</span></h1>
-<section id="ijulia" class="level2">
-<h2 class="anchored" data-anchor-id="ijulia">IJulia</h2>
-<ul>
-<li>IJulia is an interface between Julia and Jupyter Notebooks</li>
-<li>Popular tool for data analysis and visualization</li>
-<li>You can use IJulia to run <span class="highlight">Julia code in the notebooks</span></li>
-</ul>
-</section>
-<section id="installing-ijulia" class="level2">
-<h2 class="anchored" data-anchor-id="installing-ijulia">Installing IJulia</h2>
-<ul>
-<li>Open the VS Code IDE and start a terminal</li>
-<li>Start Julia by typing <code>julia</code> in the terminal</li>
-<li>Install IJulia by typing <code>]</code> to open the package manager</li>
-<li>Install IJulia by typing <code>add IJulia</code></li>
-<li>Press <code>Enter</code></li>
-</ul>
-</section>
-<section id="running-ijulia" class="level2">
-<h2 class="anchored" data-anchor-id="running-ijulia">Running IJulia</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">IJulia;</span> notebook()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Start IJulia by typing the above code in the Julia prompt</li>
-<li>This will open a new browser window</li>
-<li>You can now run code in the notebooks</li>
-</ul>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>You can also run the notebooks in VS Code, if you prefer!</p>
-</div>
-</div>
-</div>
 </section>
 <section id="get-started-with-the-sections" class="level2">
 <h2 class="anchored" data-anchor-id="get-started-with-the-sections">Get started with the sections</h2>
 <ul>
-<li>Download the first notebook and open it</li>
+<li>Download the first <code>.jl</code> file and open it in Zed</li>
 <li>Start with the <span class="highlight">first problem and solve it step by step</span></li>
 <li>You can find the sections here on the website</li>
 <li><span class="highlight">You can ask questions anytime!</span></li>
@@ -1159,31 +1132,31 @@ b_{i}   &amp;: \text{parameters}
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Mathematical Optimization with Julia, Tobias Vlćek<br>CC BY-SA 4.0</p>
+<p>Mathematical Optimization with Julia, Dr.&nbsp;Tobias Vlćek<br>CC BY-SA 4.0</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/beyondsimulations/Optimization-with-Julia">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="GitHub repository">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
-      <i class="bi bi-linkedin" role="img">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
-      <i class="bi bi-envelope" role="img">
+      <i class="bi bi-envelope" role="img" aria-label="Email">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
-      <i class="bi bi-skip-backward" role="img">
+      <i class="bi bi-skip-backward" role="img" aria-label="All lectures">
 </i> 
     </a>
   </li>  
