@@ -14,7 +14,6 @@ format:
         theme: [litera, styles.scss]
         include-in-header:
         - general/header.html
-    gfm: default
 
 execute:
     echo: true
@@ -139,32 +138,33 @@ To prepare for the upcoming lectures, we start by installing the Julia Programmi
 
 ## Installing Julia
 
-![](https://images.beyondsimulations.com/ao/ao_julia2.png){max-width=400px}
+![](https://images.beyondsimulations.com/ao/ao_julia2.png){max-width=400px fig-alt="Screenshot of the julialang.org homepage, headed The Julia Programming Language, with a green Download button next to a Documentation button."}
 
-- Head to [julialang.org](https://julialang.org) and follow the instructions. 
+- Head to [julialang.org](https://julialang.org) and follow the instructions.
+- The easiest way to install Julia is via the shell/terminal
+- Later, you can then manage Julia with `juliaup`
 
 :::{.callout-tip}
 If you are ever asked to add something to your "PATH", do so!
 :::
 
-## VS Code
+## Zed
 
-- Next, we are going to install VS Code
-- Alternatively, you can install VS Codium 
-- It is essentially VS Code but without any tracking by MS
+- Next, we are going to install [Zed](https://zed.dev), the editor of this workshop
+- macOS: `brew install --cask zed` (or the installer from [zed.dev](https://zed.dev))
+- Windows: installer from [zed.dev/windows](https://zed.dev/windows)
+- Linux: `curl -f https://zed.dev/install.sh | sh`
 
-## Installing VS Code
-
-- Head to the website [code.visualstudio.com](https://code.visualstudio.com)
-- OR to the webside [vscodium.com](https://vscodium.com) 
-- Download and install the latest release
+:::{.callout-tip}
+On Windows, Zed needs a DirectX-11-capable GPU. If it only shows a blank window, use [VS Code](https://code.visualstudio.com) with the "Julia (Julia Language Support)" extension instead: everything in this workshop works there too.
+:::
 
 ## Verify the Installation
 
-- Start the IDE and take a look around
-- Search for the field "Extensions" on the left sidebar
-- Click it and search for "Julia"
-- Download and install "Julia (Julia Language Support)"
+- Start Zed and take a look around
+- Open the command palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
+- Choose **zed: extensions** and search for "Julia"
+- Install the Julia extension for syntax support
 
 ## Create a new file
 
@@ -178,15 +178,25 @@ If you are ever asked to add something to your "PATH", do so!
 print("Hello World!")
 ```
 
-- Run the file by clicking "run" in the upper right corner 
-- OR by pressing "Control+Enter" or "STRG+Enter"
+- Open a terminal in that folder and run the file with:
+- `julia test.jl`
 
 ## Everything working?
 
-- If the terminal opens with a `Hello World!` → perfect!
-- If not, it is likely that the IDE [cannot find the path]{.highlight} to Julia
-- Try to determine the path and save it to VS Code
-- After saving it, try to run the file again
+- If the terminal prints `Hello World!` → perfect!
+- If not, the terminal likely [cannot find the path]{.highlight} to Julia
+- Close and reopen the terminal after installing Julia, and say yes to any "PATH" question during installation
+- Then try to run the file again
+
+## Installation Checklist
+
+Before you start with the first tutorial, make sure you can:
+
+- [ ] Open Zed
+- [ ] See the Julia extension installed in **zed: extensions**
+- [ ] Create a new `.jl` file
+- [ ] See syntax highlighting in your Julia file
+- [ ] Run code and see output in the terminal
 
 ## How to get started?
 
@@ -195,55 +205,25 @@ print("Hello World!")
 - Focus in the first two parts on the programming language
 - Third part dedicated to [Mathematical Optimization]{.highlight}
 
-# [Working with VS Code]{.flow} {.title}
+# [Julia in Zed]{.flow} {.title}
 
-## Notebooks in VS Code
+## Tutorials in Zed
 
-- The easiest way is by using VS Code
-- Install the Jupyter Extension 
-- Now, you can open `.ipynb` files 
-- Here you can run the code in the cells
+- The easiest way to work on the tutorials is a `.jl` file in Zed, run cell by cell
+- For detailed instructions, just open the [first tutorial](part-01/tutorial-01-01-variables.qmd)
+- It explains step-by-step how to set up the workshop environment and run the cells
 
-## Downloading the Notebooks
+## Downloading the Files
 
-- You will find the notebooks next to the sections pages
-- On each page, you will find a button `Jupyter` on the right
-- Click it to download the notebook and save it
-- I'd recommend storing the notebooks [in a separate directory for this workshop]{.highlight}
-
-# [Working with IJulia]{.flow} {.title}
-
-## IJulia
-
-- IJulia is an interface between Julia and Jupyter Notebooks
-- Popular tool for data analysis and visualization
-- You can use IJulia to run [Julia code in the notebooks]{.highlight}
-
-## Installing IJulia
-
-- Open the VS Code IDE and start a terminal
-- Start Julia by typing `julia` in the terminal
-- Install IJulia by typing `]` to open the package manager
-- Install IJulia by typing `add IJulia`
-- Press `Enter`
-
-## Running IJulia
-
-```julia
-using IJulia; notebook()
-```
-
-- Start IJulia by typing the above code in the Julia prompt
-- This will open a new browser window
-- You can now run code in the notebooks
-
-:::{.callout-note}
-You can also run the notebooks in VS Code, if you prefer!
-:::
+- You will find the tutorial files next to the sections pages
+- On each page, you will find a link `Julia` on the right (under "Code Links")
+- Click it to download the `.jl` file and save it
+- Prefer a notebook? The link `Jupyter` (under "Other Formats") downloads the same tutorial as `.ipynb`
+- I'd recommend storing the files [in a separate directory for this workshop]{.highlight}
 
 ## Get started with the sections
 
-- Download the first notebook and open it
+- Download the first `.jl` file and open it in Zed
 - Start with the [first problem and solve it step by step]{.highlight}
 - You can find the sections here on the website
 - [You can ask questions anytime!]{.highlight}

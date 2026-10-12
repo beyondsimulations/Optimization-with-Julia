@@ -1,17 +1,34 @@
 ---
-title: "Tutorial II.V - Plotting Graphs"
+title: "Tutorial II.V - Plotting in Julia"
 subtitle: "Optimization with Julia"
 
 format:
     html: default
     typst: default
-    gfm: default
     ipynb:
         code-copy: true
         code-overflow: wrap
 
 engine: julia
+code-links:
+  - text: Julia
+    icon: hand-thumbs-up
+    href: tutorial-02-05-Plotting.jl
 ---
+
+```{julia}
+#| echo: false
+#| output: false
+# Plots.jl otherwise hands Quarto a finished HTML <img>, which bypasses Quarto's
+# figure handling: `#| fig-alt` and captions are dropped on the web page. Without
+# the HTML form Quarto receives the SVG and treats it as a figure.
+# GR must not open a plot window during the render: with GKSwstype=100 it draws
+# off screen only. Set here, as _environment does not reach a Julia server
+# that is already running.
+ENV["GKSwstype"] = "100"
+push!(Base.package_callbacks, pkg -> pkg.name == "Plots" &&
+    @eval Base.showable(::MIME"text/html", ::$(Base.loaded_modules[pkg]).Plot) = false)
+```
 
 # Introduction
 
@@ -25,12 +42,13 @@ In this tutorial, you'll learn how to:
 
 Follow the instructions, write your code in the designated code blocks, and validate your results with `@assert` statements.
 
-Before we begin, let's make sure you have the necessary packages installed. If you've been following the course, you'll need to install the Plots and StatsPlots packages:
+Before we begin, let's make sure you have the necessary packages installed. If you've been following the course, you'll need to install the Plots and StatsPlots packages (StatsPlots adds statistical plot recipes like `boxplot`, which we will use at the end of this tutorial):
 
 ```{julia}
-#| eval: true
+#| eval: false
 #| output: false
-import Pkg; Pkg.add(["Plots","StatsPlots"])
+import Pkg
+Pkg.add(["Plots","StatsPlots"])
 ```
 
 Now, let's load these packages:
@@ -41,12 +59,15 @@ Now, let's load these packages:
 using Plots, StatsPlots
 ```
 
+---
+
 # Section 1 - Creating Basic Plots
 
 The Plots.jl package simplifies the process of creating a wide array of plots, from simple line plots to complex 3D visualizations. Let's start with the simplest type of plot: a line plot. We'll create some example data and then plot it.
 
 ```{julia}
 #| eval: true
+#| fig-alt: "Line plot of 10 random values between 0 and 1 over x from 1 to 10, with the title My First Line Plot, labelled x and y axes and no legend."
 # Create some example data
 x = 1:10      # This creates a range of numbers from 1 to 10
 y = rand(10)  # This creates 10 random numbers between 0 and 1
@@ -70,6 +91,11 @@ Let's break down what each part of this code does:
 - `title=...` sets the title of the plot
 - `xlabel=...` and `ylabel=...` label the x and y axes
 - `legend=false` turns off the legend (we'll use this later)
+- `display(line_plot)` shows the plot. When you run a cell, its last expression is displayed automatically, so this line is optional here - but you will need `display` when you create plots inside loops or functions later in the course.
+
+::: {.callout-note}
+We use random numbers in this tutorial, so your plots will look different from the ones shown here. That is expected and not a mistake!
+:::
 
 ## Exercise 1.1 - Create a Scatter Plot
 
@@ -86,8 +112,11 @@ Now it's your turn! Create a scatter plot using the `scatter()` function instead
 #| code-fold: true
 # Test your answer
 @assert @isdefined scatter_plot
+@assert scatter_plot isa Plots.Plot "scatter_plot should be a plot object"
 println("Great job! You've created your first scatter plot.")
 ```
+
+---
 
 # Section 2 - Customizing Plots
 
@@ -95,6 +124,7 @@ One of the best things about Plots.jl is how easy it is to customize your plots.
 
 ```{julia}
 #| eval: true
+#| fig-alt: "Line plot of 10 random values drawn as a red dashed line with a circle marker at every point, titled Customized Line Plot: line style, colour and markers are changed from the defaults."
 x = 1:10
 y = rand(10)
 
@@ -126,6 +156,7 @@ Now it's your turn to get creative! Customize a line plot with your choice of co
 #| code-fold: true
 # Test your answer
 @assert @isdefined custom_line_plot
+@assert custom_line_plot isa Plots.Plot "custom_line_plot should be a plot object"
 println("Excellent! You've created a custom line plot.")
 ```
 
@@ -133,12 +164,15 @@ println("Excellent! You've created a custom line plot.")
 Feel free to experiment with different options. There's no "right" answer here – it's all about what looks good to you!
 :::
 
+---
+
 # Section 3 - Adding Multiple Series to a Plot
 
 Now, let's learn how to add multiple data series to a single plot:
 
 ```{julia}
 #| eval: true
+#| fig-alt: "Line plot with two series of 20 random values each, drawn in different colours and named Series A and Series B in the legend, titled Plot with Two Series."
 x = 1:20
 a = rand(20)
 b = rand(20)
@@ -159,12 +193,12 @@ display(multi_plot)
 ```
 
 ::: {.callout-note}
-The `plot!()` function (with an exclamation mark) adds to an existing plot instead of creating a new one. In addition, we used the label here to add a legend to the plot.
+The `plot!()` function (with an exclamation mark) adds to an existing plot instead of creating a new one. In addition, we used the label here to add a legend to the plot. Remember how we switched the legend off with `legend=false` in Section 1? With multiple series, labels and the legend are exactly how the reader tells the series apart.
 :::
 
 ## Exercise 3.1 - Create a Multiple Series Plot
 
-NYour turn! Create a plot called `multi_series_plot` with three data series `y1`, `y2`, and `y3`. Make sure to give each series a different color and label.
+Your turn! Create a plot called `multi_series_plot` with three data series `y1`, `y2`, and `y3`. Give each series a label. You don't have to pick colors yourself - Plots.jl automatically cycles through different colors for each series - but feel free to set your own with `color=`.
 
 ```{julia}
 #| eval: false
@@ -180,12 +214,15 @@ NYour turn! Create a plot called `multi_series_plot` with three data series `y1`
 @assert @isdefined y2
 @assert @isdefined y3
 @assert @isdefined multi_series_plot
+@assert multi_series_plot isa Plots.Plot "multi_series_plot should be a plot object"
 println("Fantastic! You've created a plot with multiple series.")
 ```
 
-# Section 3 - Saving Plots to Files
+---
 
-Plots.jl supports saving your plots to various file formats including PNG, SVG, and PDF, enabling you to use your plots outside of Julia. The function to save plots is `savefig()`, the first argument is the plot itself and the second argument is the `path/filename` format as string. Replace `path` with the path, the `filename` with the actual name and `format` with the file format, e.g. `pdf`, `png`, ... . For example, if you want to save your file as PDF, you would just name it `path/filename.pdf`. For example:
+# Section 4 - Saving Plots to Files
+
+Plots.jl supports saving your plots to various file formats including PNG, SVG, and PDF, enabling you to use your plots outside of Julia. The function to save plots is `savefig()`: the first argument is the plot itself and the second argument is the file path as a string. The file extension (`.png`, `.pdf`, `.svg`, ...) determines the format. For example:
 
 ```julia
 savefig(plot_name, "path/filename.png")
@@ -193,12 +230,14 @@ savefig(plot_name, "path/filename.png")
 
 This saves the plot as a PNG file.
 
-## Exercise 3.1 - Save a Plot to a File
+## Exercise 4.1 - Save a Plot to a File
 
-Save your `multi_series_plot` as a PNG file named "saved_plot.png" in the "ExampleData" folder.
+Save your `multi_series_plot` as a PNG file named "saved_plot.png" in the "ExampleData" folder. The first line in the code block below creates the folder in case it does not exist yet - do you remember `mkpath` from the previous tutorial?
 
 ```{julia}
 #| eval: false
+# This creates the ExampleData folder if it does not exist yet
+mkpath("$(@__DIR__)/ExampleData")
 # YOUR CODE BELOW
 # Don't forget to use the @__DIR__ macro to get the correct file path!
 
@@ -211,14 +250,17 @@ Save your `multi_series_plot` as a PNG file named "saved_plot.png" in the "Examp
 println("Well done! You've saved your plot as an image file.")
 ```
 
-# Section 4 - Advanced Plotting Techniques
+---
 
-Let's explore some other common plot types. While you don't have to solve any task here, the code might come in handy later on during the course as recipe.
+# Section 5 - Advanced Plotting Techniques
+
+Let's explore some other common plot types. While you don't have to solve any task here, the code might come in handy later on during the course as recipes you can copy.
 
 ## Bar Plot
 
 ```{julia}
 #| eval: true
+#| fig-alt: "Bar plot with four bars for the categories A, B, C and D with the heights 15, 23, 18 and 30, titled Bar Plot Example."
 # Bar plot
 x_categories = ["A", "B", "C", "D"]
 y_values = [15, 23, 18, 30]
@@ -235,6 +277,7 @@ display(bar_plot)
 
 ```{julia}
 #| eval: true
+#| fig-alt: "Histogram of 1000 normally distributed random numbers in about 30 bins, titled Histogram Example: a bell shape centred near zero."
 data = randn(1000)
 hist_plot = histogram(
     data,
@@ -248,6 +291,7 @@ display(hist_plot)
 
 ```{julia}
 #| eval: true
+#| fig-alt: "Four box plots side by side for the groups 1 to 4, titled Box Plot Example. The boxes shift upward from group to group, because each group's random values are centred on its group number."
 # Box plot
 group = repeat(1:4, inner=50)
 y = randn(200) .+ group
@@ -258,6 +302,8 @@ box_plot = boxplot(
 )
 display(box_plot)
 ```
+
+---
 
 # Conclusion
 

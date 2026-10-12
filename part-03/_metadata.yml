@@ -1,0 +1,10 @@
+# Each tutorial offers two downloads. The notebook comes from `ipynb` in the
+# tutorial's `format` block and is linked below ("Jupyter"). The .jl percent
+# file is derived from it by helpers/convert_pypercent.py and linked per file
+# with `code-links`: `format-links` drops formats Quarto does not know.
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - ipynb

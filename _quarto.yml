@@ -1,8 +1,9 @@
 project:
   type: website
+  resources:
+    - part-03/data
   post-render:
     - helpers/convert_pypercent.py
-    - helpers/convert_qmd_to_md.py
   render:
     - 404.qmd
     - index.qmd
@@ -74,20 +75,26 @@ website:
         href: general/literature.qmd
 
   page-footer:
-    center: "Mathematical Optimization with Julia, Tobias Vlćek</br>CC BY-SA 4.0"
+    center: "Mathematical Optimization with Julia, Dr. Tobias Vlćek</br>CC BY-SA 4.0"
     right:
       - icon: github
         href: https://github.com/beyondsimulations/Optimization-with-Julia
+        aria-label: GitHub repository
       - icon: linkedin
         href: https://linkedin.com/in/tobiasvlcek
+        aria-label: LinkedIn
       - icon: envelope
         href: mailto:vlcek@beyondsimulations.com
+        aria-label: Email
       - icon: skip-backward
         href: https://tobiasvlcek.com/lectures/
+        aria-label: All lectures
       - icon: shield-check
         href: general/privacy.qmd
+        aria-label: Privacy policy
       - icon: file-text
         href: general/imprint.qmd
+        aria-label: Imprint
 
 format:
   html:
@@ -122,12 +129,18 @@ format:
         </script>
 
   typst:
+    template-partials:
+      - helpers/typst-show.typ
+    logo:
+      path: images/course-logo.svg
+      alt: "Optimization with Julia"
     papersize: a4
-
-  gfm:
-    output-file-ext: "md"
 
 execute:
   freeze: auto
 
 engine: julia
+
+filters:
+  - helpers/typst-classes.lua
+  - helpers/page-pauses.lua

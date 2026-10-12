@@ -31,15 +31,27 @@ This course is structured in three main parts:
 
 - Basic programming knowledge recommended
 - Julia (latest version recommended)
-- VS Code or VS Codium with Julia extension
+- Zed with the Julia extension (fallback: VS Code with the Julia extension)
 
 ## Getting Started
 
 1. Install Julia from [julialang.org](https://julialang.org)
-2. Install VS Code from [code.visualstudio.com](https://code.visualstudio.com) or VS Codium from [vscodium.com](https://vscodium.com)
-3. Install the Julia extension in VS Code/VS Codium
-4. Clone this repository
-5. Start with the introduction section
+2. Install Zed from [zed.dev](https://zed.dev)
+3. Install the Julia extension in Zed (command palette, **zed: extensions**)
+4. Follow the "Julia in Zed" steps of the [first tutorial](https://beyondsimulations.github.io/Optimization-with-Julia/part-01/tutorial-01-01-variables.html): they set up the workshop environment and the kernel Zed runs the code with
+5. Download the tutorials from the [website](https://beyondsimulations.github.io/Optimization-with-Julia) as `.jl` files (or as `.ipynb` notebooks) and start with the introduction section
+
+## Building the Site
+
+The site is built with [Quarto](https://quarto.org) and its native Julia engine (Julia 1.13); Python is only needed for the helper scripts and is managed with [uv](https://docs.astral.sh/uv/).
+
+```bash
+julia --project=. -e 'using Pkg; Pkg.instantiate()'  # Julia packages
+uv sync                                               # Python packages
+uv run quarto render                                  # website in _site/
+```
+
+After the render, `helpers/convert_pypercent.py` derives a `.jl` file in percent format (`# %%` cells) from every tutorial notebook. Both stay on the site: each tutorial page links the `.jl` file ("Julia") and the notebook ("Jupyter").
 
 ## Course Structure
 
@@ -51,7 +63,7 @@ Each tutorial includes:
 
 ## License
 
-CC BY-NC-SA 4.0 - See LICENSE file for details
+CC BY-SA 4.0 - See LICENSE file for details
 
 ## Additional Resources
 

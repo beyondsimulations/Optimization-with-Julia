@@ -5,12 +5,15 @@ subtitle: "Optimization with Julia"
 format:
     html: default
     typst: default
-    gfm: default
     ipynb:
         code-copy: true
         code-overflow: wrap
 
 engine: julia
+code-links:
+  - text: Julia
+    icon: hand-thumbs-up
+    href: tutorial-01-01-variables.jl
 ---
 
 # Introduction
@@ -19,17 +22,53 @@ Welcome to this interactive Julia tutorial which introduces the basics of variab
 
 This script is designed to be interactive. Follow the instructions, write your code in the designated code blocks, and then execute the corresponding code. Each exercise is followed by an `@assert` statement that checks your solution.
 
-There are two ways to run the code:
+## Julia in Zed
 
-1. The easiest way to run the code is by using VS Code. First, install the Julia and the Jupyter Extension. Then, you can open the downloaded `.ipynb` files and run the code from there. 
+1. First, install the **Julia** extension for syntax support: open the command palette (`Ctrl+Shift+P`, macOS `Cmd+Shift+P`), choose **zed: extensions**, and search for "Julia".
+2. Create (or pick) the folder where you want to save all the files for this workshop.
+3. Open a terminal in that folder and run:
+   ```
+   julia --project=optimization-workshop
+   ```
+   This starts Julia with the workshop project environment.
+4. In the Julia REPL that opens, run:
+   ```julia
+   using Pkg
+   Pkg.add(["IJulia", "JuMP", "HiGHS", "Plots", "CSV", "DataFrames", "StatsPlots"])
+   ```
+   This adds IJulia and the packages of this workshop to the environment.
+5. Still in Julia, run:
+   ```julia
+   using IJulia
+   IJulia.installkernel("Optimization with Julia", "--project=" * abspath("optimization-workshop"))
+   ```
+   This creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code.
+6. Type `exit()` or press Ctrl+D to exit the Julia REPL.
+7. Download this tutorial as a `.jl` file from the workshop website and save it in your workshop folder. You can do so by clicking on the "Julia" link in the sidebar (under "Code Links") on the tutorial page.
+8. Open the `.jl` file in Zed. The file is split into cells by `# %%` markers.
+9. Put the cursor in a cell and press `Ctrl+Shift+Enter` (also on macOS), or run **repl: run** from the command palette. This runs the cell and jumps to the next one. The first time, pick the kernel that starts with **optimization-with-julia** — that is the kernel you just installed. Output appears right below the code.
 
-2. The second way is by using IJulia. Start Julia, and type `using IJulia; notebook()` in the Julia prompt. This will open a new browser window where you can run the code. If you have not installed IJulia yet, you can do so by typing `]` in the Julia prompt to open the package manager, and then installing IJulia by typing `add IJulia`.
-
-:::{.callout-note}
-Always replace 'YOUR CODE BELOW' with your actual code.
+:::{.callout-warning}
+Sorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.
 :::
 
-# Section 1 - Variables 
+:::{.callout-note}
+These steps ensure you're working in a clean Julia environment for the workshop. The `--project=optimization-workshop` flag tells Julia to create (or later reuse) an environment in a subfolder called `optimization-workshop`, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: after updating Julia (for example with `juliaup update`), run steps 3 and 5 again.
+:::
+
+:::{.callout-tip collapse="true"}
+## Fallback: VS Code
+If Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install [VS Code](https://code.visualstudio.com) with the [Julia](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) extension instead. Open the same `.jl` file there: the extension recognizes the `# %%` cell markers, and `Alt+Enter` (or `Shift+Enter`) runs the current cell in the Julia REPL using the workshop environment.
+:::
+
+:::{.callout-tip collapse="true"}
+## Alternative: Jupyter Notebook
+Every tutorial of this workshop is also available as a notebook: the "Jupyter" link in the sidebar (under "Other Formats") downloads it as an `.ipynb` file. Zed runs the `.jl` file, so open the notebook in [VS Code](https://code.visualstudio.com) with the Julia and the [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extension instead, or in any other Jupyter installation. There, select the kernel **Optimization with Julia** from step 5.
+:::
+
+---
+
+# Section 1 - Variables
 
 Think of variables as labeled containers. Just like you might label a box "Books" to store books, in programming we label our data with variable names. For example:
 
@@ -59,6 +98,10 @@ Declare a variable named `x` and assign it the value `1`.
 println("Great, you have correctly assigned the value $x to the variable 'x'.")
 ```
 
+:::{.callout-note}
+Always replace 'YOUR CODE BELOW' with your actual code.
+:::
+
 ## Exercise 1.2 - Declare a String Variable
 
 Declare a variable named `hi` and assign it the string `"Hello, Optimization!"`.
@@ -71,9 +114,11 @@ Declare a variable named `hi` and assign it the string `"Hello, Optimization!"`.
 #| eval: false
 #| code-fold: true
 # Test your answer
-@assert hi == "Hello, Optimization!" "Make sure the variable 'hi' contains the exact string \"Hello, Optimization\"!"
+@assert hi == "Hello, Optimization!" "Make sure the variable 'hi' contains the exact string \"Hello, Optimization!\" - including the exclamation mark."
 println("Good, the variable 'hi' now states \"$hi\".")
 ```
+
+---
 
 # Section 2 - Basic Types
 
@@ -92,6 +137,7 @@ age = 25
 typeof(age)     # Will show Int64 (integer type)
 ```
 ```{julia}
+#| eval: true
 price = 19.99
 typeof(price)   # Will show Float64 (decimal number type)
 ```
@@ -109,7 +155,7 @@ Create an Integer variable `answerUniverse` and set it to `42`.
 #| eval: false
 #| code-fold: true
 # Test your answer
-@assert answerUniverse == 42 "The variable 'answerUniverse' should hold 42."
+@assert answerUniverse == 42 && answerUniverse isa Int "The variable 'answerUniverse' should hold the Integer 42. Note that 42.0 would be a Float, not an Integer - you can check with typeof(answerUniverse)."
 println("Great, the answer to all questions on the universe is $answerUniverse now.")
 ```
 
@@ -126,8 +172,8 @@ Create a Float variable `money` and set it to `1.35`.
 #| eval: false
 #| code-fold: true
 # Test your answer
-@assert money == 1.35 "The variable 'money' should hold the Float64 1.35."
-println("Perfect, the you have stored $money in the variable 'money'.")
+@assert money == 1.35 && money isa Float64 "The variable 'money' should hold the Float64 1.35. Remember the decimal point - you can check the type with typeof(money)."
+println("Perfect, you have stored $money in the variable 'money'.")
 ```
 
 ## Exercise 2.3 - Create a Boolean Variable
@@ -143,20 +189,23 @@ Create a Boolean variable `isStudent` and set it to `true`.
 #| eval: false
 #| code-fold: true
 # Test your answer
-@assert isStudent == true "The variable 'isStudent' should be set to true."
+@assert isStudent isa Bool && isStudent == true "The variable 'isStudent' should be the Boolean value true - not the number 1."
 println("Correct, you are a student now.")
 ```
 
+---
+
 # Section 3 - Type Annotations and Inference
 
-Sometimes we want to specify exactly what kind of "container" we want to use. In Julia, we can do this using type annotations:
+Sometimes we want to specify exactly what kind of "container" we want to use. In Julia, we can do this using type annotations. Why should you care? Later in the course, JuMP will insist on the right kinds of numbers for your optimization models, and telling Julia the exact type also helps it run your code fast.
 
 ```{julia}
 #| eval: true
-temperature::Float64 = 98.6    # Specifically saying we want a decimal number
+temperature::Float64 = 37.0    # Specifically saying we want a decimal number
 ```
 ```{julia}
-count::Int64 = 100            # Specifically saying we want a whole number
+#| eval: true
+n_items::Int64 = 100           # Specifically saying we want a whole number
 ```
 
 ## Exercise 3.1 - Type Annotation
@@ -176,6 +225,8 @@ Declare a variable `y` with an explicit type annotation of `Int64` and assign it
 println("Great! You've created an Int64 variable 'y' with the value $y.")
 ```
 
+---
+
 # Section 4 - String Interpolation
 
 String interpolation is like filling in blanks in a sentence. Instead of writing:
@@ -193,7 +244,7 @@ We can use the `$` symbol to insert variables directly into our text:
 message = "My name is $name and I am $age years old"
 ```
 
-It's like having a template where Julia automatically fills in the values for you! If you have paid attention to the previous excercise, you have already seen this in action. The following example illustrates this again:
+It's like having a template where Julia automatically fills in the values for you! If you have paid attention to the previous exercise, you have already seen this in action. The following example illustrates this again:
 
 ```{julia}
 #| eval: true
@@ -203,7 +254,7 @@ println("I'm learning $language")
 
 ## Exercise 4.1 - String Interpolation
 
-Create a string `message` that says `"y is [value of y]"` using string interpolation.
+Create a string `message` that says `"y is [value of y]"` using string interpolation. This uses the variable `y` you created in Exercise 3.1 - if you get an `UndefVarError`, run that exercise again first.
 
 ```{julia}
 #| eval: false
@@ -217,6 +268,8 @@ Create a string `message` that says `"y is [value of y]"` using string interpola
 @assert message == "y is 5" "Make sure your string includes the correct value of y."
 println("Excellent! Your interpolated string is: $message")
 ```
+
+---
 
 # Conclusion
 

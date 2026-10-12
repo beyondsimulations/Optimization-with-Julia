@@ -37,11 +37,20 @@ The core content of the workshop is organized in four blocks:
 
 # Tutorials
 
-The workshop is organized in a series of tutorials. Each tutorial is a self-contained document that you can run online in Google Colab or download and run locally.
+The workshop is organized in a series of tutorials. Each tutorial is a self-contained document that you can download and run locally.
 
 - You can find the content for each part in the corresponding folder
-- To run the code, you can use VS Code or Google Colab
-- To do so, download the corresponding `.ipynb` file and open it in VS Code or Google Colab
+- To run the code, download the tutorial as a `.jl` file (the **Julia** link on each page) and work through it cell by cell in Zed; the [introduction](introduction.qmd) walks you through installing Julia and Zed, and the [first tutorial](part-01/tutorial-01-01-variables.qmd) through the workshop's package environment and the Jupyter kernel
+- Each tutorial is also available as a Jupyter notebook (the **Jupyter** link on each page), if you prefer to work with `.ipynb` files
+- If you cannot install anything on your machine, you can still read every tutorial here on the website: all results are already executed on the pages
+
+# AI Policy
+
+**Course chatbot.** A course chatbot is available on this website for exploratory study. It is designed to guide your problem-solving process rather than hand out answers: expect hints and questions back, not finished solutions. It runs on EU-hosted infrastructure (Mistral models, servers in Germany), and your conversations are not used to train models. Details are on the [privacy page](general/privacy.qmd).
+
+**External AI tools.** You may use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). You are responsible for every line of code you rely on: understand what the AI produced before you build on it. Letting AI solve the exercises for you defeats their purpose.
+
+**No graded submissions.** This workshop has no graded hand-ins and no exam; the exercises and self-checks are for you. The only person an AI shortcut cheats here is yourself.
 
 # Questions
 If you have any questions regarding the workshop, please contact me under [tobias.vlcek@uni-hamburg.de](mailto:tobias.vlcek@uni-hamburg.de?subject=Optimization%3A%20%3CYour%20subject%3E).
