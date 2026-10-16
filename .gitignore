@@ -6,3 +6,4 @@
 /general/header.html
 **/*.quarto_ipynb
 CLAUDE.md
+/part-02/tutorial-02-05-Plotting_files/figure-commonmark/*
