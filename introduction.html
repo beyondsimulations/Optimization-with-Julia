@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-07311628652e75f956396d70ae2c81bf.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6638f692058daa0508c5e84165cb7d72.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-13d106b5ed7a8cf362f8ff11c4307a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-6638f692058daa0508c5e84165cb7d72.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7bc42100f64853ad0f21a784552cb913.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-7aa237b84225941be95ae9cebde8464c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7bc42100f64853ad0f21a784552cb913.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -348,6 +348,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./general/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./general/literature.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Literature</span></a>
   </div>
@@ -593,8 +599,9 @@ b_{i}   &amp;: \text{parameters}
 <h2 class="anchored" data-anchor-id="installing-julia-1">Installing Julia</h2>
 <p><img src="https://images.beyondsimulations.com/ao/ao_julia2.png" class="img-fluid" data-max-width="400px" alt="Screenshot of the julialang.org homepage, headed The Julia Programming Language, with a green Download button next to a Documentation button."></p>
 <ul>
-<li>Head to <a href="https://julialang.org">julialang.org</a> and follow the instructions.</li>
-<li>The easiest way to install Julia is via the shell/terminal</li>
+<li>Head to <a href="https://julialang.org/downloads/">julialang.org/downloads</a> and follow the instructions</li>
+<li>macOS/Linux: run the install command in a terminal</li>
+<li>Windows: download and open the <strong>MSIX App Installer</strong></li>
 <li>Later, you can then manage Julia with <code>juliaup</code></li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
@@ -613,7 +620,7 @@ b_{i}   &amp;: \text{parameters}
 <ul>
 <li>Next, we are going to install <a href="https://zed.dev">Zed</a>, the editor of this workshop</li>
 <li>macOS: <code>brew install --cask zed</code> (or the installer from <a href="https://zed.dev">zed.dev</a>)</li>
-<li>Windows: installer from <a href="https://zed.dev/windows">zed.dev/windows</a></li>
+<li>Windows: installer from <a href="https://zed.dev/download">zed.dev/download</a></li>
 <li>Linux: <code>curl -f https://zed.dev/install.sh | sh</code></li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
@@ -622,7 +629,7 @@ b_{i}   &amp;: \text{parameters}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>On Windows, Zed needs a DirectX-11-capable GPU. If it only shows a blank window, use <a href="https://code.visualstudio.com">VS Code</a> with the “Julia (Julia Language Support)” extension instead: everything in this workshop works there too.</p>
+<p>On Windows, Zed needs a DirectX 11 GPU with a current graphics driver. If it shows a blank window or an “Unsupported GPU” warning, update the driver first. Still not working? Use <a href="https://code.visualstudio.com">VS Code</a> with the “Julia (Julia Language Support)” extension instead: everything in this workshop works there too.</p>
 </div>
 </div>
 </div>
@@ -659,8 +666,9 @@ b_{i}   &amp;: \text{parameters}
 <ul>
 <li>If the terminal prints <code>Hello World!</code> → perfect!</li>
 <li>If not, the terminal likely <span class="highlight">cannot find the path</span> to Julia</li>
-<li>Close and reopen the terminal after installing Julia, and say yes to any “PATH” question during installation</li>
+<li>Open a new terminal after installing Julia (restart Zed if you use its terminal)</li>
 <li>Then try to run the file again</li>
+<li>Still not working? The <a href="./general/faq.html">FAQ</a> lists the usual fixes</li>
 </ul>
 </section>
 <section id="installation-checklist" class="level2">

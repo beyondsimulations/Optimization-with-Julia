@@ -466,7 +466,7 @@
     "href": "part-01/tutorial-01-01-variables.html",
     "title": "Tutorial I.I - Variables and Types",
     "section": "",
-    "text": "Welcome to this interactive Julia tutorial which introduces the basics of variables and types. Understanding variables and their types is crucial as they are the building blocks of any program. They determine how data is stored, manipulated, and how efficiently your code runs.\nThis script is designed to be interactive. Follow the instructions, write your code in the designated code blocks, and then execute the corresponding code. Each exercise is followed by an @assert statement that checks your solution.\n\n\n\nFirst, install the Julia extension for syntax support: open the command palette (Ctrl+Shift+P, macOS Cmd+Shift+P), choose zed: extensions, and search for “Julia”.\nCreate (or pick) the folder where you want to save all the files for this workshop.\nOpen a terminal in that folder and run:\njulia --project=optimization-workshop\nThis starts Julia with the workshop project environment.\nIn the Julia REPL that opens, run:\nusing Pkg\nPkg.add([\"IJulia\", \"JuMP\", \"HiGHS\", \"Plots\", \"CSV\", \"DataFrames\", \"StatsPlots\"])\nThis adds IJulia and the packages of this workshop to the environment.\nStill in Julia, run:\nusing IJulia\nIJulia.installkernel(\"Optimization with Julia\", \"--project=\" * abspath(\"optimization-workshop\"))\nThis creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code.\nType exit() or press Ctrl+D to exit the Julia REPL.\nDownload this tutorial as a .jl file from the workshop website and save it in your workshop folder. You can do so by clicking on the “Julia” link in the sidebar (under “Code Links”) on the tutorial page.\nOpen the .jl file in Zed. The file is split into cells by # %% markers.\nPut the cursor in a cell and press Ctrl+Shift+Enter (also on macOS), or run repl: run from the command palette. This runs the cell and jumps to the next one. The first time, pick the kernel that starts with optimization-with-julia — that is the kernel you just installed. Output appears right below the code.\n\n\n\n\n\n\n\nSorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.\n\n\n\n\n\n\n\n\n\nThese steps ensure you’re working in a clean Julia environment for the workshop. The --project=optimization-workshop flag tells Julia to create (or later reuse) an environment in a subfolder called optimization-workshop, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: after updating Julia (for example with juliaup update), run steps 3 and 5 again.\n\n\n\n\n\n\n\n\n\nTipFallback: VS Code\n\n\n\n\n\nIf Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install VS Code with the Julia extension instead. Open the same .jl file there: the extension recognizes the # %% cell markers, and Alt+Enter (or Shift+Enter) runs the current cell in the Julia REPL using the workshop environment.\n\n\n\n\n\n\n\n\n\nTipAlternative: Jupyter Notebook\n\n\n\n\n\nEvery tutorial of this workshop is also available as a notebook: the “Jupyter” link in the sidebar (under “Other Formats”) downloads it as an .ipynb file. Zed runs the .jl file, so open the notebook in VS Code with the Julia and the Jupyter extension instead, or in any other Jupyter installation. There, select the kernel Optimization with Julia from step 5.",
+    "text": "Welcome to this interactive Julia tutorial which introduces the basics of variables and types. Understanding variables and their types is crucial as they are the building blocks of any program. They determine how data is stored, manipulated, and how efficiently your code runs.\nThis script is designed to be interactive. Follow the instructions, write your code in the designated code blocks, and then execute the corresponding code. Each exercise is followed by an @assert statement that checks your solution.\n\n\n\nFirst, install the Julia extension for syntax support: open the command palette (Ctrl+Shift+P, macOS Cmd+Shift+P), choose zed: extensions, and search for “Julia”.\nCreate (or pick) the folder where you want to save all the files for this workshop.\nOpen a terminal in that folder and run:\njulia --project=optimization-workshop\nThis starts Julia with the workshop project environment.\nIn the Julia REPL that opens, run:\nusing Pkg\nPkg.add([\"IJulia\", \"JuMP\", \"HiGHS\", \"Plots\", \"CSV\", \"DataFrames\", \"StatsPlots\"])\nThis adds IJulia and the packages of this workshop to the environment.\nStill in Julia, run:\nusing IJulia\nzed_plots = raw\"\"\"\npush!(Base.package_callbacks, pkg -&gt; pkg.name == \"Plots\" &&\n    @eval Base.showable(::MIME\"text/html\", ::$(Base.loaded_modules[pkg]).Plot) = false)\n\"\"\"\nIJulia.installkernel(\"Optimization with Julia\", \"--project=\" * abspath(\"optimization-workshop\"), \"-e\", zed_plots)\nThis creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code. The zed_plots part makes your plots visible in Zed: Zed cannot show the web version of a plot yet, so the kernel sends plots as images instead.\nType exit() or press Ctrl+D to exit the Julia REPL.\nDownload this tutorial as a .jl file from the workshop website and save it in your workshop folder. You can do so by clicking on the “Julia” link in the sidebar (under “Code Links”) on the tutorial page.\nOpen the .jl file in Zed. The file is split into cells by # %% markers.\nPut the cursor in a cell and press Ctrl+Shift+Enter (also on macOS), or run repl: run from the command palette. This runs the cell and jumps to the next one. Output appears right below the code. Zed picks the kernel by itself: the kernel selector at the top right of the editor should show the kernel that starts with optimization-with-julia — that is the kernel you just installed. If it shows another one (such as julia-1.13), click it and choose yours.\n\n\n\n\n\n\n\nSorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.\n\n\n\n\n\n\n\n\n\nThese steps ensure you’re working in a clean Julia environment for the workshop. The --project=optimization-workshop flag tells Julia to create (or later reuse) an environment in a subfolder called optimization-workshop, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: close Zed before you update Julia (for example with juliaup update), then run steps 3 and 5 again.\n\n\n\n\n\n\n\n\n\nTipFallback: VS Code\n\n\n\n\n\nIf Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install VS Code with the Julia extension instead. Open the same .jl file there: the extension recognizes the # %% cell markers, and Alt+Enter (or Shift+Enter) runs the current cell in the Julia REPL using the workshop environment.\n\n\n\n\n\n\n\n\n\nTipAlternative: Jupyter Notebook\n\n\n\n\n\nEvery tutorial of this workshop is also available as a notebook: the “Jupyter” link in the sidebar (under “Other Formats”) downloads it as an .ipynb file. Zed runs the .jl file, so open the notebook in VS Code with the Julia and the Jupyter extension instead, or in any other Jupyter installation. There, select the kernel Optimization with Julia from step 5.",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -477,7 +477,7 @@
     "href": "part-01/tutorial-01-01-variables.html#julia-in-zed",
     "title": "Tutorial I.I - Variables and Types",
     "section": "",
-    "text": "First, install the Julia extension for syntax support: open the command palette (Ctrl+Shift+P, macOS Cmd+Shift+P), choose zed: extensions, and search for “Julia”.\nCreate (or pick) the folder where you want to save all the files for this workshop.\nOpen a terminal in that folder and run:\njulia --project=optimization-workshop\nThis starts Julia with the workshop project environment.\nIn the Julia REPL that opens, run:\nusing Pkg\nPkg.add([\"IJulia\", \"JuMP\", \"HiGHS\", \"Plots\", \"CSV\", \"DataFrames\", \"StatsPlots\"])\nThis adds IJulia and the packages of this workshop to the environment.\nStill in Julia, run:\nusing IJulia\nIJulia.installkernel(\"Optimization with Julia\", \"--project=\" * abspath(\"optimization-workshop\"))\nThis creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code.\nType exit() or press Ctrl+D to exit the Julia REPL.\nDownload this tutorial as a .jl file from the workshop website and save it in your workshop folder. You can do so by clicking on the “Julia” link in the sidebar (under “Code Links”) on the tutorial page.\nOpen the .jl file in Zed. The file is split into cells by # %% markers.\nPut the cursor in a cell and press Ctrl+Shift+Enter (also on macOS), or run repl: run from the command palette. This runs the cell and jumps to the next one. The first time, pick the kernel that starts with optimization-with-julia — that is the kernel you just installed. Output appears right below the code.\n\n\n\n\n\n\n\nSorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.\n\n\n\n\n\n\n\n\n\nThese steps ensure you’re working in a clean Julia environment for the workshop. The --project=optimization-workshop flag tells Julia to create (or later reuse) an environment in a subfolder called optimization-workshop, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: after updating Julia (for example with juliaup update), run steps 3 and 5 again.\n\n\n\n\n\n\n\n\n\nTipFallback: VS Code\n\n\n\n\n\nIf Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install VS Code with the Julia extension instead. Open the same .jl file there: the extension recognizes the # %% cell markers, and Alt+Enter (or Shift+Enter) runs the current cell in the Julia REPL using the workshop environment.\n\n\n\n\n\n\n\n\n\nTipAlternative: Jupyter Notebook\n\n\n\n\n\nEvery tutorial of this workshop is also available as a notebook: the “Jupyter” link in the sidebar (under “Other Formats”) downloads it as an .ipynb file. Zed runs the .jl file, so open the notebook in VS Code with the Julia and the Jupyter extension instead, or in any other Jupyter installation. There, select the kernel Optimization with Julia from step 5.",
+    "text": "First, install the Julia extension for syntax support: open the command palette (Ctrl+Shift+P, macOS Cmd+Shift+P), choose zed: extensions, and search for “Julia”.\nCreate (or pick) the folder where you want to save all the files for this workshop.\nOpen a terminal in that folder and run:\njulia --project=optimization-workshop\nThis starts Julia with the workshop project environment.\nIn the Julia REPL that opens, run:\nusing Pkg\nPkg.add([\"IJulia\", \"JuMP\", \"HiGHS\", \"Plots\", \"CSV\", \"DataFrames\", \"StatsPlots\"])\nThis adds IJulia and the packages of this workshop to the environment.\nStill in Julia, run:\nusing IJulia\nzed_plots = raw\"\"\"\npush!(Base.package_callbacks, pkg -&gt; pkg.name == \"Plots\" &&\n    @eval Base.showable(::MIME\"text/html\", ::$(Base.loaded_modules[pkg]).Plot) = false)\n\"\"\"\nIJulia.installkernel(\"Optimization with Julia\", \"--project=\" * abspath(\"optimization-workshop\"), \"-e\", zed_plots)\nThis creates a Jupyter kernel that uses the workshop environment: it is how Zed runs Julia code. The zed_plots part makes your plots visible in Zed: Zed cannot show the web version of a plot yet, so the kernel sends plots as images instead.\nType exit() or press Ctrl+D to exit the Julia REPL.\nDownload this tutorial as a .jl file from the workshop website and save it in your workshop folder. You can do so by clicking on the “Julia” link in the sidebar (under “Code Links”) on the tutorial page.\nOpen the .jl file in Zed. The file is split into cells by # %% markers.\nPut the cursor in a cell and press Ctrl+Shift+Enter (also on macOS), or run repl: run from the command palette. This runs the cell and jumps to the next one. Output appears right below the code. Zed picks the kernel by itself: the kernel selector at the top right of the editor should show the kernel that starts with optimization-with-julia — that is the kernel you just installed. If it shows another one (such as julia-1.13), click it and choose yours.\n\n\n\n\n\n\n\nSorry that the start is rather complicated. But by following these steps, you get a clean environment to work in and you basically cannot break anything by installing packages.\n\n\n\n\n\n\n\n\n\nThese steps ensure you’re working in a clean Julia environment for the workshop. The --project=optimization-workshop flag tells Julia to create (or later reuse) an environment in a subfolder called optimization-workshop, keeping all workshop packages organized in one place and avoiding conflicts with other projects. The kernel remembers the exact Julia version it was installed with: close Zed before you update Julia (for example with juliaup update), then run steps 3 and 5 again.\n\n\n\n\n\n\n\n\n\nTipFallback: VS Code\n\n\n\n\n\nIf Zed does not run on your machine (for example, an older Windows GPU without DirectX 11), install VS Code with the Julia extension instead. Open the same .jl file there: the extension recognizes the # %% cell markers, and Alt+Enter (or Shift+Enter) runs the current cell in the Julia REPL using the workshop environment.\n\n\n\n\n\n\n\n\n\nTipAlternative: Jupyter Notebook\n\n\n\n\n\nEvery tutorial of this workshop is also available as a notebook: the “Jupyter” link in the sidebar (under “Other Formats”) downloads it as an .ipynb file. Zed runs the .jl file, so open the notebook in VS Code with the Julia and the Jupyter extension instead, or in any other Jupyter installation. There, select the kernel Optimization with Julia from step 5.",
     "crumbs": [
       "I. First Steps",
       "01 - Variables"
@@ -591,387 +591,33 @@
     ]
   },
   {
-    "objectID": "general/cheatsheet-jump.html",
-    "href": "general/cheatsheet-jump.html",
-    "title": "JuMP Syntax Cheatsheet",
+    "objectID": "general/faq.html",
+    "href": "general/faq.html",
+    "title": "Frequently Asked Questions",
     "section": "",
-    "text": "This cheatsheet summarizes the most common syntax elements of JuMP for optimization modeling in Julia. It includes examples for setting up models, declaring variables and constraints, defining objectives, adjusting solver options, solving, and accessing solutions.",
+    "text": "The commands in bold are in Zed’s command palette (Ctrl+Shift+P, macOS Cmd+Shift+P).\n\nNothing happens when I press Ctrl+Shift+Enter. Save the file with the ending .jl and press the shortcut a second time: right after Zed starts, the first press can get lost while Zed looks for its kernels. Each cell has to start with # %% at the very beginning of a line.\nZed does not list the kernel optimization-with-julia-1.13. Run repl: refresh kernelspecs. If it is still missing, repeat steps 3 to 5 of the first tutorial and look for error messages after installkernel.\nArgumentError: Package JuMP not found in current path (or any other package). Zed started another kernel, for example julia-1.13, which does not use the workshop environment. Check the kernel selector at the top right of the editor and choose optimization-with-julia-1.13. If the kernel is right, the package is not installed yet: run using Pkg; Pkg.add(\"JuMP\") in a cell.\nUndefVarError: ... not defined. The cell uses a variable from a cell that has not run yet. Run the cells above it first. After repl: restart, all variables are gone and you start again from the top.\nPlots do not appear. Your kernel was installed without the zed_plots part of step 5 in the first tutorial: close Zed and run steps 3 and 5 again. Interactive plots made with plotly() cannot be shown in Zed; leave that line out.\nA model keeps solving and does not stop. repl: interrupt cannot stop a running solver. Use repl: restart instead and run your cells again from the top.\nThe kernel does not start after a Julia update. The kernel still points to the old Julia version, which the update removed. Close Zed and run steps 3 and 5 of the first tutorial again.\nThe first cell takes minutes. Julia compiles each package once on your computer, so the first using JuMP or using Plots is slow, on Windows even slower because Microsoft Defender scans the new files. Let it finish: afterwards, the same commands are fast.\nAn exclamation mark appears in Zed’s title bar, and code completion does not work. Zed opened your folder in Restricted Mode. Click the exclamation mark and trust your workshop folder (only that folder, not your whole user folder).\nCtrl+C does not copy in Zed’s terminal (Windows, Linux). In the terminal, Ctrl+C stops the running program; copy with Ctrl+Shift+C.\n\nIf Zed itself does not run on your computer, use the VS Code fallback described in the first tutorial. The Jupyter notebooks of this workshop run there as well.",
     "crumbs": [
-      "Cheatsheets",
-      "JuMP"
+      "FAQs"
     ]
   },
   {
-    "objectID": "general/cheatsheet-jump.html#importing-packages-and-creating-a-model",
-    "href": "general/cheatsheet-jump.html#importing-packages-and-creating-a-model",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Importing Packages and Creating a Model",
-    "text": "Importing Packages and Creating a Model\n\nusing JuMP, HiGHS\n\n# Create a model with HiGHS optimizer\nmodel = Model(HiGHS.Optimizer)\n\n# Set a time limit for the optimizer (optional)\nset_optimizer_attribute(model, \"time_limit\", 60.0)",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#declaration",
-    "href": "general/cheatsheet-jump.html#declaration",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Declaration",
-    "text": "Declaration\n\nContinuous Variables\n\n# Unbounded continuous variable\n@variable(model, x)\n\n# Non-negative continuous variable\n@variable(model, x &gt;= 0)\n\n# Bounded continuous variable (0 &lt;= x &lt;= 10)\n@variable(model, 0 &lt;= x &lt;= 10)\n\n# Fixed variable, x is fixed at 5\n@variable(model, x == 5)\n\n\n\nInteger Variables\n\n# Unbounded integer variable\n@variable(model, x, Int)\n\n# Non-negative integer variable\n@variable(model, x &gt;= 0, Int)\n\n# Bounded integer variable (0 &lt;= x &lt;= 10)\n@variable(model, 0 &lt;= x &lt;= 10, Int)\n\n\n\nBinary Variables\n\n# Binary variable (0 or 1)\n@variable(model, x, Bin)",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#containers",
-    "href": "general/cheatsheet-jump.html#containers",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Containers",
-    "text": "Containers\n\nArrays and Matrices\n\n# Array of 5 continuous variables\n@variable(model, x[1:5])\n\n# Non-negative array of variables\n@variable(model, x[1:5] &gt;= 0)\n\n# Binary array of variables\n@variable(model, x[1:5], Bin)\n\n# 3x4 matrix of variables\n@variable(model, x[1:3, 1:4])\n\n# Integer 3x4 matrix\n@variable(model, x[1:3, 1:4], Int)\n\n\n\nCustom Indexing\n\nindices = [\"A\", \"B\", \"C\"]\n@variable(model, x[i in indices])",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#basic-constraints",
-    "href": "general/cheatsheet-jump.html#basic-constraints",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Basic Constraints",
-    "text": "Basic Constraints\n\n# Declare additional variables as needed\n@variable(model, x)\n@variable(model, y)\n\n@constraint(model, con1, 2x + y &lt;= 10)\n@constraint(model, con2, x + 2y &gt;= 5)\n@constraint(model, con3, x == y)   # Equality constraint",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#constraints-with-containers",
-    "href": "general/cheatsheet-jump.html#constraints-with-containers",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Constraints with Containers",
-    "text": "Constraints with Containers\n\n# Array Variables\n@variable(model, x[1:5] &gt;= 0)\n\n# Constraint for each variable element\n@constraint(model, capacity[i=1:5],\n    x[i] &lt;= 100\n)\n\n# Sum constraint across array\n@constraint(model, total_sum,\n    sum(x[i] for i in 1:5) &lt;= 500\n)\n\n# Matrix constraints: each element gets its constraint\n@variable(model, y[1:3, 1:4])\n@constraint(model, matrix_con[i=1:3, j=1:4],\n    y[i,j] &lt;= i + j\n)",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#conditional-constraints",
-    "href": "general/cheatsheet-jump.html#conditional-constraints",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Conditional Constraints",
-    "text": "Conditional Constraints\n\n# Constraint applies only for indices where i &gt; 2\n@constraint(model, cond[i=1:5; i &gt; 2], \n    x[i] &lt;= 10\n)\n\n# Multiple conditions for two-dimensional index:\n@constraint(model, cond2[i=1:10, j=1:10; i != j && i + j &lt;= 15],\n    x[i,j] + x[j,i] &lt;= 1\n)",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#constraints-with-conditional-summations",
-    "href": "general/cheatsheet-jump.html#constraints-with-conditional-summations",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Constraints with Conditional Summations",
-    "text": "Constraints with Conditional Summations\n\n# Sum over a subset of indices (e.g., i &gt; 2)\n@constraint(model, total_sum,\n    sum(x[i] for i in 1:5 if i &gt; 2) &lt;= 500\n)\n\n# Sum with multiple conditions on a 2D array\n@constraint(model, total_sum2,\n    sum(x[i,j] for i in 1:5, j in 1:5 if i != j && i + j &lt;= 7) &lt;= 1\n)\n\n\nTip: Use semicolons (;) to separate the index definition from conditions when defining constraints.",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#basic-objectives",
-    "href": "general/cheatsheet-jump.html#basic-objectives",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Basic Objectives",
-    "text": "Basic Objectives\n\n@objective(model, Max, 5x + 3y)   # Maximize\n@objective(model, Min, 2x + 4y)   # Minimize",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#objectives-using-containers",
-    "href": "general/cheatsheet-jump.html#objectives-using-containers",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Objectives Using Containers",
-    "text": "Objectives Using Containers\n\n# Container-based objective\n@variable(model, z[1:10])\n@objective(model, Min, sum(z[i] for i in 1:10))\n\n# Weighted objective function\nweights = [1, 2, 3, 4, 5]\n@objective(model, Max, \n    sum(weights[i] * z[i] for i in 1:5)\n)",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#variable-updates",
-    "href": "general/cheatsheet-jump.html#variable-updates",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Variable Updates",
-    "text": "Variable Updates\n\n# Set or update variable bounds\nset_lower_bound(x, 0)\nset_upper_bound(x, 10)\n\n# Fix x to a specific value, then unfix if needed\nfix(x, 5)\nunfix(x)",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#constraint-updates",
-    "href": "general/cheatsheet-jump.html#constraint-updates",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Constraint Updates",
-    "text": "Constraint Updates\n\n# Delete a constraint if necessary\ndelete(model, con1)\n\n\nNote: After modifying the model, you will need to re-solve it to update the solution.",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#checking-variable-properties",
-    "href": "general/cheatsheet-jump.html#checking-variable-properties",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Checking Variable Properties",
-    "text": "Checking Variable Properties\n\n# Check bounds for a variable\nprintln(\"Has lower bound? \", has_lower_bound(x))\nprintln(\"Lower bound: \", lower_bound(x))\nprintln(\"Has upper bound? \", has_upper_bound(x))\nprintln(\"Upper bound: \", upper_bound(x))\n\n# Check variable type and retrieve information\nprintln(\"Is x binary? \", is_binary(x))\nprintln(\"Is x integer? \", is_integer(x))\nprintln(\"Variable name: \", name(x))\nprintln(\"Total number of variables: \", num_variables(model))",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "general/cheatsheet-jump.html#key-points",
-    "href": "general/cheatsheet-jump.html#key-points",
-    "title": "JuMP Syntax Cheatsheet",
-    "section": "Key Points",
-    "text": "Key Points\n\nAlways check solution status before using results\nSet appropriate time limits for large problems\nUse gap tolerances to balance precision and speed\nMonitor solve time for performance optimization\nConsider presolve for complex problems",
-    "crumbs": [
-      "Cheatsheets",
-      "JuMP"
-    ]
-  },
-  {
-    "objectID": "introduction.html",
-    "href": "introduction.html",
-    "title": "Introduction",
+    "objectID": "general/faq.html#my-julia-code-does-not-run-in-zed.-what-can-i-do",
+    "href": "general/faq.html#my-julia-code-does-not-run-in-zed.-what-can-i-do",
+    "title": "Frequently Asked Questions",
     "section": "",
-    "text": "Designed to be:\n\nas general as Python\nas statistics-friendly as R\nas fast as C++!\n\n\n\n\n\n\n\n\nAllows for fast data workflows, particularly in scientific computing!\n\n\n\n\n\n\n\nDynamically-typed syntax just like Python\nSimilar to R, Matlab and Python - not like C++\nIn comparison, accessible and easy to learn!\nNo need to worry about memory management!\n\n\n\n\n\nPackage for algebraic modeling in Julia\nSimplifies solving complex optimization problems\nProvides a high-level, user-friendly interface\nUseful for operations research and data science\n\n\n\n\n\n\n\nJuMP is an alternative to Pyomo, GAMS, and AMPL!",
+    "text": "The commands in bold are in Zed’s command palette (Ctrl+Shift+P, macOS Cmd+Shift+P).\n\nNothing happens when I press Ctrl+Shift+Enter. Save the file with the ending .jl and press the shortcut a second time: right after Zed starts, the first press can get lost while Zed looks for its kernels. Each cell has to start with # %% at the very beginning of a line.\nZed does not list the kernel optimization-with-julia-1.13. Run repl: refresh kernelspecs. If it is still missing, repeat steps 3 to 5 of the first tutorial and look for error messages after installkernel.\nArgumentError: Package JuMP not found in current path (or any other package). Zed started another kernel, for example julia-1.13, which does not use the workshop environment. Check the kernel selector at the top right of the editor and choose optimization-with-julia-1.13. If the kernel is right, the package is not installed yet: run using Pkg; Pkg.add(\"JuMP\") in a cell.\nUndefVarError: ... not defined. The cell uses a variable from a cell that has not run yet. Run the cells above it first. After repl: restart, all variables are gone and you start again from the top.\nPlots do not appear. Your kernel was installed without the zed_plots part of step 5 in the first tutorial: close Zed and run steps 3 and 5 again. Interactive plots made with plotly() cannot be shown in Zed; leave that line out.\nA model keeps solving and does not stop. repl: interrupt cannot stop a running solver. Use repl: restart instead and run your cells again from the top.\nThe kernel does not start after a Julia update. The kernel still points to the old Julia version, which the update removed. Close Zed and run steps 3 and 5 of the first tutorial again.\nThe first cell takes minutes. Julia compiles each package once on your computer, so the first using JuMP or using Plots is slow, on Windows even slower because Microsoft Defender scans the new files. Let it finish: afterwards, the same commands are fast.\nAn exclamation mark appears in Zed’s title bar, and code completion does not work. Zed opened your folder in Restricted Mode. Click the exclamation mark and trust your workshop folder (only that folder, not your whole user folder).\nCtrl+C does not copy in Zed’s terminal (Windows, Linux). In the terminal, Ctrl+C stops the running program; copy with Ctrl+Shift+C.\n\nIf Zed itself does not run on your computer, use the VS Code fallback described in the first tutorial. The Jupyter notebooks of this workshop run there as well.",
     "crumbs": [
-      "Introduction"
+      "FAQs"
     ]
   },
   {
-    "objectID": "introduction.html#why-julia",
-    "href": "introduction.html#why-julia",
-    "title": "Introduction",
-    "section": "",
-    "text": "Designed to be:\n\nas general as Python\nas statistics-friendly as R\nas fast as C++!\n\n\n\n\n\n\n\n\nAllows for fast data workflows, particularly in scientific computing!",
+    "objectID": "general/faq.html#julia-or-zed-does-not-work-on-my-windows-laptop.-what-can-i-do",
+    "href": "general/faq.html#julia-or-zed-does-not-work-on-my-windows-laptop.-what-can-i-do",
+    "title": "Frequently Asked Questions",
+    "section": "Julia or Zed does not work on my Windows laptop. What can I do?",
+    "text": "Julia or Zed does not work on my Windows laptop. What can I do?\n\nThe terminal does not find julia. Open a new terminal; if you use the terminal inside Zed, restart Zed. If that does not help, open Settings → Apps → Advanced app settings → App execution aliases and switch on julia.exe and juliaup.exe. If the Microsoft Store is blocked on your laptop, use the MSI installer instead.\n“An Application Control policy has blocked this file”, “Smart App Control has blocked part of this app” or error 0xc0e90002. Windows Smart App Control blocks the package files that Julia compiles on your laptop. Switch it off under Windows Security → App & browser control → Smart App Control and keep it off while you work with Julia: switched on again, it can block every package Julia compiles later. Then delete the folder %USERPROFILE%\\.julia\\compiled\\v1.13 and run using Pkg; Pkg.precompile() in the workshop environment. On a laptop managed by your university or employer, only the IT department can allow these files; until then, start Julia with julia --pkgimages=no --project=optimization-workshop in the first tutorial and add \"--pkgimages=no\" right after the --project argument of its installkernel call. Packages then load more slowly, but they load.\nPrecompiling IJulia fails with an EPIPE error. Run using IJulia again: the error is known on Windows and usually disappears on the second attempt.\nYour laptop has a Snapdragon (ARM) processor. Julia runs there in x64 emulation: the workshop setup should work the same way, only slower.\nYour workshop folder lies in OneDrive. Synced folders can block Julia from replacing files. Use a plain folder such as C:\\Users\\&lt;name&gt;\\julia-workshop.\n\nStill stuck? Ask the course chatbot on this website: it knows these steps.",
     "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#syntax",
-    "href": "introduction.html#syntax",
-    "title": "Introduction",
-    "section": "",
-    "text": "Dynamically-typed syntax just like Python\nSimilar to R, Matlab and Python - not like C++\nIn comparison, accessible and easy to learn!\nNo need to worry about memory management!",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#jump",
-    "href": "introduction.html#jump",
-    "title": "Introduction",
-    "section": "",
-    "text": "Package for algebraic modeling in Julia\nSimplifies solving complex optimization problems\nProvides a high-level, user-friendly interface\nUseful for operations research and data science\n\n\n\n\n\n\n\nJuMP is an alternative to Pyomo, GAMS, and AMPL!",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#what-is-algebraic-modeling",
-    "href": "introduction.html#what-is-algebraic-modeling",
-    "title": "Introduction",
-    "section": "What is algebraic modeling?",
-    "text": "What is algebraic modeling?\n\nA “mathematical language” for optimization problems\nAllows for describing complex systems and constraints\nBased on linear algebra (Equations and Inequalities)",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#how-to-learn-algebraic-modeling",
-    "href": "introduction.html#how-to-learn-algebraic-modeling",
-    "title": "Introduction",
-    "section": "How to learn algebraic modeling?",
-    "text": "How to learn algebraic modeling?\n\nPractice, practice, and practice!\nUnderstand standard models and their approach\nDevelop an understanding of constraints\nUnderstand the structure of a models solution space\nUse an available algorithms to determine solutions",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#central-questions",
-    "href": "introduction.html#central-questions",
-    "title": "Introduction",
-    "section": "Central Questions",
-    "text": "Central Questions\n\nWhat is to be decided?\nWhat is relevant to the decision?\nWhat information is given and relevant?\nWhat parameters (data) are needed?\nWhich variables and of which type are needed?\n\n\n\n\n\n\n\nModeling is a creative process!",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#model-components",
-    "href": "introduction.html#model-components",
-    "title": "Introduction",
-    "section": "Model Components",
-    "text": "Model Components\n\nObjective function\nConstraints\nVariables",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#linear-optimization-model",
-    "href": "introduction.html#linear-optimization-model",
-    "title": "Introduction",
-    "section": "Linear Optimization Model",
-    "text": "Linear Optimization Model\n\nBasic Model Formulation\n\\[\n\\begin{aligned}\n&\\text{maximize} \\quad F = \\sum_{j\\in \\mathcal{J}} c_j \\times X_j\n\\end{aligned}\n\\]\nsubject to\n\\[\n\\begin{aligned}\n&\\sum_{j\\in \\mathcal{J}} a_{i,j} \\times X_j  \\le b_i && \\forall i \\in \\mathcal{I} \\\\\n&X_j \\ge 0 &&  \\forall  j \\in \\mathcal{J}\n\\end{aligned}\n\\]\n\n\nModel Components\n\\[\n\\begin{aligned}\n\\mathcal{I} &: \\text{set of $i \\in \\mathcal{I}$,}\\\\\n\\mathcal{J} &: \\text{set of $j \\in \\mathcal{J}$,}\\\\\nF   &: \\text{Objective function variable,}\\\\\nX_{j}   &: \\text{decision variables,}\\\\\nc_{j}   &: \\text{objective function coefficients,}\\\\\na_{i,j} &: \\text{parameters,}\\\\\nb_{i}   &: \\text{parameters}\n\\end{aligned}\n\\]",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#what-is-modelling-good-for",
-    "href": "introduction.html#what-is-modelling-good-for",
-    "title": "Introduction",
-    "section": "What is modelling good for?",
-    "text": "What is modelling good for?\n\nGood Question! A lot of things:\n\nModeling real-world problems\nSolving complex systems\nOptimizing resource allocation\nDecision-making under constraints\nSimulation and prediction",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#download-and-install-julia",
-    "href": "introduction.html#download-and-install-julia",
-    "title": "Introduction",
-    "section": "Download and Install Julia",
-    "text": "Download and Install Julia\nTo prepare for the upcoming lectures, we start by installing the Julia Programming Language and an Integrated Development Environment (IDE) to work with Julia.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#installing-julia-1",
-    "href": "introduction.html#installing-julia-1",
-    "title": "Introduction",
-    "section": "Installing Julia",
-    "text": "Installing Julia\n\n\nHead to julialang.org and follow the instructions.\nThe easiest way to install Julia is via the shell/terminal\nLater, you can then manage Julia with juliaup\n\n\n\n\n\n\n\nIf you are ever asked to add something to your “PATH”, do so!",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#zed",
-    "href": "introduction.html#zed",
-    "title": "Introduction",
-    "section": "Zed",
-    "text": "Zed\n\nNext, we are going to install Zed, the editor of this workshop\nmacOS: brew install --cask zed (or the installer from zed.dev)\nWindows: installer from zed.dev/windows\nLinux: curl -f https://zed.dev/install.sh | sh\n\n\n\n\n\n\n\nOn Windows, Zed needs a DirectX-11-capable GPU. If it only shows a blank window, use VS Code with the “Julia (Julia Language Support)” extension instead: everything in this workshop works there too.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#verify-the-installation",
-    "href": "introduction.html#verify-the-installation",
-    "title": "Introduction",
-    "section": "Verify the Installation",
-    "text": "Verify the Installation\n\nStart Zed and take a look around\nOpen the command palette: Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (macOS)\nChoose zed: extensions and search for “Julia”\nInstall the Julia extension for syntax support",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#create-a-new-file",
-    "href": "introduction.html#create-a-new-file",
-    "title": "Introduction",
-    "section": "Create a new file",
-    "text": "Create a new file\n\nCreate a new file with a “.jl” ending\nSave it somewhere on your computer\ne.g., in a folder that you will use in the course\n\n\nprint(\"Hello World!\")\n\nHello World!\n\n\n\nOpen a terminal in that folder and run the file with:\njulia test.jl",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#everything-working",
-    "href": "introduction.html#everything-working",
-    "title": "Introduction",
-    "section": "Everything working?",
-    "text": "Everything working?\n\nIf the terminal prints Hello World! → perfect!\nIf not, the terminal likely cannot find the path to Julia\nClose and reopen the terminal after installing Julia, and say yes to any “PATH” question during installation\nThen try to run the file again",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#installation-checklist",
-    "href": "introduction.html#installation-checklist",
-    "title": "Introduction",
-    "section": "Installation Checklist",
-    "text": "Installation Checklist\nBefore you start with the first tutorial, make sure you can:\n\nOpen Zed\nSee the Julia extension installed in zed: extensions\nCreate a new .jl file\nSee syntax highlighting in your Julia file\nRun code and see output in the terminal",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#how-to-get-started",
-    "href": "introduction.html#how-to-get-started",
-    "title": "Introduction",
-    "section": "How to get started?",
-    "text": "How to get started?\n\nFollowing three parts are dedicated to learning the basics\nStart with the very basics and gradually move on\nFocus in the first two parts on the programming language\nThird part dedicated to Mathematical Optimization",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#tutorials-in-zed",
-    "href": "introduction.html#tutorials-in-zed",
-    "title": "Introduction",
-    "section": "Tutorials in Zed",
-    "text": "Tutorials in Zed\n\nThe easiest way to work on the tutorials is a .jl file in Zed, run cell by cell\nFor detailed instructions, just open the first tutorial\nIt explains step-by-step how to set up the workshop environment and run the cells",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#downloading-the-files",
-    "href": "introduction.html#downloading-the-files",
-    "title": "Introduction",
-    "section": "Downloading the Files",
-    "text": "Downloading the Files\n\nYou will find the tutorial files next to the sections pages\nOn each page, you will find a link Julia on the right (under “Code Links”)\nClick it to download the .jl file and save it\nPrefer a notebook? The link Jupyter (under “Other Formats”) downloads the same tutorial as .ipynb\nI’d recommend storing the files in a separate directory for this workshop",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#get-started-with-the-sections",
-    "href": "introduction.html#get-started-with-the-sections",
-    "title": "Introduction",
-    "section": "Get started with the sections",
-    "text": "Get started with the sections\n\nDownload the first .jl file and open it in Zed\nStart with the first problem and solve it step by step\nYou can find the sections here on the website\nYou can ask questions anytime!",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#literature-1",
-    "href": "introduction.html#literature-1",
-    "title": "Introduction",
-    "section": "Literature",
-    "text": "Literature\nFor interesting literature to learn more about Julia, take a look at the literature list of this course.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Optimization with Julia!",
-    "section": "",
-    "text": "Description\nThis small workshop will introduce you to the basics of mathematical optimization using Julia. Throughout the workshop, you will learn the basics of Julia and JuMP, the de facto standard for mathematical optimization in Julia. We will work with simple, practical examples to help you understand the core concepts. You will learn how to formulate basic optimization problems and translate them into code. The workshop was originally part of the course Applied Optimization but it is now also offered as a standalone small workshop.\n\n\nLearning Outcomes\nMy goal is to introduce you to the Julia programming language and the JuMP package for mathematical optimization. Both are widely used in academia and industry and are great tools to know. Julia is a fast, flexible, and powerful programming language that is becoming more and more popular in academia and industry. JuMP is a package that allows you to formulate and solve optimization problems in Julia, it is an alternative to other popular optimization software such as GAMS, AMPL, Pyomo, etc.\nUpon completion of the workshop, you will be able to:\n\nApply the basics of the Julia programming language\nImplement basic optimization problems in Julia\nUnderstand the core concepts of optimization\nApply optimization techniques to practical problems\n\nPlease note that this workshop is designed to be accessible to everyone, including complete beginners. No advanced knowledge or experience in programming is required to follow along, although knowledge of programming is helpful! The teaching format accommodates different levels of programming skills, ensuring that every participant can get the most out of the workshop.\n\n\nCourse Blocks\nThe core content of the workshop is organized in four blocks:\n\nIntroduction\nPart I: Variables and Types\nPart II: Functions, Data Frames and Plots\nPart III: Optimization with JuMP\n\n\n\nTutorials\nThe workshop is organized in a series of tutorials. Each tutorial is a self-contained document that you can download and run locally.\n\nYou can find the content for each part in the corresponding folder\nTo run the code, download the tutorial as a .jl file (the Julia link on each page) and work through it cell by cell in Zed; the introduction walks you through installing Julia and Zed, and the first tutorial through the workshop’s package environment and the Jupyter kernel\nEach tutorial is also available as a Jupyter notebook (the Jupyter link on each page), if you prefer to work with .ipynb files\nIf you cannot install anything on your machine, you can still read every tutorial here on the website: all results are already executed on the pages\n\n\n\nAI Policy\nCourse chatbot. A course chatbot is available on this website for exploratory study. It is designed to guide your problem-solving process rather than hand out answers: expect hints and questions back, not finished solutions. It runs on EU-hosted infrastructure (Mistral models, servers in Germany), and your conversations are not used to train models. Details are on the privacy page.\nExternal AI tools. You may use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). You are responsible for every line of code you rely on: understand what the AI produced before you build on it. Letting AI solve the exercises for you defeats their purpose.\nNo graded submissions. This workshop has no graded hand-ins and no exam; the exercises and self-checks are for you. The only person an AI shortcut cheats here is yourself.\n\n\nQuestions\nIf you have any questions regarding the workshop, please contact me under tobias.vlcek@uni-hamburg.de.",
-    "crumbs": [
-      "Welcome"
+      "FAQs"
     ]
   },
   {
@@ -1280,6 +926,390 @@
     "crumbs": [
       "Cheatsheets",
       "Julia"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Optimization with Julia!",
+    "section": "",
+    "text": "Description\nThis small workshop will introduce you to the basics of mathematical optimization using Julia. Throughout the workshop, you will learn the basics of Julia and JuMP, the de facto standard for mathematical optimization in Julia. We will work with simple, practical examples to help you understand the core concepts. You will learn how to formulate basic optimization problems and translate them into code. The workshop was originally part of the course Applied Optimization but it is now also offered as a standalone small workshop.\n\n\nLearning Outcomes\nMy goal is to introduce you to the Julia programming language and the JuMP package for mathematical optimization. Both are widely used in academia and industry and are great tools to know. Julia is a fast, flexible, and powerful programming language that is becoming more and more popular in academia and industry. JuMP is a package that allows you to formulate and solve optimization problems in Julia, it is an alternative to other popular optimization software such as GAMS, AMPL, Pyomo, etc.\nUpon completion of the workshop, you will be able to:\n\nApply the basics of the Julia programming language\nImplement basic optimization problems in Julia\nUnderstand the core concepts of optimization\nApply optimization techniques to practical problems\n\nPlease note that this workshop is designed to be accessible to everyone, including complete beginners. No advanced knowledge or experience in programming is required to follow along, although knowledge of programming is helpful! The teaching format accommodates different levels of programming skills, ensuring that every participant can get the most out of the workshop.\n\n\nCourse Blocks\nThe core content of the workshop is organized in four blocks:\n\nIntroduction\nPart I: Variables and Types\nPart II: Functions, Data Frames and Plots\nPart III: Optimization with JuMP\n\n\n\nTutorials\nThe workshop is organized in a series of tutorials. Each tutorial is a self-contained document that you can download and run locally.\n\nYou can find the content for each part in the corresponding folder\nTo run the code, download the tutorial as a .jl file (the Julia link on each page) and work through it cell by cell in Zed; the introduction walks you through installing Julia and Zed, and the first tutorial through the workshop’s package environment and the Jupyter kernel\nEach tutorial is also available as a Jupyter notebook (the Jupyter link on each page), if you prefer to work with .ipynb files\nIf you cannot install anything on your machine, you can still read every tutorial here on the website: all results are already executed on the pages\n\n\n\nAI Policy\nCourse chatbot. A course chatbot is available on this website for exploratory study. It is designed to guide your problem-solving process rather than hand out answers: expect hints and questions back, not finished solutions. It runs on EU-hosted infrastructure (Mistral models, servers in Germany), and your conversations are not used to train models. Details are on the privacy page.\nExternal AI tools. You may use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). You are responsible for every line of code you rely on: understand what the AI produced before you build on it. Letting AI solve the exercises for you defeats their purpose.\nNo graded submissions. This workshop has no graded hand-ins and no exam; the exercises and self-checks are for you. The only person an AI shortcut cheats here is yourself.\n\n\nQuestions\nIf you have any questions regarding the workshop, please contact me under tobias.vlcek@uni-hamburg.de.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Designed to be:\n\nas general as Python\nas statistics-friendly as R\nas fast as C++!\n\n\n\n\n\n\n\n\nAllows for fast data workflows, particularly in scientific computing!\n\n\n\n\n\n\n\nDynamically-typed syntax just like Python\nSimilar to R, Matlab and Python - not like C++\nIn comparison, accessible and easy to learn!\nNo need to worry about memory management!\n\n\n\n\n\nPackage for algebraic modeling in Julia\nSimplifies solving complex optimization problems\nProvides a high-level, user-friendly interface\nUseful for operations research and data science\n\n\n\n\n\n\n\nJuMP is an alternative to Pyomo, GAMS, and AMPL!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#why-julia",
+    "href": "introduction.html#why-julia",
+    "title": "Introduction",
+    "section": "",
+    "text": "Designed to be:\n\nas general as Python\nas statistics-friendly as R\nas fast as C++!\n\n\n\n\n\n\n\n\nAllows for fast data workflows, particularly in scientific computing!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#syntax",
+    "href": "introduction.html#syntax",
+    "title": "Introduction",
+    "section": "",
+    "text": "Dynamically-typed syntax just like Python\nSimilar to R, Matlab and Python - not like C++\nIn comparison, accessible and easy to learn!\nNo need to worry about memory management!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#jump",
+    "href": "introduction.html#jump",
+    "title": "Introduction",
+    "section": "",
+    "text": "Package for algebraic modeling in Julia\nSimplifies solving complex optimization problems\nProvides a high-level, user-friendly interface\nUseful for operations research and data science\n\n\n\n\n\n\n\nJuMP is an alternative to Pyomo, GAMS, and AMPL!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#what-is-algebraic-modeling",
+    "href": "introduction.html#what-is-algebraic-modeling",
+    "title": "Introduction",
+    "section": "What is algebraic modeling?",
+    "text": "What is algebraic modeling?\n\nA “mathematical language” for optimization problems\nAllows for describing complex systems and constraints\nBased on linear algebra (Equations and Inequalities)",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#how-to-learn-algebraic-modeling",
+    "href": "introduction.html#how-to-learn-algebraic-modeling",
+    "title": "Introduction",
+    "section": "How to learn algebraic modeling?",
+    "text": "How to learn algebraic modeling?\n\nPractice, practice, and practice!\nUnderstand standard models and their approach\nDevelop an understanding of constraints\nUnderstand the structure of a models solution space\nUse an available algorithms to determine solutions",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#central-questions",
+    "href": "introduction.html#central-questions",
+    "title": "Introduction",
+    "section": "Central Questions",
+    "text": "Central Questions\n\nWhat is to be decided?\nWhat is relevant to the decision?\nWhat information is given and relevant?\nWhat parameters (data) are needed?\nWhich variables and of which type are needed?\n\n\n\n\n\n\n\nModeling is a creative process!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#model-components",
+    "href": "introduction.html#model-components",
+    "title": "Introduction",
+    "section": "Model Components",
+    "text": "Model Components\n\nObjective function\nConstraints\nVariables",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#linear-optimization-model",
+    "href": "introduction.html#linear-optimization-model",
+    "title": "Introduction",
+    "section": "Linear Optimization Model",
+    "text": "Linear Optimization Model\n\nBasic Model Formulation\n\\[\n\\begin{aligned}\n&\\text{maximize} \\quad F = \\sum_{j\\in \\mathcal{J}} c_j \\times X_j\n\\end{aligned}\n\\]\nsubject to\n\\[\n\\begin{aligned}\n&\\sum_{j\\in \\mathcal{J}} a_{i,j} \\times X_j  \\le b_i && \\forall i \\in \\mathcal{I} \\\\\n&X_j \\ge 0 &&  \\forall  j \\in \\mathcal{J}\n\\end{aligned}\n\\]\n\n\nModel Components\n\\[\n\\begin{aligned}\n\\mathcal{I} &: \\text{set of $i \\in \\mathcal{I}$,}\\\\\n\\mathcal{J} &: \\text{set of $j \\in \\mathcal{J}$,}\\\\\nF   &: \\text{Objective function variable,}\\\\\nX_{j}   &: \\text{decision variables,}\\\\\nc_{j}   &: \\text{objective function coefficients,}\\\\\na_{i,j} &: \\text{parameters,}\\\\\nb_{i}   &: \\text{parameters}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#what-is-modelling-good-for",
+    "href": "introduction.html#what-is-modelling-good-for",
+    "title": "Introduction",
+    "section": "What is modelling good for?",
+    "text": "What is modelling good for?\n\nGood Question! A lot of things:\n\nModeling real-world problems\nSolving complex systems\nOptimizing resource allocation\nDecision-making under constraints\nSimulation and prediction",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#download-and-install-julia",
+    "href": "introduction.html#download-and-install-julia",
+    "title": "Introduction",
+    "section": "Download and Install Julia",
+    "text": "Download and Install Julia\nTo prepare for the upcoming lectures, we start by installing the Julia Programming Language and an Integrated Development Environment (IDE) to work with Julia.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#installing-julia-1",
+    "href": "introduction.html#installing-julia-1",
+    "title": "Introduction",
+    "section": "Installing Julia",
+    "text": "Installing Julia\n\n\nHead to julialang.org/downloads and follow the instructions\nmacOS/Linux: run the install command in a terminal\nWindows: download and open the MSIX App Installer\nLater, you can then manage Julia with juliaup\n\n\n\n\n\n\n\nIf you are ever asked to add something to your “PATH”, do so!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#zed",
+    "href": "introduction.html#zed",
+    "title": "Introduction",
+    "section": "Zed",
+    "text": "Zed\n\nNext, we are going to install Zed, the editor of this workshop\nmacOS: brew install --cask zed (or the installer from zed.dev)\nWindows: installer from zed.dev/download\nLinux: curl -f https://zed.dev/install.sh | sh\n\n\n\n\n\n\n\nOn Windows, Zed needs a DirectX 11 GPU with a current graphics driver. If it shows a blank window or an “Unsupported GPU” warning, update the driver first. Still not working? Use VS Code with the “Julia (Julia Language Support)” extension instead: everything in this workshop works there too.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#verify-the-installation",
+    "href": "introduction.html#verify-the-installation",
+    "title": "Introduction",
+    "section": "Verify the Installation",
+    "text": "Verify the Installation\n\nStart Zed and take a look around\nOpen the command palette: Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (macOS)\nChoose zed: extensions and search for “Julia”\nInstall the Julia extension for syntax support",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#create-a-new-file",
+    "href": "introduction.html#create-a-new-file",
+    "title": "Introduction",
+    "section": "Create a new file",
+    "text": "Create a new file\n\nCreate a new file with a “.jl” ending\nSave it somewhere on your computer\ne.g., in a folder that you will use in the course\n\n\nprint(\"Hello World!\")\n\nHello World!\n\n\n\nOpen a terminal in that folder and run the file with:\njulia test.jl",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#everything-working",
+    "href": "introduction.html#everything-working",
+    "title": "Introduction",
+    "section": "Everything working?",
+    "text": "Everything working?\n\nIf the terminal prints Hello World! → perfect!\nIf not, the terminal likely cannot find the path to Julia\nOpen a new terminal after installing Julia (restart Zed if you use its terminal)\nThen try to run the file again\nStill not working? The FAQ lists the usual fixes",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#installation-checklist",
+    "href": "introduction.html#installation-checklist",
+    "title": "Introduction",
+    "section": "Installation Checklist",
+    "text": "Installation Checklist\nBefore you start with the first tutorial, make sure you can:\n\nOpen Zed\nSee the Julia extension installed in zed: extensions\nCreate a new .jl file\nSee syntax highlighting in your Julia file\nRun code and see output in the terminal",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#how-to-get-started",
+    "href": "introduction.html#how-to-get-started",
+    "title": "Introduction",
+    "section": "How to get started?",
+    "text": "How to get started?\n\nFollowing three parts are dedicated to learning the basics\nStart with the very basics and gradually move on\nFocus in the first two parts on the programming language\nThird part dedicated to Mathematical Optimization",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#tutorials-in-zed",
+    "href": "introduction.html#tutorials-in-zed",
+    "title": "Introduction",
+    "section": "Tutorials in Zed",
+    "text": "Tutorials in Zed\n\nThe easiest way to work on the tutorials is a .jl file in Zed, run cell by cell\nFor detailed instructions, just open the first tutorial\nIt explains step-by-step how to set up the workshop environment and run the cells",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#downloading-the-files",
+    "href": "introduction.html#downloading-the-files",
+    "title": "Introduction",
+    "section": "Downloading the Files",
+    "text": "Downloading the Files\n\nYou will find the tutorial files next to the sections pages\nOn each page, you will find a link Julia on the right (under “Code Links”)\nClick it to download the .jl file and save it\nPrefer a notebook? The link Jupyter (under “Other Formats”) downloads the same tutorial as .ipynb\nI’d recommend storing the files in a separate directory for this workshop",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#get-started-with-the-sections",
+    "href": "introduction.html#get-started-with-the-sections",
+    "title": "Introduction",
+    "section": "Get started with the sections",
+    "text": "Get started with the sections\n\nDownload the first .jl file and open it in Zed\nStart with the first problem and solve it step by step\nYou can find the sections here on the website\nYou can ask questions anytime!",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#literature-1",
+    "href": "introduction.html#literature-1",
+    "title": "Introduction",
+    "section": "Literature",
+    "text": "Literature\nFor interesting literature to learn more about Julia, take a look at the literature list of this course.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html",
+    "href": "general/cheatsheet-jump.html",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "",
+    "text": "This cheatsheet summarizes the most common syntax elements of JuMP for optimization modeling in Julia. It includes examples for setting up models, declaring variables and constraints, defining objectives, adjusting solver options, solving, and accessing solutions.",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#importing-packages-and-creating-a-model",
+    "href": "general/cheatsheet-jump.html#importing-packages-and-creating-a-model",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Importing Packages and Creating a Model",
+    "text": "Importing Packages and Creating a Model\n\nusing JuMP, HiGHS\n\n# Create a model with HiGHS optimizer\nmodel = Model(HiGHS.Optimizer)\n\n# Set a time limit for the optimizer (optional)\nset_optimizer_attribute(model, \"time_limit\", 60.0)",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#declaration",
+    "href": "general/cheatsheet-jump.html#declaration",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Declaration",
+    "text": "Declaration\n\nContinuous Variables\n\n# Unbounded continuous variable\n@variable(model, x)\n\n# Non-negative continuous variable\n@variable(model, x &gt;= 0)\n\n# Bounded continuous variable (0 &lt;= x &lt;= 10)\n@variable(model, 0 &lt;= x &lt;= 10)\n\n# Fixed variable, x is fixed at 5\n@variable(model, x == 5)\n\n\n\nInteger Variables\n\n# Unbounded integer variable\n@variable(model, x, Int)\n\n# Non-negative integer variable\n@variable(model, x &gt;= 0, Int)\n\n# Bounded integer variable (0 &lt;= x &lt;= 10)\n@variable(model, 0 &lt;= x &lt;= 10, Int)\n\n\n\nBinary Variables\n\n# Binary variable (0 or 1)\n@variable(model, x, Bin)",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#containers",
+    "href": "general/cheatsheet-jump.html#containers",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Containers",
+    "text": "Containers\n\nArrays and Matrices\n\n# Array of 5 continuous variables\n@variable(model, x[1:5])\n\n# Non-negative array of variables\n@variable(model, x[1:5] &gt;= 0)\n\n# Binary array of variables\n@variable(model, x[1:5], Bin)\n\n# 3x4 matrix of variables\n@variable(model, x[1:3, 1:4])\n\n# Integer 3x4 matrix\n@variable(model, x[1:3, 1:4], Int)\n\n\n\nCustom Indexing\n\nindices = [\"A\", \"B\", \"C\"]\n@variable(model, x[i in indices])",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#basic-constraints",
+    "href": "general/cheatsheet-jump.html#basic-constraints",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Basic Constraints",
+    "text": "Basic Constraints\n\n# Declare additional variables as needed\n@variable(model, x)\n@variable(model, y)\n\n@constraint(model, con1, 2x + y &lt;= 10)\n@constraint(model, con2, x + 2y &gt;= 5)\n@constraint(model, con3, x == y)   # Equality constraint",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#constraints-with-containers",
+    "href": "general/cheatsheet-jump.html#constraints-with-containers",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Constraints with Containers",
+    "text": "Constraints with Containers\n\n# Array Variables\n@variable(model, x[1:5] &gt;= 0)\n\n# Constraint for each variable element\n@constraint(model, capacity[i=1:5],\n    x[i] &lt;= 100\n)\n\n# Sum constraint across array\n@constraint(model, total_sum,\n    sum(x[i] for i in 1:5) &lt;= 500\n)\n\n# Matrix constraints: each element gets its constraint\n@variable(model, y[1:3, 1:4])\n@constraint(model, matrix_con[i=1:3, j=1:4],\n    y[i,j] &lt;= i + j\n)",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#conditional-constraints",
+    "href": "general/cheatsheet-jump.html#conditional-constraints",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Conditional Constraints",
+    "text": "Conditional Constraints\n\n# Constraint applies only for indices where i &gt; 2\n@constraint(model, cond[i=1:5; i &gt; 2], \n    x[i] &lt;= 10\n)\n\n# Multiple conditions for two-dimensional index:\n@constraint(model, cond2[i=1:10, j=1:10; i != j && i + j &lt;= 15],\n    x[i,j] + x[j,i] &lt;= 1\n)",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#constraints-with-conditional-summations",
+    "href": "general/cheatsheet-jump.html#constraints-with-conditional-summations",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Constraints with Conditional Summations",
+    "text": "Constraints with Conditional Summations\n\n# Sum over a subset of indices (e.g., i &gt; 2)\n@constraint(model, total_sum,\n    sum(x[i] for i in 1:5 if i &gt; 2) &lt;= 500\n)\n\n# Sum with multiple conditions on a 2D array\n@constraint(model, total_sum2,\n    sum(x[i,j] for i in 1:5, j in 1:5 if i != j && i + j &lt;= 7) &lt;= 1\n)\n\n\nTip: Use semicolons (;) to separate the index definition from conditions when defining constraints.",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#basic-objectives",
+    "href": "general/cheatsheet-jump.html#basic-objectives",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Basic Objectives",
+    "text": "Basic Objectives\n\n@objective(model, Max, 5x + 3y)   # Maximize\n@objective(model, Min, 2x + 4y)   # Minimize",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#objectives-using-containers",
+    "href": "general/cheatsheet-jump.html#objectives-using-containers",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Objectives Using Containers",
+    "text": "Objectives Using Containers\n\n# Container-based objective\n@variable(model, z[1:10])\n@objective(model, Min, sum(z[i] for i in 1:10))\n\n# Weighted objective function\nweights = [1, 2, 3, 4, 5]\n@objective(model, Max, \n    sum(weights[i] * z[i] for i in 1:5)\n)",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#variable-updates",
+    "href": "general/cheatsheet-jump.html#variable-updates",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Variable Updates",
+    "text": "Variable Updates\n\n# Set or update variable bounds\nset_lower_bound(x, 0)\nset_upper_bound(x, 10)\n\n# Fix x to a specific value, then unfix if needed\nfix(x, 5)\nunfix(x)",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#constraint-updates",
+    "href": "general/cheatsheet-jump.html#constraint-updates",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Constraint Updates",
+    "text": "Constraint Updates\n\n# Delete a constraint if necessary\ndelete(model, con1)\n\n\nNote: After modifying the model, you will need to re-solve it to update the solution.",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#checking-variable-properties",
+    "href": "general/cheatsheet-jump.html#checking-variable-properties",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Checking Variable Properties",
+    "text": "Checking Variable Properties\n\n# Check bounds for a variable\nprintln(\"Has lower bound? \", has_lower_bound(x))\nprintln(\"Lower bound: \", lower_bound(x))\nprintln(\"Has upper bound? \", has_upper_bound(x))\nprintln(\"Upper bound: \", upper_bound(x))\n\n# Check variable type and retrieve information\nprintln(\"Is x binary? \", is_binary(x))\nprintln(\"Is x integer? \", is_integer(x))\nprintln(\"Variable name: \", name(x))\nprintln(\"Total number of variables: \", num_variables(model))",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
+    ]
+  },
+  {
+    "objectID": "general/cheatsheet-jump.html#key-points",
+    "href": "general/cheatsheet-jump.html#key-points",
+    "title": "JuMP Syntax Cheatsheet",
+    "section": "Key Points",
+    "text": "Key Points\n\nAlways check solution status before using results\nSet appropriate time limits for large problems\nUse gap tolerances to balance precision and speed\nMonitor solve time for performance optimization\nConsider presolve for complex problems",
+    "crumbs": [
+      "Cheatsheets",
+      "JuMP"
     ]
   },
   {
