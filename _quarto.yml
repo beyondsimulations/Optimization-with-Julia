@@ -71,6 +71,8 @@ website:
             href: general/cheatsheet-julia.qmd
           - text: "JuMP"
             href: general/cheatsheet-jump.qmd
+      - text: "FAQs"
+        href: general/faq.qmd
       - text: "Literature"
         href: general/literature.qmd
 
