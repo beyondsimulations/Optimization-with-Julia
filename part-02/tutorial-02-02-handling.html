@@ -440,11 +440,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>Project.toml</code>: Lists direct dependencies of your project.</li>
 <li><code>Manifest.toml</code>: Contains a complete dependency graph of your project.</li>
 </ol>
-<p>These files help ensure reproducibility and should be version controlled with your project. Remember the first tutorial? There, we created the workshop environment in the folder <code>optimization-workshop</code> inside your workshop folder. To activate it, run:</p>
+<p>These files help ensure reproducibility and should be version controlled with your project. Remember the first tutorial? There, we created the workshop environment in the folder <code>optimization-workshop</code> inside your workshop folder, and your tutorial files live in that folder too. To activate it, run:</p>
 <div id="6" class="cell" data-execution_count="0">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"optimization-workshop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Here, <code>"optimization-workshop"</code> is the path to the folder with the workshop’s <code>Project.toml</code>, relative to the folder Julia runs in: your workshop folder. Whenever you start Julia without this environment, activate it before installing new packages. This ensures that the packages are <strong>installed in the environment</strong> and not globally.</p>
+<p>Here, <code>"."</code> stands for the folder Julia runs in. In Zed, that is the folder of your tutorial file, so <code>"."</code> points to the workshop’s <code>Project.toml</code>. In a terminal opened in your workshop folder, use <code>Pkg.activate("optimization-workshop")</code> instead. Whenever you start Julia without this environment, activate it before installing new packages. This ensures that the packages are <strong>installed in the environment</strong> and not globally.</p>
 <div class="callout callout-style-simple callout-caution">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -462,16 +462,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container">
 <p>Our kernel “Optimization with Julia” from the first tutorial already starts in this environment. Therefore, we don’t need to activate it most of the time: <code>Pkg.add</code> installs packages into the workshop environment directly.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Once created and while working in the folder with <code>Project.toml</code> and <code>Manifest.toml</code>, a simple <code>Pkg.activate(".")</code> is faster and enough to load the environment in the working folder!</p>
 </div>
 </div>
 </div>
