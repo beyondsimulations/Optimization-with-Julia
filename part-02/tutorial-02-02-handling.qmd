@@ -71,14 +71,14 @@ Think of environments as separate workspaces for different projects. It's like h
 1. `Project.toml`: Lists direct dependencies of your project.
 2. `Manifest.toml`: Contains a complete dependency graph of your project.
 
-These files help ensure reproducibility and should be version controlled with your project. Remember the first tutorial? There, we created the workshop environment in the folder `optimization-workshop` inside your workshop folder. To activate it, run:
+These files help ensure reproducibility and should be version controlled with your project. Remember the first tutorial? There, we created the workshop environment in the folder `optimization-workshop` inside your workshop folder, and your tutorial files live in that folder too. To activate it, run:
 
 ```{julia}
 #| eval: false
-Pkg.activate("optimization-workshop")
+Pkg.activate(".")
 ```
 
-Here, `"optimization-workshop"` is the path to the folder with the workshop's `Project.toml`, relative to the folder Julia runs in: your workshop folder. Whenever you start Julia without this environment, activate it before installing new packages. This ensures that the packages are **installed in the environment** and not globally.
+Here, `"."` stands for the folder Julia runs in. In Zed, that is the folder of your tutorial file, so `"."` points to the workshop's `Project.toml`. In a terminal opened in your workshop folder, use `Pkg.activate("optimization-workshop")` instead. Whenever you start Julia without this environment, activate it before installing new packages. This ensures that the packages are **installed in the environment** and not globally.
 
 ::: {.callout-caution}
 Check the path carefully: if it does not point to an existing environment, `Pkg.activate` silently creates a new, empty environment at that location, and your packages end up in the wrong place.
@@ -86,10 +86,6 @@ Check the path carefully: if it does not point to an existing environment, `Pkg.
 
 :::{.callout-tip}
 Our kernel "Optimization with Julia" from the first tutorial already starts in this environment. Therefore, we don't need to activate it most of the time: `Pkg.add` installs packages into the workshop environment directly.
-:::
-
-:::{.callout-tip}
-Once created and while working in the folder with `Project.toml` and `Manifest.toml`, a simple `Pkg.activate(".")` is faster and enough to load the environment in the working folder!
 :::
 
 Afterwards, adding packages is straightforward using the `Pkg.add("PackageName")` function. Replace `PackageName` with the actual package name you wish to add.
