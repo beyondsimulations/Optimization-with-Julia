@@ -3,9 +3,6 @@ title: "Welcome to Optimization with Julia!"
 subtitle: "University of Hamburg - Fall 2026"
 
 html:
-    theme: [default, styles.scss]
-    highlight-style: breezedark
-    linkcolor: "#a60000"
     include-in-header:
       - general/header.html
 ---

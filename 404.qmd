@@ -1,10 +1,6 @@
 ---
 title: Page Not Found
 
-html:
-    theme: [default, styles.scss]
-    highlight-style: breezedark
-    linkcolor: "#a60000"
 ---
 
 # Page Not Found

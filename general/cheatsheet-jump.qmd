@@ -3,9 +3,6 @@ title: "JuMP Syntax Cheatsheet"
 subtitle: "Optimization with Julia"
 
 html:
-    theme: litera
-    highlight-style: breezedark
-    linkcolor: "#a60000"
     code-copy: true
     code-link: true
     toc: true
