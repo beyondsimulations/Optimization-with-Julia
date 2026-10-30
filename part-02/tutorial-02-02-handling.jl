@@ -71,7 +71,7 @@
 try
     Pkg.status()
     println("Pkg module imported successfully!")
-catch e
+catch
     @error "The Pkg module was not imported yet! Have you used the correct syntax?"
 end
 
@@ -94,19 +94,16 @@ end
 #     project.
 #
 # These files help ensure reproducibility and should be version controlled
-# with your project. Remember the first tutorial? There, we created the
-# workshop environment in the folder `optimization-workshop` inside your
-# workshop folder, and your tutorial files live in that folder too. To
-# activate it, run:
+# with your project. Remember the first tutorial? There, we set up the
+# workshop environment in your workshop folder, and your tutorial files
+# live there too. To activate it, run:
 
 # %%
 Pkg.activate(".")
 
 # %% [markdown]
-# Here, `"."` stands for the folder Julia runs in. In Zed, that is the
-# folder of your tutorial file, so `"."` points to the workshop’s
-# `Project.toml`. In a terminal opened in your workshop folder, use
-# `Pkg.activate("optimization-workshop")` instead. Whenever you start
+# Here, `"."` stands for the folder Julia runs in, so it points to the
+# workshop’s `Project.toml` in your workshop folder. Whenever you start
 # Julia without this environment, activate it before installing new
 # packages. This ensures that the packages are **installed in the
 # environment** and not globally.
@@ -142,7 +139,7 @@ Pkg.activate(".")
 try
     using DataFrames
     println("Package added successfully!")
-catch e
+catch
     @error "Package was not added yet! Have you used the correct syntax?"
 end
 

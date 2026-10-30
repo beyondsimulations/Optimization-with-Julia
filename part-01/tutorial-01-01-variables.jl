@@ -43,9 +43,10 @@
 #
 # 3.  Open a terminal in that folder and run:
 #
-#         julia --project=optimization-workshop
+#         julia --project=.
 #
-#     This starts Julia with the workshop project environment.
+#     The `.` means ‘this folder’: Julia uses your workshop folder as the
+#     environment.
 #
 # 4.  In the Julia REPL that opens, run:
 #
@@ -65,26 +66,40 @@
 #     push!(Base.package_callbacks, pkg -> pkg.name == "Plots" &&
 #         @eval Base.showable(::MIME"text/html", ::$(Base.loaded_modules[pkg]).Plot) = false)
 #     """
-#     IJulia.installkernel("Optimization with Julia", "--project=" * abspath("optimization-workshop"), "-e", zed_plots)
+#     IJulia.installkernel("Optimization with Julia", "--project=" * abspath("."), "-e", zed_plots)
+#     write(".JETLSConfig.toml", """
+#     [[diagnostic.patterns]]
+#     pattern = "(lowering|inference)/undef-global-var"
+#     match_by = "code"
+#     match_type = "regex"
+#     severity = "off"
+#     path = "**/tutorial-*.jl"
+#     """)
 #     ```
 #
 #     This creates a Jupyter kernel that uses the workshop environment: it
 #     is how Zed runs Julia code. The `zed_plots` part makes your plots
 #     visible in Zed: Zed cannot show the web version of a plot yet, so
-#     the kernel sends plots as images instead.
+#     the kernel sends plots as images instead. The `write` line saves a
+#     settings file for Zed’s Julia extension in your workshop folder.
+#     Without it, the extension underlines the test cells of every
+#     tutorial with “… is not defined”, because they check variables that
+#     you only create when you solve the exercise.
 #
-# 6.  Type `exit()` or press Ctrl+D to exit the Julia REPL.
+# 6.  Type `exit()` or press Ctrl+D to exit the Julia REPL. If Zed was
+#     open during these steps, quit it completely (macOS: `Cmd+Q`) and
+#     start it again: Zed only reads its kernels when it starts.
 #
 # 7.  Download this tutorial as a `.jl` file from the workshop website and
-#     save it in the `optimization-workshop` folder that the steps above
-#     created inside your workshop folder. You can do so by clicking on
-#     the “Julia” link in the sidebar (under “Code Links”) on the tutorial
-#     page. Keep all tutorial files in that folder, together with the
-#     `data` folders some of them need later: Zed’s Julia extension then
-#     knows the workshop packages.
+#     save it in your workshop folder. You can do so by clicking on the
+#     “Julia” link in the sidebar (under “Code Links”) on the tutorial
+#     page. Keep all tutorial files there, together with the `data`
+#     folders some of them need later: Zed’s Julia extension then knows
+#     the workshop packages.
 #
-# 8.  Open the `.jl` file in Zed. The file is split into cells by `# %%`
-#     markers.
+# 8.  In Zed, open your workshop folder and open the `.jl` file from
+#     there: the settings file from step 5 only works while the workshop
+#     folder is open. The file is split into cells by `# %%` markers.
 #
 # 9.  Put the cursor in a cell and press `Ctrl+Shift+Enter` (also on
 #     macOS), or run **repl: run** from the command palette. This runs the
@@ -104,13 +119,12 @@
 # > **Note**
 # >
 # > These steps ensure you’re working in a clean Julia environment for the
-# > workshop. The `--project=optimization-workshop` flag tells Julia to
-# > create (or later reuse) an environment in a subfolder called
-# > `optimization-workshop`, keeping all workshop packages organized in
-# > one place and avoiding conflicts with other projects. The kernel
-# > remembers the exact Julia version it was installed with: close Zed
-# > before you update Julia (for example with `juliaup update`), then run
-# > steps 3 and 5 again.
+# > workshop. The `--project=.` flag tells Julia to use your workshop
+# > folder itself as the environment: the workshop packages live there, in
+# > the files `Project.toml` and `Manifest.toml`, and stay separate from
+# > your other projects. The kernel remembers the exact Julia version it
+# > was installed with: close Zed before you update Julia (for example
+# > with `juliaup update`), then run steps 3 and 5 again.
 #
 # > **Fallback: VS Code**
 # >
